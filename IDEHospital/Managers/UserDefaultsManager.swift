@@ -12,8 +12,11 @@ import Foundation
 class UserDefaultsManager {
     
     // MARK:- Singleton
-    static let shared = UserDefaultsManager()
-    private init() {}
+    private static let sharedInstance = UserDefaultsManager()
+    
+    class func shared() -> UserDefaultsManager {
+        return UserDefaultsManager.sharedInstance
+    }
     
     // MARK:- Properties
     var token: String? {

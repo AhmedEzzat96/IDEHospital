@@ -46,7 +46,13 @@ class HomeVC: UIViewController {
 //MARK:- Private Methods
 extension HomeVC {
     private func setupNavController() {
-        navigationController?.title = "Choose Services"
-        navigationController?.navigationBar.backgroundColor = .darkGray
+        self.navigationItem.title = "Choose Services"
+        self.navigationController?.navigationBar.clipsToBounds = true
+        navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 204/255, green: 204/255, blue: 204/255, alpha: 1)
+        self.navigationController?.navigationBar.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor : UIColor.white,
+            NSAttributedString.Key.font: UIFont(name: "PTSans-Bold", size: 20) as Any
+        ]
     }
 }

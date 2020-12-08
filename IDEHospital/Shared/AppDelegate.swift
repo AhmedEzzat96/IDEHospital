@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeVC = HomeVC.create()
         let homeNav = UINavigationController(rootViewController: homeVC)
         window?.rootViewController = homeNav
+        
         return true
     }
 

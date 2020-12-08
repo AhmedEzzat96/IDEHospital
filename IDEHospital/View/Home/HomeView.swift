@@ -45,6 +45,7 @@ class HomeView: UIView {
 extension HomeView {
     private func setupBackground() {
         backgroundImgView.image = UIImage(named: "component22")
+        
         backgroundImgView.contentMode = .scaleAspectFill
     }
     

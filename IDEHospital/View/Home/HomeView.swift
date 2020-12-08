@@ -56,4 +56,8 @@ extension HomeView {
         homeNurseButton.setTitle("", for: .normal)
     }
     
+    private func setupLabel(label: UILabel) {
+        
+    }
+    
 }

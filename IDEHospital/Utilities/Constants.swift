@@ -11,11 +11,12 @@ import Foundation
 // Storyboards
 struct Storyboards {
     static let main = "Main"
+    static let serviceSearch = "ServiceSearch"
 }
 
 // View Controllers
 struct ViewControllers {
-    
+    static let serviceSearchVC = "ServiceSearchVC"
 }
 
 // UserDefaultsKeys

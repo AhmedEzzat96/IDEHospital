@@ -11,6 +11,9 @@
         <array key="PTSans-Bold.ttf">
             <string>PTSans-Bold</string>
         </array>
+        <array key="PTSans-Regular.ttf">
+            <string>PTSans-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -24,27 +27,41 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="component22" translatesAutoresizingMaskIntoConstraints="NO" id="d1L-W3-Rgu">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group1" translatesAutoresizingMaskIntoConstraints="NO" id="E0N-MA-Z3P">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group1" translatesAutoresizingMaskIntoConstraints="NO" id="E0N-MA-Z3P">
                                 <rect key="frame" x="102" y="186.5" width="171" height="188"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="188" id="cx6-iT-n2b"/>
                                     <constraint firstAttribute="width" constant="171" id="i14-u8-alm"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6f-Uy-ms8">
-                                <rect key="frame" x="166" y="423.5" width="42" height="52"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IDEA EG Hospital" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l6f-Uy-ms8">
+                                <rect key="frame" x="28" y="410" width="319" height="47"/>
                                 <fontDescription key="fontDescription" name="PTSans-Bold" family="PT Sans" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IDEA EG HOSPITAL THE BEST CHOICE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vjV-ML-ddq">
+                                <rect key="frame" x="14.5" y="457" width="346" height="24"/>
+                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="l6f-Uy-ms8" firstAttribute="top" secondItem="E0N-MA-Z3P" secondAttribute="bottom" constant="49" id="6Qe-Uk-HAX"/>
+                            <constraint firstItem="l6f-Uy-ms8" firstAttribute="top" secondItem="E0N-MA-Z3P" secondAttribute="bottom" constant="35.600000000000001" id="6Qe-Uk-HAX"/>
                             <constraint firstItem="d1L-W3-Rgu" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="8ZN-hE-7yY"/>
+                            <constraint firstItem="vjV-ML-ddq" firstAttribute="centerX" secondItem="l6f-Uy-ms8" secondAttribute="centerX" id="8dQ-ol-deZ"/>
                             <constraint firstItem="E0N-MA-Z3P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="186.40000000000001" id="EQZ-xX-uT0"/>
+                            <constraint firstItem="l6f-Uy-ms8" firstAttribute="centerX" secondItem="E0N-MA-Z3P" secondAttribute="centerX" id="Lqw-Ee-k3J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vjV-ML-ddq" secondAttribute="bottom" constant="186" id="RHq-e4-BJ7"/>
                             <constraint firstItem="E0N-MA-Z3P" firstAttribute="centerX" secondItem="d1L-W3-Rgu" secondAttribute="centerX" id="RpV-Ag-dud"/>
+                            <constraint firstItem="l6f-Uy-ms8" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="319/375" id="S9G-SE-zVU"/>
+                            <constraint firstItem="vjV-ML-ddq" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="346/375" id="Zue-Fn-476"/>
+                            <constraint firstItem="vjV-ML-ddq" firstAttribute="top" secondItem="E0N-MA-Z3P" secondAttribute="bottom" constant="82.599999999999994" id="nY3-NE-F6g"/>
                             <constraint firstAttribute="bottom" secondItem="d1L-W3-Rgu" secondAttribute="bottom" id="oAO-k8-dsJ"/>
+                            <constraint firstItem="l6f-Uy-ms8" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="47/667" id="r8d-iC-uXr"/>
+                            <constraint firstItem="vjV-ML-ddq" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="24/667" id="s7T-PQ-x0K"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d1L-W3-Rgu" secondAttribute="trailing" id="sWz-4M-cyM"/>
                             <constraint firstItem="d1L-W3-Rgu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ziI-ik-RxN"/>
                         </constraints>

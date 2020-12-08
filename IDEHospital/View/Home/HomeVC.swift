@@ -48,7 +48,7 @@ extension HomeVC {
     private func setupNavController() {
         self.navigationItem.title = "Choose Services"
         self.navigationController?.navigationBar.clipsToBounds = true
-        navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 204/255, green: 204/255, blue: 204/255, alpha: 1)
+        navigationController?.navigationBar.barTintColor = UIColor(white: 204 / 255, alpha: 1)
         self.navigationController?.navigationBar.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         self.navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor : UIColor.white,

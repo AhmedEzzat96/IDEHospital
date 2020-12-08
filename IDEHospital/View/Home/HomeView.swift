@@ -38,6 +38,16 @@ class HomeView: UIView {
     func setup() {
         setupBackground()
         setupButtons()
+        setupLabel(label: viewLabel, text: "IDEA EG HOSPITAL THE BEST CHOICE", fontSize: 20)
+        setupLabel(label: humanMedicineLabel, text: "HUMAN MEDICINE")
+        setupLabel(label: mriLabel, text: "MRI")
+        setupLabel(label: homeNurseLabel, text: "HOME NURSE")
+        setupLabel(label: veterinaryLabel, text: "VETERINARY")
+        setupImage(imageView: logoImgView, image: "group1")
+        setupImage(imageView: homeNurseImgView, image: "doctor2")
+        setupImage(imageView: veterinaryImgView, image: "veterinary")
+        setupImage(imageView: mriImgView, image: "ctScan")
+        setupImage(imageView: humanMedicineImgView, image: "doctor")
     }
 }
 
@@ -45,8 +55,11 @@ class HomeView: UIView {
 extension HomeView {
     private func setupBackground() {
         backgroundImgView.image = UIImage(named: "component22")
-        
         backgroundImgView.contentMode = .scaleAspectFill
+        humanMedicineView.backgroundColor = .black
+        mriView.backgroundColor = .black
+        homeNurseView.backgroundColor = .black
+        veterinaryView.backgroundColor = .black
     }
     
     private func setupButtons() {
@@ -56,8 +69,16 @@ extension HomeView {
         homeNurseButton.setTitle("", for: .normal)
     }
     
-    private func setupLabel(label: UILabel) {
-        
+    private func setupLabel(label: UILabel, text: String, fontSize: CGFloat = 15) {
+        label.textAlignment = .center
+        label.text = text
+        label.textColor = .white
+        label.font = UIFont(name: "PTSans-Bold", size: fontSize)
+    }
+    
+    private func setupImage(imageView: UIImageView, image: String) {
+        imageView.image = UIImage(named: image)
+        imageView.contentMode = .scaleAspectFit
     }
     
 }

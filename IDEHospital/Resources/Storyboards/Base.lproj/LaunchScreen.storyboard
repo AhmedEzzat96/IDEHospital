@@ -1,10 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="PTSans-Bold.ttf">
+            <string>PTSans-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -13,7 +20,34 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="component22" translatesAutoresizingMaskIntoConstraints="NO" id="d1L-W3-Rgu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group1" translatesAutoresizingMaskIntoConstraints="NO" id="E0N-MA-Z3P">
+                                <rect key="frame" x="102" y="186.5" width="171" height="188"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="188" id="cx6-iT-n2b"/>
+                                    <constraint firstAttribute="width" constant="171" id="i14-u8-alm"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6f-Uy-ms8">
+                                <rect key="frame" x="166" y="423.5" width="42" height="52"/>
+                                <fontDescription key="fontDescription" name="PTSans-Bold" family="PT Sans" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="l6f-Uy-ms8" firstAttribute="top" secondItem="E0N-MA-Z3P" secondAttribute="bottom" constant="49" id="6Qe-Uk-HAX"/>
+                            <constraint firstItem="d1L-W3-Rgu" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="8ZN-hE-7yY"/>
+                            <constraint firstItem="E0N-MA-Z3P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="186.40000000000001" id="EQZ-xX-uT0"/>
+                            <constraint firstItem="E0N-MA-Z3P" firstAttribute="centerX" secondItem="d1L-W3-Rgu" secondAttribute="centerX" id="RpV-Ag-dud"/>
+                            <constraint firstAttribute="bottom" secondItem="d1L-W3-Rgu" secondAttribute="bottom" id="oAO-k8-dsJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d1L-W3-Rgu" secondAttribute="trailing" id="sWz-4M-cyM"/>
+                            <constraint firstItem="d1L-W3-Rgu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ziI-ik-RxN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -22,4 +56,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="component22" width="375" height="667"/>
+        <image name="group1" width="171" height="188.5"/>
+    </resources>
 </document>

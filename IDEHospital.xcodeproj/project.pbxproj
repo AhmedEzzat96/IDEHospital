@@ -18,6 +18,7 @@
 		062FDF83257E6F4A00949D54 /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF82257E6F4A00949D54 /* UIViewController+Storyboard.swift */; };
 		062FDF85257E6F9B00949D54 /* UIView+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF84257E6F9B00949D54 /* UIView+ActivityIndicator.swift */; };
 		062FDF87257E708200949D54 /* UIImageView+CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF86257E708200949D54 /* UIImageView+CircularImage.swift */; };
+		06DD993A257FB47F00D36344 /* PT_Sans in Resources */ = {isa = PBXBuildFile; fileRef = 06DD9939257FB47F00D36344 /* PT_Sans */; };
 		97D6CEE065259CA6151A715D /* Pods_IDEHospital.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C6039448DDB167416F6840 /* Pods_IDEHospital.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		062FDF82257E6F4A00949D54 /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
 		062FDF84257E6F9B00949D54 /* UIView+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		062FDF86257E708200949D54 /* UIImageView+CircularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+CircularImage.swift"; sourceTree = "<group>"; };
+		06DD9939257FB47F00D36344 /* PT_Sans */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PT_Sans; path = ../../../../PT_Sans; sourceTree = "<group>"; };
 		39C6039448DDB167416F6840 /* Pods_IDEHospital.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDEHospital.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8569C0829D2161F9E9E57603 /* Pods-IDEHospital.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDEHospital.release.xcconfig"; path = "Target Support Files/Pods-IDEHospital/Pods-IDEHospital.release.xcconfig"; sourceTree = "<group>"; };
 		C60A97CD5B7753B53A601432 /* Pods-IDEHospital.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDEHospital.debug.xcconfig"; path = "Target Support Files/Pods-IDEHospital/Pods-IDEHospital.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		062FDF73257E670E00949D54 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				06DD9938257FB47200D36344 /* Fonts */,
 				062FDF74257E671400949D54 /* Storyboards */,
 				062FDF75257E671A00949D54 /* Assets */,
 			);
@@ -175,6 +178,14 @@
 				062FDF80257E694700949D54 /* APIRouter.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		06DD9938257FB47200D36344 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				06DD9939257FB47F00D36344 /* PT_Sans */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		4D009CD1F446CACED9E3657C /* Pods */ = {
@@ -257,6 +268,7 @@
 				062FDF68257E669E00949D54 /* LaunchScreen.storyboard in Resources */,
 				062FDF65257E669E00949D54 /* Assets.xcassets in Resources */,
 				062FDF63257E669B00949D54 /* Main.storyboard in Resources */,
+				06DD993A257FB47F00D36344 /* PT_Sans in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

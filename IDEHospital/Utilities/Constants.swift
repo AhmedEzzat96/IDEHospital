@@ -11,11 +11,12 @@ import Foundation
 // Storyboards
 struct Storyboards {
     static let main = "Main"
+    static let home = "Home"
 }
 
 // View Controllers
 struct ViewControllers {
-    
+    static let homeVC = "HomeVC"
 }
 
 // UserDefaultsKeys

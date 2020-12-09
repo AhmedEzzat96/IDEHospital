@@ -13,5 +13,6 @@ extension UIView {
         let background = UIImageView(image: UIImage(named: "component22"))
         background.frame = self.bounds
         addSubview(background)
+        self.sendSubviewToBack(background)
     }
 }

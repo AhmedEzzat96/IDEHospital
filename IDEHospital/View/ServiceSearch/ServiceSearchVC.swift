@@ -18,6 +18,7 @@ class ServiceSearchVC: UIViewController {
         super.viewDidLoad()
         setupNavigationItems()
         mainView.setupBackground()
+        mainView.setupLabels()
     }
     
     // MARK:- Public Methods

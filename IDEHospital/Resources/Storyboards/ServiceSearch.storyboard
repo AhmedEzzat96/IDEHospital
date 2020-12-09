@@ -16,16 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Vh-vZ-Anq">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="jHA-dz-gx5"/>
-                                </items>
-                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXZ-nx-n29">
+                                <rect key="frame" x="28" y="123" width="319" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="1JC-hw-BQ0"/>
+                                    <constraint firstAttribute="width" constant="319" id="ktK-iP-GYB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ST-L2-gGS">
+                                <rect key="frame" x="18" y="170" width="339" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="aBr-bp-S4C"/>
+                                    <constraint firstAttribute="width" constant="339" id="wzZ-GJ-DVR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HXZ-nx-n29" firstAttribute="centerX" secondItem="Ym3-pD-Ohl" secondAttribute="centerX" id="0b4-Mv-P8u"/>
+                            <constraint firstItem="9ST-L2-gGS" firstAttribute="top" secondItem="HXZ-nx-n29" secondAttribute="bottom" id="PNA-6O-Chh"/>
+                            <constraint firstItem="9ST-L2-gGS" firstAttribute="centerX" secondItem="HXZ-nx-n29" secondAttribute="centerX" id="ffd-n5-Blf"/>
+                            <constraint firstItem="HXZ-nx-n29" firstAttribute="top" secondItem="Ut6-Uj-0Zs" secondAttribute="top" constant="123" id="gKv-de-Y4L"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ym3-pD-Ohl"/>
+                        <connections>
+                            <outlet property="firstTitleLabel" destination="HXZ-nx-n29" id="xRY-ad-ufm"/>
+                            <outlet property="secondTitleLabel" destination="9ST-L2-gGS" id="mdt-sR-d7r"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>

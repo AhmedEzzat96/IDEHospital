@@ -17,6 +17,7 @@ class ServiceSearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationItems()
+        mainView.setupBackground()
     }
     
     // MARK:- Public Methods

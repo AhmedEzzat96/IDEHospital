@@ -19,6 +19,7 @@
 		062FDF85257E6F9B00949D54 /* UIView+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF84257E6F9B00949D54 /* UIView+ActivityIndicator.swift */; };
 		062FDF87257E708200949D54 /* UIImageView+CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF86257E708200949D54 /* UIImageView+CircularImage.swift */; };
 		97D6CEE065259CA6151A715D /* Pods_IDEHospital.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C6039448DDB167416F6840 /* Pods_IDEHospital.framework */; };
+		9938FC232580FBBB003781E5 /* UIView+SetupBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */; };
 		99697C62257F803900B6BFBE /* ServiceSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99697C61257F803900B6BFBE /* ServiceSearch.storyboard */; };
 		99697C65257F80BD00B6BFBE /* ServiceSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99697C64257F80BD00B6BFBE /* ServiceSearchVC.swift */; };
 		99697C67257F80DB00B6BFBE /* ServiceSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99697C66257F80DB00B6BFBE /* ServiceSearchView.swift */; };
@@ -40,6 +41,7 @@
 		062FDF86257E708200949D54 /* UIImageView+CircularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+CircularImage.swift"; sourceTree = "<group>"; };
 		39C6039448DDB167416F6840 /* Pods_IDEHospital.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDEHospital.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8569C0829D2161F9E9E57603 /* Pods-IDEHospital.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDEHospital.release.xcconfig"; path = "Target Support Files/Pods-IDEHospital/Pods-IDEHospital.release.xcconfig"; sourceTree = "<group>"; };
+		9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SetupBackground.swift"; sourceTree = "<group>"; };
 		99697C61257F803900B6BFBE /* ServiceSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServiceSearch.storyboard; sourceTree = "<group>"; };
 		99697C64257F80BD00B6BFBE /* ServiceSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchVC.swift; sourceTree = "<group>"; };
 		99697C66257F80DB00B6BFBE /* ServiceSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				062FDF82257E6F4A00949D54 /* UIViewController+Storyboard.swift */,
 				062FDF84257E6F9B00949D54 /* UIView+ActivityIndicator.swift */,
 				062FDF86257E708200949D54 /* UIImageView+CircularImage.swift */,
+				9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				062FDF7D257E67F200949D54 /* UserDefaultsManager.swift in Sources */,
 				062FDF79257E678D00949D54 /* Constants.swift in Sources */,
 				062FDF83257E6F4A00949D54 /* UIViewController+Storyboard.swift in Sources */,
+				9938FC232580FBBB003781E5 /* UIView+SetupBackground.swift in Sources */,
 				062FDF85257E6F9B00949D54 /* UIView+ActivityIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

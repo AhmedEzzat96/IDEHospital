@@ -1,38 +1,28 @@
 //
-//  ServiceSearchVC.swift
+//  MainTabBar.swift
 //  IDEHospital
 //
-//  Created by Ziad on 12/8/20.
+//  Created by Ziad on 12/10/20.
 //  Copyright © 2020 IDEAcademy. All rights reserved.
 //
 
 import UIKit
 
-class ServiceSearchVC: UIViewController {
-    
-    // MARK:- Outlets
-    @IBOutlet weak var mainView: ServiceSearchView!
-    
-    // MARK:- LifeCycle Methods
+class MainTabBar: UITabBarController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.delegate = self
         setupNavigationItems()
-        mainView.setupBackground()
-        mainView.setupLabels()
-    }
-    
-    // MARK:- Public Methods
-    class func create() -> ServiceSearchVC {
-        let serviceSearchVC: ServiceSearchVC = UIViewController.create(storyboardName: Storyboards.serviceSearch, identifier: ViewControllers.serviceSearchVC)
-        return serviceSearchVC
+        setupTabBarItems()
     }
 }
 
-extension ServiceSearchVC {
+extension MainTabBar {
     // MARK:- Private Methods
     private func setupNavigationItems() {
         navigationController?.navigationBar.barTintColor = UIColor(white: 204.0 / 255.0, alpha: 1.0)
-        navigationItem.title = "Service Search"
+        title = "Service Search"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         let backItem = UIBarButtonItem(image: UIImage(named: "back2"), style: .done, target: self, action: #selector(popUp))
         backItem.tintColor = UIColor(red: 132.0 / 255.0, green: 133.0 / 255.0, blue: 133.0 / 255.0, alpha: 1.0)
@@ -46,6 +36,19 @@ extension ServiceSearchVC {
         navigationItem.rightBarButtonItems = [rightPadding, settingsItem]
     }
     
+    private func setupTabBarItems() {
+        self.tabBar.tintColor = .black
+        let serviceSearchVC = ServiceSearchVC.create()
+        serviceSearchVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "Component 41 – 1"), tag: 1)
+        
+        let favoriteVC = UIViewController()
+        favoriteVC.tabBarItem = UITabBarItem(title: "Favotire", image: UIImage(named: "heart"), tag: 2)
+        
+        let appointmentsVC = UIViewController()
+        appointmentsVC.tabBarItem = UITabBarItem(title: "Schedule", image: UIImage(named: "calendar-3"), tag: 3)
+        self.viewControllers = [serviceSearchVC, favoriteVC, appointmentsVC]
+    }
+    
     // MARK:- Objc Methods
     @objc private func popUp() {
         navigationController?.popViewController(animated: true)
@@ -53,5 +56,20 @@ extension ServiceSearchVC {
     
     @objc private func showSettings() {
         print("Show Settings")
+    }
+    
+}
+
+// MARK:- TabBar Delegate
+extension MainTabBar: UITabBarControllerDelegate {
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        switch item.tag {
+        case 1:
+            title = "Service Search"
+        case 2:
+            title = "MY FAVORITES"
+        default:
+            title = "MY APPOINTMENTS"
+        }
     }
 }

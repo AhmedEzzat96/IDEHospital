@@ -13,41 +13,13 @@ class HomeView: UIView {
     @IBOutlet weak var backgroundImgView: UIImageView!
     @IBOutlet weak var logoImgView: UIImageView!
     @IBOutlet weak var viewLabel: UILabel!
-    
-    @IBOutlet weak var humanMedicineView: UIView!
-    @IBOutlet weak var humanMedicineImgView: UIImageView!
-    @IBOutlet weak var humanMedicineLabel: UILabel!
-    @IBOutlet weak var humanMedicineButton: UIButton!
-    
-    @IBOutlet weak var mriView: UIView!
-    @IBOutlet weak var mriImgView: UIImageView!
-    @IBOutlet weak var mriLabel: UILabel!
-    @IBOutlet weak var mriButton: UIButton!
-    
-    @IBOutlet weak var homeNurseView: UIView!
-    @IBOutlet weak var homeNurseImgView: UIImageView!
-    @IBOutlet weak var homeNurseLabel: UILabel!
-    @IBOutlet weak var homeNurseButton: UIButton!
-    
-    @IBOutlet weak var veterinaryView: UIView!
-    @IBOutlet weak var veterinaryImgView: UIImageView!
-    @IBOutlet weak var veterinaryLabel: UILabel!
-    @IBOutlet weak var veterinaryButton: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK:- Public Methods
     func setup() {
         setupBackground()
-        setupButtons()
         setupLabel(label: viewLabel, text: "IDEA EG HOSPITAL THE BEST CHOICE", fontSize: 20)
-        setupLabel(label: humanMedicineLabel, text: "HUMAN MEDICINE")
-        setupLabel(label: mriLabel, text: "MRI")
-        setupLabel(label: homeNurseLabel, text: "HOME NURSE")
-        setupLabel(label: veterinaryLabel, text: "VETERINARY")
-        setupImage(imageView: logoImgView, image: "group1")
-        setupImage(imageView: homeNurseImgView, image: "doctor2")
-        setupImage(imageView: veterinaryImgView, image: "veterinary")
-        setupImage(imageView: mriImgView, image: "ctScan")
-        setupImage(imageView: humanMedicineImgView, image: "doctor")
+        setupCollectionView()
     }
 }
 
@@ -55,18 +27,24 @@ class HomeView: UIView {
 extension HomeView {
     private func setupBackground() {
         backgroundImgView.image = UIImage(named: "component22")
+        logoImgView.image = UIImage(named: "group1")
         backgroundImgView.contentMode = .scaleAspectFill
-        humanMedicineView.backgroundColor = .black
-        mriView.backgroundColor = .black
-        homeNurseView.backgroundColor = .black
-        veterinaryView.backgroundColor = .black
+        
     }
     
-    private func setupButtons() {
-        mriButton.setTitle("", for: .normal)
-        veterinaryButton.setTitle("", for: .normal)
-        humanMedicineButton.setTitle("", for: .normal)
-        homeNurseButton.setTitle("", for: .normal)
+    private func setupCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.minimumLineSpacing = 10
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: 150, height: 150)
+        collectionView.collectionViewLayout = layout
+        collectionView.backgroundColor = .clear
+    }
+    
+    private func setupView(view: UIView) {
+        view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
     }
     
     private func setupLabel(label: UILabel, text: String, fontSize: CGFloat = 15) {

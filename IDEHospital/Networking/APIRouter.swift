@@ -12,11 +12,13 @@ import Alamofire
 
 enum APIRouter: URLRequestConvertible{
     // The endpoint name
+    case mainCategories
     
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self{
-            
+        case .mainCategories:
+            return .get
         default:
             return .post
         }
@@ -34,6 +36,8 @@ enum APIRouter: URLRequestConvertible{
     private var path: String {
         switch self {
         
+        case .mainCategories:
+            return URLs.mainCategories
         }
     }
     
@@ -44,7 +48,8 @@ enum APIRouter: URLRequestConvertible{
         //httpMethod
         urlRequest.httpMethod = method.rawValue
         switch self {
-
+        case .mainCategories:
+            urlRequest.setValue("en", forHTTPHeaderField: HeaderKeys.acceptLanguage)
         default:
             break
         }

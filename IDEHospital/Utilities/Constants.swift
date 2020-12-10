@@ -28,11 +28,12 @@ struct UserDefaultsKeys {
 // Urls
 struct URLs {
     static let base = "http://ide-hospital.ideaeg.co/api"
+    static let mainCategories = "/main_categories"
 }
 
 // HeaderKeys
 struct HeaderKeys {
-    
+    static let acceptLanguage = "Accept-Language"
 }
 
 // Parameters Keys
@@ -42,5 +43,5 @@ struct ParameterKeys {
 
 // Cells
 struct Cells {
-    
+    static let categoryCell = "CategoryCell"
 }

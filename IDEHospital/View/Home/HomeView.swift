@@ -26,8 +26,8 @@ class HomeView: UIView {
 //MARK:- Private Methods
 extension HomeView {
     private func setupBackground() {
-        backgroundImgView.image = UIImage(named: "component22")
-        logoImgView.image = UIImage(named: "group1")
+        backgroundImgView.image = Asset.component22.image
+        logoImgView.image = Asset.group1.image
         backgroundImgView.contentMode = .scaleAspectFill
         
     }

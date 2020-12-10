@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06064CEA2582C693006ADB86 /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06064CE92582C693006ADB86 /* AssetsManager.swift */; };
 		062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF5B257E669B00949D54 /* AppDelegate.swift */; };
 		062FDF63257E669B00949D54 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 062FDF61257E669B00949D54 /* Home.storyboard */; };
 		062FDF65257E669E00949D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 062FDF64257E669E00949D54 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06064CE92582C693006ADB86 /* AssetsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsManager.swift; sourceTree = "<group>"; };
 		062FDF58257E669B00949D54 /* IDEHospital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDEHospital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		062FDF5B257E669B00949D54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		062FDF62257E669B00949D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				062FDF64257E669E00949D54 /* Assets.xcassets */,
+				06064CE92582C693006ADB86 /* AssetsManager.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildConfigurationList = 062FDF6C257E669E00949D54 /* Build configuration list for PBXNativeTarget "IDEHospital" */;
 			buildPhases = (
 				1B28C4F41D389A5B66362C11 /* [CP] Check Pods Manifest.lock */,
+				065574212582BC0500CFEE4F /* SwiftGen */,
 				062FDF54257E669B00949D54 /* Sources */,
 				062FDF55257E669B00949D54 /* Frameworks */,
 				062FDF56257E669B00949D54 /* Resources */,
@@ -325,6 +329,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		065574212582BC0500CFEE4F /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n$PODS_ROOT/SwiftGen/bin/swiftgen\n";
+		};
 		1B28C4F41D389A5B66362C11 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -379,6 +401,7 @@
 				0678C1212581CA4C00949700 /* UIColor+getColorByHex.swift in Sources */,
 				06DD9940257FBA3100D36344 /* HomeView.swift in Sources */,
 				062FDF7F257E687D00949D54 /* APIManager.swift in Sources */,
+				06064CEA2582C693006ADB86 /* AssetsManager.swift in Sources */,
 				062FDF7D257E67F200949D54 /* UserDefaultsManager.swift in Sources */,
 				062FDF79257E678D00949D54 /* Constants.swift in Sources */,
 				06DD9943257FBAA100D36344 /* HomeVC.swift in Sources */,

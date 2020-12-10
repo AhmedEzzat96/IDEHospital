@@ -19,8 +19,6 @@ enum APIRouter: URLRequestConvertible{
         switch self{
         case .mainCategories:
             return .get
-        default:
-            return .post
         }
     }
     
@@ -48,10 +46,9 @@ enum APIRouter: URLRequestConvertible{
         //httpMethod
         urlRequest.httpMethod = method.rawValue
         switch self {
-        case .mainCategories:
-            urlRequest.setValue("en", forHTTPHeaderField: HeaderKeys.acceptLanguage)
+            
         default:
-            break
+            urlRequest.setValue("en", forHTTPHeaderField: HeaderKeys.acceptLanguage)
         }
         
         

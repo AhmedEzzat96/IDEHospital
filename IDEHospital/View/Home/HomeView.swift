@@ -34,10 +34,10 @@ extension HomeView {
     
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 25)
         layout.minimumLineSpacing = 10
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: 150, height: 150)
+        layout.itemSize = CGSize(width: self.frame.size.width/2.5, height: self.frame.size.width/2.5)
         collectionView.collectionViewLayout = layout
         collectionView.backgroundColor = .clear
     }

@@ -39,23 +39,6 @@ class HomeVC: UIViewController {
         homeVC.viewModel = HomeViewModel(view: homeVC)
         return homeVC
     }
-
-    //MARK:- IBActions
-    @IBAction func homeNurseBtnPressed(_ sender: UIButton) {
-        print("Home Nurse")
-    }
-    
-    @IBAction func veterinaryBtnPressed(_ sender: UIButton) {
-        print("Veterinary")
-    }
-    
-    @IBAction func mriBtnPressed(_ sender: UIButton) {
-        print("MRI")
-    }
-    
-    @IBAction func humanMedicineBtnPressed(_ sender: UIButton) {
-        print("Human Medicine")
-    }
 }
 
 //MARK:- Private Methods

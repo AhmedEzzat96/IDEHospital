@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WXw-av-LA6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WXw-av-LA6">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,7 +30,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1rF-35-IAj">
                                 <rect key="frame" x="0.0" y="199" width="375" height="333.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZS2-42-29c">
                                     <size key="itemSize" width="150" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -41,8 +40,7 @@
                                 <cells/>
                             </collectionView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="EZN-i9-dbH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Na2-bs-y4y" firstAttribute="top" secondItem="EZN-i9-dbH" secondAttribute="top" constant="46.399999999999999" id="2lD-OW-UZ1"/>
                             <constraint firstItem="Na2-bs-y4y" firstAttribute="height" secondItem="ctf-Ey-eO0" secondAttribute="height" multiplier="85/667" id="4AC-9A-e1M"/>
@@ -61,6 +59,7 @@
                             <constraint firstItem="EZN-i9-dbH" firstAttribute="trailing" secondItem="Zls-mZ-grl" secondAttribute="trailing" id="hfn-8H-1zO"/>
                             <constraint firstItem="1rF-35-IAj" firstAttribute="top" secondItem="oxJ-s0-OJn" secondAttribute="bottom" constant="32" id="tM7-xV-Trp"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="EZN-i9-dbH"/>
                         <connections>
                             <outlet property="backgroundImgView" destination="Zls-mZ-grl" id="hBe-nd-u01"/>
                             <outlet property="collectionView" destination="1rF-35-IAj" id="pyo-Bc-TQ4"/>
@@ -77,9 +76,4 @@
             <point key="canvasLocation" x="-80.799999999999997" y="53.523238380809602"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

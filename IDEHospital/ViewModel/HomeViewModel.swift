@@ -12,6 +12,7 @@ protocol HomeViewModelProtocol {
     func getCategoriesCount() -> Int
     func configure(cell: CategoryCell, for index: Int)
     func mainCategoriesData()
+    func didSelectItem(item: Int)
 }
 
 class HomeViewModel {
@@ -57,5 +58,20 @@ extension HomeViewModel: HomeViewModelProtocol {
         cell.categoryLabel.text = category.name
         cell.backgroundColor = view?.color(category.color)
         view?.getImage(imageView: cell.categoryImgView, imageUrl: category.image)
+    }
+    
+    func didSelectItem(item: Int) {
+        switch (item) {
+        case (0):
+            print(item)
+        case (1):
+            print(item)
+        case (2):
+            print(item)
+        case (3):
+            print(item)
+        default:
+            break
+        }
     }
 }

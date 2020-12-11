@@ -22,7 +22,7 @@ struct ViewControllers {
 // UserDefaultsKeys
 struct UserDefaultsKeys {
     static let token = "UDKToken"
-    static let id = "id"
+    static let categoryId = "categoryID"
 }
 
 // Urls

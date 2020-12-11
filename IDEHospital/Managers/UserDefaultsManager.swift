@@ -31,15 +31,15 @@ class UserDefaultsManager {
         }
     }
     
-    var id: String? {
+    var categoryId: String? {
         set {
-            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.id)
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.categoryId)
         }
         get {
-            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.id) != nil else {
+            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.categoryId) != nil else {
                 return nil
             }
-            return UserDefaults.standard.string(forKey: UserDefaultsKeys.id)!
+            return UserDefaults.standard.string(forKey: UserDefaultsKeys.categoryId)!
         }
     }
 }

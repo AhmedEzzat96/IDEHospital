@@ -31,7 +31,7 @@ class UserDefaultsManager {
         }
     }
     
-    var categoryId: String? {
+    var categoryId: Int? {
         set {
             UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.categoryId)
         }
@@ -39,7 +39,7 @@ class UserDefaultsManager {
             guard UserDefaults.standard.object(forKey: UserDefaultsKeys.categoryId) != nil else {
                 return nil
             }
-            return UserDefaults.standard.string(forKey: UserDefaultsKeys.categoryId)!
+            return UserDefaults.standard.integer(forKey: UserDefaultsKeys.categoryId)
         }
     }
 }

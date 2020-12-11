@@ -61,17 +61,7 @@ extension HomeViewModel: HomeViewModelProtocol {
     }
     
     func didSelectItem(item: Int) {
-        switch (item) {
-        case (0):
-            print(item)
-        case (1):
-            print(item)
-        case (2):
-            print(item)
-        case (3):
-            print(item)
-        default:
-            break
-        }
+        let category = categoriesData[item]
+        UserDefaultsManager.shared().categoryId = category.id
     }
 }

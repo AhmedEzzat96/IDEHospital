@@ -30,17 +30,5 @@ class UserDefaultsManager {
             return UserDefaults.standard.string(forKey: UserDefaultsKeys.token)!
         }
     }
-    
-    var categoryId: Int? {
-        set {
-            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.categoryId)
-        }
-        get {
-            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.categoryId) != nil else {
-                return nil
-            }
-            return UserDefaults.standard.integer(forKey: UserDefaultsKeys.categoryId)
-        }
-    }
 }
 

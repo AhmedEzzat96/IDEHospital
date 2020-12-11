@@ -50,8 +50,8 @@ extension HomeView {
     private func setupLabel(label: UILabel, text: String, fontSize: CGFloat = 15) {
         label.textAlignment = .center
         label.text = text
-        label.textColor = .white
-        label.font = UIFont(name: "PTSans-Bold", size: fontSize)
+        label.textColor = ColorName.white.color
+        label.font = FontFamily.PTSans.bold.font(size: fontSize)
     }
     
     private func setupImage(imageView: UIImageView, image: String) {

@@ -27,7 +27,7 @@ class CategoryCell: UICollectionViewCell {
     }
     
     private func setupLabel() {
-        categoryLabel.font = UIFont(name: "PTSans-Bold", size: 15)
+        categoryLabel.font = FontFamily.PTSans.bold.font(size: 15)
         categoryLabel.textColor = .white
         categoryLabel.textAlignment = .center
     }

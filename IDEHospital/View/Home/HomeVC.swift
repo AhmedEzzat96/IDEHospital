@@ -46,11 +46,11 @@ extension HomeVC {
     private func setupNavController() {
         self.navigationItem.title = "Choose Services"
         self.navigationController?.navigationBar.clipsToBounds = true
-        navigationController?.navigationBar.barTintColor = UIColor(white: 204 / 255, alpha: 1)
+        navigationController?.navigationBar.barTintColor = ColorName.veryLightPink.color
         self.navigationController?.navigationBar.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         self.navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor : UIColor.white,
-            NSAttributedString.Key.font: UIFont(name: "PTSans-Bold", size: 20) as Any
+            NSAttributedString.Key.foregroundColor : ColorName.white.color,
+            NSAttributedString.Key.font: FontFamily.PTSans.bold.font(size: 20) as Any
         ]
     }
     

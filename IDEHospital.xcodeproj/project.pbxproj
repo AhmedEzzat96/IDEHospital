@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		06064CEA2582C693006ADB86 /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06064CE92582C693006ADB86 /* AssetsManager.swift */; };
+		06064D1F25830973006ADB86 /* FontsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06064D1E25830973006ADB86 /* FontsManager.swift */; };
+		06064D2225830A8A006ADB86 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 06064D2125830A8A006ADB86 /* Colors.txt */; };
+		06064D2425830CBB006ADB86 /* ColorsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06064D2325830CBB006ADB86 /* ColorsManager.swift */; };
 		062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF5B257E669B00949D54 /* AppDelegate.swift */; };
 		062FDF63257E669B00949D54 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 062FDF61257E669B00949D54 /* Home.storyboard */; };
 		062FDF65257E669E00949D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 062FDF64257E669E00949D54 /* Assets.xcassets */; };
@@ -35,6 +38,9 @@
 
 /* Begin PBXFileReference section */
 		06064CE92582C693006ADB86 /* AssetsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsManager.swift; sourceTree = "<group>"; };
+		06064D1E25830973006ADB86 /* FontsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsManager.swift; sourceTree = "<group>"; };
+		06064D2125830A8A006ADB86 /* Colors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
+		06064D2325830CBB006ADB86 /* ColorsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsManager.swift; sourceTree = "<group>"; };
 		062FDF58257E669B00949D54 /* IDEHospital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDEHospital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		062FDF5B257E669B00949D54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		062FDF62257E669B00949D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -76,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06064D2025830A62006ADB86 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				06064D2125830A8A006ADB86 /* Colors.txt */,
+				06064D2325830CBB006ADB86 /* ColorsManager.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
 		062FDF4F257E669B00949D54 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +162,7 @@
 		062FDF73257E670E00949D54 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				06064D2025830A62006ADB86 /* Colors */,
 				06DD9938257FB47200D36344 /* Fonts */,
 				062FDF74257E671400949D54 /* Storyboards */,
 				062FDF75257E671A00949D54 /* Assets */,
@@ -220,6 +236,7 @@
 		06DD9938257FB47200D36344 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				06064D1E25830973006ADB86 /* FontsManager.swift */,
 				06DD9959257FE68E00D36344 /* PTSans-Bold.ttf */,
 				06DD9958257FE68E00D36344 /* PTSans-BoldItalic.ttf */,
 				06DD9956257FE68E00D36344 /* PTSans-Italic.ttf */,
@@ -317,6 +334,7 @@
 			files = (
 				062FDF68257E669E00949D54 /* LaunchScreen.storyboard in Resources */,
 				06DD995B257FE68E00D36344 /* PTSans-Regular.ttf in Resources */,
+				06064D2225830A8A006ADB86 /* Colors.txt in Resources */,
 				06DD995C257FE68E00D36344 /* PTSans-BoldItalic.ttf in Resources */,
 				06DD995A257FE68E00D36344 /* PTSans-Italic.ttf in Resources */,
 				062FDF65257E669E00949D54 /* Assets.xcassets in Resources */,
@@ -395,6 +413,7 @@
 			files = (
 				0678C11E2581B09500949700 /* CategoryCell.swift in Sources */,
 				062FDF81257E694700949D54 /* APIRouter.swift in Sources */,
+				06064D1F25830973006ADB86 /* FontsManager.swift in Sources */,
 				062FDF87257E708200949D54 /* UIImageView+CircularImage.swift in Sources */,
 				062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */,
 				06DD993E257FBA0B00D36344 /* HomeViewModel.swift in Sources */,
@@ -407,6 +426,7 @@
 				06DD9943257FBAA100D36344 /* HomeVC.swift in Sources */,
 				062FDF83257E6F4A00949D54 /* UIViewController+Storyboard.swift in Sources */,
 				062FDF85257E6F9B00949D54 /* UIView+ActivityIndicator.swift in Sources */,
+				06064D2425830CBB006ADB86 /* ColorsManager.swift in Sources */,
 				0655740E2582829900CFEE4F /* MainCategoriesResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

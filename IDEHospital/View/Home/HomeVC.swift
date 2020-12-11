@@ -29,7 +29,7 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         homeView.setup()
         viewModel.mainCategoriesData()
-        setupNavController()
+        setupNavController(title: "Choose Services")
         setupCollectionView()
     }
     
@@ -43,17 +43,6 @@ class HomeVC: UIViewController {
 
 //MARK:- Private Methods
 extension HomeVC {
-    private func setupNavController() {
-        self.navigationItem.title = "Choose Services"
-        self.navigationController?.navigationBar.clipsToBounds = true
-        navigationController?.navigationBar.barTintColor = ColorName.veryLightPink.color
-        self.navigationController?.navigationBar.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor : ColorName.white.color,
-            NSAttributedString.Key.font: FontFamily.PTSans.bold.font(size: 20) as Any
-        ]
-    }
-    
     private func setupCollectionView() {
         homeView.collectionView.register(UINib.init(nibName: Cells.categoryCell, bundle: nil), forCellWithReuseIdentifier: Cells.categoryCell)
         homeView.collectionView.delegate = self
@@ -61,6 +50,7 @@ extension HomeVC {
     }
 }
 
+//MARK:- HomeVC Protocol
 extension HomeVC: HomeVCProtocol {
     func showLoader() {
         self.view.showActivityIndicator()
@@ -95,7 +85,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cells.categoryCell, for: indexPath) as? CategoryCell else {
             return UICollectionViewCell()
         }
-        viewModel.configure(cell: cell, for: indexPath.row)
+        cell.configure(self.viewModel.configure(for: indexPath.row))
         return cell
     }
     
@@ -103,5 +93,4 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
         self.homeView.collectionView.deselectItem(at: indexPath, animated: true)
         self.viewModel.didSelectItem(item: indexPath.row)
     }
-    
 }

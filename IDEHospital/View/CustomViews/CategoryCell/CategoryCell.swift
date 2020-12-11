@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CategoryCell: UICollectionViewCell {
+    //MARK:- IBOutlets
     @IBOutlet weak var categoryImgView: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     
+    //MARK:- Lifecycle Methods
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
@@ -19,6 +22,17 @@ class CategoryCell: UICollectionViewCell {
         setupImage()
     }
     
+    //MARK:- Public Methods
+    func configure(_ category: MainCategoriesData) {
+        categoryLabel.text = category.name
+        backgroundColor = UIColor.init(hexString: category.color)
+        categoryImgView.sd_setImage(with: URL(string: category.image), completed: nil)
+    }
+    
+}
+
+//MARK:- Private Methods
+extension CategoryCell {
     private func setupView() {
         self.layer.cornerRadius = 10
         self.layer.borderWidth = 1
@@ -35,5 +49,4 @@ class CategoryCell: UICollectionViewCell {
     private func setupImage() {
         categoryImgView.contentMode = .scaleAspectFit
     }
-
 }

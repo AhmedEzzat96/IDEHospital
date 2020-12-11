@@ -26,6 +26,7 @@
 		0678C11E2581B09500949700 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678C11C2581B09500949700 /* CategoryCell.swift */; };
 		0678C11F2581B09500949700 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0678C11D2581B09500949700 /* CategoryCell.xib */; };
 		0678C1212581CA4C00949700 /* UIColor+getColorByHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678C1202581CA4C00949700 /* UIColor+getColorByHex.swift */; };
+		06AB4F11258404CA00A0B658 /* UIViewController+NavControllerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB4F10258404CA00A0B658 /* UIViewController+NavControllerSetup.swift */; };
 		06DD993E257FBA0B00D36344 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DD993D257FBA0B00D36344 /* HomeViewModel.swift */; };
 		06DD9940257FBA3100D36344 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DD993F257FBA3100D36344 /* HomeView.swift */; };
 		06DD9943257FBAA100D36344 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DD9942257FBAA100D36344 /* HomeVC.swift */; };
@@ -58,6 +59,7 @@
 		0678C11C2581B09500949700 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		0678C11D2581B09500949700 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		0678C1202581CA4C00949700 /* UIColor+getColorByHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+getColorByHex.swift"; sourceTree = "<group>"; };
+		06AB4F10258404CA00A0B658 /* UIViewController+NavControllerSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavControllerSetup.swift"; sourceTree = "<group>"; };
 		06DD993D257FBA0B00D36344 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		06DD993F257FBA3100D36344 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		06DD9942257FBAA100D36344 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				062FDF82257E6F4A00949D54 /* UIViewController+Storyboard.swift */,
+				06AB4F10258404CA00A0B658 /* UIViewController+NavControllerSetup.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				062FDF87257E708200949D54 /* UIImageView+CircularImage.swift in Sources */,
 				062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */,
 				06DD993E257FBA0B00D36344 /* HomeViewModel.swift in Sources */,
+				06AB4F11258404CA00A0B658 /* UIViewController+NavControllerSetup.swift in Sources */,
 				0678C1212581CA4C00949700 /* UIColor+getColorByHex.swift in Sources */,
 				06DD9940257FBA3100D36344 /* HomeView.swift in Sources */,
 				062FDF7F257E687D00949D54 /* APIManager.swift in Sources */,

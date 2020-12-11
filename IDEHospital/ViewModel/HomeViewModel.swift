@@ -1,10 +1,9 @@
 
-
 import Foundation
 
 protocol HomeViewModelProtocol {
     func getCategoriesCount() -> Int
-    func configure(cell: CategoryCell, for index: Int)
+    func configure(for index: Int) -> MainCategoriesData
     func mainCategoriesData()
     func didSelectItem(item: Int)
 }
@@ -15,14 +14,13 @@ class HomeViewModel {
     private weak var view: HomeVCProtocol?
     private var categoriesData = [MainCategoriesData]()
     
-    // MARK:- init
+    //MARK:- init
     init(view: HomeVCProtocol) {
         self.view = view
     }
-
 }
 
-//MARK:- Public Methods
+//MARK:- HomeViewModel Protocol
 extension HomeViewModel: HomeViewModelProtocol {
     func mainCategoriesData() {
         view?.showLoader()
@@ -47,11 +45,8 @@ extension HomeViewModel: HomeViewModelProtocol {
         return categoriesData.count
     }
     
-    func configure(cell: CategoryCell, for index: Int) {
-        let category = categoriesData[index]
-        cell.categoryLabel.text = category.name
-        cell.backgroundColor = view?.color(category.color)
-        view?.getImage(imageView: cell.categoryImgView, imageUrl: category.image)
+    func configure(for index: Int) -> MainCategoriesData {
+        return categoriesData[index]
     }
     
     func didSelectItem(item: Int) {

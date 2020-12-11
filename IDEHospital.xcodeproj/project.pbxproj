@@ -137,7 +137,7 @@
 		062FDF70257E66E400949D54 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0678C11B2581B07200949700 /* CategoryCell */,
+				06AB4F0F2583F87500A0B658 /* CustomViews */,
 				06DD9941257FBA3800D36344 /* Home */,
 			);
 			path = View;
@@ -191,10 +191,10 @@
 		062FDF76257E674A00949D54 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				062FDF82257E6F4A00949D54 /* UIViewController+Storyboard.swift */,
-				062FDF84257E6F9B00949D54 /* UIView+ActivityIndicator.swift */,
-				062FDF86257E708200949D54 /* UIImageView+CircularImage.swift */,
-				0678C1202581CA4C00949700 /* UIColor+getColorByHex.swift */,
+				06AB4F0A2583F83600A0B658 /* UIView */,
+				06AB4F0B2583F84100A0B658 /* UIViewController */,
+				06AB4F0C2583F84C00A0B658 /* UIImageVIew */,
+				06AB4F0D2583F85500A0B658 /* UIColor */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -231,6 +231,46 @@
 				0678C11D2581B09500949700 /* CategoryCell.xib */,
 			);
 			path = CategoryCell;
+			sourceTree = "<group>";
+		};
+		06AB4F0A2583F83600A0B658 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				062FDF84257E6F9B00949D54 /* UIView+ActivityIndicator.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		06AB4F0B2583F84100A0B658 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				062FDF82257E6F4A00949D54 /* UIViewController+Storyboard.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		06AB4F0C2583F84C00A0B658 /* UIImageVIew */ = {
+			isa = PBXGroup;
+			children = (
+				062FDF86257E708200949D54 /* UIImageView+CircularImage.swift */,
+			);
+			path = UIImageVIew;
+			sourceTree = "<group>";
+		};
+		06AB4F0D2583F85500A0B658 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				0678C1202581CA4C00949700 /* UIColor+getColorByHex.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		06AB4F0F2583F87500A0B658 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				0678C11B2581B07200949700 /* CategoryCell */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		06DD9938257FB47200D36344 /* Fonts */ = {

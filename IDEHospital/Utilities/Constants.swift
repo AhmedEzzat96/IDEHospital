@@ -11,27 +11,28 @@ import Foundation
 // Storyboards
 struct Storyboards {
     static let main = "Main"
+    static let home = "Home"
 }
 
 // View Controllers
 struct ViewControllers {
-    
+    static let homeVC = "HomeVC"
 }
 
 // UserDefaultsKeys
 struct UserDefaultsKeys {
     static let token = "UDKToken"
-    static let id = "id"
 }
 
 // Urls
 struct URLs {
     static let base = "http://ide-hospital.ideaeg.co/api"
+    static let mainCategories = "/main_categories"
 }
 
 // HeaderKeys
 struct HeaderKeys {
-    
+    static let acceptLanguage = "Accept-Language"
 }
 
 // Parameters Keys
@@ -41,5 +42,5 @@ struct ParameterKeys {
 
 // Cells
 struct Cells {
-    
+    static let categoryCell = "CategoryCell"
 }

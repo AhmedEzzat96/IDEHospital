@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF5B257E669B00949D54 /* AppDelegate.swift */; };
-		062FDF63257E669B00949D54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 062FDF61257E669B00949D54 /* Main.storyboard */; };
 		062FDF65257E669E00949D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 062FDF64257E669E00949D54 /* Assets.xcassets */; };
 		062FDF68257E669E00949D54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 062FDF66257E669E00949D54 /* LaunchScreen.storyboard */; };
 		062FDF79257E678D00949D54 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF78257E678D00949D54 /* Constants.swift */; };
@@ -19,19 +18,27 @@
 		062FDF85257E6F9B00949D54 /* UIView+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF84257E6F9B00949D54 /* UIView+ActivityIndicator.swift */; };
 		062FDF87257E708200949D54 /* UIImageView+CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF86257E708200949D54 /* UIImageView+CircularImage.swift */; };
 		97D6CEE065259CA6151A715D /* Pods_IDEHospital.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C6039448DDB167416F6840 /* Pods_IDEHospital.framework */; };
+		99272D68258498A600732F85 /* PTSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99272D67258498A600732F85 /* PTSans-Regular.ttf */; };
+		99272D6A258498E600732F85 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99272D69258498E600732F85 /* Fonts.swift */; };
 		9938FC232580FBBB003781E5 /* UIView+SetupBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */; };
 		9938FC25258173CC003781E5 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938FC24258173CC003781E5 /* UIView+CornerRadius.swift */; };
 		9938FC2725817425003781E5 /* UITextField+TextFieldIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938FC2625817425003781E5 /* UITextField+TextFieldIcons.swift */; };
+		9966C2FB2582636B0016A8CB /* ServiceSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966C2FA2582636B0016A8CB /* ServiceSearchViewModel.swift */; };
 		99697C62257F803900B6BFBE /* ServiceSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99697C61257F803900B6BFBE /* ServiceSearch.storyboard */; };
 		99697C65257F80BD00B6BFBE /* ServiceSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99697C64257F80BD00B6BFBE /* ServiceSearchVC.swift */; };
 		99697C67257F80DB00B6BFBE /* ServiceSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99697C66257F80DB00B6BFBE /* ServiceSearchView.swift */; };
+		999A71092584122200678453 /* UIViewController+ShowSimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999A71082584122200678453 /* UIViewController+ShowSimpleAlert.swift */; };
+		999D8CF22582929900CAEA06 /* CategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D8CF12582929900CAEA06 /* CategoryResponse.swift */; };
 		99E7AD0725824E2800AAB5B0 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E7AD0625824E2800AAB5B0 /* MainTabBar.swift */; };
+		99F90A6E25846EC8006E7B91 /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F90A6D25846EC8006E7B91 /* AssetsManager.swift */; };
+		99F90A7025847B4A006E7B91 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 99F90A6F25847B4A006E7B91 /* Colors.txt */; };
+		99F90A7225847F44006E7B91 /* ColorsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F90A7125847F44006E7B91 /* ColorsManager.swift */; };
+		99F90A772584897F006E7B91 /* PT_Sans_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99F90A762584897F006E7B91 /* PT_Sans_Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		062FDF58257E669B00949D54 /* IDEHospital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDEHospital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		062FDF5B257E669B00949D54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		062FDF62257E669B00949D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		062FDF64257E669E00949D54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		062FDF67257E669E00949D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		062FDF69257E669E00949D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,13 +51,22 @@
 		062FDF86257E708200949D54 /* UIImageView+CircularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+CircularImage.swift"; sourceTree = "<group>"; };
 		39C6039448DDB167416F6840 /* Pods_IDEHospital.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDEHospital.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8569C0829D2161F9E9E57603 /* Pods-IDEHospital.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDEHospital.release.xcconfig"; path = "Target Support Files/Pods-IDEHospital/Pods-IDEHospital.release.xcconfig"; sourceTree = "<group>"; };
+		99272D67258498A600732F85 /* PTSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Regular.ttf"; sourceTree = "<group>"; };
+		99272D69258498E600732F85 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SetupBackground.swift"; sourceTree = "<group>"; };
 		9938FC24258173CC003781E5 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
 		9938FC2625817425003781E5 /* UITextField+TextFieldIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+TextFieldIcons.swift"; sourceTree = "<group>"; };
+		9966C2FA2582636B0016A8CB /* ServiceSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceSearchViewModel.swift; path = IDEHospital/ViewModel/MainTabs/ServiceSearchViewModel.swift; sourceTree = SOURCE_ROOT; };
 		99697C61257F803900B6BFBE /* ServiceSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServiceSearch.storyboard; sourceTree = "<group>"; };
 		99697C64257F80BD00B6BFBE /* ServiceSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchVC.swift; sourceTree = "<group>"; };
 		99697C66257F80DB00B6BFBE /* ServiceSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchView.swift; sourceTree = "<group>"; };
+		999A71082584122200678453 /* UIViewController+ShowSimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowSimpleAlert.swift"; sourceTree = "<group>"; };
+		999D8CF12582929900CAEA06 /* CategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryResponse.swift; sourceTree = "<group>"; };
 		99E7AD0625824E2800AAB5B0 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		99F90A6D25846EC8006E7B91 /* AssetsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsManager.swift; sourceTree = "<group>"; };
+		99F90A6F25847B4A006E7B91 /* Colors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
+		99F90A7125847F44006E7B91 /* ColorsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsManager.swift; sourceTree = "<group>"; };
+		99F90A762584897F006E7B91 /* PT_Sans_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PT_Sans_Bold.ttf; sourceTree = "<group>"; };
 		C60A97CD5B7753B53A601432 /* Pods-IDEHospital.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDEHospital.debug.xcconfig"; path = "Target Support Files/Pods-IDEHospital/Pods-IDEHospital.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +120,7 @@
 		062FDF6F257E66DF00949D54 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				999D8CF12582929900CAEA06 /* CategoryResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +136,7 @@
 		062FDF71257E66E900949D54 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9966C2FC258263980016A8CB /* MainTabs */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -136,6 +154,8 @@
 			children = (
 				062FDF74257E671400949D54 /* Storyboards */,
 				062FDF75257E671A00949D54 /* Assets */,
+				99F90A73258488C4006E7B91 /* Fonts */,
+				999A710D25845F6700678453 /* Colors */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -143,9 +163,8 @@
 		062FDF74257E671400949D54 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				062FDF61257E669B00949D54 /* Main.storyboard */,
 				062FDF66257E669E00949D54 /* LaunchScreen.storyboard */,
-				99697C61257F803900B6BFBE /* ServiceSearch.storyboard */,
+				99163DB62584B5AB007C351D /* MainTabs */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -153,6 +172,7 @@
 		062FDF75257E671A00949D54 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				99F90A6D25846EC8006E7B91 /* AssetsManager.swift */,
 				062FDF64257E669E00949D54 /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -161,12 +181,10 @@
 		062FDF76257E674A00949D54 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				062FDF82257E6F4A00949D54 /* UIViewController+Storyboard.swift */,
-				062FDF84257E6F9B00949D54 /* UIView+ActivityIndicator.swift */,
-				062FDF86257E708200949D54 /* UIImageView+CircularImage.swift */,
-				9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */,
-				9938FC24258173CC003781E5 /* UIView+CornerRadius.swift */,
-				9938FC2625817425003781E5 /* UITextField+TextFieldIcons.swift */,
+				999A710725840E3B00678453 /* UIImageView */,
+				999A710625840E2000678453 /* UITextField */,
+				999A710525840E1900678453 /* UIView */,
+				999A710425840E0A00678453 /* UIViewController */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -213,6 +231,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		99163DB62584B5AB007C351D /* MainTabs */ = {
+			isa = PBXGroup;
+			children = (
+				99697C61257F803900B6BFBE /* ServiceSearch.storyboard */,
+			);
+			path = MainTabs;
+			sourceTree = "<group>";
+		};
+		9966C2FC258263980016A8CB /* MainTabs */ = {
+			isa = PBXGroup;
+			children = (
+				9966C2FA2582636B0016A8CB /* ServiceSearchViewModel.swift */,
+			);
+			path = MainTabs;
+			sourceTree = "<group>";
+		};
 		99697C63257F806400B6BFBE /* ServiceSearch */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +254,50 @@
 				99697C66257F80DB00B6BFBE /* ServiceSearchView.swift */,
 			);
 			path = ServiceSearch;
+			sourceTree = "<group>";
+		};
+		999A710425840E0A00678453 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				062FDF82257E6F4A00949D54 /* UIViewController+Storyboard.swift */,
+				999A71082584122200678453 /* UIViewController+ShowSimpleAlert.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		999A710525840E1900678453 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				062FDF84257E6F9B00949D54 /* UIView+ActivityIndicator.swift */,
+				9938FC24258173CC003781E5 /* UIView+CornerRadius.swift */,
+				9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		999A710625840E2000678453 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				9938FC2625817425003781E5 /* UITextField+TextFieldIcons.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		999A710725840E3B00678453 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				062FDF86257E708200949D54 /* UIImageView+CircularImage.swift */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
+		999A710D25845F6700678453 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				99F90A7125847F44006E7B91 /* ColorsManager.swift */,
+				99F90A6F25847B4A006E7B91 /* Colors.txt */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		99E7AD0825825C0000AAB5B0 /* MainTabs */ = {
@@ -231,6 +309,16 @@
 			path = MainTabs;
 			sourceTree = "<group>";
 		};
+		99F90A73258488C4006E7B91 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				99272D69258498E600732F85 /* Fonts.swift */,
+				99272D67258498A600732F85 /* PTSans-Regular.ttf */,
+				99F90A762584897F006E7B91 /* PT_Sans_Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -239,6 +327,7 @@
 			buildConfigurationList = 062FDF6C257E669E00949D54 /* Build configuration list for PBXNativeTarget "IDEHospital" */;
 			buildPhases = (
 				1B28C4F41D389A5B66362C11 /* [CP] Check Pods Manifest.lock */,
+				999A710A25845C7F00678453 /* SwiftGen */,
 				062FDF54257E669B00949D54 /* Sources */,
 				062FDF55257E669B00949D54 /* Frameworks */,
 				062FDF56257E669B00949D54 /* Resources */,
@@ -291,10 +380,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99272D68258498A600732F85 /* PTSans-Regular.ttf in Resources */,
 				062FDF68257E669E00949D54 /* LaunchScreen.storyboard in Resources */,
+				99F90A772584897F006E7B91 /* PT_Sans_Bold.ttf in Resources */,
 				062FDF65257E669E00949D54 /* Assets.xcassets in Resources */,
+				99F90A7025847B4A006E7B91 /* Colors.txt in Resources */,
 				99697C62257F803900B6BFBE /* ServiceSearch.storyboard in Resources */,
-				062FDF63257E669B00949D54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +431,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IDEHospital/Pods-IDEHospital-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		999A710A25845C7F00678453 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n$PODS_ROOT/SwiftGen/bin/swiftgen\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -349,17 +458,23 @@
 			files = (
 				99697C67257F80DB00B6BFBE /* ServiceSearchView.swift in Sources */,
 				062FDF81257E694700949D54 /* APIRouter.swift in Sources */,
+				99F90A6E25846EC8006E7B91 /* AssetsManager.swift in Sources */,
 				99E7AD0725824E2800AAB5B0 /* MainTabBar.swift in Sources */,
 				99697C65257F80BD00B6BFBE /* ServiceSearchVC.swift in Sources */,
 				062FDF87257E708200949D54 /* UIImageView+CircularImage.swift in Sources */,
+				999D8CF22582929900CAEA06 /* CategoryResponse.swift in Sources */,
 				9938FC2725817425003781E5 /* UITextField+TextFieldIcons.swift in Sources */,
+				99F90A7225847F44006E7B91 /* ColorsManager.swift in Sources */,
 				062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */,
 				062FDF7F257E687D00949D54 /* APIManager.swift in Sources */,
 				062FDF7D257E67F200949D54 /* UserDefaultsManager.swift in Sources */,
 				062FDF79257E678D00949D54 /* Constants.swift in Sources */,
 				062FDF83257E6F4A00949D54 /* UIViewController+Storyboard.swift in Sources */,
+				9966C2FB2582636B0016A8CB /* ServiceSearchViewModel.swift in Sources */,
 				9938FC25258173CC003781E5 /* UIView+CornerRadius.swift in Sources */,
+				99272D6A258498E600732F85 /* Fonts.swift in Sources */,
 				9938FC232580FBBB003781E5 /* UIView+SetupBackground.swift in Sources */,
+				999A71092584122200678453 /* UIViewController+ShowSimpleAlert.swift in Sources */,
 				062FDF85257E6F9B00949D54 /* UIView+ActivityIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,14 +482,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		062FDF61257E669B00949D54 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				062FDF62257E669B00949D54 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		062FDF66257E669E00949D54 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

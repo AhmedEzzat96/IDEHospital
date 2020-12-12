@@ -1,0 +1,5 @@
+pinkishGrey : #cccccc
+blackTwo : #202020
+darkRoyalBlue : #001867
+darkGrey : #848585
+whiteTwo : #ededed

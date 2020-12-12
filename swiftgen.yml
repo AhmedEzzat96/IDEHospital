@@ -1,0 +1,17 @@
+xcassets:
+  inputs: IDEHospital/Resources/Assets/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: IDEHospital/Resources/Assets/AssetsManager.swift
+      
+colors:
+  inputs: IDEHospital/Resources/Colors/Colors.txt
+  outputs:
+    templateName: swift5
+    output: IDEHospital/Resources/Colors/ColorsManager.swift
+
+fonts:
+  inputs: IDEHospital/Resources/Fonts
+  outputs:
+    templateName: swift5
+    output: IDEHospital/Resources/Fonts/Fonts.swift

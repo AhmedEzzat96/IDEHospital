@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXZ-nx-n29">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXZ-nx-n29">
                                 <rect key="frame" x="28" y="123" width="319" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="1JC-hw-BQ0"/>
@@ -26,7 +26,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ST-L2-gGS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ST-L2-gGS">
                                 <rect key="frame" x="18" y="170" width="339" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="aBr-bp-S4C"/>
@@ -72,7 +72,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="HXZ-nx-n29" firstAttribute="centerX" secondItem="Ym3-pD-Ohl" secondAttribute="centerX" id="0b4-Mv-P8u"/>
+                            <constraint firstItem="HXZ-nx-n29" firstAttribute="centerX" secondItem="Ut6-Uj-0Zs" secondAttribute="centerX" id="0b4-Mv-P8u"/>
                             <constraint firstItem="QZU-WK-YDS" firstAttribute="top" secondItem="LdX-9o-L6A" secondAttribute="bottom" constant="15" id="0dA-iM-uYw"/>
                             <constraint firstItem="ClE-wt-UEw" firstAttribute="centerX" secondItem="9ST-L2-gGS" secondAttribute="centerX" id="0iC-GD-n87"/>
                             <constraint firstItem="U1Z-Kf-1o5" firstAttribute="top" secondItem="oe6-qc-Qw3" secondAttribute="bottom" constant="30" id="0jF-4P-Xkm"/>

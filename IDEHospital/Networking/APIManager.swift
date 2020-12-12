@@ -10,7 +10,11 @@ import Foundation
 import Alamofire
 
 class APIManager {
-    
+    class func getCategoriesData(with categoryID: Int, completion: @escaping (Result<CategoryResponse, Error>) -> Void) {
+        request(APIRouter.getCategoriesData(categoryID)) { (response) in
+            completion(response)
+        }
+    }
 }
 
 extension APIManager{

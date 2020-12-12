@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     func setupBackground() {
-        let background = UIImageView(image: UIImage(named: "component22"))
+        let background = UIImageView(image: Asset.background.image)
         background.frame = self.bounds
         addSubview(background)
         self.sendSubviewToBack(background)

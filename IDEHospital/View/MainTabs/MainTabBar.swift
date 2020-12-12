@@ -10,43 +10,62 @@ import UIKit
 
 class MainTabBar: UITabBarController {
 
+    // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
         setupNavigationItems()
-        setupTabBarItems()
+        setupTabBar()
+    }
+    
+    // MARK:- Public Methods
+    class func create(with categoryID: Int) -> MainTabBar {
+        let mainTabBar = MainTabBar()
+        let serviceSearchVC = mainTabBar.createServiceSearchVC(with: categoryID)
+        let favoriteVC = mainTabBar.createFavoriteVC()
+        let appointmentsVC = mainTabBar.createAppointmentsVC()
+        mainTabBar.viewControllers = [serviceSearchVC, favoriteVC, appointmentsVC]
+        return mainTabBar
     }
 }
 
 extension MainTabBar {
     // MARK:- Private Methods
     private func setupNavigationItems() {
-        navigationController?.navigationBar.barTintColor = UIColor(white: 204.0 / 255.0, alpha: 1.0)
-        title = "Service Search"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        let backItem = UIBarButtonItem(image: UIImage(named: "back2"), style: .done, target: self, action: #selector(popUp))
-        backItem.tintColor = UIColor(red: 132.0 / 255.0, green: 133.0 / 255.0, blue: 133.0 / 255.0, alpha: 1.0)
+        title = Titles.serviceSearch
+        let backItem = UIBarButtonItem(image: Asset.back.image, style: .done, target: self, action: #selector(popUp))
+        backItem.tintColor = ColorName.darkGrey.color
         let leftPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         leftPadding.width = 18
         navigationItem.leftBarButtonItems = [leftPadding, backItem]
-        let settingsItem = UIBarButtonItem(image: UIImage(named: "settings"), style: .done, target: self, action: #selector(showSettings))
-        settingsItem.tintColor = UIColor(red: 132.0 / 255.0, green: 133.0 / 255.0, blue: 133.0 / 255.0, alpha: 1.0)
+        let settingsItem = UIBarButtonItem(image: Asset.settings.image, style: .done, target: self, action: #selector(showSettings))
+        settingsItem.tintColor = ColorName.darkGrey.color
         let rightPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         rightPadding.width = 18
         navigationItem.rightBarButtonItems = [rightPadding, settingsItem]
     }
     
-    private func setupTabBarItems() {
-        self.tabBar.tintColor = .black
-        let serviceSearchVC = ServiceSearchVC.create()
-        serviceSearchVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "Component 41 – 1"), tag: 1)
-        
+    private func setupTabBar() {
+        self.tabBar.backgroundColor = ColorName.whiteTwo.color
+        self.tabBar.tintColor = ColorName.blackTwo.color
+    }
+    
+    private func createServiceSearchVC(with categoryID: Int) -> ServiceSearchVC {
+        let serviceSearchVC = ServiceSearchVC.create(with: categoryID)
+        serviceSearchVC.tabBarItem = UITabBarItem(title: Titles.search, image: Asset.search.image, tag: 1)
+        return serviceSearchVC
+    }
+    
+    private func createFavoriteVC() -> UIViewController {
         let favoriteVC = UIViewController()
-        favoriteVC.tabBarItem = UITabBarItem(title: "Favotire", image: UIImage(named: "heart"), tag: 2)
-        
+        favoriteVC.tabBarItem = UITabBarItem(title: Titles.favorite, image: Asset.heart.image, tag: 2)
+        return favoriteVC
+    }
+    
+    private func createAppointmentsVC() -> UIViewController {
         let appointmentsVC = UIViewController()
-        appointmentsVC.tabBarItem = UITabBarItem(title: "Schedule", image: UIImage(named: "calendar-3"), tag: 3)
-        self.viewControllers = [serviceSearchVC, favoriteVC, appointmentsVC]
+        appointmentsVC.tabBarItem = UITabBarItem(title: Titles.schedule, image: Asset.calendar.image, tag: 3)
+        return appointmentsVC
     }
     
     // MARK:- Objc Methods
@@ -65,11 +84,11 @@ extension MainTabBar: UITabBarControllerDelegate {
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.tag {
         case 1:
-            title = "Service Search"
+            title = Titles.serviceSearch
         case 2:
-            title = "MY FAVORITES"
+            title = Titles.myFavorites
         default:
-            title = "MY APPOINTMENTS"
+            title = Titles.myAppointments
         }
     }
 }

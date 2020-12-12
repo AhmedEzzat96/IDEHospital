@@ -15,7 +15,7 @@ class MainTabBar: UITabBarController {
         super.viewDidLoad()
         self.delegate = self
         setupNavigationItems()
-        setupTabBar()
+        setupNavController(title: Titles.serviceSearch)
     }
     
     // MARK:- Public Methods
@@ -32,26 +32,26 @@ class MainTabBar: UITabBarController {
 extension MainTabBar {
     // MARK:- Private Methods
     private func setupNavigationItems() {
-        title = Titles.serviceSearch
         let backItem = UIBarButtonItem(image: Asset.back.image, style: .done, target: self, action: #selector(popUp))
-        backItem.tintColor = ColorName.darkGrey.color
+        backItem.tintColor = ColorName.steelGrey.color
         let leftPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         leftPadding.width = 18
         navigationItem.leftBarButtonItems = [leftPadding, backItem]
         let settingsItem = UIBarButtonItem(image: Asset.settings.image, style: .done, target: self, action: #selector(showSettings))
-        settingsItem.tintColor = ColorName.darkGrey.color
+        settingsItem.tintColor = ColorName.steelGrey.color
         let rightPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         rightPadding.width = 18
         navigationItem.rightBarButtonItems = [rightPadding, settingsItem]
     }
     
-    private func setupTabBar() {
-        self.tabBar.backgroundColor = ColorName.whiteTwo.color
-        self.tabBar.tintColor = ColorName.blackTwo.color
-    }
+//    private func setupTabBar() {
+//        self.tabBar.backgroundColor = ColorName.whiteTwo.color
+//        self.tabBar.tintColor = ColorName.blackTwo.color
+//    }
     
     private func createServiceSearchVC(with categoryID: Int) -> ServiceSearchVC {
         let serviceSearchVC = ServiceSearchVC.create(with: categoryID)
+        serviceSearchVC.viewModel.prepareCategories(with: categoryID)
         serviceSearchVC.tabBarItem = UITabBarItem(title: Titles.search, image: Asset.search.image, tag: 1)
         return serviceSearchVC
     }

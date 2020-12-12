@@ -12,11 +12,13 @@ import Foundation
 struct Storyboards {
     static let main = "Main"
     static let serviceSearch = "ServiceSearch"
+    static let home = "Home"
 }
 
 // ViewControllers
 struct ViewControllers {
     static let serviceSearchVC = "ServiceSearchVC"
+    static let homeVC = "HomeVC"
 }
 
 struct Titles {
@@ -47,18 +49,18 @@ struct Labels {
 // UserDefaultsKeys
 struct UserDefaultsKeys {
     static let token = "UDKToken"
-    static let id = "id"
 }
 
 // Urls
 struct URLs {
     static let base = "http://ide-hospital.ideaeg.co/api"
-    static let categoriesData = "/main_categories"
+    static let mainCategories = "/main_categories"
 }
 
 // HeaderKeys
 struct HeaderKeys {
     static let accept = "accept"
+    static let acceptLanguage = "Accept-Language"
     static let language = "Accept-Language"
 }
 
@@ -75,5 +77,5 @@ struct ParameterKeys {
 
 // Cells
 struct Cells {
-    
+    static let categoryCell = "CategoryCell"
 }

@@ -1,5 +1,11 @@
-pinkishGrey : #cccccc
+veryLightPink : #cccccc
 blackTwo : #202020
 darkRoyalBlue : #001867
-darkGrey : #848585
 whiteTwo : #ededed
+puke : #a59800
+niceBlue : #0f85b9
+richPurple : #6f0066
+white : #ffffff
+black : #0a0a0a
+steelGrey : #848585
+brownishGrey : #707070

@@ -15,6 +15,12 @@ class APIManager {
             completion(response)
         }
     }
+    
+    class func mainCategories(completion: @escaping (Result<MainCategoriesResponse,Error>) -> Void) {
+        request(APIRouter.mainCategories) { (response) in
+            completion(response)
+        }
+    }
 }
 
 extension APIManager{

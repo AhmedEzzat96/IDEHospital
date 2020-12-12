@@ -14,11 +14,12 @@ enum APIRouter: URLRequestConvertible{
     
     // The endpoint name
     case getCategoriesData(_ CategoriesID: Int)
+    case mainCategories
     
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self{
-        case .getCategoriesData:
+        case .getCategoriesData, .mainCategories:
             return .get
         }
     }
@@ -35,7 +36,10 @@ enum APIRouter: URLRequestConvertible{
     private var path: String {
         switch self {
         case .getCategoriesData(let categoriesID):
-            return URLs.categoriesData + "/\(categoriesID)/doctors_query_parameters"
+            return URLs.mainCategories + "/\(categoriesID)/doctors_query_parameters"
+        
+        case .mainCategories:
+            return URLs.mainCategories
         }
     }
     
@@ -49,8 +53,9 @@ enum APIRouter: URLRequestConvertible{
         
         // Headers
         switch self {
-        case .getCategoriesData:
-            urlRequest.setValue(HeaderValues.en, forHTTPHeaderField: HeaderKeys.language)
+            
+        default:
+            urlRequest.setValue("en", forHTTPHeaderField: HeaderKeys.acceptLanguage)
         }
         
         // HTTP Body

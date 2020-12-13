@@ -16,6 +16,7 @@ class MainTabBar: UITabBarController {
         self.delegate = self
         setupNavigationItems()
         setupNavController(title: Titles.serviceSearch)
+        setupTabBar()
     }
     
     // MARK:- Public Methods
@@ -44,14 +45,13 @@ extension MainTabBar {
         navigationItem.rightBarButtonItems = [rightPadding, settingsItem]
     }
     
-//    private func setupTabBar() {
-//        self.tabBar.backgroundColor = ColorName.whiteTwo.color
-//        self.tabBar.tintColor = ColorName.blackTwo.color
-//    }
+    private func setupTabBar() {
+        self.tabBar.backgroundColor = ColorName.whiteTwo.color
+        self.tabBar.tintColor = ColorName.blackTwo.color
+    }
     
     private func createServiceSearchVC(with categoryID: Int) -> ServiceSearchVC {
         let serviceSearchVC = ServiceSearchVC.create(with: categoryID)
-        serviceSearchVC.viewModel.prepareCategories(with: categoryID)
         serviceSearchVC.tabBarItem = UITabBarItem(title: Titles.search, image: Asset.search.image, tag: 1)
         return serviceSearchVC
     }

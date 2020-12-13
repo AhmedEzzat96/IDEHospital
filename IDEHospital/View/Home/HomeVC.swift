@@ -12,7 +12,6 @@ import SDWebImage
 protocol HomeVCProtocol: class {
     func showLoader()
     func hideLoader()
-    func color(_ color: String) -> UIColor
     func reloadCollectionView()
     func getImage( imageView: UIImageView, imageUrl: String)
     func goToTabBar(with id: Int)
@@ -59,10 +58,6 @@ extension HomeVC: HomeVCProtocol {
     
     func hideLoader() {
         self.view.hideActivityIndicator()
-    }
-    
-    func color(_ color: String) -> UIColor {
-        return UIColor(hexString: color)
     }
     
     func reloadCollectionView() {

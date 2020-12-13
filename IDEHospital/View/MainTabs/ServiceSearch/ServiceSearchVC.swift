@@ -64,11 +64,11 @@ extension ServiceSearchVC: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return viewModel.items.count
+        return viewModel.itemsCount()
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return viewModel.items[row]
+        return viewModel.getItem(at: row)
     }
 }
 

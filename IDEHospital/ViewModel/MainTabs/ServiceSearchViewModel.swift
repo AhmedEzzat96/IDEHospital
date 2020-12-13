@@ -9,8 +9,9 @@
 import Foundation
 
 protocol ServiceSearchViewModelProtocol {
-    var items: [String] { get set }
     func prepareCategories(with categoryID: Int)
+    func itemsCount() -> Int
+    func getItem(at row: Int) -> String
     func preparePickerItems(with tag: Int)
     func itemSelected(tag: Int, row: Int)
 }
@@ -20,16 +21,13 @@ class ServiceSearchViewModel {
     // MARK:- Properties
     private var view: ServiceSearchVCProtocol?
     var categoryData: CategoryData!
-
+    var items: [String] = []
+    
     // This ids i will handle it later while making the find doctor API calling
     var specialtyID: Int?
     var cityID: Int?
     var regionID: Int?
     var companyID: Int?
-    
-    // Protocol Properties
-    var items: [String] = []
-    
     
     // MARK:- Init
     init(view: ServiceSearchVCProtocol) {
@@ -55,6 +53,14 @@ extension ServiceSearchViewModel {
 extension ServiceSearchViewModel: ServiceSearchViewModelProtocol {
     func prepareCategories(with categoryID: Int) {
         getCategories(with: categoryID)
+    }
+    
+    func itemsCount() -> Int {
+        return items.count
+    }
+    
+    func getItem(at row: Int) -> String {
+        return items[row]
     }
     
     func preparePickerItems(with tag: Int) {

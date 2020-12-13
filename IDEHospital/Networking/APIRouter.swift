@@ -55,7 +55,7 @@ enum APIRouter: URLRequestConvertible{
         switch self {
             
         default:
-            urlRequest.setValue("en", forHTTPHeaderField: HeaderKeys.acceptLanguage)
+            urlRequest.setValue(L10n.en, forHTTPHeaderField: HeaderKeys.acceptLanguage)
         }
         
         // HTTP Body

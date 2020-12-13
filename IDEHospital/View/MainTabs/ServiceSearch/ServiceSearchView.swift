@@ -26,7 +26,7 @@ class ServiceSearchView: UIView {
     // MARK:- Public Methods
     func setup() {
         setupBackground()
-        setupLabels()
+        setupL10n()
         setupTextFields()
         setupButton()
     }
@@ -34,9 +34,9 @@ class ServiceSearchView: UIView {
 
 // MARK:- Private Methods
 extension ServiceSearchView {
-    private func setupLabels() {
-        setupLabel(firstTitleLabel, with: Labels.firstTitle, font: FontFamily.PTSans.bold,fontSize: 40)
-        setupLabel(secondTitleLabel, with: Labels.secondTitle, font: FontFamily.PTSans.regular, fontSize: 20)
+    private func setupL10n() {
+        setupLabel(firstTitleLabel, with: L10n.firstTitle, font: FontFamily.PTSans.bold,fontSize: 40)
+        setupLabel(secondTitleLabel, with: L10n.secondTitle, font: FontFamily.PTSans.regular, fontSize: 20)
     }
     
     private func setupLabel(_ label: UILabel, with text: String, font: FontConvertible,fontSize: CGFloat) {
@@ -47,15 +47,15 @@ extension ServiceSearchView {
     }
     
     private func setupTextFields() {
-        setupTextField(specialistsTextField, tag: 1, placeholder: Placeholders.specialist, leftIcon: Asset.medicalHeart.image)
+        setupTextField(specialistsTextField, tag: 1, placeholder: L10n.specialist, leftIcon: Asset.medicalHeart.image)
         setupTextFieldPicker(specialistsTextField)
-        setupTextField(cityTextField, tag: 2, placeholder: Placeholders.city, leftIcon: Asset.pin.image)
+        setupTextField(cityTextField, tag: 2, placeholder: L10n.city, leftIcon: Asset.pin.image)
         setupTextFieldPicker(cityTextField)
-        setupTextField(regionTextField, tag: 3, placeholder: Placeholders.region, leftIcon: Asset.pin.image)
+        setupTextField(regionTextField, tag: 3, placeholder: L10n.region, leftIcon: Asset.pin.image)
         setupTextFieldPicker(regionTextField)
-        setupTextField(companiesTextField, tag: 4, placeholder: Placeholders.company, leftIcon: Asset.life.image)
+        setupTextField(companiesTextField, tag: 4, placeholder: L10n.company, leftIcon: Asset.life.image)
         setupTextFieldPicker(companiesTextField)
-        setupTextField(doctorNameTextField, tag: 5, placeholder: Placeholders.doctorName, leftIcon: Asset.doctor.image)
+        setupTextField(doctorNameTextField, tag: 5, placeholder: L10n.doctorName, leftIcon: Asset.doctor.image)
     }
     
     private func setupTextField(_ textField: UITextField, tag: Int, placeholder: String, leftIcon: UIImage) {
@@ -73,7 +73,7 @@ extension ServiceSearchView {
     }
     
     private func setupButton() {
-        findDoctorButton.setAttributedTitle(NSAttributedString(string: Titles.findDoctor, attributes: [NSAttributedString.Key.font: UIFont(font: FontFamily.PTSans.bold, size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
+        findDoctorButton.setAttributedTitle(NSAttributedString(string: L10n.findDoctor, attributes: [NSAttributedString.Key.font: UIFont(font: FontFamily.PTSans.bold, size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
         findDoctorButton.backgroundColor = ColorName.darkRoyalBlue.color
         findDoctorButton.setupCornerRadiuss()
     }

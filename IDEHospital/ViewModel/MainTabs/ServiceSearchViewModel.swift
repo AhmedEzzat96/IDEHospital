@@ -41,7 +41,7 @@ extension ServiceSearchViewModel {
         APIManager.getCategoriesData(with: categoriesID) { [weak self] (response) in
             switch response {
             case .failure(let error):
-                self?.view?.showAlert(title: "Sorry", message: error.localizedDescription)
+                self?.view?.showAlert(title: L10n.sorry, message: error.localizedDescription)
             case .success(let categoryResponse):
                 self?.categoryData = categoryResponse.data
             }
@@ -75,7 +75,7 @@ extension ServiceSearchViewModel: ServiceSearchViewModelProtocol {
                 view?.doneButtonEnabled(true, for: tag)
                 items = city.regions.map{$0.name}
             } else {
-                items = ["Choose City first"]
+                items = [L10n.chooseCityFirst]
                 view?.doneButtonEnabled(false, for: tag)
             }
         case 4:

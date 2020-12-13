@@ -15,7 +15,7 @@ class MainTabBar: UITabBarController {
         super.viewDidLoad()
         self.delegate = self
         setupNavigationItems()
-        setupNavController(title: Titles.serviceSearch)
+        setupNavController(title: L10n.serviceSearch)
         setupTabBar()
     }
     
@@ -52,19 +52,19 @@ extension MainTabBar {
     
     private func createServiceSearchVC(with categoryID: Int) -> ServiceSearchVC {
         let serviceSearchVC = ServiceSearchVC.create(with: categoryID)
-        serviceSearchVC.tabBarItem = UITabBarItem(title: Titles.search, image: Asset.search.image, tag: 1)
+        serviceSearchVC.tabBarItem = UITabBarItem(title: L10n.search, image: Asset.search.image, tag: 1)
         return serviceSearchVC
     }
     
     private func createFavoriteVC() -> UIViewController {
         let favoriteVC = UIViewController()
-        favoriteVC.tabBarItem = UITabBarItem(title: Titles.favorite, image: Asset.heart.image, tag: 2)
+        favoriteVC.tabBarItem = UITabBarItem(title: L10n.favorite, image: Asset.heart.image, tag: 2)
         return favoriteVC
     }
     
     private func createAppointmentsVC() -> UIViewController {
         let appointmentsVC = UIViewController()
-        appointmentsVC.tabBarItem = UITabBarItem(title: Titles.schedule, image: Asset.calendar.image, tag: 3)
+        appointmentsVC.tabBarItem = UITabBarItem(title: L10n.schedule, image: Asset.calendar.image, tag: 3)
         return appointmentsVC
     }
     
@@ -84,11 +84,11 @@ extension MainTabBar: UITabBarControllerDelegate {
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.tag {
         case 1:
-            title = Titles.serviceSearch
+            title = L10n.serviceSearch
         case 2:
-            title = Titles.myFavorites
+            title = L10n.myFavorites
         default:
-            title = Titles.myAppointments
+            title = L10n.myAppointments
         }
     }
 }

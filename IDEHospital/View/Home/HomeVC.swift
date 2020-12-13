@@ -30,7 +30,7 @@ class HomeVC: UIViewController {
         self.viewModel = HomeViewModel(view: self)
         homeView.setup()
         viewModel.mainCategoriesData()
-        setupNavController(title: "Choose Services")
+        setupNavController(title: L10n.chooseServices)
         setupCollectionView()
     }
     

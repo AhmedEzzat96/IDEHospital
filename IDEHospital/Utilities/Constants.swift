@@ -10,7 +10,6 @@ import Foundation
 
 // Storyboards
 struct Storyboards {
-    static let main = "Main"
     static let serviceSearch = "ServiceSearch"
     static let home = "Home"
 }
@@ -19,31 +18,6 @@ struct Storyboards {
 struct ViewControllers {
     static let serviceSearchVC = "ServiceSearchVC"
     static let homeVC = "HomeVC"
-}
-
-struct Titles {
-    static let serviceSearch = "Service Search"
-    static let myFavorites = "MY FAVORITES"
-    static let myAppointments = "MY APPOINTMENTS"
-    static let search = "search"
-    static let favorite = "Favorite"
-    static let schedule = "Schedule"
-    static let findDoctor = "Find a doctor"
-}
-
-// Placeholders
-struct Placeholders {
-    static let specialist = "Choose Specialist"
-    static let city = "Choose City"
-    static let region = "Choose Region"
-    static let company = "Choose Company"
-    static let doctorName = "Doctor Name"
-}
-
-// Labels
-struct Labels {
-    static let firstTitle = "IDEA EG HOSPITAL"
-    static let secondTitle = "IDEA EG HOSPITAL THE BEST CHOICE"
 }
 
 // UserDefaultsKeys

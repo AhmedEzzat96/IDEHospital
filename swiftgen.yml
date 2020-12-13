@@ -14,4 +14,10 @@ fonts:
   inputs: IDEHospital/Resources/Fonts
   outputs:
     templateName: swift5
-    output: IDEHospital/Resources/Fonts/Fonts.swift
+    output: IDEHospital/Resources/Fonts/FontsManager.swift
+
+strings:
+  inputs: IDEHospital/Resources/Strings/Localizable.strings
+  outputs:
+    templateName: structured-swift5
+    output: IDEHospital/Resources/Strings/StringsManager.swift

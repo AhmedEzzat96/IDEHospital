@@ -18,7 +18,7 @@ class HomeView: UIView {
     //MARK:- Public Methods
     func setup() {
         self.setupBackground()
-        setupLabel(label: viewLabel, text: "IDEA EG HOSPITAL THE BEST CHOICE", fontSize: 20)
+        setupLabel(label: viewLabel, text: L10n.secondTitle, fontSize: 20)
         setupCollectionView()
         setupLogoImgView()
     }

@@ -66,9 +66,11 @@ extension ServiceSearchViewModel: ServiceSearchViewModelProtocol {
             items = categoryData.cities.map{$0.name}
         case 3:
             if let city = categoryData.cities.first(where: {$0.id == cityID}) {
+                view?.doneButtonEnabled(true, for: tag)
                 items = city.regions.map{$0.name}
             } else {
-                items = []
+                items = ["Choose City first"]
+                view?.doneButtonEnabled(false, for: tag)
             }
         case 4:
             items = categoryData.companies.map{$0.name}

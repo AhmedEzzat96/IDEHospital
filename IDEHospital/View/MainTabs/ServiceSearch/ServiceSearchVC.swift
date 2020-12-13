@@ -13,6 +13,7 @@ protocol ServiceSearchVCProtocol {
     func showItems()
     func addSelectedItem(_ viewWithTag: Int, _ item: String)
     func clearTextField(with tag: Int)
+    func doneButtonEnabled(_ enabled: Bool, for tag: Int)
 }
 
 class ServiceSearchVC: UIViewController {
@@ -105,6 +106,13 @@ extension ServiceSearchVC: ServiceSearchVCProtocol {
         DispatchQueue.main.async {
             let textField = self.mainView.viewWithTag(tag) as! UITextField
             textField.text = ""
+        }
+    }
+    
+    func doneButtonEnabled(_ enabled: Bool, for tag: Int) {
+        DispatchQueue.main.async {
+            let textField = self.mainView.viewWithTag(tag) as! UITextField
+            textField.keyboardToolbar.doneBarButton.isEnabled = enabled
         }
     }
 }

@@ -19,5 +19,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
         return true
     }
-
 }

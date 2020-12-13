@@ -21,11 +21,7 @@ extension UITextField {
         
         guard self.tag != 5 else { return }
         let rightIcon = UIImageView(image: Asset.arrow.image)
-        rightIcon.frame.size = CGSize(width: 20, height: 11.4)
-        self.rightViewMode = UITextField.ViewMode.always
-        let rightPadding = UIView(frame: leftPadding.frame)
-        rightIcon.center = rightPadding.center
-        rightPadding.addSubview(rightIcon)
-        self.rightView = rightPadding
+        rightIcon.frame = CGRect(x: self.bounds.width - 33, y: self.bounds.height / 3, width: 20, height: 11.4)
+        self.addSubview(rightIcon)
     }
 }

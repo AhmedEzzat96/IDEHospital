@@ -27,7 +27,6 @@ class ServiceSearchVC: UIViewController {
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-//        mainView.setup()
         setupDelegates()
     }
     

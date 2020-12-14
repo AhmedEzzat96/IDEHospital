@@ -26,7 +26,7 @@ class ServiceSearchView: UIView {
     // MARK:- Public Methods
     func setup() {
         setupBackground()
-        setupL10n()
+        setupLabels()
         setupTextFields()
         setupButton()
     }
@@ -34,7 +34,7 @@ class ServiceSearchView: UIView {
 
 // MARK:- Private Methods
 extension ServiceSearchView {
-    private func setupL10n() {
+    private func setupLabels() {
         setupLabel(firstTitleLabel, with: L10n.firstTitle, font: FontFamily.PTSans.bold,fontSize: 40)
         setupLabel(secondTitleLabel, with: L10n.secondTitle, font: FontFamily.PTSans.regular, fontSize: 20)
     }

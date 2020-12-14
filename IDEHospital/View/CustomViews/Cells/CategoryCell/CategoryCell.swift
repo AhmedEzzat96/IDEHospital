@@ -25,8 +25,7 @@ class CategoryCell: UICollectionViewCell {
     //MARK:- Public Methods
     func configure(_ category: MainCategoriesData) {
         categoryLabel.text = category.name
-        backgroundColor = UIColor.init(hexString: category.color)
-        categoryImgView.sd_setImage(with: URL(string: category.image), completed: nil)
+        backgroundColor = UIColor(hexString: category.color)
     }
     
 }

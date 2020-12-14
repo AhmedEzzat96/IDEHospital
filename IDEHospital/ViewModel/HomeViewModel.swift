@@ -1,11 +1,13 @@
 
 import Foundation
+import SDWebImage
 
 protocol HomeViewModelProtocol {
     func getCategoriesCount() -> Int
     func configure(for index: Int) -> MainCategoriesData
     func mainCategoriesData()
     func didSelectItem(item: Int)
+    func downloadImage(for Index: Int, completion: @escaping (UIImage?) -> Void)
 }
 
 class HomeViewModel {
@@ -40,6 +42,18 @@ extension HomeViewModel: HomeViewModelProtocol {
         }
     }
     
+    func downloadImage(for Index: Int, completion: @escaping (UIImage?) -> Void) {
+        view?.showLoader()
+        SDWebImageManager.shared.loadImage(with: URL(string: categoriesData[Index].image), options: .highPriority, progress: nil) {[weak self] (image, _, error, _, _, _) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let image = image {
+                completion(image)
+            }
+            self?.view?.hideLoader()
+        }
+    }
+    
     func getCategoriesCount() -> Int {
         return categoriesData.count
     }
@@ -56,4 +70,6 @@ extension HomeViewModel: HomeViewModelProtocol {
             self.view?.goToTabBar(with: categoryID)
         }
     }
+    
+    
 }

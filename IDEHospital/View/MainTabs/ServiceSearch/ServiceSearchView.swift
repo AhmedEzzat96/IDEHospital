@@ -13,10 +13,10 @@ class ServiceSearchView: UIView {
     // MARK:- Outlets
     @IBOutlet weak var firstTitleLabel: UILabel!
     @IBOutlet weak var secondTitleLabel: UILabel!
-    @IBOutlet weak var specialistsTextField: UITextField!
-    @IBOutlet weak var cityTextField: UITextField!
-    @IBOutlet weak var regionTextField: UITextField!
-    @IBOutlet weak var companiesTextField: UITextField!
+    @IBOutlet weak var specialistsTextField: PaddedTextField!
+    @IBOutlet weak var cityTextField: PaddedTextField!
+    @IBOutlet weak var regionTextField: PaddedTextField!
+    @IBOutlet weak var companiesTextField: PaddedTextField!
     @IBOutlet weak var doctorNameTextField: UITextField!
     @IBOutlet weak var findDoctorButton: UIButton!
     

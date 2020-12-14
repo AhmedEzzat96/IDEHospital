@@ -29,10 +29,6 @@ extension HomeViewModel: HomeViewModelProtocol {
             case .success(let response):
                 let data = response.data
                 self?.categoriesData = data
-                if let homeNurse = self?.categoriesData.first(where: {$0.id == 4}) {
-                    self?.categoriesData.remove(at: 3)
-                    self?.categoriesData.insert(homeNurse, at: 2)
-                }
                 DispatchQueue.main.async {
                     self?.view?.reloadCollectionView()
                 }

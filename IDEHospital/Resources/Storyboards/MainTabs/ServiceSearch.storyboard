@@ -40,8 +40,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ClE-wt-UEw">
-                                                <rect key="frame" x="30" y="219" width="315" height="45"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ClE-wt-UEw" customClass="PaddedTextField" customModule="IDEHospital" customModuleProvider="target">
+                                                <rect key="frame" x="25" y="219" width="315" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="315" id="h5Z-Hw-eHa"/>
                                                     <constraint firstAttribute="height" constant="45" id="nA9-hU-7pc"/>
@@ -49,56 +49,57 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LdX-9o-L6A">
-                                                <rect key="frame" x="30" y="279" width="315" height="45"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LdX-9o-L6A" customClass="PaddedTextField" customModule="IDEHospital" customModuleProvider="target">
+                                                <rect key="frame" x="25" y="279" width="315" height="45"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KhO-q9-obp">
-                                                <rect key="frame" x="30" y="399" width="315" height="45"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KhO-q9-obp" customClass="PaddedTextField" customModule="IDEHospital" customModuleProvider="target">
+                                                <rect key="frame" x="25" y="399" width="315" height="45"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oe6-qc-Qw3">
-                                                <rect key="frame" x="30" y="459" width="315" height="45"/>
+                                                <rect key="frame" x="25" y="459" width="315" height="45"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1Z-Kf-1o5">
-                                                <rect key="frame" x="30" y="534" width="315" height="45"/>
+                                                <rect key="frame" x="25" y="534" width="315" height="45"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QZU-WK-YDS">
-                                                <rect key="frame" x="30" y="339" width="315" height="45"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QZU-WK-YDS" customClass="PaddedTextField" customModule="IDEHospital" customModuleProvider="target">
+                                                <rect key="frame" x="25" y="339" width="315" height="45"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="QZU-WK-YDS" firstAttribute="width" secondItem="LdX-9o-L6A" secondAttribute="width" id="40o-yv-oJy"/>
-                                            <constraint firstItem="oe6-qc-Qw3" firstAttribute="width" secondItem="KhO-q9-obp" secondAttribute="width" id="4GW-KZ-Evz"/>
+                                            <constraint firstItem="oe6-qc-Qw3" firstAttribute="width" secondItem="KhO-q9-obp" secondAttribute="width" id="3Bm-vf-Wa7"/>
                                             <constraint firstItem="ClE-wt-UEw" firstAttribute="top" secondItem="9ST-L2-gGS" secondAttribute="bottom" constant="27" id="5hj-HG-vZq"/>
-                                            <constraint firstItem="KhO-q9-obp" firstAttribute="width" secondItem="QZU-WK-YDS" secondAttribute="width" id="8je-eX-kul"/>
+                                            <constraint firstItem="LdX-9o-L6A" firstAttribute="width" secondItem="ClE-wt-UEw" secondAttribute="width" id="B1d-q7-gcX"/>
+                                            <constraint firstItem="U1Z-Kf-1o5" firstAttribute="width" secondItem="oe6-qc-Qw3" secondAttribute="width" id="BjK-Sh-f5p"/>
                                             <constraint firstItem="QZU-WK-YDS" firstAttribute="centerX" secondItem="LdX-9o-L6A" secondAttribute="centerX" id="BqD-XW-heD"/>
                                             <constraint firstItem="HXZ-nx-n29" firstAttribute="centerX" secondItem="lF3-DK-IpI" secondAttribute="centerX" id="EZ0-rn-JDj"/>
                                             <constraint firstItem="KhO-q9-obp" firstAttribute="centerX" secondItem="QZU-WK-YDS" secondAttribute="centerX" id="F48-FF-UJU"/>
-                                            <constraint firstItem="U1Z-Kf-1o5" firstAttribute="width" secondItem="oe6-qc-Qw3" secondAttribute="width" id="Fav-pi-4fj"/>
                                             <constraint firstItem="U1Z-Kf-1o5" firstAttribute="centerX" secondItem="oe6-qc-Qw3" secondAttribute="centerX" id="Hg5-mo-Jgt"/>
                                             <constraint firstItem="QZU-WK-YDS" firstAttribute="top" secondItem="LdX-9o-L6A" secondAttribute="bottom" constant="15" id="K4Y-AK-pw9"/>
+                                            <constraint firstItem="QZU-WK-YDS" firstAttribute="width" secondItem="LdX-9o-L6A" secondAttribute="width" id="NXS-NX-p4N"/>
                                             <constraint firstItem="HXZ-nx-n29" firstAttribute="centerY" secondItem="lF3-DK-IpI" secondAttribute="centerY" multiplier="0.475" id="OYf-c5-cUU"/>
                                             <constraint firstItem="9ST-L2-gGS" firstAttribute="width" secondItem="lF3-DK-IpI" secondAttribute="width" multiplier="0.96" id="PBy-5Z-GZV"/>
                                             <constraint firstItem="HXZ-nx-n29" firstAttribute="width" secondItem="lF3-DK-IpI" secondAttribute="width" multiplier="0.81" id="QgE-dr-dvO"/>
                                             <constraint firstItem="U1Z-Kf-1o5" firstAttribute="height" secondItem="oe6-qc-Qw3" secondAttribute="height" id="Tsd-WM-t3p"/>
                                             <constraint firstItem="oe6-qc-Qw3" firstAttribute="height" secondItem="KhO-q9-obp" secondAttribute="height" id="USN-HD-nhQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="ClE-wt-UEw" secondAttribute="trailing" constant="35" id="Uzf-rv-GU9"/>
                                             <constraint firstItem="oe6-qc-Qw3" firstAttribute="top" secondItem="KhO-q9-obp" secondAttribute="bottom" constant="15" id="V5g-be-fua"/>
                                             <constraint firstItem="LdX-9o-L6A" firstAttribute="top" secondItem="ClE-wt-UEw" secondAttribute="bottom" constant="15" id="Vl6-we-gMQ"/>
-                                            <constraint firstItem="LdX-9o-L6A" firstAttribute="width" secondItem="ClE-wt-UEw" secondAttribute="width" id="XF1-7i-JyQ"/>
+                                            <constraint firstItem="KhO-q9-obp" firstAttribute="width" secondItem="QZU-WK-YDS" secondAttribute="width" id="XG1-fZ-i0f"/>
                                             <constraint firstItem="LdX-9o-L6A" firstAttribute="height" secondItem="ClE-wt-UEw" secondAttribute="height" id="bjj-Gb-BIk"/>
                                             <constraint firstItem="9ST-L2-gGS" firstAttribute="top" secondItem="HXZ-nx-n29" secondAttribute="bottom" id="cvM-B7-hzJ"/>
                                             <constraint firstItem="oe6-qc-Qw3" firstAttribute="centerX" secondItem="KhO-q9-obp" secondAttribute="centerX" id="eB4-Q2-Qdh"/>
-                                            <constraint firstItem="ClE-wt-UEw" firstAttribute="centerX" secondItem="9ST-L2-gGS" secondAttribute="centerX" id="eYI-5j-TEj"/>
                                             <constraint firstItem="KhO-q9-obp" firstAttribute="height" secondItem="QZU-WK-YDS" secondAttribute="height" id="eZ2-si-gaN"/>
+                                            <constraint firstItem="ClE-wt-UEw" firstAttribute="leading" secondItem="lF3-DK-IpI" secondAttribute="leading" constant="25" id="fwm-5c-Nsa"/>
                                             <constraint firstItem="QZU-WK-YDS" firstAttribute="height" secondItem="LdX-9o-L6A" secondAttribute="height" id="iOX-Oo-uT8"/>
                                             <constraint firstItem="U1Z-Kf-1o5" firstAttribute="top" secondItem="oe6-qc-Qw3" secondAttribute="bottom" constant="30" id="mdY-Zf-jBh"/>
                                             <constraint firstItem="KhO-q9-obp" firstAttribute="top" secondItem="QZU-WK-YDS" secondAttribute="bottom" constant="15" id="oTv-NM-Ppz"/>
@@ -134,7 +135,7 @@
                             <outlet property="firstTitleLabel" destination="HXZ-nx-n29" id="tZL-9z-Cwg"/>
                             <outlet property="regionTextField" destination="QZU-WK-YDS" id="WxQ-el-Mqh"/>
                             <outlet property="secondTitleLabel" destination="9ST-L2-gGS" id="x5A-GC-0oD"/>
-                            <outlet property="specialistsTextField" destination="ClE-wt-UEw" id="SNV-5R-lla"/>
+                            <outlet property="specialistsTextField" destination="ClE-wt-UEw" id="IhP-LR-Xnq"/>
                         </connections>
                     </view>
                     <toolbarItems/>

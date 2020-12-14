@@ -38,6 +38,7 @@
 		9938FC232580FBBB003781E5 /* UIView+SetupBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */; };
 		9938FC25258173CC003781E5 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938FC24258173CC003781E5 /* UIView+CornerRadius.swift */; };
 		9938FC2725817425003781E5 /* UITextField+TextFieldIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938FC2625817425003781E5 /* UITextField+TextFieldIcons.swift */; };
+		993AD11B25873212005311CD /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993AD11A25873212005311CD /* PaddedTextField.swift */; };
 		9966C2FB2582636B0016A8CB /* ServiceSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966C2FA2582636B0016A8CB /* ServiceSearchViewModel.swift */; };
 		99697C62257F803900B6BFBE /* ServiceSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99697C61257F803900B6BFBE /* ServiceSearch.storyboard */; };
 		99697C65257F80BD00B6BFBE /* ServiceSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99697C64257F80BD00B6BFBE /* ServiceSearchVC.swift */; };
@@ -86,6 +87,7 @@
 		9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SetupBackground.swift"; sourceTree = "<group>"; };
 		9938FC24258173CC003781E5 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
 		9938FC2625817425003781E5 /* UITextField+TextFieldIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+TextFieldIcons.swift"; sourceTree = "<group>"; };
+		993AD11A25873212005311CD /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		9966C2FA2582636B0016A8CB /* ServiceSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceSearchViewModel.swift; path = IDEHospital/ViewModel/MainTabs/ServiceSearchViewModel.swift; sourceTree = SOURCE_ROOT; };
 		99697C61257F803900B6BFBE /* ServiceSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServiceSearch.storyboard; sourceTree = "<group>"; };
 		99697C64257F80BD00B6BFBE /* ServiceSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchVC.swift; sourceTree = "<group>"; };
@@ -183,8 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				99E7AD0825825C0000AAB5B0 /* MainTabs */,
-				06AB4F0F2583F87500A0B658 /* CustomViews */,
 				06DD9941257FBA3800D36344 /* Home */,
+				06AB4F0F2583F87500A0B658 /* CustomViews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,7 +315,8 @@
 		06AB4F0F2583F87500A0B658 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				0678C11B2581B07200949700 /* CategoryCell */,
+				993AD119258731E1005311CD /* PaddedTextField */,
+				993AD118258731C9005311CD /* Cells */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -371,6 +374,22 @@
 				991B7B6A258681CB00700114 /* Localizable.strings */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		993AD118258731C9005311CD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0678C11B2581B07200949700 /* CategoryCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		993AD119258731E1005311CD /* PaddedTextField */ = {
+			isa = PBXGroup;
+			children = (
+				993AD11A25873212005311CD /* PaddedTextField.swift */,
+			);
+			path = PaddedTextField;
 			sourceTree = "<group>";
 		};
 		9966C2FC258263980016A8CB /* MainTabs */ = {
@@ -573,6 +592,7 @@
 				99E7AD0725824E2800AAB5B0 /* MainTabBar.swift in Sources */,
 				99697C65257F80BD00B6BFBE /* ServiceSearchVC.swift in Sources */,
 				0678C11E2581B09500949700 /* CategoryCell.swift in Sources */,
+				993AD11B25873212005311CD /* PaddedTextField.swift in Sources */,
 				999D8CF22582929900CAEA06 /* CategoryResponse.swift in Sources */,
 				9938FC2725817425003781E5 /* UITextField+TextFieldIcons.swift in Sources */,
 				99F90A7225847F44006E7B91 /* ColorsManager.swift in Sources */,

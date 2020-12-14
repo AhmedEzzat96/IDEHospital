@@ -9,6 +9,7 @@
 import UIKit
 
 extension UITextField {
+    
     func setTextFieldIcons(with leftImage: UIImage) {
         let leftIcon = UIImageView(image: leftImage)
         leftIcon.frame.size = CGSize(width: 24.6, height: 27.1)
@@ -21,7 +22,12 @@ extension UITextField {
         
         guard self.tag != 5 else { return }
         let rightIcon = UIImageView(image: Asset.arrow.image)
-        rightIcon.frame = CGRect(x: self.bounds.width - 33, y: self.bounds.height / 3, width: 20, height: 11.4)
-        self.addSubview(rightIcon)
+//        let rightPadding = UIView(frame: CGRect(x: 0, y: 0, width: 33, height: self.frame.height / 3.5))
+        rightIcon.frame.size = CGSize(width: 20, height: 11.4)
+//        rightPadding.addSubview(rightIcon)
+        self.rightViewMode = .always
+        
+       self.rightView = rightIcon
     }
+    
 }

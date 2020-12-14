@@ -85,6 +85,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cells.categoryCell, for: indexPath) as? CategoryCell else {
             return UICollectionViewCell()
         }
+        ///MARK:  TODO
         cell.configure(viewModel.configure(for: indexPath.row))
         viewModel.downloadImage(for: indexPath.row, completion: { (image) in
             cell.categoryImgView.image = image

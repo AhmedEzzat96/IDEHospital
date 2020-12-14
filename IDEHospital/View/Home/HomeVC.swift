@@ -93,7 +93,6 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.homeView.collectionView.deselectItem(at: indexPath, animated: true)
         self.viewModel.didSelectItem(item: indexPath.row)
     }
 }

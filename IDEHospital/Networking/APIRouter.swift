@@ -11,14 +11,16 @@ import Foundation
 import Alamofire
 
 enum APIRouter: URLRequestConvertible{
+    
     // The endpoint name
+    case getCategoriesData(_ CategoriesID: Int)
+    case mainCategories
     
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self{
-            
-        default:
-            return .post
+        case .getCategoriesData, .mainCategories:
+            return .get
         }
     }
     
@@ -30,30 +32,35 @@ enum APIRouter: URLRequestConvertible{
         }
     }
     
-    // MARK: - Path
+    // MARK:- Path
     private var path: String {
         switch self {
+        case .getCategoriesData(let categoriesID):
+            return URLs.mainCategories + "/\(categoriesID)/doctors_query_parameters"
         
+        case .mainCategories:
+            return URLs.mainCategories
         }
     }
     
     // MARK: - URLRequestConvertible
     func asURLRequest() throws -> URLRequest {
-        let url = try URLs.base.asURL()
-        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-        //httpMethod
-        urlRequest.httpMethod = method.rawValue
-        switch self {
-
-        default:
-            break
-        }
+    let url = try URLs.base.asURL()
+    var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         
+        // HTTP Method
+        urlRequest.httpMethod = method.rawValue
+        
+        // Headers
+        switch self {
+            
+        default:
+            urlRequest.setValue(L10n.en, forHTTPHeaderField: HeaderKeys.acceptLanguage)
+        }
         
         // HTTP Body
         let httpBody: Data? = {
             switch self {
-
             default:
                 return nil
             }
@@ -63,14 +70,13 @@ enum APIRouter: URLRequestConvertible{
         // Encoding
         let encoding: ParameterEncoding = {
             switch method {
-            case .get, .delete:
-                return URLEncoding.default
+            case .get :
+                return JSONEncoding.default
             default:
                 return JSONEncoding.default
             }
         }()
         
-        print(try encoding.encode(urlRequest, with: parameters))
         return try encoding.encode(urlRequest, with: parameters)
     }
     

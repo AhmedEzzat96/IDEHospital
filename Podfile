@@ -9,4 +9,5 @@ target 'IDEHospital' do
 pod 'Alamofire'
 pod 'SDWebImage'
 pod 'IQKeyboardManagerSwift'
+pod 'SwiftGen'
 end

@@ -10,12 +10,13 @@ import Foundation
 
 // Storyboards
 struct Storyboards {
-    static let main = "Main"
+    static let serviceSearch = "ServiceSearch"
     static let home = "Home"
 }
 
-// View Controllers
+// ViewControllers
 struct ViewControllers {
+    static let serviceSearchVC = "ServiceSearchVC"
     static let homeVC = "HomeVC"
 }
 
@@ -32,7 +33,15 @@ struct URLs {
 
 // HeaderKeys
 struct HeaderKeys {
+    static let accept = "accept"
     static let acceptLanguage = "Accept-Language"
+    static let language = "Accept-Language"
+}
+
+// HeaderValues
+struct HeaderValues {
+    static let appJSON = "application/json"
+    static let en = "en"
 }
 
 // Parameters Keys

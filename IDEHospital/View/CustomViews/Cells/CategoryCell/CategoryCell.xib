@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,24 +17,24 @@
                 <rect key="frame" x="0.0" y="0.0" width="167" height="218"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gN-cr-pt4">
-                        <rect key="frame" x="54" y="184.5" width="59" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2gN-cr-pt4">
+                        <rect key="frame" x="54" y="180.5" width="59" height="24.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fUi-vx-V2H">
-                        <rect key="frame" x="47" y="18" width="73" height="107.5"/>
+                        <rect key="frame" x="46" y="51.5" width="75" height="106.5"/>
                     </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="fUi-vx-V2H" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="65.6/150" id="2fB-e4-3TF"/>
+                <constraint firstItem="fUi-vx-V2H" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.45" id="2fB-e4-3TF"/>
                 <constraint firstItem="fUi-vx-V2H" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="6wg-3z-KTZ"/>
-                <constraint firstItem="fUi-vx-V2H" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="73.9/150" id="DBB-YH-9Xc"/>
-                <constraint firstItem="2gN-cr-pt4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fUi-vx-V2H" secondAttribute="bottom" constant="5" id="DHP-r3-B7w"/>
+                <constraint firstItem="fUi-vx-V2H" firstAttribute="centerY" secondItem="FHY-yC-wqR" secondAttribute="centerY" multiplier="0.8" id="94d-vw-dkJ"/>
+                <constraint firstItem="fUi-vx-V2H" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.49" id="DBB-YH-9Xc"/>
                 <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="2gN-cr-pt4" secondAttribute="trailing" constant="54" id="Fpv-ep-ieh"/>
-                <constraint firstItem="fUi-vx-V2H" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="18" id="Lgn-y0-E3k"/>
+                <constraint firstItem="2gN-cr-pt4" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.113333" id="ZRa-ty-Uqn"/>
                 <constraint firstAttribute="bottom" secondItem="2gN-cr-pt4" secondAttribute="bottom" constant="13" id="aZr-73-ecV"/>
                 <constraint firstItem="2gN-cr-pt4" firstAttribute="centerX" secondItem="fUi-vx-V2H" secondAttribute="centerX" id="omn-MW-5La"/>
                 <constraint firstItem="2gN-cr-pt4" firstAttribute="leading" relation="lessThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="54" id="tMH-Df-hkU"/>

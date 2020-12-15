@@ -16,11 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
-        let homeVC = HomeVC.create()
-        let homeNav = UINavigationController(rootViewController: homeVC)
-        window?.rootViewController = homeNav
-        
+        IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
         return true
     }
-
 }

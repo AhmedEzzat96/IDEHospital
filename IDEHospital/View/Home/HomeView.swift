@@ -17,20 +17,15 @@ class HomeView: UIView {
     
     //MARK:- Public Methods
     func setup() {
-        setupBackground()
-        setupLabel(label: viewLabel, text: "IDEA EG HOSPITAL THE BEST CHOICE", fontSize: 20)
+        self.setupBackground()
+        setupLabel(label: viewLabel, text: L10n.secondTitle, fontSize: 20)
         setupCollectionView()
+        setupLogoImgView()
     }
 }
 
 //MARK:- Private Methods
 extension HomeView {
-    private func setupBackground() {
-        backgroundImgView.image = Asset.component22.image
-        logoImgView.image = Asset.group1.image
-        backgroundImgView.contentMode = .scaleAspectFill
-        
-    }
     
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
@@ -40,6 +35,10 @@ extension HomeView {
         layout.itemSize = CGSize(width: self.frame.size.width/2.5, height: self.frame.size.width/2.5)
         collectionView.collectionViewLayout = layout
         collectionView.backgroundColor = .clear
+    }
+    
+    private func setupLogoImgView() {
+        logoImgView.image = Asset.group1.image
     }
     
     private func setupView(view: UIView) {

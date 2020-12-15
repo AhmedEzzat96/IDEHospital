@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SDWebImage
 
 class CategoryCell: UICollectionViewCell {
     //MARK:- IBOutlets
@@ -23,10 +22,10 @@ class CategoryCell: UICollectionViewCell {
     }
     
     //MARK:- Public Methods
-    func configure(_ category: MainCategoriesData) {
+    func configure(_ category: MainCategoriesData, _ image: UIImage) {
         categoryLabel.text = category.name
-        backgroundColor = UIColor.init(hexString: category.color)
-        categoryImgView.sd_setImage(with: URL(string: category.image), completed: nil)
+        backgroundColor = UIColor(hexString: category.color)
+        categoryImgView.image = image
     }
     
 }

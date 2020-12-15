@@ -1,9 +1,10 @@
 
 import Foundation
+import SDWebImage
 
 protocol HomeViewModelProtocol {
     func getCategoriesCount() -> Int
-    func configure(for index: Int) -> MainCategoriesData
+    func getCategoryData(for indexPath: IndexPath)
     func mainCategoriesData()
     func didSelectItem(item: Int)
 }
@@ -20,6 +21,21 @@ class HomeViewModel {
     }
 }
 
+//MARK:- Private Methods
+extension HomeViewModel {
+    private func downloadImage(for Index: Int, completion: @escaping (UIImage?) -> Void) {
+        view?.showLoader()
+        SDWebImageManager.shared.loadImage(with: URL(string: categoriesData[Index].image), options: .highPriority, progress: nil) {[weak self] (image, _, error, _, _, _) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let image = image {
+                completion(image)
+            }
+            self?.view?.hideLoader()
+        }
+    }
+}
+
 //MARK:- HomeViewModel Protocol
 extension HomeViewModel: HomeViewModelProtocol {
     func mainCategoriesData() {
@@ -29,7 +45,6 @@ extension HomeViewModel: HomeViewModelProtocol {
             case .success(let response):
                 let data = response.data
                 self?.categoriesData = data
-                
                 DispatchQueue.main.async {
                     self?.view?.reloadCollectionView()
                 }
@@ -45,12 +60,21 @@ extension HomeViewModel: HomeViewModelProtocol {
         return categoriesData.count
     }
     
-    func configure(for index: Int) -> MainCategoriesData {
-        return categoriesData[index]
+    func getCategoryData(for indexPath: IndexPath) {
+        downloadImage(for: indexPath.row) { [weak self] (image) in
+            guard let self = self else {return}
+            if let image = image {
+                self.view?.configureCell(for: indexPath, categoryData: self.categoriesData[indexPath.row], image: image)
+            }
+        }
     }
     
     func didSelectItem(item: Int) {
         let categoryID = categoriesData[item].id
-        print(categoryID)
+        if categoryID == 4 {
+            print(categoryID)
+        } else {
+            self.view?.goToTabBar(with: categoryID)
+        }
     }
 }

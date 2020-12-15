@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import SDWebImage
 
 protocol HomeVCProtocol: class {
     func showLoader()
     func hideLoader()
     func reloadCollectionView()
-    func getImage( imageView: UIImageView, imageUrl: String)
     func goToTabBar(with id: Int)
+    func configureCell(for indexPath: IndexPath, categoryData: MainCategoriesData, image: UIImage)
 }
 
 class HomeVC: UIViewController {
@@ -64,13 +63,14 @@ extension HomeVC: HomeVCProtocol {
         self.homeView.collectionView.reloadData()
     }
     
-    func getImage( imageView: UIImageView, imageUrl: String) {
-        imageView.sd_setImage(with: URL(string: imageUrl), completed: nil)
-    }
-    
     func goToTabBar(with id: Int) {
         let tabBarVC = MainTabBar.create(with: id)
         self.navigationController?.pushViewController(tabBarVC, animated: true)
+    }
+    
+    func configureCell(for indexPath: IndexPath, categoryData: MainCategoriesData, image: UIImage) {
+        let cell = homeView.collectionView.cellForItem(at: indexPath) as! CategoryCell
+        cell.configure(categoryData, image)
     }
     
 }
@@ -85,11 +85,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cells.categoryCell, for: indexPath) as? CategoryCell else {
             return UICollectionViewCell()
         }
-        ///MARK:  TODO
-        cell.configure(viewModel.configure(for: indexPath.row))
-        viewModel.downloadImage(for: indexPath.row, completion: { (image) in
-            cell.categoryImgView.image = image
-        })
+        viewModel.getCategoryData(for: indexPath)
         return cell
     }
     

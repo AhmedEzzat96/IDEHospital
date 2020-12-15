@@ -4,10 +4,9 @@ import SDWebImage
 
 protocol HomeViewModelProtocol {
     func getCategoriesCount() -> Int
-    func configure(for index: Int) -> MainCategoriesData
+    func getCategoryData(for indexPath: IndexPath)
     func mainCategoriesData()
     func didSelectItem(item: Int)
-    func downloadImage(for Index: Int, completion: @escaping (UIImage?) -> Void)
 }
 
 class HomeViewModel {
@@ -19,6 +18,21 @@ class HomeViewModel {
     //MARK:- init
     init(view: HomeVCProtocol) {
         self.view = view
+    }
+}
+
+//MARK:- Private Methods
+extension HomeViewModel {
+    private func downloadImage(for Index: Int, completion: @escaping (UIImage?) -> Void) {
+        view?.showLoader()
+        SDWebImageManager.shared.loadImage(with: URL(string: categoriesData[Index].image), options: .highPriority, progress: nil) {[weak self] (image, _, error, _, _, _) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let image = image {
+                completion(image)
+            }
+            self?.view?.hideLoader()
+        }
     }
 }
 
@@ -42,24 +56,17 @@ extension HomeViewModel: HomeViewModelProtocol {
         }
     }
     
-    func downloadImage(for Index: Int, completion: @escaping (UIImage?) -> Void) {
-        view?.showLoader()
-        SDWebImageManager.shared.loadImage(with: URL(string: categoriesData[Index].image), options: .highPriority, progress: nil) {[weak self] (image, _, error, _, _, _) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else if let image = image {
-                completion(image)
-            }
-            self?.view?.hideLoader()
-        }
-    }
-    
     func getCategoriesCount() -> Int {
         return categoriesData.count
     }
     
-    func configure(for index: Int) -> MainCategoriesData {
-        return categoriesData[index]
+    func getCategoryData(for indexPath: IndexPath) {
+        downloadImage(for: indexPath.row) { [weak self] (image) in
+            guard let self = self else {return}
+            if let image = image {
+                self.view?.configureCell(for: indexPath, categoryData: self.categoriesData[indexPath.row], image: image)
+            }
+        }
     }
     
     func didSelectItem(item: Int) {
@@ -70,6 +77,4 @@ extension HomeViewModel: HomeViewModelProtocol {
             self.view?.goToTabBar(with: categoryID)
         }
     }
-    
-    
 }

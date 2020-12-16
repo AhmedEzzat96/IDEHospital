@@ -42,6 +42,11 @@ class ServiceSearchVC: UIViewController {
         serviceSearchVC.viewModel.prepareCategories(with: categoryID)
         return serviceSearchVC
     }
+    
+    @IBAction func findDoctorButtonPressed(_ sender: UIButton) {
+        let homeNurseVC = HomeNurseVC.create()
+        navigationController?.pushViewController(homeNurseVC, animated: true)
+    }
 }
 
 extension ServiceSearchVC {

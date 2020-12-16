@@ -10,10 +10,17 @@ import UIKit
 
 class HomeNurseVC: UIViewController {
 
+    @IBOutlet weak var mainView: HomeNurseView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        mainView.setup()
         // Do any additional setup after loading the view.
     }
 
+    //MARK:- Public Methods
+    class func create() -> HomeNurseVC {
+        let homeNurseVC: HomeNurseVC = UIViewController.create(storyboardName: Storyboards.homeNurse, identifier: ViewControllers.homeNurseVC)
+        return homeNurseVC
+    }
 }

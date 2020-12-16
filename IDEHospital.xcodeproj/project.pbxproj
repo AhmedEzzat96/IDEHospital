@@ -48,6 +48,7 @@
 		99E7AD0725824E2800AAB5B0 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E7AD0625824E2800AAB5B0 /* MainTabBar.swift */; };
 		99F395DF2589894E00ACBD3B /* HomeNurseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F395DE2589894E00ACBD3B /* HomeNurseVC.swift */; };
 		99F395E12589899600ACBD3B /* HomeNurse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F395E02589899600ACBD3B /* HomeNurse.storyboard */; };
+		99F395E425898E0700ACBD3B /* HomeNurseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F395E325898E0700ACBD3B /* HomeNurseView.swift */; };
 		99F90A7025847B4A006E7B91 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 99F90A6F25847B4A006E7B91 /* Colors.txt */; };
 		99F90A7225847F44006E7B91 /* ColorsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F90A7125847F44006E7B91 /* ColorsManager.swift */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,7 @@
 		99E7AD0625824E2800AAB5B0 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		99F395DE2589894E00ACBD3B /* HomeNurseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNurseVC.swift; sourceTree = "<group>"; };
 		99F395E02589899600ACBD3B /* HomeNurse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeNurse.storyboard; sourceTree = "<group>"; };
+		99F395E325898E0700ACBD3B /* HomeNurseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNurseView.swift; sourceTree = "<group>"; };
 		99F90A6F25847B4A006E7B91 /* Colors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
 		99F90A7125847F44006E7B91 /* ColorsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsManager.swift; sourceTree = "<group>"; };
 		C60A97CD5B7753B53A601432 /* Pods-IDEHospital.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDEHospital.debug.xcconfig"; path = "Target Support Files/Pods-IDEHospital/Pods-IDEHospital.debug.xcconfig"; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				99F395DE2589894E00ACBD3B /* HomeNurseVC.swift */,
+				99F395E325898E0700ACBD3B /* HomeNurseView.swift */,
 			);
 			path = HomeNurse;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				0678C1212581CA4C00949700 /* UIColor+getColorByHex.swift in Sources */,
 				991B7B6F2586878300700114 /* StringsManager.swift in Sources */,
 				06DD9940257FBA3100D36344 /* HomeView.swift in Sources */,
+				99F395E425898E0700ACBD3B /* HomeNurseView.swift in Sources */,
 				062FDF7F257E687D00949D54 /* APIManager.swift in Sources */,
 				06064CEA2582C693006ADB86 /* AssetsManager.swift in Sources */,
 				991B7B6D2586877400700114 /* FontsManager.swift in Sources */,

@@ -55,6 +55,6 @@ extension MyFavoritesVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.frame.height / 2.72
+        return 251.5
     }
 }

@@ -25,11 +25,8 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3H-5c-4ts" customClass="CosmosView" customModule="Cosmos">
-                        <rect key="frame" x="117" y="43" width="190" height="14.5"/>
+                        <rect key="frame" x="117" y="43" width="190" height="20"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="14.300000000000001" id="rPY-Vs-ROx"/>
-                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="120 review"/>
                         </userDefinedRuntimeAttributes>
@@ -41,7 +38,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dental" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwk-Tp-7xF">
-                        <rect key="frame" x="117" y="64.5" width="49.5" height="21"/>
+                        <rect key="frame" x="117" y="62" width="49.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -82,9 +79,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCx-ET-Kuh">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCx-ET-Kuh" customClass="CustomButton" customModule="IDEHospital" customModuleProvider="target">
                         <rect key="frame" x="208" y="253.5" width="151" height="44"/>
                         <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="viewProfileBtnPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bwX-rW-ikq"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jN2-XF-lqu">
                         <rect key="frame" x="0.0" y="444" width="567" height="2"/>
@@ -105,7 +105,7 @@
                             <constraint firstAttribute="width" secondItem="QYO-KI-NbG" secondAttribute="height" multiplier="1:1" id="jiE-FI-lSv"/>
                         </constraints>
                         <connections>
-                            <action selector="cancelBtnPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CRo-Qr-3kJ"/>
+                            <action selector="deleteBtnPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8zl-2k-2cH"/>
                         </connections>
                     </button>
                 </subviews>
@@ -124,8 +124,8 @@
                     <constraint firstItem="R3H-5c-4ts" firstAttribute="top" secondItem="5Qj-5O-3bo" secondAttribute="bottom" constant="5" id="Odz-Uv-uYa"/>
                     <constraint firstAttribute="trailing" secondItem="jN2-XF-lqu" secondAttribute="trailing" id="P2w-DY-icr"/>
                     <constraint firstItem="4v6-Mw-eei" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="10/375" id="PXB-eS-gzk"/>
+                    <constraint firstItem="pwk-Tp-7xF" firstAttribute="top" secondItem="5Qj-5O-3bo" secondAttribute="bottom" constant="24" id="RIH-va-Xgm"/>
                     <constraint firstItem="pwk-Tp-7xF" firstAttribute="leading" secondItem="5Qj-5O-3bo" secondAttribute="leading" id="RMx-Iw-xEb"/>
-                    <constraint firstItem="pwk-Tp-7xF" firstAttribute="top" secondItem="R3H-5c-4ts" secondAttribute="bottom" constant="7" id="TUD-ZM-HqB"/>
                     <constraint firstItem="5Qj-5O-3bo" firstAttribute="leading" secondItem="dXg-j0-5xV" secondAttribute="trailing" constant="15" id="Tdx-mp-uw6"/>
                     <constraint firstItem="lCx-ET-Kuh" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="25/251.5" id="W09-Cc-Nle"/>
                     <constraint firstItem="F6u-Ii-qac" firstAttribute="height" secondItem="O36-E7-3Gb" secondAttribute="height" id="WDz-Rz-sVM"/>
@@ -162,7 +162,7 @@
             <connections>
                 <outlet property="addressImgView" destination="sxF-8q-fLI" id="WkD-Ju-rcw"/>
                 <outlet property="adressLabel" destination="O36-E7-3Gb" id="uNb-EU-box"/>
-                <outlet property="cancelBtn" destination="QYO-KI-NbG" id="ty9-IR-0CA"/>
+                <outlet property="deleteBtn" destination="QYO-KI-NbG" id="Ej9-Ah-h6r"/>
                 <outlet property="doctorImgView" destination="dXg-j0-5xV" id="Hhe-8N-eHX"/>
                 <outlet property="doctorNameImgView" destination="pKS-j9-M3S" id="TMx-l1-VTm"/>
                 <outlet property="doctorNameLabel" destination="5Qj-5O-3bo" id="mfH-cj-8eJ"/>
@@ -171,6 +171,7 @@
                 <outlet property="ratingView" destination="R3H-5c-4ts" id="EIS-Fb-JEb"/>
                 <outlet property="secondBioLabel" destination="pwk-Tp-7xF" id="Tw2-lx-lgc"/>
                 <outlet property="specialtyLabel" destination="NpU-yH-X0R" id="fJ1-ly-exE"/>
+                <outlet property="viewProfileBtn" destination="lCx-ET-Kuh" id="Pfp-s7-FSu"/>
                 <outlet property="waitingTimeImgView" destination="RqX-P1-GG9" id="BGP-2g-68Z"/>
                 <outlet property="waitingTimeLabel" destination="F6u-Ii-qac" id="eHl-jl-X46"/>
             </connections>

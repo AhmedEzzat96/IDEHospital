@@ -50,6 +50,8 @@ internal enum L10n {
   internal static let sorry = L10n.tr("Localizable", "sorry")
   /// Choose Specialist
   internal static let specialist = L10n.tr("Localizable", "specialist")
+  /// View Profile
+  internal static let viewProfile = L10n.tr("Localizable", "viewProfile")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

@@ -13,6 +13,7 @@
 		0605D678258954E1006E38D8 /* MyFavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0605D677258954E1006E38D8 /* MyFavoritesViewModel.swift */; };
 		0605D67C258959F3006E38D8 /* MyFavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0605D67A258959F3006E38D8 /* MyFavoriteCell.swift */; };
 		0605D67D258959F3006E38D8 /* MyFavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0605D67B258959F3006E38D8 /* MyFavoriteCell.xib */; };
+		0605D67F2589B602006E38D8 /* UIButton+CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0605D67E2589B602006E38D8 /* UIButton+CustomButton.swift */; };
 		06064CEA2582C693006ADB86 /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06064CE92582C693006ADB86 /* AssetsManager.swift */; };
 		062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF5B257E669B00949D54 /* AppDelegate.swift */; };
 		062FDF63257E669B00949D54 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 062FDF61257E669B00949D54 /* Home.storyboard */; };
@@ -63,6 +64,7 @@
 		0605D677258954E1006E38D8 /* MyFavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritesViewModel.swift; sourceTree = "<group>"; };
 		0605D67A258959F3006E38D8 /* MyFavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteCell.swift; sourceTree = "<group>"; };
 		0605D67B258959F3006E38D8 /* MyFavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyFavoriteCell.xib; sourceTree = "<group>"; };
+		0605D67E2589B602006E38D8 /* UIButton+CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+CustomButton.swift"; sourceTree = "<group>"; };
 		06064CE92582C693006ADB86 /* AssetsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsManager.swift; sourceTree = "<group>"; };
 		06064D2125830A8A006ADB86 /* Colors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
 		06064D2325830CBB006ADB86 /* ColorsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsManager.swift; sourceTree = "<group>"; };
@@ -147,6 +149,14 @@
 				0605D67B258959F3006E38D8 /* MyFavoriteCell.xib */,
 			);
 			path = MyFavoriteCell;
+			sourceTree = "<group>";
+		};
+		0605D6802589B608006E38D8 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				0605D67E2589B602006E38D8 /* UIButton+CustomButton.swift */,
+			);
+			path = UIButton;
 			sourceTree = "<group>";
 		};
 		06064D2025830A62006ADB86 /* Colors */ = {
@@ -280,6 +290,7 @@
 		062FDF76257E674A00949D54 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0605D6802589B608006E38D8 /* UIButton */,
 				999A710625840E2000678453 /* UITextField */,
 				999A710525840E1900678453 /* UIView */,
 				06AB4F0B2583F84100A0B658 /* UIViewController */,
@@ -647,6 +658,7 @@
 				991B7B6F2586878300700114 /* StringsManager.swift in Sources */,
 				06DD9940257FBA3100D36344 /* HomeView.swift in Sources */,
 				062FDF7F257E687D00949D54 /* APIManager.swift in Sources */,
+				0605D67F2589B602006E38D8 /* UIButton+CustomButton.swift in Sources */,
 				06064CEA2582C693006ADB86 /* AssetsManager.swift in Sources */,
 				991B7B6D2586877400700114 /* FontsManager.swift in Sources */,
 				062FDF7D257E67F200949D54 /* UserDefaultsManager.swift in Sources */,

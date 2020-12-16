@@ -55,6 +55,10 @@ extension MyFavoritesVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 251.5
+        return 245
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.myFavoritesView.tableView.deselectRow(at: indexPath, animated: true)
     }
 }

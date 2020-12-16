@@ -24,8 +24,9 @@ class MyFavoriteCell: UITableViewCell {
     @IBOutlet var specialtyLabel: UILabel!
     @IBOutlet var adressLabel: UILabel!
     @IBOutlet var waitingTimeLabel: UILabel!
-    @IBOutlet var cancelBtn: UIButton!
     @IBOutlet var feesLabel: UILabel!
+    @IBOutlet var deleteBtn: UIButton!
+    @IBOutlet var viewProfileBtn: CustomButton!
     @IBOutlet weak var ratingView: CosmosView!
     
     override func awakeFromNib() {
@@ -37,7 +38,10 @@ class MyFavoriteCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    @IBAction func cancelBtnPressed(_ sender: UIButton) {
+    @IBAction func deleteBtnPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func viewProfileBtnPressed(_ sender: CustomButton) {
     }
     
     
@@ -62,6 +66,7 @@ extension MyFavoriteCell {
         ratingView.settings.emptyImage = Asset.starEmpty.image
         ratingView.settings.textFont = FontFamily.PTSans.regular.font(size: 12)
         ratingView.settings.textColor = Color.white
+        ratingView.settings.starSize = 15
     }
     
     private func setupImgView() {
@@ -80,8 +85,9 @@ extension MyFavoriteCell {
     }
     
     private func setupButton() {
-        cancelBtn.setImage(Asset.cancelBtn.image, for: .normal)
-        cancelBtn.tintColor = .white
+        deleteBtn.setImage(Asset.cancelBtn.image, for: .normal)
+        deleteBtn.tintColor = .white
+        viewProfileBtn.setTitle(L10n.viewProfile, for: .normal)
     }
 }
 

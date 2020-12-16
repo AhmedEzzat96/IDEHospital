@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0605D6722589541D006E38D8 /* MyFavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0605D6712589541D006E38D8 /* MyFavoritesVC.swift */; };
+		0605D6742589544F006E38D8 /* MyFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0605D6732589544F006E38D8 /* MyFavoritesView.swift */; };
+		0605D67625895473006E38D8 /* MyFavorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0605D67525895473006E38D8 /* MyFavorites.storyboard */; };
+		0605D678258954E1006E38D8 /* MyFavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0605D677258954E1006E38D8 /* MyFavoritesViewModel.swift */; };
+		0605D67C258959F3006E38D8 /* MyFavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0605D67A258959F3006E38D8 /* MyFavoriteCell.swift */; };
+		0605D67D258959F3006E38D8 /* MyFavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0605D67B258959F3006E38D8 /* MyFavoriteCell.xib */; };
 		06064CEA2582C693006ADB86 /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06064CE92582C693006ADB86 /* AssetsManager.swift */; };
 		062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF5B257E669B00949D54 /* AppDelegate.swift */; };
 		062FDF63257E669B00949D54 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 062FDF61257E669B00949D54 /* Home.storyboard */; };
@@ -51,6 +57,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0605D6712589541D006E38D8 /* MyFavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritesVC.swift; sourceTree = "<group>"; };
+		0605D6732589544F006E38D8 /* MyFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritesView.swift; sourceTree = "<group>"; };
+		0605D67525895473006E38D8 /* MyFavorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyFavorites.storyboard; sourceTree = "<group>"; };
+		0605D677258954E1006E38D8 /* MyFavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritesViewModel.swift; sourceTree = "<group>"; };
+		0605D67A258959F3006E38D8 /* MyFavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteCell.swift; sourceTree = "<group>"; };
+		0605D67B258959F3006E38D8 /* MyFavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyFavoriteCell.xib; sourceTree = "<group>"; };
 		06064CE92582C693006ADB86 /* AssetsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsManager.swift; sourceTree = "<group>"; };
 		06064D2125830A8A006ADB86 /* Colors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
 		06064D2325830CBB006ADB86 /* ColorsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsManager.swift; sourceTree = "<group>"; };
@@ -112,6 +124,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0605D66F258953B7006E38D8 /* MyFavorites */ = {
+			isa = PBXGroup;
+			children = (
+				0605D6712589541D006E38D8 /* MyFavoritesVC.swift */,
+				0605D6732589544F006E38D8 /* MyFavoritesView.swift */,
+			);
+			path = MyFavorites;
+			sourceTree = "<group>";
+		};
+		0605D670258953C1006E38D8 /* MyAppointments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyAppointments;
+			sourceTree = "<group>";
+		};
+		0605D679258959B9006E38D8 /* MyFavoriteCell */ = {
+			isa = PBXGroup;
+			children = (
+				0605D67A258959F3006E38D8 /* MyFavoriteCell.swift */,
+				0605D67B258959F3006E38D8 /* MyFavoriteCell.xib */,
+			);
+			path = MyFavoriteCell;
+			sourceTree = "<group>";
+		};
 		06064D2025830A62006ADB86 /* Colors */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				99697C61257F803900B6BFBE /* ServiceSearch.storyboard */,
+				0605D67525895473006E38D8 /* MyFavorites.storyboard */,
 			);
 			path = MainTabs;
 			sourceTree = "<group>";
@@ -379,6 +417,7 @@
 		993AD118258731C9005311CD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				0605D679258959B9006E38D8 /* MyFavoriteCell */,
 				0678C11B2581B07200949700 /* CategoryCell */,
 			);
 			path = Cells;
@@ -396,6 +435,7 @@
 			isa = PBXGroup;
 			children = (
 				9966C2FA2582636B0016A8CB /* ServiceSearchViewModel.swift */,
+				0605D677258954E1006E38D8 /* MyFavoritesViewModel.swift */,
 			);
 			path = MainTabs;
 			sourceTree = "<group>";
@@ -440,6 +480,8 @@
 			isa = PBXGroup;
 			children = (
 				99E7AD0625824E2800AAB5B0 /* MainTabBar.swift */,
+				0605D670258953C1006E38D8 /* MyAppointments */,
+				0605D66F258953B7006E38D8 /* MyFavorites */,
 				99697C63257F806400B6BFBE /* ServiceSearch */,
 			);
 			path = MainTabs;
@@ -510,12 +552,14 @@
 				062FDF68257E669E00949D54 /* LaunchScreen.storyboard in Resources */,
 				991B7B6B258681CB00700114 /* Localizable.strings in Resources */,
 				99F90A7025847B4A006E7B91 /* Colors.txt in Resources */,
+				0605D67D258959F3006E38D8 /* MyFavoriteCell.xib in Resources */,
 				99697C62257F803900B6BFBE /* ServiceSearch.storyboard in Resources */,
 				06DD995B257FE68E00D36344 /* PTSans-Regular.ttf in Resources */,
 				06DD995C257FE68E00D36344 /* PTSans-BoldItalic.ttf in Resources */,
 				06DD995A257FE68E00D36344 /* PTSans-Italic.ttf in Resources */,
 				062FDF63257E669B00949D54 /* Home.storyboard in Resources */,
 				06DD995D257FE68E00D36344 /* PTSans-Bold.ttf in Resources */,
+				0605D67625895473006E38D8 /* MyFavorites.storyboard in Resources */,
 				0678C11F2581B09500949700 /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,10 +655,14 @@
 				062FDF83257E6F4A00949D54 /* UIViewController+Storyboard.swift in Sources */,
 				9966C2FB2582636B0016A8CB /* ServiceSearchViewModel.swift in Sources */,
 				9938FC25258173CC003781E5 /* UIView+CornerRadius.swift in Sources */,
+				0605D6722589541D006E38D8 /* MyFavoritesVC.swift in Sources */,
 				9938FC232580FBBB003781E5 /* UIView+SetupBackground.swift in Sources */,
+				0605D67C258959F3006E38D8 /* MyFavoriteCell.swift in Sources */,
+				0605D678258954E1006E38D8 /* MyFavoritesViewModel.swift in Sources */,
 				999A71092584122200678453 /* UIViewController+ShowSimpleAlert.swift in Sources */,
 				062FDF85257E6F9B00949D54 /* UIView+ActivityIndicator.swift in Sources */,
 				06BB4E212585397D00D2C4E3 /* UIImageView+CircularImage.swift in Sources */,
+				0605D6742589544F006E38D8 /* MyFavoritesView.swift in Sources */,
 				0655740E2582829900CFEE4F /* MainCategoriesResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

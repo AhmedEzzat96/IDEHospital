@@ -57,7 +57,7 @@ extension MainTabBar {
     }
     
     private func createFavoriteVC() -> UIViewController {
-        let favoriteVC = UIViewController()
+        let favoriteVC = MyFavoritesVC.create()
         favoriteVC.tabBarItem = UITabBarItem(title: L10n.favorite, image: Asset.heart.image, tag: 2)
         return favoriteVC
     }

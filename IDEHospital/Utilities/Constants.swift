@@ -12,12 +12,18 @@ import Foundation
 struct Storyboards {
     static let serviceSearch = "ServiceSearch"
     static let home = "Home"
+    static let myFavorites = "MyFavorites"
+    static let myAppointments = "MyAppointments"
+    
 }
 
 // ViewControllers
 struct ViewControllers {
     static let serviceSearchVC = "ServiceSearchVC"
     static let homeVC = "HomeVC"
+    static let myFavoritesVC = "MyFavoritesVC"
+    static let myAppointmentsVC = "MyAppointments"
+    
 }
 
 // UserDefaultsKeys
@@ -52,4 +58,5 @@ struct ParameterKeys {
 // Cells
 struct Cells {
     static let categoryCell = "CategoryCell"
+    static let myFavoriteCell = "MyFavoriteCell"
 }

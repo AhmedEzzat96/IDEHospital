@@ -12,12 +12,18 @@ import Foundation
 struct Storyboards {
     static let serviceSearch = "ServiceSearch"
     static let home = "Home"
+    
+    
+    static let homeNurse = "HomeNurse"
 }
 
 // ViewControllers
 struct ViewControllers {
     static let serviceSearchVC = "ServiceSearchVC"
     static let homeVC = "HomeVC"
+    
+    
+    static let homeNurseVC = "HomeNurseVC"
 }
 
 // UserDefaultsKeys

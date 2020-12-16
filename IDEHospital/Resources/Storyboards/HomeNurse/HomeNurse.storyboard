@@ -31,12 +31,12 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DtX-Hi-Fy1">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DtX-Hi-Fy1" customClass="CommonTextField" customModule="IDEHospital" customModuleProvider="target">
                                                 <rect key="frame" x="30.5" y="340" width="321" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0G-DV-8Rc">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0G-DV-8Rc" customClass="CommonTextField" customModule="IDEHospital" customModuleProvider="target">
                                                 <rect key="frame" x="30.5" y="218" width="321" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="aS6-s2-f5z"/>
@@ -44,7 +44,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mYt-H4-6mr">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mYt-H4-6mr" customClass="CommonTextField" customModule="IDEHospital" customModuleProvider="target">
                                                 <rect key="frame" x="30.5" y="279" width="321" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -112,7 +112,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ceB-id-0Pt"/>
                         <connections>
+                            <outlet property="detailsTextView" destination="Kjm-77-nRe" id="Uft-dL-727"/>
+                            <outlet property="emailTextField" destination="mYt-H4-6mr" id="LfN-gg-UKX"/>
                             <outlet property="infoLabel" destination="GZ6-a7-1eV" id="fWu-Ni-TZY"/>
+                            <outlet property="nameTextField" destination="X0G-DV-8Rc" id="97Y-dg-e5L"/>
+                            <outlet property="phoneTextField" destination="DtX-Hi-Fy1" id="XS6-39-b0U"/>
+                            <outlet property="sendRequestButton" destination="QOB-JC-taI" id="z6m-uv-suR"/>
                         </connections>
                     </view>
                     <connections>

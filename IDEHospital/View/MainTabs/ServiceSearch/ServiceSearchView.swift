@@ -17,7 +17,7 @@ class ServiceSearchView: UIView {
     @IBOutlet weak var cityTextField: PaddedTextField!
     @IBOutlet weak var regionTextField: PaddedTextField!
     @IBOutlet weak var companiesTextField: PaddedTextField!
-    @IBOutlet weak var doctorNameTextField: UITextField!
+    @IBOutlet weak var doctorNameTextField: PaddedTextField!
     @IBOutlet weak var findDoctorButton: UIButton!
     
     // MARK:- Properties
@@ -58,7 +58,7 @@ extension ServiceSearchView {
         setupTextField(doctorNameTextField, tag: 5, placeholder: L10n.doctorName, leftIcon: Asset.doctor.image)
     }
     
-    private func setupTextField(_ textField: UITextField, tag: Int, placeholder: String, leftIcon: UIImage) {
+    private func setupTextField(_ textField: PaddedTextField, tag: Int, placeholder: String, leftIcon: UIImage) {
         textField.backgroundColor = .white
         textField.alpha = 0.8
         textField.tag = tag

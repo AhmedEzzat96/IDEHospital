@@ -37,7 +37,6 @@
 		991B7B6F2586878300700114 /* StringsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B7B6E2586878300700114 /* StringsManager.swift */; };
 		9938FC232580FBBB003781E5 /* UIView+SetupBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */; };
 		9938FC25258173CC003781E5 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938FC24258173CC003781E5 /* UIView+CornerRadius.swift */; };
-		9938FC2725817425003781E5 /* UITextField+TextFieldIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938FC2625817425003781E5 /* UITextField+TextFieldIcons.swift */; };
 		993AD11B25873212005311CD /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993AD11A25873212005311CD /* PaddedTextField.swift */; };
 		9966C2FB2582636B0016A8CB /* ServiceSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966C2FA2582636B0016A8CB /* ServiceSearchViewModel.swift */; };
 		99697C62257F803900B6BFBE /* ServiceSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99697C61257F803900B6BFBE /* ServiceSearch.storyboard */; };
@@ -49,6 +48,8 @@
 		99F395DF2589894E00ACBD3B /* HomeNurseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F395DE2589894E00ACBD3B /* HomeNurseVC.swift */; };
 		99F395E12589899600ACBD3B /* HomeNurse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F395E02589899600ACBD3B /* HomeNurse.storyboard */; };
 		99F395E425898E0700ACBD3B /* HomeNurseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F395E325898E0700ACBD3B /* HomeNurseView.swift */; };
+		99F49F26258A8F6A0039A280 /* HomeNurseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F49F25258A8F6A0039A280 /* HomeNurseViewModel.swift */; };
+		99F49F28258A955F0039A280 /* CommonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F49F27258A955F0039A280 /* CommonTextField.swift */; };
 		99F90A7025847B4A006E7B91 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 99F90A6F25847B4A006E7B91 /* Colors.txt */; };
 		99F90A7225847F44006E7B91 /* ColorsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F90A7125847F44006E7B91 /* ColorsManager.swift */; };
 /* End PBXBuildFile section */
@@ -89,7 +90,6 @@
 		991B7B6E2586878300700114 /* StringsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringsManager.swift; sourceTree = "<group>"; };
 		9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SetupBackground.swift"; sourceTree = "<group>"; };
 		9938FC24258173CC003781E5 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
-		9938FC2625817425003781E5 /* UITextField+TextFieldIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+TextFieldIcons.swift"; sourceTree = "<group>"; };
 		993AD11A25873212005311CD /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		9966C2FA2582636B0016A8CB /* ServiceSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceSearchViewModel.swift; path = IDEHospital/ViewModel/MainTabs/ServiceSearchViewModel.swift; sourceTree = SOURCE_ROOT; };
 		99697C61257F803900B6BFBE /* ServiceSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServiceSearch.storyboard; sourceTree = "<group>"; };
@@ -101,6 +101,8 @@
 		99F395DE2589894E00ACBD3B /* HomeNurseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNurseVC.swift; sourceTree = "<group>"; };
 		99F395E02589899600ACBD3B /* HomeNurse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeNurse.storyboard; sourceTree = "<group>"; };
 		99F395E325898E0700ACBD3B /* HomeNurseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNurseView.swift; sourceTree = "<group>"; };
+		99F49F25258A8F6A0039A280 /* HomeNurseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNurseViewModel.swift; sourceTree = "<group>"; };
+		99F49F27258A955F0039A280 /* CommonTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextField.swift; sourceTree = "<group>"; };
 		99F90A6F25847B4A006E7B91 /* Colors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
 		99F90A7125847F44006E7B91 /* ColorsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsManager.swift; sourceTree = "<group>"; };
 		C60A97CD5B7753B53A601432 /* Pods-IDEHospital.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDEHospital.debug.xcconfig"; path = "Target Support Files/Pods-IDEHospital/Pods-IDEHospital.debug.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				9966C2FC258263980016A8CB /* MainTabs */,
 				06DD993D257FBA0B00D36344 /* HomeViewModel.swift */,
+				99F49F25258A8F6A0039A280 /* HomeNurseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -251,7 +254,6 @@
 		062FDF76257E674A00949D54 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				999A710625840E2000678453 /* UITextField */,
 				999A710525840E1900678453 /* UIView */,
 				06AB4F0B2583F84100A0B658 /* UIViewController */,
 				06AB4F0C2583F84C00A0B658 /* UIImageVIew */,
@@ -323,7 +325,7 @@
 		06AB4F0F2583F87500A0B658 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				993AD119258731E1005311CD /* PaddedTextField */,
+				993AD119258731E1005311CD /* TextFields */,
 				993AD118258731C9005311CD /* Cells */,
 			);
 			path = CustomViews;
@@ -392,12 +394,13 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		993AD119258731E1005311CD /* PaddedTextField */ = {
+		993AD119258731E1005311CD /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
+				99F49F27258A955F0039A280 /* CommonTextField.swift */,
 				993AD11A25873212005311CD /* PaddedTextField.swift */,
 			);
-			path = PaddedTextField;
+			path = TextFields;
 			sourceTree = "<group>";
 		};
 		9966C2FC258263980016A8CB /* MainTabs */ = {
@@ -425,14 +428,6 @@
 				062FDF84257E6F9B00949D54 /* UIView+ActivityIndicator.swift */,
 			);
 			path = UIView;
-			sourceTree = "<group>";
-		};
-		999A710625840E2000678453 /* UITextField */ = {
-			isa = PBXGroup;
-			children = (
-				9938FC2625817425003781E5 /* UITextField+TextFieldIcons.swift */,
-			);
-			path = UITextField;
 			sourceTree = "<group>";
 		};
 		999A710D25845F6700678453 /* Colors */ = {
@@ -620,7 +615,6 @@
 				0678C11E2581B09500949700 /* CategoryCell.swift in Sources */,
 				993AD11B25873212005311CD /* PaddedTextField.swift in Sources */,
 				999D8CF22582929900CAEA06 /* CategoryResponse.swift in Sources */,
-				9938FC2725817425003781E5 /* UITextField+TextFieldIcons.swift in Sources */,
 				99F90A7225847F44006E7B91 /* ColorsManager.swift in Sources */,
 				062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */,
 				06DD993E257FBA0B00D36344 /* HomeViewModel.swift in Sources */,
@@ -634,6 +628,7 @@
 				991B7B6D2586877400700114 /* FontsManager.swift in Sources */,
 				062FDF7D257E67F200949D54 /* UserDefaultsManager.swift in Sources */,
 				062FDF79257E678D00949D54 /* Constants.swift in Sources */,
+				99F49F26258A8F6A0039A280 /* HomeNurseViewModel.swift in Sources */,
 				06DD9943257FBAA100D36344 /* HomeVC.swift in Sources */,
 				062FDF83257E6F4A00949D54 /* UIViewController+Storyboard.swift in Sources */,
 				9966C2FB2582636B0016A8CB /* ServiceSearchViewModel.swift in Sources */,
@@ -642,6 +637,7 @@
 				999A71092584122200678453 /* UIViewController+ShowSimpleAlert.swift in Sources */,
 				062FDF85257E6F9B00949D54 /* UIView+ActivityIndicator.swift in Sources */,
 				06BB4E212585397D00D2C4E3 /* UIImageView+CircularImage.swift in Sources */,
+				99F49F28258A955F0039A280 /* CommonTextField.swift in Sources */,
 				0655740E2582829900CFEE4F /* MainCategoriesResponse.swift in Sources */,
 				99F395DF2589894E00ACBD3B /* HomeNurseVC.swift in Sources */,
 			);

@@ -34,6 +34,8 @@ class HomeNurseVC: UIViewController {
         homeNurseVC.viewModel = HomeNurseViewModel(view: homeNurseVC)
         return homeNurseVC
     }
+    @IBAction func sendRequestButtonPressed(_ sender: UIButton) {
+    }
 }
 
 // MARK:- TextView Delegate

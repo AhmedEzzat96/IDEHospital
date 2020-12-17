@@ -35,6 +35,7 @@ class CommonTextField: UITextField {
         self.leftViewMode = .always
         self.leftView = leftIcon
         self.borderStyle = .none
+        self.layoutIfNeeded()
         let bottomLine = CALayer()
         bottomLine.frame = CGRect(x: 0, y: frame.height - 1, width: frame.width, height: 2)
         bottomLine.backgroundColor = ColorName.white.color.cgColor

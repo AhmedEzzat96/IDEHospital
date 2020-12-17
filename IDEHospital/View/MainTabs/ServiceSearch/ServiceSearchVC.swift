@@ -62,7 +62,7 @@ extension ServiceSearchVC {
     
     // MARK:- Objc Methods
     @objc private func doneTapped(_ sender: UIBarButtonItem) {
-        viewModel.itemSelected(tag: sender.tag,row: mainView.pickerView.selectedRow(inComponent: 0))
+        viewModel.itemSelected(tag: sender.tag, row: mainView.pickerView.selectedRow(inComponent: 0))
     }
 }
 

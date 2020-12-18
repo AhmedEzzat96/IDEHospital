@@ -71,9 +71,10 @@ extension HomeViewModel: HomeViewModelProtocol {
     
     func didSelectItem(item: Int) {
         let categoryID = categoriesData[item].id
-        if categoryID == 4 {
-            print(categoryID)
-        } else {
+        switch categoryID {
+        case 4:
+            self.view?.goToHomeNurse()
+        default:
             self.view?.goToTabBar(with: categoryID)
         }
     }

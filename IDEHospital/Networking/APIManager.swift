@@ -21,6 +21,22 @@ class APIManager {
             completion(response)
         }
     }
+    
+    class func sendNurseRequest(_ requestData: RequestData, completion: @escaping (Result<Bool, Error>) -> Void) {
+        AF.upload(multipartFormData: { (multiPartFormData) in
+            multiPartFormData.append(Data(requestData.0!.utf8), withName: "name")
+            multiPartFormData.append(Data(requestData.1!.utf8), withName: "email")
+            multiPartFormData.append(Data(requestData.2!.utf8), withName: "mobile")
+            multiPartFormData.append(Data(requestData.3!.utf8), withName: "message")
+        }, with: APIRouter.nurseRequest).response { response in
+            switch response.result {
+            case .success:
+                completion(.success(true))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }
 
 extension APIManager{

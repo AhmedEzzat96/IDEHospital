@@ -13,6 +13,7 @@ protocol HomeVCProtocol: class {
     func hideLoader()
     func reloadCollectionView()
     func goToTabBar(with id: Int)
+    func goToHomeNurse()
     func configureCell(for indexPath: IndexPath, categoryData: MainCategoriesData, image: UIImage)
 }
 
@@ -68,11 +69,15 @@ extension HomeVC: HomeVCProtocol {
         self.navigationController?.pushViewController(tabBarVC, animated: true)
     }
     
+    func goToHomeNurse() {
+        let homeNurseVC = HomeNurseVC.create()
+        navigationController?.pushViewController(homeNurseVC, animated: true)
+    }
+    
     func configureCell(for indexPath: IndexPath, categoryData: MainCategoriesData, image: UIImage) {
         let cell = homeView.collectionView.cellForItem(at: indexPath) as! CategoryCell
         cell.configure(categoryData, image)
     }
-    
 }
 
 //MARK:- CollectionView Data Source

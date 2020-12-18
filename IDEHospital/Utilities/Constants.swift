@@ -35,6 +35,7 @@ struct UserDefaultsKeys {
 struct URLs {
     static let base = "http://ide-hospital.ideaeg.co/api"
     static let mainCategories = "/main_categories"
+    static let nurseRequset = "/nursing_requests"
 }
 
 // HeaderKeys

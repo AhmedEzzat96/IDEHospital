@@ -52,7 +52,12 @@ extension ServiceSearchViewModel {
 // MARK:- ViewModel Protocol
 extension ServiceSearchViewModel: ServiceSearchViewModelProtocol {
     func prepareCategories(with categoryID: Int) {
-        getCategories(with: categoryID)
+        switch categoryID {
+        case 4:
+            view?.presentHomeNurse()
+        default:
+            getCategories(with: categoryID)
+        }
     }
     
     func itemsCount() -> Int {

@@ -2,18 +2,86 @@
 //  ValidationManager.swift
 //  IDEHospital
 //
-//  Created by Ziad on 12/16/20.
+//  Created by Ziad on 12/17/20.
 //  Copyright © 2020 IDEAcademy. All rights reserved.
 //
 
 import Foundation
 
+typealias RequestData = (String?, String?, String?, String?)
+
 class ValidationManager {
+    
+    // MARK:- Enum
+    enum ValidationError {
+        case name, email, phone, missedData
+        
+        var error: (title: String, message: String) {
+            switch self {
+                case .name:
+                return ("Invalid Name", "Name should contain letters only, at least 3 characters and and at most 18 characters")
+            case .email:
+                return ("Invalid Email", "Email should be : example@mail.com")
+            case .phone:
+                return ("Invalid Phone Number", "Please enter valid phone number ex : 010xxxxxxxx")
+            case .missedData:
+                return ("Missed data", "Please enter all textfields above")
+            }
+        }
+    }
     
     // MARK:- Singleton
     private static let sharedInstance = ValidationManager()
-    
     class func shared() -> ValidationManager {
         return ValidationManager.sharedInstance
+    }
+    
+    // MARK:- Public Methods
+    func tryToCathchErrors(with requestData: RequestData) -> (String, String)? {
+        if let name = requestData.0?.trimmed, !name.isEmpty, let email = requestData.1?.trimmed, !email.isEmpty, let phone = requestData.2?.trimmed, !phone.isEmpty, let message = requestData.3, !message.isEmpty, message != "Enter Details" {
+            
+            switch isValidName(name) {
+            case true: break
+            case false:
+                return ValidationError.name.error
+            }
+            
+            switch isValidEmail(email) {
+            case true: break
+            case false:
+                return ValidationError.email.error
+            }
+            
+            switch isValidPhone(phone) {
+            case true: break
+            case false:
+                return ValidationError.phone.error
+            }
+            
+            return nil
+        }
+        return ValidationError.missedData.error
+    }
+}
+
+// MARK:- Private Methods
+extension ValidationManager {
+    private func isValidName(_ name: String) -> Bool {
+        guard name.count > 3, name.count < 18 else { return false }
+        let regularExpressionForName = "^(([^ ]?)(^[a-zA-Z].*[a-zA-Z]$)([^ ]?))$"
+        let testPassword = NSPredicate(format: "SELF MATCHES %@", regularExpressionForName)
+        return testPassword.evaluate(with: name)
+    }
+    
+    private func isValidEmail(_ email: String) -> Bool {
+        let regularExpressionForEmail = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let testEmail = NSPredicate(format:"SELF MATCHES %@", regularExpressionForEmail)
+        return testEmail.evaluate(with: email)
+    }
+    
+    private func isValidPhone(_ phone: String) -> Bool {
+        let phoneRegex = "^[0-9]{11}$"
+        let testPassword = NSPredicate(format:"SELF MATCHES %@", phoneRegex)
+        return testPassword.evaluate(with: phone)
     }
 }

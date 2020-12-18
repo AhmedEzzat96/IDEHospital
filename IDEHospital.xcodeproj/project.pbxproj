@@ -38,6 +38,8 @@
 		9938FC232580FBBB003781E5 /* UIView+SetupBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */; };
 		9938FC25258173CC003781E5 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938FC24258173CC003781E5 /* UIView+CornerRadius.swift */; };
 		993AD11B25873212005311CD /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993AD11A25873212005311CD /* PaddedTextField.swift */; };
+		995CAC73258B9D6F0042527F /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995CAC72258B9D6F0042527F /* ValidationManager.swift */; };
+		995CAC75258B9EC40042527F /* String+Trimming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995CAC74258B9EC40042527F /* String+Trimming.swift */; };
 		9966C2FB2582636B0016A8CB /* ServiceSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966C2FA2582636B0016A8CB /* ServiceSearchViewModel.swift */; };
 		99697C62257F803900B6BFBE /* ServiceSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99697C61257F803900B6BFBE /* ServiceSearch.storyboard */; };
 		99697C65257F80BD00B6BFBE /* ServiceSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99697C64257F80BD00B6BFBE /* ServiceSearchVC.swift */; };
@@ -91,6 +93,8 @@
 		9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SetupBackground.swift"; sourceTree = "<group>"; };
 		9938FC24258173CC003781E5 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
 		993AD11A25873212005311CD /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
+		995CAC72258B9D6F0042527F /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
+		995CAC74258B9EC40042527F /* String+Trimming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Trimming.swift"; sourceTree = "<group>"; };
 		9966C2FA2582636B0016A8CB /* ServiceSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceSearchViewModel.swift; path = IDEHospital/ViewModel/MainTabs/ServiceSearchViewModel.swift; sourceTree = SOURCE_ROOT; };
 		99697C61257F803900B6BFBE /* ServiceSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServiceSearch.storyboard; sourceTree = "<group>"; };
 		99697C64257F80BD00B6BFBE /* ServiceSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchVC.swift; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 				06AB4F0B2583F84100A0B658 /* UIViewController */,
 				06AB4F0C2583F84C00A0B658 /* UIImageVIew */,
 				06AB4F0D2583F85500A0B658 /* UIColor */,
+				99FD522C258CF80C0005110E /* String */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				062FDF7C257E67F200949D54 /* UserDefaultsManager.swift */,
+				995CAC72258B9D6F0042527F /* ValidationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -465,6 +471,14 @@
 			path = HomeNurse;
 			sourceTree = "<group>";
 		};
+		99FD522C258CF80C0005110E /* String */ = {
+			isa = PBXGroup;
+			children = (
+				995CAC74258B9EC40042527F /* String+Trimming.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -608,12 +622,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				995CAC73258B9D6F0042527F /* ValidationManager.swift in Sources */,
 				06BB4E1E2585334700D2C4E3 /* APIRouter.swift in Sources */,
 				99697C67257F80DB00B6BFBE /* ServiceSearchView.swift in Sources */,
 				99E7AD0725824E2800AAB5B0 /* MainTabBar.swift in Sources */,
 				99697C65257F80BD00B6BFBE /* ServiceSearchVC.swift in Sources */,
 				0678C11E2581B09500949700 /* CategoryCell.swift in Sources */,
 				993AD11B25873212005311CD /* PaddedTextField.swift in Sources */,
+				995CAC75258B9EC40042527F /* String+Trimming.swift in Sources */,
 				999D8CF22582929900CAEA06 /* CategoryResponse.swift in Sources */,
 				99F90A7225847F44006E7B91 /* ColorsManager.swift in Sources */,
 				062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */,

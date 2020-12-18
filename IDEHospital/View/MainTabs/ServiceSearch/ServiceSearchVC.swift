@@ -14,6 +14,7 @@ protocol ServiceSearchVCProtocol {
     func addSelectedItem(_ viewWithTag: Int, _ item: String)
     func clearTextField(with tag: Int)
     func doneButtonEnabled(_ enabled: Bool, for tag: Int)
+    func presentHomeNurse()
 }
 
 class ServiceSearchVC: UIViewController {
@@ -123,5 +124,10 @@ extension ServiceSearchVC: ServiceSearchVCProtocol {
             let textField = self.mainView.viewWithTag(tag) as! UITextField
             textField.keyboardToolbar.doneBarButton.isEnabled = enabled
         }
+    }
+    
+    func presentHomeNurse() {
+        let homeNurseVC = HomeNurseVC.create()
+        present(homeNurseVC, animated: false)
     }
 }

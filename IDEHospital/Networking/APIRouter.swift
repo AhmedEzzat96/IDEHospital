@@ -15,12 +15,15 @@ enum APIRouter: URLRequestConvertible{
     // The endpoint name
     case getCategoriesData(_ CategoriesID: Int)
     case mainCategories
+    case nurseRequest
     
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self{
         case .getCategoriesData, .mainCategories:
             return .get
+        case .nurseRequest:
+            return .post
         }
     }
     
@@ -40,6 +43,8 @@ enum APIRouter: URLRequestConvertible{
         
         case .mainCategories:
             return URLs.mainCategories
+        case .nurseRequest:
+            return URLs.nurseRequset
         }
     }
     
@@ -66,7 +71,6 @@ enum APIRouter: URLRequestConvertible{
             }
         }()
         urlRequest.httpBody = httpBody
-        
         // Encoding
         let encoding: ParameterEncoding = {
             switch method {

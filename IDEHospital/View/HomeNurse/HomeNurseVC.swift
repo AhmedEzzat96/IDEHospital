@@ -10,6 +10,10 @@ import UIKit
 
 protocol HomeNurseVCProtocol: class {
     func addPlaceholder()
+    func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)?)
+    func showLoader()
+    func hideLoader()
+    func showHomeVC()
 }
 
 class HomeNurseVC: UIViewController {
@@ -23,9 +27,9 @@ class HomeNurseVC: UIViewController {
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationItems()
         mainView.setup()
         mainView.detailsTextView.delegate = self
-        // Do any additional setup after loading the view.
     }
 
     //MARK:- Public Methods
@@ -34,7 +38,35 @@ class HomeNurseVC: UIViewController {
         homeNurseVC.viewModel = HomeNurseViewModel(view: homeNurseVC)
         return homeNurseVC
     }
+    
+    // MARK:- Actions
     @IBAction func sendRequestButtonPressed(_ sender: UIButton) {
+        viewModel.requestTapped(with: RequestData(mainView.nameTextField.text, mainView.emailTextField.text, mainView.phoneTextField.text, mainView.detailsTextView.text))
+    }
+}
+extension HomeNurseVC {
+// MARK:- Private Methods
+    private func setupNavigationItems() {
+        title = "HOME NURSE"
+        let backItem = UIBarButtonItem(image: Asset.back.image, style: .done, target: self, action: #selector(popUp))
+        backItem.tintColor = ColorName.steelGrey.color
+        let leftPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        leftPadding.width = 18
+        navigationItem.leftBarButtonItems = [leftPadding, backItem]
+        let settingsItem = UIBarButtonItem(image: Asset.settings.image, style: .done, target: self, action: #selector(showSettings))
+        settingsItem.tintColor = ColorName.steelGrey.color
+        let rightPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        rightPadding.width = 18
+        navigationItem.rightBarButtonItems = [rightPadding, settingsItem]
+    }
+    
+    // MARK:- Objc Methods
+    @objc private func popUp() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func showSettings() {
+        print("Show Settings")
     }
 }
 
@@ -56,6 +88,24 @@ extension HomeNurseVC: UITextViewDelegate {
 // MARK:- HomeNurseVC Protocol
 extension HomeNurseVC: HomeNurseVCProtocol {
     func addPlaceholder() {
-        mainView.detailsTextView.text = "Enter Details"
+        DispatchQueue.main.async {
+            self.mainView.detailsTextView.text = "Enter Details"
+        }
+    }
+    
+    func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)?) {
+        showSimpleAlert(title: title, message: message, handler: handler)
+    }
+    
+    func showLoader() {
+        view.showActivityIndicator()
+    }
+    
+    func hideLoader() {
+        view.hideActivityIndicator()
+    }
+    
+    func showHomeVC() {
+        popUp()
     }
 }

@@ -24,9 +24,12 @@
 		062FDF83257E6F4A00949D54 /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF82257E6F4A00949D54 /* UIViewController+Storyboard.swift */; };
 		062FDF85257E6F9B00949D54 /* UIView+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF84257E6F9B00949D54 /* UIView+ActivityIndicator.swift */; };
 		0655740E2582829900CFEE4F /* MainCategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0655740D2582829900CFEE4F /* MainCategoriesResponse.swift */; };
+		067584C9258D7CDD00A65404 /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067584C8258D7CDD00A65404 /* UIViewController+ShowAlert.swift */; };
 		0678C11E2581B09500949700 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678C11C2581B09500949700 /* CategoryCell.swift */; };
 		0678C11F2581B09500949700 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0678C11D2581B09500949700 /* CategoryCell.xib */; };
 		0678C1212581CA4C00949700 /* UIColor+getColorByHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678C1202581CA4C00949700 /* UIColor+getColorByHex.swift */; };
+		0699F05D258D1F3E00C2AF5F /* MyFavoriteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699F05C258D1F3E00C2AF5F /* MyFavoriteResponse.swift */; };
+		0699F05F258D5A3A00C2AF5F /* MyFavoriteCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699F05E258D5A3A00C2AF5F /* MyFavoriteCellViewModel.swift */; };
 		06AB4F11258404CA00A0B658 /* UIViewController+NavControllerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB4F10258404CA00A0B658 /* UIViewController+NavControllerSetup.swift */; };
 		06BB4E1E2585334700D2C4E3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF80257E694700949D54 /* APIRouter.swift */; };
 		06BB4E1F2585337200D2C4E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 062FDF64257E669E00949D54 /* Assets.xcassets */; };
@@ -81,9 +84,12 @@
 		062FDF82257E6F4A00949D54 /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
 		062FDF84257E6F9B00949D54 /* UIView+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		0655740D2582829900CFEE4F /* MainCategoriesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCategoriesResponse.swift; sourceTree = "<group>"; };
+		067584C8258D7CDD00A65404 /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
 		0678C11C2581B09500949700 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		0678C11D2581B09500949700 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		0678C1202581CA4C00949700 /* UIColor+getColorByHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+getColorByHex.swift"; sourceTree = "<group>"; };
+		0699F05C258D1F3E00C2AF5F /* MyFavoriteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteResponse.swift; sourceTree = "<group>"; };
+		0699F05E258D5A3A00C2AF5F /* MyFavoriteCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteCellViewModel.swift; sourceTree = "<group>"; };
 		06AB4F10258404CA00A0B658 /* UIViewController+NavControllerSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavControllerSetup.swift"; sourceTree = "<group>"; };
 		06BB4E202585397D00D2C4E3 /* UIImageView+CircularImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+CircularImage.swift"; sourceTree = "<group>"; };
 		06DD993D257FBA0B00D36344 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -224,6 +230,7 @@
 			children = (
 				999D8CF12582929900CAEA06 /* CategoryResponse.swift */,
 				0655740D2582829900CFEE4F /* MainCategoriesResponse.swift */,
+				0699F05C258D1F3E00C2AF5F /* MyFavoriteResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -340,6 +347,7 @@
 				062FDF82257E6F4A00949D54 /* UIViewController+Storyboard.swift */,
 				999A71082584122200678453 /* UIViewController+ShowSimpleAlert.swift */,
 				06AB4F10258404CA00A0B658 /* UIViewController+NavControllerSetup.swift */,
+				067584C8258D7CDD00A65404 /* UIViewController+ShowAlert.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -447,6 +455,7 @@
 			children = (
 				9966C2FA2582636B0016A8CB /* ServiceSearchViewModel.swift */,
 				0605D677258954E1006E38D8 /* MyFavoritesViewModel.swift */,
+				0699F05E258D5A3A00C2AF5F /* MyFavoriteCellViewModel.swift */,
 			);
 			path = MainTabs;
 			sourceTree = "<group>";
@@ -651,6 +660,7 @@
 				999D8CF22582929900CAEA06 /* CategoryResponse.swift in Sources */,
 				9938FC2725817425003781E5 /* UITextField+TextFieldIcons.swift in Sources */,
 				99F90A7225847F44006E7B91 /* ColorsManager.swift in Sources */,
+				0699F05D258D1F3E00C2AF5F /* MyFavoriteResponse.swift in Sources */,
 				062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */,
 				06DD993E257FBA0B00D36344 /* HomeViewModel.swift in Sources */,
 				06AB4F11258404CA00A0B658 /* UIViewController+NavControllerSetup.swift in Sources */,
@@ -669,12 +679,14 @@
 				9938FC25258173CC003781E5 /* UIView+CornerRadius.swift in Sources */,
 				0605D6722589541D006E38D8 /* MyFavoritesVC.swift in Sources */,
 				9938FC232580FBBB003781E5 /* UIView+SetupBackground.swift in Sources */,
+				067584C9258D7CDD00A65404 /* UIViewController+ShowAlert.swift in Sources */,
 				0605D67C258959F3006E38D8 /* MyFavoriteCell.swift in Sources */,
 				0605D678258954E1006E38D8 /* MyFavoritesViewModel.swift in Sources */,
 				999A71092584122200678453 /* UIViewController+ShowSimpleAlert.swift in Sources */,
 				062FDF85257E6F9B00949D54 /* UIView+ActivityIndicator.swift in Sources */,
 				06BB4E212585397D00D2C4E3 /* UIImageView+CircularImage.swift in Sources */,
 				0605D6742589544F006E38D8 /* MyFavoritesView.swift in Sources */,
+				0699F05F258D5A3A00C2AF5F /* MyFavoriteCellViewModel.swift in Sources */,
 				0655740E2582829900CFEE4F /* MainCategoriesResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,11 @@
 import UIKit
 
 protocol MyFavoritesVCProtocol: class {
-    
+    func showLoader()
+    func hideLoader()
+    func reloadData()
+    func isHidden(tableView: Bool, noItemsFound: Bool)
+    func showAlert(title: String, message: String, actions: [((UIAlertAction) -> Void)?]?)
 }
 
 class MyFavoritesVC: UIViewController {
@@ -30,12 +34,13 @@ class MyFavoritesVC: UIViewController {
     class func create() -> MyFavoritesVC {
         let myFavoritesVC: MyFavoritesVC = UIViewController.create(storyboardName: Storyboards.myFavorites, identifier: ViewControllers.myFavoritesVC)
         myFavoritesVC.viewModel = MyFavoritesViewModel(view: myFavoritesVC)
+        myFavoritesVC.viewModel.getFavorites()
         return myFavoritesVC
     }
 }
 
-//MARK:- MyFavoritesVC Protocol
-extension MyFavoritesVC: MyFavoritesVCProtocol {
+//MARK:- Private Methods
+extension MyFavoritesVC {
     private func tableViewConfiguration() {
         myFavoritesView.tableView.delegate = self
         myFavoritesView.tableView.dataSource = self
@@ -43,14 +48,40 @@ extension MyFavoritesVC: MyFavoritesVCProtocol {
     }
 }
 
+//MARK:- MyFavoritesVC Protocol
+extension MyFavoritesVC: MyFavoritesVCProtocol {
+    func showLoader() {
+        self.view.showActivityIndicator()
+    }
+    
+    func hideLoader() {
+        self.view.hideActivityIndicator()
+    }
+    
+    func reloadData() {
+        self.myFavoritesView.tableView.reloadData()
+    }
+    
+    func isHidden(tableView: Bool, noItemsFound: Bool) {
+        self.myFavoritesView.tableView.isHidden = tableView
+        self.myFavoritesView.noFavoriteLabel.isHidden = noItemsFound
+    }
+    
+    func showAlert(title: String, message: String, actions: [((UIAlertAction) -> Void)?]?) {
+        self.openAlert(title: title, message: message, alertStyle: .alert, actionTitles: ["No", "Yes"], actionStyles: [.cancel, .destructive], actions: actions)
+    }
+}
+
 //MARK:- TableView Data Source
 extension MyFavoritesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.getFavoriteItemsCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = myFavoritesView.tableView.dequeueReusableCell(withIdentifier: Cells.myFavoriteCell, for: indexPath) as! MyFavoriteCell
+        guard let cell = myFavoritesView.tableView.dequeueReusableCell(withIdentifier: Cells.myFavoriteCell, for: indexPath) as? MyFavoriteCell else { return UITableViewCell() }
+        cell.delegate = self
+        cell.configureCell(viewModel.getItems()[indexPath.row])
         return cell
     }
     
@@ -60,5 +91,17 @@ extension MyFavoritesVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.myFavoritesView.tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+//MARK:- ShowAlert Delegate
+extension MyFavoritesVC: CellButtonDelegate {
+    func showDeleteAlert(customTableViewCell: UITableViewCell) {
+        guard let indexPath = myFavoritesView.tableView.indexPath(for: customTableViewCell) else {return}
+        viewModel.showDeleteAlert(with: indexPath.row)
+    }
+    
+    func viewProfileAlert(customTableViewCell: UITableViewCell) {
+        self.openAlert(title: L10n.sorry, message: L10n.feature, alertStyle: .alert, actionTitles: ["Ok"], actionStyles: [.cancel], actions: [nil])
     }
 }

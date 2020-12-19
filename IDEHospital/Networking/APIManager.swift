@@ -16,8 +16,20 @@ class APIManager {
         }
     }
     
-    class func mainCategories(completion: @escaping (Result<MainCategoriesResponse,Error>) -> Void) {
+    class func mainCategories(completion: @escaping (Result<MainCategoriesResponse, Error>) -> Void) {
         request(APIRouter.mainCategories) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func addRemoveFavorite(with doctorID: Int, completion: @escaping (Bool) -> Void) {
+        requestBool(APIRouter.addRemoveFavorite(doctorID)) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func favorites(completion: @escaping (Result<MyFavoriteResponse, Error>) -> Void) {
+        request(APIRouter.favorites) { (response) in
             completion(response)
         }
     }
@@ -44,6 +56,19 @@ extension APIManager{
                 return
             }
             print(response)
+        }
+    }
+    
+    // MARK:- The request function to get results in Bool
+    private static func requestBool(_ urlConvertible: URLRequestConvertible, completion:  @escaping (Bool) -> ()) {
+        // Trigger the HttpRequest using AlamoFire
+        AF.request(urlConvertible).response { (response) in
+            switch response.result {
+            case .success(_):
+                completion(true)
+            case .failure(_):
+                completion(false)
+            }
         }
     }
 }

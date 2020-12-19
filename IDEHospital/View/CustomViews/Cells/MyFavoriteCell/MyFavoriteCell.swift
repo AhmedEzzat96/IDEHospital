@@ -9,11 +9,13 @@
 import UIKit
 import Cosmos
 
-protocol MyFavoriteCellProtocol: class {
-    
+protocol CellButtonDelegate: class {
+    func showDeleteAlert(customTableViewCell: UITableViewCell)
+    func viewProfileAlert(customTableViewCell: UITableViewCell)
 }
 
 class MyFavoriteCell: UITableViewCell {
+    //MARK:- IBOutlets
     @IBOutlet var doctorImgView: UIImageView!
     @IBOutlet var doctorNameImgView: UIImageView!
     @IBOutlet var addressImgView: UIImageView!
@@ -29,32 +31,53 @@ class MyFavoriteCell: UITableViewCell {
     @IBOutlet var viewProfileBtn: CustomButton!
     @IBOutlet weak var ratingView: CosmosView!
     
+    //MARK:- Properties
+    var viewModel: MyFavoriteCellViewModelProtocol!
+    weak var delegate: CellButtonDelegate?
+    
+    //MARK:- Lifecycle Methods
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.viewModel = MyFavoriteCellViewModel()
         setup()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    
+    //MARK:- Public Methods
+    func configureCell(_ item: MyFavoriteItem) {
+        self.doctorNameLabel.text = item.name
+        self.specialtyLabel.text = item.specialty
+        self.secondBioLabel.text = item.second_bio
+        self.adressLabel.text = item.address
+        self.waitingTimeLabel.text = "Waiting Time : \(item.waiting_time) minutes"
+        self.feesLabel.text = "Examination Fees : \(item.fees) LE"
+        self.ratingView.text = "\(item.reviews_count) Review"
+        self.ratingView.rating = Double(item.rating)
+        viewModel.downloadImage(with: item) { (image) in
+            self.doctorImgView.image = image
+        }
     }
     
+    //MARK:- IBActions
     @IBAction func deleteBtnPressed(_ sender: UIButton) {
+        self.delegate?.showDeleteAlert(customTableViewCell: self)
     }
     
     @IBAction func viewProfileBtnPressed(_ sender: CustomButton) {
+        self.delegate?.viewProfileAlert(customTableViewCell: self)
     }
     
     
 }
 
+//MARK:- Private Methods
 extension MyFavoriteCell {
     private func setup() {
         setupRatingView()
         setupImgView()
         setupButton()
         setupLabel(doctorNameLabel, font: FontFamily.PTSans.bold.font(size: 15))
-        setupLabel(secondBioLabel, font: FontFamily.PTSans.bold.font(size: 15))
-        setupLabel(specialtyLabel)
+        setupLabel(specialtyLabel, font: FontFamily.PTSans.bold.font(size: 15))
+        setupLabel(secondBioLabel)
         setupLabel(adressLabel)
         setupLabel(waitingTimeLabel)
         setupLabel(feesLabel)
@@ -91,6 +114,6 @@ extension MyFavoriteCell {
     }
 }
 
-extension MyFavoriteCell: MyFavoriteCellProtocol {
-    
-}
+//extension MyFavoriteCell: MyFavoriteCellProtocol {
+//
+//}

@@ -35,6 +35,7 @@ struct UserDefaultsKeys {
 struct URLs {
     static let base = "http://ide-hospital.ideaeg.co/api"
     static let mainCategories = "/main_categories"
+    static let favorites = "/favorites/doctors"
 }
 
 // HeaderKeys
@@ -42,6 +43,7 @@ struct HeaderKeys {
     static let accept = "accept"
     static let acceptLanguage = "Accept-Language"
     static let language = "Accept-Language"
+    static let authorization = "Authorization"
 }
 
 // HeaderValues

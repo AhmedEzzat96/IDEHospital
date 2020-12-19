@@ -24,7 +24,7 @@ class MyFavoritesView: UIView {
 //MARK:- Private Methods
 extension MyFavoritesView {
     private func setupTableView() {
-        tableView.isHidden = false
+        tableView.isHidden = true
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
     }
@@ -33,6 +33,7 @@ extension MyFavoritesView {
         noFavoriteLabel.isHidden = true
         noFavoriteLabel.textAlignment = .center
         noFavoriteLabel.text = L10n.noFavoriteFound
-        noFavoriteLabel.font = FontFamily.PTSans.bold.font(size: 20)
+        noFavoriteLabel.font = FontFamily.PTSans.bold.font(size: 30)
+        noFavoriteLabel.textColor = ColorName.white.color
     }
 }

@@ -17,9 +17,10 @@ protocol MyFavoritesVCProtocol: class {
 }
 
 class MyFavoritesVC: UIViewController {
+    //MARK:- IBOutlets
+    @IBOutlet weak var myFavoritesView: MyFavoritesView!
     
     //MARK:- Properties
-    @IBOutlet weak var myFavoritesView: MyFavoritesView!
     var viewModel: MyFavoritesViewModelProtocol!
 
     //MARK:- Lifecycle Methods

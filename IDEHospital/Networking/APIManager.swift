@@ -33,6 +33,12 @@ class APIManager {
             completion(response)
         }
     }
+    
+    class func appointments(for page: Int, completion: @escaping (Result<MyAppointmentResponse, Error>) -> Void) {
+        request(APIRouter.appointments(page)) { (response) in
+            completion(response)
+        }
+    }
 }
 
 extension APIManager{

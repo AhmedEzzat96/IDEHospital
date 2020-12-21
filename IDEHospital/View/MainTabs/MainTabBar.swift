@@ -63,7 +63,7 @@ extension MainTabBar {
     }
     
     private func createAppointmentsVC() -> UIViewController {
-        let appointmentsVC = UIViewController()
+        let appointmentsVC = MyAppointmentsVC.create()
         appointmentsVC.tabBarItem = UITabBarItem(title: L10n.schedule, image: Asset.calendar.image, tag: 3)
         return appointmentsVC
     }

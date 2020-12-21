@@ -38,6 +38,8 @@ internal enum L10n {
   internal static let myAppointments = L10n.tr("Localizable", "myAppointments")
   /// MY FAVORITES
   internal static let myFavorites = L10n.tr("Localizable", "myFavorites")
+  /// No Appointments Found!
+  internal static let noAppointmentFound = L10n.tr("Localizable", "noAppointmentFound")
   /// No Favorites Found!
   internal static let noFavoriteFound = L10n.tr("Localizable", "noFavoriteFound")
   /// Choose Region

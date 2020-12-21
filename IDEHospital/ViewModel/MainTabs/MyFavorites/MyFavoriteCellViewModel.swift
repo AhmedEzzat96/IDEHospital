@@ -14,13 +14,6 @@ protocol MyFavoriteCellViewModelProtocol {
 }
 
 class MyFavoriteCellViewModel {
-//    //MARK:- Properties
-//    private weak var view: MyFavoriteCellProtocol?
-//
-//    //MARK:- Init
-//    init(view: MyFavoriteCellProtocol) {
-//        self.view = view
-//    }
     
 }
 

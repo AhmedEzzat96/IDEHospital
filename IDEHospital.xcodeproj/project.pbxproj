@@ -25,7 +25,13 @@
 		062FDF85257E6F9B00949D54 /* UIView+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF84257E6F9B00949D54 /* UIView+ActivityIndicator.swift */; };
 		0644BB292590EE0300963D65 /* MyAppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0644BB272590EE0300963D65 /* MyAppointmentCell.swift */; };
 		0644BB2A2590EE0300963D65 /* MyAppointmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0644BB282590EE0300963D65 /* MyAppointmentCell.xib */; };
+		0644BB2C2590F47900963D65 /* MyAppointmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0644BB2B2590F47900963D65 /* MyAppointmentsVC.swift */; };
+		0644BB2E2590F48900963D65 /* MyAppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0644BB2D2590F48900963D65 /* MyAppointmentsView.swift */; };
+		0644BB322590F4E000963D65 /* MyAppointmentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0644BB312590F4E000963D65 /* MyAppointmentsViewModel.swift */; };
+		0644BB342590F6E600963D65 /* MyAppointments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0644BB332590F6E600963D65 /* MyAppointments.storyboard */; };
 		0655740E2582829900CFEE4F /* MainCategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0655740D2582829900CFEE4F /* MainCategoriesResponse.swift */; };
+		0657F1A225911E03003C9586 /* MyAppointmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0657F1A125911E03003C9586 /* MyAppointmentResponse.swift */; };
+		0657F1A4259127B5003C9586 /* MyAppointmentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0657F1A3259127B5003C9586 /* MyAppointmentCellViewModel.swift */; };
 		067584C9258D7CDD00A65404 /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067584C8258D7CDD00A65404 /* UIViewController+ShowAlert.swift */; };
 		0678C11E2581B09500949700 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678C11C2581B09500949700 /* CategoryCell.swift */; };
 		0678C11F2581B09500949700 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0678C11D2581B09500949700 /* CategoryCell.xib */; };
@@ -87,7 +93,13 @@
 		062FDF84257E6F9B00949D54 /* UIView+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		0644BB272590EE0300963D65 /* MyAppointmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentCell.swift; sourceTree = "<group>"; };
 		0644BB282590EE0300963D65 /* MyAppointmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAppointmentCell.xib; sourceTree = "<group>"; };
+		0644BB2B2590F47900963D65 /* MyAppointmentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentsVC.swift; sourceTree = "<group>"; };
+		0644BB2D2590F48900963D65 /* MyAppointmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentsView.swift; sourceTree = "<group>"; };
+		0644BB312590F4E000963D65 /* MyAppointmentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentsViewModel.swift; sourceTree = "<group>"; };
+		0644BB332590F6E600963D65 /* MyAppointments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyAppointments.storyboard; sourceTree = "<group>"; };
 		0655740D2582829900CFEE4F /* MainCategoriesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCategoriesResponse.swift; sourceTree = "<group>"; };
+		0657F1A125911E03003C9586 /* MyAppointmentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentResponse.swift; sourceTree = "<group>"; };
+		0657F1A3259127B5003C9586 /* MyAppointmentCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentCellViewModel.swift; sourceTree = "<group>"; };
 		067584C8258D7CDD00A65404 /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
 		0678C11C2581B09500949700 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		0678C11D2581B09500949700 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
@@ -148,6 +160,8 @@
 		0605D670258953C1006E38D8 /* MyAppointments */ = {
 			isa = PBXGroup;
 			children = (
+				0644BB2B2590F47900963D65 /* MyAppointmentsVC.swift */,
+				0644BB2D2590F48900963D65 /* MyAppointmentsView.swift */,
 			);
 			path = MyAppointments;
 			sourceTree = "<group>";
@@ -235,6 +249,7 @@
 				999D8CF12582929900CAEA06 /* CategoryResponse.swift */,
 				0655740D2582829900CFEE4F /* MainCategoriesResponse.swift */,
 				0699F05C258D1F3E00C2AF5F /* MyFavoriteResponse.swift */,
+				0657F1A125911E03003C9586 /* MyAppointmentResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -345,6 +360,24 @@
 			path = MyAppointmentCell;
 			sourceTree = "<group>";
 		};
+		0644BB2F2590F4B200963D65 /* MyFavorites */ = {
+			isa = PBXGroup;
+			children = (
+				0605D677258954E1006E38D8 /* MyFavoritesViewModel.swift */,
+				0699F05E258D5A3A00C2AF5F /* MyFavoriteCellViewModel.swift */,
+			);
+			path = MyFavorites;
+			sourceTree = "<group>";
+		};
+		0644BB302590F4C100963D65 /* MyAppointments */ = {
+			isa = PBXGroup;
+			children = (
+				0644BB312590F4E000963D65 /* MyAppointmentsViewModel.swift */,
+				0657F1A3259127B5003C9586 /* MyAppointmentCellViewModel.swift */,
+			);
+			path = MyAppointments;
+			sourceTree = "<group>";
+		};
 		0678C11B2581B07200949700 /* CategoryCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,6 +466,7 @@
 			children = (
 				99697C61257F803900B6BFBE /* ServiceSearch.storyboard */,
 				0605D67525895473006E38D8 /* MyFavorites.storyboard */,
+				0644BB332590F6E600963D65 /* MyAppointments.storyboard */,
 			);
 			path = MainTabs;
 			sourceTree = "<group>";
@@ -468,8 +502,8 @@
 			isa = PBXGroup;
 			children = (
 				9966C2FA2582636B0016A8CB /* ServiceSearchViewModel.swift */,
-				0605D677258954E1006E38D8 /* MyFavoritesViewModel.swift */,
-				0699F05E258D5A3A00C2AF5F /* MyFavoriteCellViewModel.swift */,
+				0644BB2F2590F4B200963D65 /* MyFavorites */,
+				0644BB302590F4C100963D65 /* MyAppointments */,
 			);
 			path = MainTabs;
 			sourceTree = "<group>";
@@ -583,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06BB4E1F2585337200D2C4E3 /* Assets.xcassets in Resources */,
+				0644BB342590F6E600963D65 /* MyAppointments.storyboard in Resources */,
 				062FDF68257E669E00949D54 /* LaunchScreen.storyboard in Resources */,
 				991B7B6B258681CB00700114 /* Localizable.strings in Resources */,
 				0644BB2A2590EE0300963D65 /* MyAppointmentCell.xib in Resources */,
@@ -668,15 +703,18 @@
 			files = (
 				06BB4E1E2585334700D2C4E3 /* APIRouter.swift in Sources */,
 				99697C67257F80DB00B6BFBE /* ServiceSearchView.swift in Sources */,
+				0644BB322590F4E000963D65 /* MyAppointmentsViewModel.swift in Sources */,
 				99E7AD0725824E2800AAB5B0 /* MainTabBar.swift in Sources */,
 				99697C65257F80BD00B6BFBE /* ServiceSearchVC.swift in Sources */,
 				0678C11E2581B09500949700 /* CategoryCell.swift in Sources */,
 				993AD11B25873212005311CD /* PaddedTextField.swift in Sources */,
+				0644BB2E2590F48900963D65 /* MyAppointmentsView.swift in Sources */,
 				999D8CF22582929900CAEA06 /* CategoryResponse.swift in Sources */,
 				9938FC2725817425003781E5 /* UITextField+TextFieldIcons.swift in Sources */,
 				99F90A7225847F44006E7B91 /* ColorsManager.swift in Sources */,
 				0699F05D258D1F3E00C2AF5F /* MyFavoriteResponse.swift in Sources */,
 				062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */,
+				0644BB2C2590F47900963D65 /* MyAppointmentsVC.swift in Sources */,
 				06DD993E257FBA0B00D36344 /* HomeViewModel.swift in Sources */,
 				06AB4F11258404CA00A0B658 /* UIViewController+NavControllerSetup.swift in Sources */,
 				0644BB292590EE0300963D65 /* MyAppointmentCell.swift in Sources */,
@@ -695,6 +733,8 @@
 				9938FC25258173CC003781E5 /* UIView+CornerRadius.swift in Sources */,
 				0605D6722589541D006E38D8 /* MyFavoritesVC.swift in Sources */,
 				9938FC232580FBBB003781E5 /* UIView+SetupBackground.swift in Sources */,
+				0657F1A4259127B5003C9586 /* MyAppointmentCellViewModel.swift in Sources */,
+				0657F1A225911E03003C9586 /* MyAppointmentResponse.swift in Sources */,
 				067584C9258D7CDD00A65404 /* UIViewController+ShowAlert.swift in Sources */,
 				0605D67C258959F3006E38D8 /* MyFavoriteCell.swift in Sources */,
 				0605D678258954E1006E38D8 /* MyFavoritesViewModel.swift in Sources */,

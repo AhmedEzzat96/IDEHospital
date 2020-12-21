@@ -27,6 +27,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3H-5c-4ts" customClass="CosmosView" customModule="Cosmos">
                         <rect key="frame" x="117" y="43" width="190" height="20"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="1rB-ZE-Xwb"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="120 review"/>
                         </userDefinedRuntimeAttributes>
@@ -120,7 +123,6 @@
                     <constraint firstItem="sxF-8q-fLI" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="9.5/375" id="FgN-fC-goM"/>
                     <constraint firstItem="5Qj-5O-3bo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="FpM-yj-9gd"/>
                     <constraint firstItem="lCx-ET-Kuh" firstAttribute="top" secondItem="fjb-UU-BmC" secondAttribute="bottom" constant="20" id="Hfi-lN-zEg"/>
-                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="R3H-5c-4ts" secondAttribute="trailing" constant="260" id="Knx-AE-s0p"/>
                     <constraint firstItem="RqX-P1-GG9" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="11/375" id="LKy-Qb-eIE"/>
                     <constraint firstItem="lCx-ET-Kuh" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="N70-Dk-96r"/>
                     <constraint firstItem="R3H-5c-4ts" firstAttribute="top" secondItem="5Qj-5O-3bo" secondAttribute="bottom" constant="5" id="Odz-Uv-uYa"/>

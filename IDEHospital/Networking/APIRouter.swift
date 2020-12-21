@@ -15,7 +15,7 @@ enum APIRouter: URLRequestConvertible{
     // The endpoint name
     case getCategoriesData(_ CategoriesID: Int)
     case mainCategories
-    case favorites
+    case favorites(_ page: Int)
     case addRemoveFavorite(_ doctorID: Int)
     
     // MARK: - HttpMethod
@@ -31,6 +31,8 @@ enum APIRouter: URLRequestConvertible{
     // MARK: - Parameters
     private var parameters: Parameters? {
         switch self {
+        case .favorites(let page):
+            return [ParameterKeys.page: page]
         default:
             return nil
         }
@@ -80,7 +82,7 @@ enum APIRouter: URLRequestConvertible{
         let encoding: ParameterEncoding = {
             switch method {
             case .get :
-                return JSONEncoding.default
+                return URLEncoding.default
             default:
                 return JSONEncoding.default
             }

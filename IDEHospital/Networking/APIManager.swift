@@ -28,8 +28,8 @@ class APIManager {
         }
     }
     
-    class func favorites(completion: @escaping (Result<MyFavoriteResponse, Error>) -> Void) {
-        request(APIRouter.favorites) { (response) in
+    class func favorites(for page: Int, completion: @escaping (Result<MyFavoriteResponse, Error>) -> Void) {
+        request(APIRouter.favorites(page)) { (response) in
             completion(response)
         }
     }

@@ -30,11 +30,14 @@ class MyFavoritesVC: UIViewController {
         tableViewConfiguration()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.loadData()
+    }
+    
     //MARK:- Public Methods
     class func create() -> MyFavoritesVC {
         let myFavoritesVC: MyFavoritesVC = UIViewController.create(storyboardName: Storyboards.myFavorites, identifier: ViewControllers.myFavoritesVC)
         myFavoritesVC.viewModel = MyFavoritesViewModel(view: myFavoritesVC)
-        myFavoritesVC.viewModel.getFavorites()
         return myFavoritesVC
     }
 }
@@ -85,6 +88,10 @@ extension MyFavoritesVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        viewModel.willDisplayCell(for: indexPath.row)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 245
     }
@@ -102,6 +109,6 @@ extension MyFavoritesVC: CellButtonDelegate {
     }
     
     func viewProfileAlert(customTableViewCell: UITableViewCell) {
-        self.openAlert(title: L10n.sorry, message: L10n.feature, alertStyle: .alert, actionTitles: ["Ok"], actionStyles: [.cancel], actions: [nil])
+        self.showSimpleAlert(title: L10n.sorry, message: L10n.feature)
     }
 }

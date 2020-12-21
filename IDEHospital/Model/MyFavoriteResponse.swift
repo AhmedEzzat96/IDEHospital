@@ -14,6 +14,9 @@ struct MyFavoriteResponse: Codable {
 
 struct MyFavoriteData: Codable {
     let items: [MyFavoriteItem]
+    let page: Int
+    let total_pages: Int
+    let total: Int
 }
 
 struct MyFavoriteItem: Codable {

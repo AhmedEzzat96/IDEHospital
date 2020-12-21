@@ -54,7 +54,7 @@ struct HeaderValues {
 
 // Parameters Keys
 struct ParameterKeys {
-    
+    static let page = "page"
 }
 
 // Cells

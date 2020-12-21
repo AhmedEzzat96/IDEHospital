@@ -23,6 +23,8 @@
 		062FDF7F257E687D00949D54 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF7E257E687D00949D54 /* APIManager.swift */; };
 		062FDF83257E6F4A00949D54 /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF82257E6F4A00949D54 /* UIViewController+Storyboard.swift */; };
 		062FDF85257E6F9B00949D54 /* UIView+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF84257E6F9B00949D54 /* UIView+ActivityIndicator.swift */; };
+		0644BB292590EE0300963D65 /* MyAppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0644BB272590EE0300963D65 /* MyAppointmentCell.swift */; };
+		0644BB2A2590EE0300963D65 /* MyAppointmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0644BB282590EE0300963D65 /* MyAppointmentCell.xib */; };
 		0655740E2582829900CFEE4F /* MainCategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0655740D2582829900CFEE4F /* MainCategoriesResponse.swift */; };
 		067584C9258D7CDD00A65404 /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067584C8258D7CDD00A65404 /* UIViewController+ShowAlert.swift */; };
 		0678C11E2581B09500949700 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678C11C2581B09500949700 /* CategoryCell.swift */; };
@@ -83,6 +85,8 @@
 		062FDF80257E694700949D54 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		062FDF82257E6F4A00949D54 /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
 		062FDF84257E6F9B00949D54 /* UIView+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ActivityIndicator.swift"; sourceTree = "<group>"; };
+		0644BB272590EE0300963D65 /* MyAppointmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentCell.swift; sourceTree = "<group>"; };
+		0644BB282590EE0300963D65 /* MyAppointmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAppointmentCell.xib; sourceTree = "<group>"; };
 		0655740D2582829900CFEE4F /* MainCategoriesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCategoriesResponse.swift; sourceTree = "<group>"; };
 		067584C8258D7CDD00A65404 /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
 		0678C11C2581B09500949700 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -332,6 +336,15 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		0644BB262590EDD800963D65 /* MyAppointmentCell */ = {
+			isa = PBXGroup;
+			children = (
+				0644BB272590EE0300963D65 /* MyAppointmentCell.swift */,
+				0644BB282590EE0300963D65 /* MyAppointmentCell.xib */,
+			);
+			path = MyAppointmentCell;
+			sourceTree = "<group>";
+		};
 		0678C11B2581B07200949700 /* CategoryCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,6 +449,7 @@
 		993AD118258731C9005311CD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				0644BB262590EDD800963D65 /* MyAppointmentCell */,
 				0605D679258959B9006E38D8 /* MyFavoriteCell */,
 				0678C11B2581B07200949700 /* CategoryCell */,
 			);
@@ -571,6 +585,7 @@
 				06BB4E1F2585337200D2C4E3 /* Assets.xcassets in Resources */,
 				062FDF68257E669E00949D54 /* LaunchScreen.storyboard in Resources */,
 				991B7B6B258681CB00700114 /* Localizable.strings in Resources */,
+				0644BB2A2590EE0300963D65 /* MyAppointmentCell.xib in Resources */,
 				99F90A7025847B4A006E7B91 /* Colors.txt in Resources */,
 				0605D67D258959F3006E38D8 /* MyFavoriteCell.xib in Resources */,
 				99697C62257F803900B6BFBE /* ServiceSearch.storyboard in Resources */,
@@ -664,6 +679,7 @@
 				062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */,
 				06DD993E257FBA0B00D36344 /* HomeViewModel.swift in Sources */,
 				06AB4F11258404CA00A0B658 /* UIViewController+NavControllerSetup.swift in Sources */,
+				0644BB292590EE0300963D65 /* MyAppointmentCell.swift in Sources */,
 				0678C1212581CA4C00949700 /* UIColor+getColorByHex.swift in Sources */,
 				991B7B6F2586878300700114 /* StringsManager.swift in Sources */,
 				06DD9940257FBA3100D36344 /* HomeView.swift in Sources */,

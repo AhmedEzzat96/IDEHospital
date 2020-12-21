@@ -39,6 +39,12 @@ class APIManager {
             completion(response)
         }
     }
+    
+    class func removeAppointment(with appointmentID: Int, completion: @escaping (Bool) -> Void) {
+        requestBool(APIRouter.removeAppointment(appointmentID)) { (response) in
+            completion(response)
+        }
+    }
 }
 
 extension APIManager{

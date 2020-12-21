@@ -19,6 +19,7 @@
 "en" = "en";
 "noFavoriteFound" = "No Favorites Found!";
 "viewProfile" = "View Profile";
-"deleteMessage" = "Are You Sure Want to Delete this Favorite?";
+"deleteFavorite" = "Are You Sure Want to Delete this Favorite?";
 "feature" = "this feature will be available soon";
 "noAppointmentFound" = "No Appointments Found!";
+"deleteAppointment" = "Are You Sure Want to Delete this Appointment?";

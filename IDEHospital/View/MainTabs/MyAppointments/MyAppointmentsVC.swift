@@ -61,6 +61,7 @@ extension MyAppointmentsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = myAppointmentsView.tableView.dequeueReusableCell(withIdentifier: Cells.myAppointmentCell, for: indexPath) as? MyAppointmentCell else { return UITableViewCell() }
         cell.configureCell(viewModel.getItems()[indexPath.row])
+        cell.delegate = self
         return cell
     }
     
@@ -111,5 +112,18 @@ extension MyAppointmentsVC: MyAppointmentsVCProtocol {
     
     func showAlert(title: String, message: String, actions: [((UIAlertAction) -> Void)?]?) {
         self.openAlert(title: title, message: message, alertStyle: .alert, actionTitles: ["No", "Yes"], actionStyles: [.cancel, .destructive], actions: actions)
+    }
+}
+
+//MARK:- ShowAlert Delegate
+extension MyAppointmentsVC: CellButtonDelegate {
+    func showDeleteAlert(customTableViewCell: UITableViewCell) {
+        guard let indexPath = myAppointmentsView.tableView.indexPath(for: customTableViewCell) else {return}
+        viewModel.showDeleteAlert(with: indexPath.row)
+    }
+    
+    func viewOnMap(customTableViewCell: UITableViewCell) {
+        guard let indexPath = myAppointmentsView.tableView.indexPath(for: customTableViewCell) else {return}
+        viewModel.openMapForPlace(for: indexPath.row)
     }
 }

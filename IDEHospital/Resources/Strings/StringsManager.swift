@@ -18,8 +18,10 @@ internal enum L10n {
   internal static let city = L10n.tr("Localizable", "city")
   /// Choose Company
   internal static let company = L10n.tr("Localizable", "company")
+  /// Are You Sure Want to Delete this Appointment?
+  internal static let deleteAppointment = L10n.tr("Localizable", "deleteAppointment")
   /// Are You Sure Want to Delete this Favorite?
-  internal static let deleteMessage = L10n.tr("Localizable", "deleteMessage")
+  internal static let deleteFavorite = L10n.tr("Localizable", "deleteFavorite")
   /// Dismiss
   internal static let dismiss = L10n.tr("Localizable", "dismiss")
   /// Doctor Name

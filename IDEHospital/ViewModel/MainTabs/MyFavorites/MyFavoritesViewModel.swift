@@ -60,7 +60,7 @@ extension MyFavoritesViewModel: MyFavoritesViewModelProtocol {
     }
     
     func showDeleteAlert(with row: Int) {
-        view?.showAlert(title: L10n.sorry, message: L10n.deleteMessage, actions: [nil, { [weak self] yesAction in
+        view?.showAlert(title: L10n.sorry, message: L10n.deleteFavorite, actions: [nil, { [weak self] yesAction in
             self?.removeFavorite(with: row)
             }])
     }

@@ -35,4 +35,5 @@ struct DoctorItem: Codable {
     let lng: Double
     let lat: Double
     let image: String
+    let address: String
 }

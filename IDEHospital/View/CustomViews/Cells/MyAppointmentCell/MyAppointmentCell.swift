@@ -22,6 +22,7 @@ class MyAppointmentCell: UITableViewCell {
     
     //MARK:- Properties
     var viewModel: MyAppointmentCellViewModelProtocol!
+    weak var delegate: CellButtonDelegate?
     
     //MARK:- Lifecycle Methods
     override func awakeFromNib() {
@@ -45,9 +46,11 @@ class MyAppointmentCell: UITableViewCell {
     
     //MARK:- IBActions
     @IBAction func mapBtnPressed(_ sender: UIButton) {
+        delegate?.viewOnMap(customTableViewCell: self)
     }
     
     @IBAction func deleteBtnPressed(_ sender: UIButton) {
+        delegate?.showDeleteAlert(customTableViewCell: self)
     }
     
 }

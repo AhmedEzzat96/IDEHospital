@@ -7,12 +7,14 @@
 //
 
 import Foundation
-
+import MapKit
 protocol MyAppointmentsViewModelProtocol {
     func getFavoriteItemsCount() -> Int
     func getItems() -> [MyAppointmentItem]
     func willDisplayCell(for row: Int)
     func loadData()
+    func showDeleteAlert(with row: Int)
+    func openMapForPlace(for row: Int)
 }
 
 class MyAppointmentsViewModel {
@@ -63,6 +65,15 @@ extension MyAppointmentsViewModel {
             getAppointments()
         }
     }
+    
+    private func removeAppointment(with row: Int) {
+        APIManager.removeAppointment(with: appointmentItems[row].id) { [weak self] (success) in
+            if success {
+                self?.appointmentItems.remove(at: row)
+                self?.view?.reloadData()
+            }
+        }
+    }
 }
 
 //MARK:- MyAppointmentsViewModel Protocol
@@ -85,5 +96,28 @@ extension MyAppointmentsViewModel: MyAppointmentsViewModelProtocol {
         self.appointmentItems.removeAll()
         self.currentPage = 1
         getAppointments()
+    }
+    
+    func showDeleteAlert(with row: Int) {
+        view?.showAlert(title: L10n.sorry, message: L10n.deleteAppointment, actions: [nil, { [weak self] yesAction in
+            self?.removeAppointment(with: row)
+            }])
+    }
+    
+    func openMapForPlace(for row: Int) {
+        let latitude: CLLocationDegrees = appointmentItems[row].doctor.lat
+        let longitude: CLLocationDegrees = appointmentItems[row].doctor.lng
+
+        let regionDistance:CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = appointmentItems[row].doctor.address
+        mapItem.openInMaps(launchOptions: options)
     }
 }

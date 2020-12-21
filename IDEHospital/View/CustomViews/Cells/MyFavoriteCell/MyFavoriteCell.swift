@@ -12,6 +12,7 @@ import Cosmos
 protocol CellButtonDelegate: class {
     func showDeleteAlert(customTableViewCell: UITableViewCell)
     func viewProfileAlert(customTableViewCell: UITableViewCell)
+    func viewOnMap(customTableViewCell: UITableViewCell)
 }
 
 class MyFavoriteCell: UITableViewCell {
@@ -114,6 +115,12 @@ extension MyFavoriteCell {
     }
 }
 
-//extension MyFavoriteCell: MyFavoriteCellProtocol {
-//
-//}
+extension CellButtonDelegate {
+    func viewProfileAlert(customTableViewCell: UITableViewCell) {
+        
+    }
+    
+    func viewOnMap(customTableViewCell: UITableViewCell){
+
+    }
+}

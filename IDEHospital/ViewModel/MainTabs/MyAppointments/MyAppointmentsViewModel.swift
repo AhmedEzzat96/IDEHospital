@@ -69,8 +69,8 @@ extension MyAppointmentsViewModel {
     private func removeAppointment(with row: Int) {
         APIManager.removeAppointment(with: appointmentItems[row].id) { [weak self] (success) in
             if success {
-                self?.appointmentItems.remove(at: row)
-                self?.view?.reloadData()
+                self?.appointmentItems.removeAll()
+                self?.loadData()
             }
         }
     }

@@ -80,17 +80,19 @@ extension MyFavoritesViewModel {
                 self.lastPage = data.total_pages
                 self.favoriteItems += items
                 print(self.favoriteItems.count)
-                if self.favoriteItems.count != 0 {
-                    DispatchQueue.main.async {
-                        self.view?.isHidden(tableView: false, noItemsFound: true)
-                        self.view?.reloadData()
-                    }
-                } else {
-                    self.view?.isHidden(tableView: true, noItemsFound: false)
-                }
                 
             case .failure(let error):
                 print(error.localizedDescription)
+            }
+            
+            if self.favoriteItems.count != 0 {
+                DispatchQueue.main.async {
+                    self.view?.isHidden(tableView: false, noItemsFound: true)
+                    self.view?.reloadData()
+                    
+                }
+            } else {
+                self.view?.isHidden(tableView: true, noItemsFound: false)
             }
             self.view?.hideLoader()
         }
@@ -99,8 +101,8 @@ extension MyFavoritesViewModel {
     private func removeFavorite(with row: Int) {
         APIManager.addRemoveFavorite(with: favoriteItems[row].id) { [weak self] (success) in
             if success {
-                self?.favoriteItems.remove(at: row)
-                self?.view?.reloadData()
+                self?.favoriteItems.removeAll()
+                self?.loadData()
             }
         }
     }

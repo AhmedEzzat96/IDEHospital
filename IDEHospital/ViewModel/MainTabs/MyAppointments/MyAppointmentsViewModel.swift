@@ -31,7 +31,9 @@ class MyAppointmentsViewModel {
 //MARK:- Private Methods
 extension MyAppointmentsViewModel {
     private func getAppointments() {
-        APIManager.appointments(for: currentPage) { (result) in
+        self.view?.showLoader()
+        APIManager.appointments(for: currentPage) { [weak self] (result) in
+            guard let self = self else { return }
             switch result {
                 
             case .success(let response):
@@ -51,6 +53,7 @@ extension MyAppointmentsViewModel {
             case .failure(let error):
                 print(error.localizedDescription)
             }
+            self.view?.hideLoader()
         }
     }
     

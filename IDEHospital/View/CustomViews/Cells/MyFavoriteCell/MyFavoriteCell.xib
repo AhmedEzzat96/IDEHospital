@@ -157,6 +157,7 @@
                     <constraint firstItem="pKS-j9-M3S" firstAttribute="leading" secondItem="dXg-j0-5xV" secondAttribute="leading" id="wKc-1a-jV6"/>
                     <constraint firstItem="jN2-XF-lqu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wRH-zi-FS6"/>
                     <constraint firstItem="QYO-KI-NbG" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="33/375" id="xy0-KP-ANI"/>
+                    <constraint firstItem="R3H-5c-4ts" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.335097" id="ym2-wt-Qhh"/>
                     <constraint firstItem="NpU-yH-X0R" firstAttribute="top" secondItem="dXg-j0-5xV" secondAttribute="bottom" constant="20" id="yr2-zl-61z"/>
                 </constraints>
             </tableViewCellContentView>

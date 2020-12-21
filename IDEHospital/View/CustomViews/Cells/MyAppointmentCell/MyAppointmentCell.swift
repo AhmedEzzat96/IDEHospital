@@ -7,18 +7,25 @@
 //
 
 import UIKit
+import Cosmos
 
 class MyAppointmentCell: UITableViewCell {
-
+    //MARK:- IBOutlets
+    @IBOutlet weak var doctorImgView: UIImageView!
+    @IBOutlet weak var doctorNameLabel: UILabel!
+    @IBOutlet weak var ratingView: CosmosView!
+    @IBOutlet weak var bioLabel: UILabel!
+    @IBOutlet weak var mapBtn: UIButton!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    //MARK:- Lifecycle Methods
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBAction func mapBtnPressed(_ sender: UIButton) {
     }
     
 }

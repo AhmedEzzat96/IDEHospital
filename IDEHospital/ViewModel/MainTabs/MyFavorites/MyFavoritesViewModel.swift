@@ -15,6 +15,7 @@ protocol MyFavoritesViewModelProtocol {
     func getItem(at index: Int) -> MyFavoriteItem
     func showDeleteAlert(with doctorID: Int)
     func willDisplayCell(for row: Int)
+    func viewProfileAlert(with row: Int)
 }
 
 class MyFavoritesViewModel {
@@ -63,6 +64,11 @@ extension MyFavoritesViewModel: MyFavoritesViewModelProtocol {
         view?.showAlert(title: L10n.sorry, message: L10n.deleteFavorite, actions: [nil, { [weak self] yesAction in
             self?.removeFavorite(with: row)
             }])
+    }
+    
+    func viewProfileAlert(with row: Int) {
+        view?.simpleAlert(title: L10n.sorry, message: L10n.feature)
+        print(favoriteItems[row].id)
     }
 }
 

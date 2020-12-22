@@ -14,6 +14,7 @@ protocol MyFavoritesVCProtocol: class {
     func reloadData()
     func isHidden(tableView: Bool, noItemsFound: Bool)
     func showAlert(title: String, message: String, actions: [((UIAlertAction) -> Void)?]?)
+    func simpleAlert(title: String, message: String)
 }
 
 class MyFavoritesVC: UIViewController {
@@ -74,6 +75,10 @@ extension MyFavoritesVC: MyFavoritesVCProtocol {
     func showAlert(title: String, message: String, actions: [((UIAlertAction) -> Void)?]?) {
         self.openAlert(title: title, message: message, alertStyle: .alert, actionTitles: [L10n.no, L10n.yes], actionStyles: [.cancel, .destructive], actions: actions)
     }
+    
+    func simpleAlert(title: String, message: String) {
+        self.showSimpleAlert(title: title, message: message)
+    }
 }
 
 //MARK:- TableView Data Source
@@ -122,6 +127,7 @@ extension MyFavoritesVC: CellButtonDelegate {
     }
     
     func viewProfileAlert(customTableViewCell: UITableViewCell) {
-        self.showSimpleAlert(title: L10n.sorry, message: L10n.feature)
+        guard let indexPath = myFavoritesView.tableView.indexPath(for: customTableViewCell) else {return}
+        viewModel.viewProfileAlert(with: indexPath.row)
     }
 }

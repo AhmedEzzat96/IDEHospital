@@ -15,7 +15,7 @@ enum APIRouter: URLRequestConvertible{
     // The endpoint name
     case getCategoriesData(_ CategoriesID: Int)
     case mainCategories
-    case nurseRequest
+    case nurseRequest(_ requestData: RequestData)
     case searchForDoctors(_ doctorsFilter: DoctorsFilter)
     
     // MARK: - HttpMethod
@@ -63,14 +63,19 @@ enum APIRouter: URLRequestConvertible{
         
         // Headers
         switch self {
-            
+        case .nurseRequest:
+            urlRequest.setValue(HeaderValues.en, forHTTPHeaderField: HeaderKeys.acceptLanguage)
+            urlRequest.setValue(HeaderValues.appJSON, forHTTPHeaderField: HeaderKeys.accept)
         default:
             urlRequest.setValue(L10n.en, forHTTPHeaderField: HeaderKeys.acceptLanguage)
         }
+
         
         // HTTP Body
         let httpBody: Data? = {
             switch self {
+            case .nurseRequest(let body):
+                return encodeToJSON(body)
             default:
                 return nil
             }

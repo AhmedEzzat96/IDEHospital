@@ -23,19 +23,9 @@ class APIManager {
     }
     
     // This request i will refactor it while making the Contact Us request
-    class func sendNurseRequest(_ requestData: RequestData, completion: @escaping (Result<Bool, Error>) -> Void) {
-        AF.upload(multipartFormData: { (multiPartFormData) in
-            multiPartFormData.append(Data(requestData.0!.utf8), withName: ParameterKeys.name)
-            multiPartFormData.append(Data(requestData.1!.utf8), withName: ParameterKeys.email)
-            multiPartFormData.append(Data(requestData.2!.utf8), withName: ParameterKeys.mobile)
-            multiPartFormData.append(Data(requestData.3!.utf8), withName: ParameterKeys.message)
-        }, with: APIRouter.nurseRequest).response { response in
-            switch response.result {
-            case .success:
-                completion(.success(true))
-            case .failure(let error):
-                completion(.failure(error))
-            }
+    class func sendNurseRequest(_ requestData: RequestData, completion: @escaping (Result<NurseResponse, Error>) -> Void) {
+        request(APIRouter.nurseRequest(requestData)) { (response) in
+            completion(response)
         }
     }
     

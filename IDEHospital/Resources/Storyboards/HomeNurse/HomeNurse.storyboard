@@ -31,26 +31,26 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DtX-Hi-Fy1" customClass="CommonTextField" customModule="IDEHospital" customModuleProvider="target">
-                                                <rect key="frame" x="30.5" y="340" width="321" height="36"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DtX-Hi-Fy1" customClass="IDEAHospitalTextField" customModule="IDEHospital" customModuleProvider="target">
+                                                <rect key="frame" x="27" y="340" width="321" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0G-DV-8Rc" customClass="CommonTextField" customModule="IDEHospital" customModuleProvider="target">
-                                                <rect key="frame" x="30.5" y="218" width="321" height="36"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0G-DV-8Rc" customClass="IDEAHospitalTextField" customModule="IDEHospital" customModuleProvider="target">
+                                                <rect key="frame" x="27" y="218" width="321" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="aS6-s2-f5z"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mYt-H4-6mr" customClass="CommonTextField" customModule="IDEHospital" customModuleProvider="target">
-                                                <rect key="frame" x="30.5" y="279" width="321" height="36"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mYt-H4-6mr" customClass="IDEAHospitalTextField" customModule="IDEHospital" customModuleProvider="target">
+                                                <rect key="frame" x="27" y="279" width="321" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kjm-77-nRe">
-                                                <rect key="frame" x="30" y="399" width="322" height="119"/>
+                                                <rect key="frame" x="27" y="399" width="321" height="119"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="119" id="Ymk-aX-AHM"/>
@@ -72,9 +72,9 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="X0G-DV-8Rc" firstAttribute="centerX" secondItem="QG2-uf-VPW" secondAttribute="centerX" id="3NU-8X-y7v"/>
                                             <constraint firstItem="mYt-H4-6mr" firstAttribute="top" secondItem="X0G-DV-8Rc" secondAttribute="bottom" constant="25" id="5wo-JZ-Rai"/>
                                             <constraint firstItem="mYt-H4-6mr" firstAttribute="centerX" secondItem="X0G-DV-8Rc" secondAttribute="centerX" id="6ze-PF-VE3"/>
-                                            <constraint firstItem="Kjm-77-nRe" firstAttribute="leading" secondItem="QG2-uf-VPW" secondAttribute="leading" constant="30" id="9ZM-tS-wFK"/>
                                             <constraint firstItem="mYt-H4-6mr" firstAttribute="width" secondItem="X0G-DV-8Rc" secondAttribute="width" id="9rh-fH-jRR"/>
                                             <constraint firstItem="DtX-Hi-Fy1" firstAttribute="height" secondItem="mYt-H4-6mr" secondAttribute="height" id="CAT-XK-qSe"/>
                                             <constraint firstItem="GZ6-a7-1eV" firstAttribute="centerY" secondItem="QG2-uf-VPW" secondAttribute="centerY" multiplier="0.465" id="Dwx-wT-5FE"/>
@@ -84,15 +84,15 @@
                                             <constraint firstItem="DtX-Hi-Fy1" firstAttribute="width" secondItem="mYt-H4-6mr" secondAttribute="width" id="URS-XF-yfh"/>
                                             <constraint firstItem="GZ6-a7-1eV" firstAttribute="leading" secondItem="QG2-uf-VPW" secondAttribute="leading" constant="26" id="W4e-LY-zgu"/>
                                             <constraint firstItem="QOB-JC-taI" firstAttribute="leading" secondItem="QG2-uf-VPW" secondAttribute="leading" constant="30" id="Yyg-Rh-uMB"/>
+                                            <constraint firstItem="X0G-DV-8Rc" firstAttribute="width" secondItem="QG2-uf-VPW" secondAttribute="width" multiplier="0.856" id="ZuN-BY-YRI"/>
                                             <constraint firstItem="Kjm-77-nRe" firstAttribute="top" secondItem="DtX-Hi-Fy1" secondAttribute="bottom" constant="23" id="crb-rK-XTf"/>
+                                            <constraint firstItem="Kjm-77-nRe" firstAttribute="width" secondItem="DtX-Hi-Fy1" secondAttribute="width" id="dat-PF-zO3"/>
                                             <constraint firstAttribute="trailing" secondItem="QOB-JC-taI" secondAttribute="trailing" constant="30" id="eJI-Fp-IBZ"/>
                                             <constraint firstAttribute="trailing" secondItem="GZ6-a7-1eV" secondAttribute="trailing" constant="27" id="ixo-ul-HAB"/>
-                                            <constraint firstItem="X0G-DV-8Rc" firstAttribute="leading" secondItem="QG2-uf-VPW" secondAttribute="leading" constant="30.5" id="jAl-Uf-RwT"/>
                                             <constraint firstItem="DtX-Hi-Fy1" firstAttribute="centerX" secondItem="mYt-H4-6mr" secondAttribute="centerX" id="q0G-iM-ThE"/>
                                             <constraint firstAttribute="bottom" secondItem="QOB-JC-taI" secondAttribute="bottom" constant="87" id="rkJ-YX-Ios"/>
                                             <constraint firstItem="QOB-JC-taI" firstAttribute="top" secondItem="Kjm-77-nRe" secondAttribute="bottom" constant="17" id="rnW-Fw-Gcb"/>
-                                            <constraint firstAttribute="trailing" secondItem="Kjm-77-nRe" secondAttribute="trailing" constant="23" id="t8o-Br-zr4"/>
-                                            <constraint firstAttribute="trailing" secondItem="X0G-DV-8Rc" secondAttribute="trailing" constant="23.5" id="urO-R1-uQZ"/>
+                                            <constraint firstItem="Kjm-77-nRe" firstAttribute="centerX" secondItem="DtX-Hi-Fy1" secondAttribute="centerX" id="tyb-If-Hcx"/>
                                         </constraints>
                                     </view>
                                 </subviews>

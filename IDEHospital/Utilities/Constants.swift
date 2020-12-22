@@ -42,9 +42,8 @@ struct URLs {
 
 // HeaderKeys
 struct HeaderKeys {
-    static let accept = "accept"
+    static let accept = "Content-Type"
     static let acceptLanguage = "Accept-Language"
-    static let language = "Accept-Language"
 }
 
 // HeaderValues

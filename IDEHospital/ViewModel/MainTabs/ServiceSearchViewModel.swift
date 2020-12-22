@@ -21,10 +21,9 @@ class ServiceSearchViewModel {
     
     // MARK:- Properties
     private var view: ServiceSearchVCProtocol?
-    var categoryData: CategoryData!
-    var items: [String] = []
-    
-    var doctorsFilter: DoctorsFilter!
+    private var categoryData: CategoryData!
+    private var items: [String] = []
+    private var doctorsFilter: DoctorsFilter!
     
     // MARK:- Init
     init(view: ServiceSearchVCProtocol) {
@@ -49,13 +48,8 @@ extension ServiceSearchViewModel {
 // MARK:- ViewModel Protocol
 extension ServiceSearchViewModel: ServiceSearchViewModelProtocol {
     func prepareCategories(with categoryID: Int) {
-        switch categoryID {
-        case 4:
-            view?.presentHomeNurse()
-        default:
-            self.doctorsFilter = DoctorsFilter(categoryId: categoryID, page: 1)
-            getCategories(with: categoryID)
-        }
+        self.doctorsFilter = DoctorsFilter(categoryId: categoryID, page: 1)
+        getCategories(with: categoryID)
     }
     
     func itemsCount() -> Int {

@@ -24,7 +24,7 @@ class SearchResultsVC: UIViewController {
     @IBOutlet weak var mainView: SearchResultsView!
     
     // MARK:- Properties
-    var viewModel: SearchResultsViewModelProtocol!
+    private var viewModel: SearchResultsViewModelProtocol!
     
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
@@ -32,13 +32,13 @@ class SearchResultsVC: UIViewController {
         mainView.setup()
         setupDelegates()
         setupNavigationItems()
+        viewModel.searchForDoctors()
     }
 
     //MARK:- Public Methods
     class func create(with doctorsFilter: DoctorsFilter) -> SearchResultsVC {
         let searchResultsVC: SearchResultsVC = UIViewController.create(storyboardName: Storyboards.searchResults, identifier: ViewControllers.searchResultsVC)
-        searchResultsVC.viewModel = SearchResultsViewModel(view: searchResultsVC)
-        searchResultsVC.viewModel.searchForDoctors(with: doctorsFilter)
+        searchResultsVC.viewModel = SearchResultsViewModel(view: searchResultsVC, doctorsFilter: doctorsFilter)
         return searchResultsVC
     }
 }

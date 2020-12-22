@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SearchResultsViewModelProtocol {
-    func searchForDoctors(with doctorsFilter: DoctorsFilter)
+    func searchForDoctors()
     func getSortTypes() -> [String]
     func sortTypeSelected(row: Int)
     func getItemsCount() -> Int
@@ -21,12 +21,13 @@ class SearchResultsViewModel {
     
     // MARK:- Properties
     private weak var view: SearchResultsVCProtocol?
-    var doctorsFilter: DoctorsFilter!
-    private var data: SearchResults!
+    private var doctorsFilter: DoctorsFilter!
+    private var searchResults: SearchResults!
     
     // MARK:- Init
-    init(view: SearchResultsVCProtocol) {
+    init(view: SearchResultsVCProtocol, doctorsFilter: DoctorsFilter) {
         self.view = view
+        self.doctorsFilter = doctorsFilter
     }
 }
 
@@ -39,9 +40,9 @@ extension SearchResultsViewModel {
             case .success(let response):
                 guard response.code == 200 else { break }
                 if self?.doctorsFilter.page == 1 {
-                    self?.data = response.data
+                    self?.searchResults = response.data
                 } else {
-                    self?.data.items += response.data.items
+                    self?.searchResults.items += response.data.items
                 }
                 self?.reloadTableView(toTop: reloadToTop)
                 guard response.data.items.count == 0 else { break }
@@ -65,8 +66,7 @@ extension SearchResultsViewModel {
 
 // MARK:- ViewModel Protocol
 extension SearchResultsViewModel: SearchResultsViewModelProtocol {
-    func searchForDoctors(with doctorsFilter: DoctorsFilter) {
-        self.doctorsFilter = doctorsFilter
+    func searchForDoctors() {
         getDoctors()
     }
     
@@ -83,7 +83,7 @@ extension SearchResultsViewModel: SearchResultsViewModelProtocol {
     }
     
     func getItemsCount() -> Int {
-        if let count = data?.items.count {
+        if let count = searchResults?.items.count {
             return count
         } else {
             return 0
@@ -91,11 +91,11 @@ extension SearchResultsViewModel: SearchResultsViewModelProtocol {
     }
     
     func getItem(for row: Int) -> Item {
-        return data.items[row]
+        return searchResults.items[row]
     }
     
     func willDisplay(_ row: Int) {
-        if row == self.data.items.count - 1, doctorsFilter.page < data.totalPages {
+        if row == self.searchResults.items.count - 1, doctorsFilter.page < searchResults.totalPages {
             doctorsFilter.page += 1
             getDoctors()
         }

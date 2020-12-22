@@ -35,6 +35,7 @@
 		991B7B6B258681CB00700114 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991B7B6A258681CB00700114 /* Localizable.strings */; };
 		991B7B6D2586877400700114 /* FontsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B7B6C2586877400700114 /* FontsManager.swift */; };
 		991B7B6F2586878300700114 /* StringsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B7B6E2586878300700114 /* StringsManager.swift */; };
+		99245A7C2592366800608FE1 /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99245A7B2592366800608FE1 /* RequestData.swift */; };
 		99343E46258FC274008E069F /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99343E45258FC274008E069F /* SearchResults.swift */; };
 		99343E4825902FFF008E069F /* SearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99343E4725902FFF008E069F /* SearchResultsViewModel.swift */; };
 		99343E4A2590603C008E069F /* DoctorsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99343E492590603C008E069F /* DoctorsFilter.swift */; };
@@ -60,7 +61,7 @@
 		99F395E12589899600ACBD3B /* HomeNurse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F395E02589899600ACBD3B /* HomeNurse.storyboard */; };
 		99F395E425898E0700ACBD3B /* HomeNurseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F395E325898E0700ACBD3B /* HomeNurseView.swift */; };
 		99F49F26258A8F6A0039A280 /* HomeNurseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F49F25258A8F6A0039A280 /* HomeNurseViewModel.swift */; };
-		99F49F28258A955F0039A280 /* CommonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F49F27258A955F0039A280 /* CommonTextField.swift */; };
+		99F49F28258A955F0039A280 /* IDEAHospitalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F49F27258A955F0039A280 /* IDEAHospitalTextField.swift */; };
 		99F90A7025847B4A006E7B91 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 99F90A6F25847B4A006E7B91 /* Colors.txt */; };
 		99F90A7225847F44006E7B91 /* ColorsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F90A7125847F44006E7B91 /* ColorsManager.swift */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,7 @@
 		991B7B6A258681CB00700114 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		991B7B6C2586877400700114 /* FontsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsManager.swift; sourceTree = "<group>"; };
 		991B7B6E2586878300700114 /* StringsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringsManager.swift; sourceTree = "<group>"; };
+		99245A7B2592366800608FE1 /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
 		99343E45258FC274008E069F /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		99343E4725902FFF008E069F /* SearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModel.swift; sourceTree = "<group>"; };
 		99343E492590603C008E069F /* DoctorsFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsFilter.swift; sourceTree = "<group>"; };
@@ -124,7 +126,7 @@
 		99F395E02589899600ACBD3B /* HomeNurse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeNurse.storyboard; sourceTree = "<group>"; };
 		99F395E325898E0700ACBD3B /* HomeNurseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNurseView.swift; sourceTree = "<group>"; };
 		99F49F25258A8F6A0039A280 /* HomeNurseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNurseViewModel.swift; sourceTree = "<group>"; };
-		99F49F27258A955F0039A280 /* CommonTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextField.swift; sourceTree = "<group>"; };
+		99F49F27258A955F0039A280 /* IDEAHospitalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDEAHospitalTextField.swift; sourceTree = "<group>"; };
 		99F90A6F25847B4A006E7B91 /* Colors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
 		99F90A7125847F44006E7B91 /* ColorsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsManager.swift; sourceTree = "<group>"; };
 		C60A97CD5B7753B53A601432 /* Pods-IDEHospital.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDEHospital.debug.xcconfig"; path = "Target Support Files/Pods-IDEHospital/Pods-IDEHospital.debug.xcconfig"; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				0655740D2582829900CFEE4F /* MainCategoriesResponse.swift */,
 				99343E45258FC274008E069F /* SearchResults.swift */,
 				99343E492590603C008E069F /* DoctorsFilter.swift */,
+				99245A7B2592366800608FE1 /* RequestData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -427,7 +430,7 @@
 		993AD119258731E1005311CD /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
-				99F49F27258A955F0039A280 /* CommonTextField.swift */,
+				99F49F27258A955F0039A280 /* IDEAHospitalTextField.swift */,
 				993AD11A25873212005311CD /* PaddedTextField.swift */,
 				99D14841258EF48E009443F2 /* SortTextField.swift */,
 			);
@@ -712,8 +715,9 @@
 				999A71092584122200678453 /* UIViewController+ShowSimpleAlert.swift in Sources */,
 				062FDF85257E6F9B00949D54 /* UIView+ActivityIndicator.swift in Sources */,
 				06BB4E212585397D00D2C4E3 /* UIImageView+CircularImage.swift in Sources */,
-				99F49F28258A955F0039A280 /* CommonTextField.swift in Sources */,
+				99F49F28258A955F0039A280 /* IDEAHospitalTextField.swift in Sources */,
 				0655740E2582829900CFEE4F /* MainCategoriesResponse.swift in Sources */,
+				99245A7C2592366800608FE1 /* RequestData.swift in Sources */,
 				999A5C1B258E434200FC0792 /* SearchResultsVC.swift in Sources */,
 				99F395DF2589894E00ACBD3B /* HomeNurseVC.swift in Sources */,
 			);

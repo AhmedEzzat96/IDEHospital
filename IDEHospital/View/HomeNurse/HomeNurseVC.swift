@@ -22,7 +22,7 @@ class HomeNurseVC: UIViewController {
     @IBOutlet weak var mainView: HomeNurseView!
     
     // MARK:- Properties
-    var viewModel: HomeNurseViewModelProtocol!
+    private var viewModel: HomeNurseViewModelProtocol!
     
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class HomeNurseVC: UIViewController {
     
     // MARK:- Actions
     @IBAction func sendRequestButtonPressed(_ sender: UIButton) {
-        viewModel.requestTapped(with: RequestData(mainView.nameTextField.text, mainView.emailTextField.text, mainView.phoneTextField.text, mainView.detailsTextView.text))
+        viewModel.requestTapped(with: RequestData(name: mainView.nameTextField.text, email: mainView.emailTextField.text, mobile: mainView.phoneTextField.text, message: mainView.detailsTextView.text))
     }
 }
 extension HomeNurseVC {

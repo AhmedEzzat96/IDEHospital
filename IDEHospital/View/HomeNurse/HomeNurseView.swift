@@ -12,9 +12,9 @@ class HomeNurseView: UIView {
 
     // MARK:- Outlets
     @IBOutlet weak var infoLabel: UILabel!
-    @IBOutlet weak var nameTextField: CommonTextField!
-    @IBOutlet weak var emailTextField: CommonTextField!
-    @IBOutlet weak var phoneTextField: CommonTextField!
+    @IBOutlet weak var nameTextField: IDEAHospitalTextField!
+    @IBOutlet weak var emailTextField: IDEAHospitalTextField!
+    @IBOutlet weak var phoneTextField: IDEAHospitalTextField!
     @IBOutlet weak var detailsTextView: UITextView!
     @IBOutlet weak var sendRequestButton: UIButton!
     

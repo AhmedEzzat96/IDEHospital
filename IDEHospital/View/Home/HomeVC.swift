@@ -19,7 +19,7 @@ protocol HomeVCProtocol: class {
 
 class HomeVC: UIViewController {
     //MARK:- Properties
-    var viewModel: HomeViewModelProtocol!
+    private var viewModel: HomeViewModelProtocol!
     
     //MARK:- IBOutlets
     @IBOutlet weak var homeView: HomeView!

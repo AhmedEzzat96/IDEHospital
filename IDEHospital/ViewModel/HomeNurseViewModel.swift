@@ -30,11 +30,15 @@ extension HomeNurseViewModel {
         view?.showLoader()
         APIManager.sendNurseRequest(requestData) { [weak self] (response) in
             switch response {
-            case .success:
-                self?.view?.showAlert(title: L10n.done, message: L10n.yourRequestWasSent) { (action) in
-                    self?.view?.showHomeVC()
+            case .success(let response):
+                print(response.code)
+                if response.success, response.code == 202 {
+                    self?.view?.showAlert(title: L10n.done, message: L10n.yourRequestWasSent) { (action) in
+                        self?.view?.showHomeVC()
+                    }
                 }
             case .failure(let error):
+                print(error)
                 self?.view?.showAlert(title: L10n.sorry, message: error.localizedDescription, handler: nil)
             }
             self?.view?.hideLoader()

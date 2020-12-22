@@ -14,7 +14,6 @@ protocol ServiceSearchVCProtocol {
     func addSelectedItem(_ viewWithTag: Int, _ item: String)
     func clearTextField(tag: Int)
     func doneButtonEnabled(_ enabled: Bool, for tag: Int)
-    func presentHomeNurse()
     func switchToSearchResults(with doctorsFilter: DoctorsFilter)
 }
 
@@ -24,7 +23,7 @@ class ServiceSearchVC: UIViewController {
     @IBOutlet weak var mainView: ServiceSearchView!
     
     // MARK:- Properties
-    var viewModel: ServiceSearchViewModelProtocol!
+    private var viewModel: ServiceSearchViewModelProtocol!
     
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
@@ -125,11 +124,6 @@ extension ServiceSearchVC: ServiceSearchVCProtocol {
             let textField = self.mainView.viewWithTag(tag) as! UITextField
             textField.keyboardToolbar.doneBarButton.isEnabled = enabled
         }
-    }
-    
-    func presentHomeNurse() {
-        let homeNurseVC = HomeNurseVC.create()
-        present(homeNurseVC, animated: false)
     }
     
     func switchToSearchResults(with doctorsFilter: DoctorsFilter) {

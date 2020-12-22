@@ -8,9 +8,6 @@
 
 import Foundation
 
-/// name - email - phone - message
-typealias RequestData = (String?, String?, String?, String?) // This typealias i will reuse it while implementing the Contact Us request
-
 class ValidationManager {
     
     // MARK:- Enum
@@ -39,7 +36,7 @@ class ValidationManager {
     
     // MARK:- Public Methods
     func tryToCathchErrors(with requestData: RequestData) -> (String, String)? {
-        if let name = requestData.0?.trimmed, !name.isEmpty, let email = requestData.1?.trimmed, !email.isEmpty, let phone = requestData.2?.trimmed, !phone.isEmpty, let message = requestData.3, !message.isEmpty, message != L10n.enterDetails {
+        if let name = requestData.name?.trimmed, !name.isEmpty, let email = requestData.email?.trimmed, !email.isEmpty, let phone = requestData.mobile?.trimmed, !phone.isEmpty, let message = requestData.message, !message.isEmpty, message != L10n.enterDetails {
             
             switch isValidName(name) {
             case true: break

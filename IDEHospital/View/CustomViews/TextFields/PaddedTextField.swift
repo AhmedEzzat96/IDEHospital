@@ -27,8 +27,8 @@ class PaddedTextField: UITextField {
         self.leftView = leftPadding
         
         guard self.tag != 5 else { return }
+        tintColor = .clear
         let rightIcon = UIImageView(image: Asset.arrow.image)
-        rightIcon.frame.size = CGSize(width: 20, height: 11.4)
         self.rightViewMode = .always
         self.rightView = rightIcon
     }

@@ -16,11 +16,12 @@ enum APIRouter: URLRequestConvertible{
     case getCategoriesData(_ CategoriesID: Int)
     case mainCategories
     case nurseRequest
+    case searchForDoctors(_ doctorsFilter: DoctorsFilter)
     
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self{
-        case .getCategoriesData, .mainCategories:
+        case .getCategoriesData, .mainCategories, .searchForDoctors:
             return .get
         case .nurseRequest:
             return .post
@@ -30,6 +31,8 @@ enum APIRouter: URLRequestConvertible{
     // MARK: - Parameters
     private var parameters: Parameters? {
         switch self {
+        case .searchForDoctors(let doctorsFilter):
+            return doctorsFilter.parameters()
         default:
             return nil
         }
@@ -45,6 +48,8 @@ enum APIRouter: URLRequestConvertible{
             return URLs.mainCategories
         case .nurseRequest:
             return URLs.nurseRequset
+        case .searchForDoctors(let doctorsFilter):
+            return URLs.mainCategories + "/\(doctorsFilter.categoryId!)/doctors"
         }
     }
     
@@ -74,8 +79,8 @@ enum APIRouter: URLRequestConvertible{
         // Encoding
         let encoding: ParameterEncoding = {
             switch method {
-            case .get :
-                return JSONEncoding.default
+            case .get:
+                return URLEncoding.default
             default:
                 return JSONEncoding.default
             }

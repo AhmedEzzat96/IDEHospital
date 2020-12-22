@@ -31,7 +31,7 @@ extension HomeNurseViewModel {
         APIManager.sendNurseRequest(requestData) { [weak self] (response) in
             switch response {
             case .success:
-                self?.view?.showAlert(title: "Done", message: "Your request was sent") { (action) in
+                self?.view?.showAlert(title: L10n.done, message: L10n.yourRequestWasSent) { (action) in
                     self?.view?.showHomeVC()
                 }
             case .failure(let error):
@@ -42,6 +42,7 @@ extension HomeNurseViewModel {
     }
 }
 
+// MARK:- ViewModel Protocol
 extension HomeNurseViewModel: HomeNurseViewModelProtocol {
     func textViewShouldEndEditing(text: String) {
         if text.isEmpty {

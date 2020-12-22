@@ -12,9 +12,10 @@ protocol ServiceSearchVCProtocol {
     func showAlert(title: String, message: String)
     func showItems()
     func addSelectedItem(_ viewWithTag: Int, _ item: String)
-    func clearTextField(with tag: Int)
+    func clearTextField(tag: Int)
     func doneButtonEnabled(_ enabled: Bool, for tag: Int)
     func presentHomeNurse()
+    func switchToSearchResults(with doctorsFilter: DoctorsFilter)
 }
 
 class ServiceSearchVC: UIViewController {
@@ -44,9 +45,9 @@ class ServiceSearchVC: UIViewController {
         return serviceSearchVC
     }
     
+    // MARK:- IBAction Methods
     @IBAction func findDoctorButtonPressed(_ sender: UIButton) {
-        let homeNurseVC = HomeNurseVC.create()
-        navigationController?.pushViewController(homeNurseVC, animated: true)
+        viewModel.findDoctorTapped(doctorName: mainView.doctorNameTextField.text)
     }
 }
 
@@ -112,7 +113,7 @@ extension ServiceSearchVC: ServiceSearchVCProtocol {
         }
     }
     
-    func clearTextField(with tag: Int) {
+    func clearTextField(tag: Int) {
         DispatchQueue.main.async {
             let textField = self.mainView.viewWithTag(tag) as! UITextField
             textField.text = ""
@@ -129,5 +130,10 @@ extension ServiceSearchVC: ServiceSearchVCProtocol {
     func presentHomeNurse() {
         let homeNurseVC = HomeNurseVC.create()
         present(homeNurseVC, animated: false)
+    }
+    
+    func switchToSearchResults(with doctorsFilter: DoctorsFilter) {
+        let searchResultsVC = SearchResultsVC.create(with: doctorsFilter)
+        navigationController?.pushViewController(searchResultsVC, animated: true)
     }
 }

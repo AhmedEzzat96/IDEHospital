@@ -31,21 +31,23 @@ class HomeNurseView: UIView {
 // MARK:- Private Methods
 extension HomeNurseView {
     private func setupInfoLabel() {
-        infoLabel.text = "If you would like further information about how we can help you and your health it would be great to hear from you"
-        infoLabel.font = UIFont(font: FontFamily.PTSans.regular, size: 12)
+        infoLabel.text = L10n.info
+        infoLabel.font = FontFamily.PTSans.regular.font(size: 12)
         infoLabel.textAlignment = .center
         infoLabel.textColor = ColorName.white.color
         infoLabel.numberOfLines = 2
     }
     
     private func setupTextFields() {
-        nameTextField.setup(leftImage: Asset.name.image, placeholder: "Your Name")
-        emailTextField.setup(leftImage: Asset.email.image, placeholder: "Your Email")
-        phoneTextField.setup(leftImage: Asset.phone.image, placeholder: "Mobile Number")
+        nameTextField.setup(leftImage: Asset.name.image, placeholder: L10n.yourName)
+        emailTextField.setup(leftImage: Asset.email.image, placeholder: L10n.yourEmail)
+        emailTextField.keyboardType = .emailAddress
+        phoneTextField.setup(leftImage: Asset.phone.image, placeholder: L10n.mobileNumber)
+        phoneTextField.keyboardType = .phonePad
     }
     
     private func setupDetailsTextView() {
-        detailsTextView.attributedText = NSAttributedString(string: "Enter Details", attributes: [NSAttributedString.Key.foregroundColor: ColorName.white.color, NSAttributedString.Key.font: UIFont(font: FontFamily.PTSans.bold, size: 15)!])
+        detailsTextView.attributedText = NSAttributedString(string: L10n.enterDetails, attributes: [NSAttributedString.Key.foregroundColor: ColorName.white.color, NSAttributedString.Key.font: FontFamily.PTSans.bold.font(size: 15)])
         infoLabel.adjustsFontSizeToFitWidth = true
         detailsTextView.backgroundColor = .clear
         detailsTextView.layer.borderWidth = 1
@@ -54,7 +56,7 @@ extension HomeNurseView {
     }
     
     private func setupButton() {
-        sendRequestButton.setAttributedTitle(NSAttributedString(string: "Send Request", attributes: [NSAttributedString.Key.font: UIFont(font: FontFamily.PTSans.bold, size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
+        sendRequestButton.setAttributedTitle(NSAttributedString(string: L10n.sendRequest, attributes: [NSAttributedString.Key.font: FontFamily.PTSans.bold.font(size: 20), NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
         sendRequestButton.backgroundColor = ColorName.darkRoyalBlue.color
         sendRequestButton.setupCornerRadiuss()
     }

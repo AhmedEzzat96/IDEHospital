@@ -8,7 +8,8 @@
 
 import Foundation
 
-typealias RequestData = (String?, String?, String?, String?)
+/// name - email - phone - message
+typealias RequestData = (String?, String?, String?, String?) // This typealias i will reuse it while implementing the Contact Us request
 
 class ValidationManager {
     
@@ -19,13 +20,13 @@ class ValidationManager {
         var error: (title: String, message: String) {
             switch self {
                 case .name:
-                return ("Invalid Name", "Name should contain letters only, at least 3 characters and and at most 18 characters")
+                    return (L10n.invalidName, L10n.nameRequirements)
             case .email:
-                return ("Invalid Email", "Email should be : example@mail.com")
+                return (L10n.invalidEmail, L10n.emailRequiremtnts)
             case .phone:
-                return ("Invalid Phone Number", "Please enter valid phone number ex : 010xxxxxxxx")
+                return (L10n.invalidPhoneNumber, L10n.phoneRequirements)
             case .missedData:
-                return ("Missed data", "Please enter all textfields above")
+                return (L10n.missedData, L10n.dataRequirements)
             }
         }
     }
@@ -38,7 +39,7 @@ class ValidationManager {
     
     // MARK:- Public Methods
     func tryToCathchErrors(with requestData: RequestData) -> (String, String)? {
-        if let name = requestData.0?.trimmed, !name.isEmpty, let email = requestData.1?.trimmed, !email.isEmpty, let phone = requestData.2?.trimmed, !phone.isEmpty, let message = requestData.3, !message.isEmpty, message != "Enter Details" {
+        if let name = requestData.0?.trimmed, !name.isEmpty, let email = requestData.1?.trimmed, !email.isEmpty, let phone = requestData.2?.trimmed, !phone.isEmpty, let message = requestData.3, !message.isEmpty, message != L10n.enterDetails {
             
             switch isValidName(name) {
             case true: break

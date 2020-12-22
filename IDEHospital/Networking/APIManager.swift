@@ -22,12 +22,13 @@ class APIManager {
         }
     }
     
+    // This request i will refactor it while making the Contact Us request
     class func sendNurseRequest(_ requestData: RequestData, completion: @escaping (Result<Bool, Error>) -> Void) {
         AF.upload(multipartFormData: { (multiPartFormData) in
-            multiPartFormData.append(Data(requestData.0!.utf8), withName: "name")
-            multiPartFormData.append(Data(requestData.1!.utf8), withName: "email")
-            multiPartFormData.append(Data(requestData.2!.utf8), withName: "mobile")
-            multiPartFormData.append(Data(requestData.3!.utf8), withName: "message")
+            multiPartFormData.append(Data(requestData.0!.utf8), withName: ParameterKeys.name)
+            multiPartFormData.append(Data(requestData.1!.utf8), withName: ParameterKeys.email)
+            multiPartFormData.append(Data(requestData.2!.utf8), withName: ParameterKeys.mobile)
+            multiPartFormData.append(Data(requestData.3!.utf8), withName: ParameterKeys.message)
         }, with: APIRouter.nurseRequest).response { response in
             switch response.result {
             case .success:
@@ -35,6 +36,12 @@ class APIManager {
             case .failure(let error):
                 completion(.failure(error))
             }
+        }
+    }
+    
+    class func searchForDoctors(with doctorsFilter: DoctorsFilter, completion: @escaping (Result<SearchResponse, Error>) -> Void) {
+        request(APIRouter.searchForDoctors(doctorsFilter)) { (response) in
+            completion(response)
         }
     }
 }

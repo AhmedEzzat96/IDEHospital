@@ -47,7 +47,7 @@ class HomeNurseVC: UIViewController {
 extension HomeNurseVC {
 // MARK:- Private Methods
     private func setupNavigationItems() {
-        title = "HOME NURSE"
+        title = L10n.homeNurse
         let backItem = UIBarButtonItem(image: Asset.back.image, style: .done, target: self, action: #selector(popUp))
         backItem.tintColor = ColorName.steelGrey.color
         let leftPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)

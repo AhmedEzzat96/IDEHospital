@@ -25,20 +25,24 @@ class CommonTextField: UITextField {
         return bounds.inset(by: padding)
     }
     
-    // MARK:- Public Methods
-    func setup(leftImage: UIImage, placeholder: String) {
-        self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: ColorName.white.color, NSAttributedString.Key.font: UIFont(font: FontFamily.PTSans.bold, size: 15)!])
+    override func awakeFromNib() {
+        super.awakeFromNib()
         self.textColor = ColorName.white.color
-        self.font = UIFont(font: FontFamily.PTSans.bold, size: 15)
+        self.font = FontFamily.PTSans.bold.font(size: 15)
         self.backgroundColor = .clear
-        let leftIcon = UIImageView(image: leftImage)
         self.leftViewMode = .always
-        self.leftView = leftIcon
         self.borderStyle = .none
         self.layoutIfNeeded()
         let bottomLine = CALayer()
         bottomLine.frame = CGRect(x: 0, y: frame.height - 1, width: frame.width, height: 2)
         bottomLine.backgroundColor = ColorName.white.color.cgColor
         self.layer.addSublayer(bottomLine)
+    }
+    
+    // MARK:- Public Methods
+    func setup(leftImage: UIImage, placeholder: String) {
+        self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: ColorName.white.color, NSAttributedString.Key.font: FontFamily.PTSans.bold.font(size: 15)])
+        let leftIcon = UIImageView(image: leftImage)
+        self.leftView = leftIcon
     }
 }

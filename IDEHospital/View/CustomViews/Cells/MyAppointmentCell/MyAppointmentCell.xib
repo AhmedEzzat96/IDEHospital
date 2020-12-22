@@ -32,8 +32,8 @@
                             <constraint firstAttribute="height" constant="20" id="X3o-mq-fGy"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9s-MK-CVv">
-                        <rect key="frame" x="116" y="21" width="0.0" height="0.0"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p9s-MK-CVv">
+                        <rect key="frame" x="116" y="21" width="349.5" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -117,6 +117,7 @@
                     <constraint firstItem="kwc-ic-74v" firstAttribute="leading" secondItem="IEX-XY-cFZ" secondAttribute="leading" id="nyE-ZB-tAi"/>
                     <constraint firstItem="kUf-KM-goz" firstAttribute="width" secondItem="0B9-od-jpn" secondAttribute="width" multiplier="33/375" id="rca-sW-We4"/>
                     <constraint firstItem="6xn-qX-jOz" firstAttribute="top" secondItem="igw-Ac-IFU" secondAttribute="bottom" constant="8.5" id="s6b-rN-Qea"/>
+                    <constraint firstItem="kUf-KM-goz" firstAttribute="leading" secondItem="p9s-MK-CVv" secondAttribute="trailing" constant="15" id="tpF-m5-9xb"/>
                     <constraint firstItem="igw-Ac-IFU" firstAttribute="top" secondItem="ugU-Ta-GiW" secondAttribute="bottom" constant="5" id="ug0-zH-ppN"/>
                     <constraint firstItem="p9s-MK-CVv" firstAttribute="leading" secondItem="MDo-oq-eRP" secondAttribute="trailing" constant="15" id="vsp-mG-BZB"/>
                     <constraint firstItem="igw-Ac-IFU" firstAttribute="leading" secondItem="ugU-Ta-GiW" secondAttribute="leading" id="wWL-5d-5de"/>

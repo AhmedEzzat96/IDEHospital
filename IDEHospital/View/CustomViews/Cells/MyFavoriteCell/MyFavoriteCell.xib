@@ -35,8 +35,8 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="120 review"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr. Mohamed Yehia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qj-5O-3bo">
-                        <rect key="frame" x="117" y="17" width="147.5" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr. Mohamed Yehia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5Qj-5O-3bo">
+                        <rect key="frame" x="117" y="17" width="362" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -133,6 +133,7 @@
                     <constraint firstItem="fjb-UU-BmC" firstAttribute="leading" secondItem="F6u-Ii-qac" secondAttribute="leading" id="Q66-w1-hxI"/>
                     <constraint firstItem="pwk-Tp-7xF" firstAttribute="top" secondItem="5Qj-5O-3bo" secondAttribute="bottom" constant="24" id="RIH-va-Xgm"/>
                     <constraint firstItem="pwk-Tp-7xF" firstAttribute="leading" secondItem="5Qj-5O-3bo" secondAttribute="leading" id="RMx-Iw-xEb"/>
+                    <constraint firstItem="QYO-KI-NbG" firstAttribute="leading" secondItem="5Qj-5O-3bo" secondAttribute="trailing" constant="15" id="STn-0r-hcm"/>
                     <constraint firstItem="5Qj-5O-3bo" firstAttribute="leading" secondItem="dXg-j0-5xV" secondAttribute="trailing" constant="15" id="Tdx-mp-uw6"/>
                     <constraint firstItem="lCx-ET-Kuh" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="25/251.5" id="W09-Cc-Nle"/>
                     <constraint firstItem="F6u-Ii-qac" firstAttribute="leading" secondItem="O36-E7-3Gb" secondAttribute="leading" id="W0Y-rm-asR"/>

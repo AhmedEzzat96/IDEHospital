@@ -34,7 +34,7 @@ class MyAppointmentCell: UITableViewCell {
     //MARK:- Public Methods
     func configureCell(_ item: MyAppointmentItem) {
         self.doctorNameLabel.text = item.doctor.name
-        self.ratingView.text = "\(item.doctor.reviews_count) Review"
+        self.ratingView.text = "\(item.doctor.reviews_count) \(L10n.review)"
         self.ratingView.rating = Double(item.doctor.rating)
         self.bioLabel.text = item.doctor.bio
         self.dateLabel.text = viewModel.createDate(timestamp: item.appointment)

@@ -32,7 +32,7 @@ extension MyAppointmentCellViewModel: MyAppointmentCellViewModelProtocol {
     }
     
     func createDate(timestamp: Int) -> String {
-        var strDate = "undefined"
+        var strDate = ""
         
         
         let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
@@ -40,14 +40,14 @@ extension MyAppointmentCellViewModel: MyAppointmentCellViewModelProtocol {
         let timezone = TimeZone.current.abbreviation() ?? "CET"  // get current TimeZone abbreviation or set to CET
         dateFormatter.timeZone = TimeZone(abbreviation: timezone) //Set timezone that you want
         dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "EEEE,d MMMM yyyy" //Specify your format that you want
+        dateFormatter.dateFormat = L10n.dateFormat //Specify your format that you want
         strDate = dateFormatter.string(from: date)
         
         return strDate
     }
     
     func createTime(timestamp: Int) -> String {
-        var strDate = "undefined"
+        var strDate = ""
         
         
         let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
@@ -55,9 +55,9 @@ extension MyAppointmentCellViewModel: MyAppointmentCellViewModelProtocol {
         let timezone = TimeZone.current.abbreviation() ?? "CET"  // get current TimeZone abbreviation or set to CET
         dateFormatter.timeZone = TimeZone(abbreviation: timezone) //Set timezone that you want
         dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "hh:mm a" //Specify your format that you want
-        dateFormatter.amSymbol = "am"
-        dateFormatter.pmSymbol = "pm"
+        dateFormatter.dateFormat = L10n.timeFormat //Specify your format that you want
+        dateFormatter.amSymbol = L10n.am
+        dateFormatter.pmSymbol = L10n.pm
         strDate = dateFormatter.string(from: date)
         
         return strDate

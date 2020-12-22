@@ -49,9 +49,9 @@ class MyFavoriteCell: UITableViewCell {
         self.specialtyLabel.text = item.specialty
         self.secondBioLabel.text = item.second_bio
         self.adressLabel.text = item.address
-        self.waitingTimeLabel.text = "Waiting Time : \(item.waiting_time) minutes"
-        self.feesLabel.text = "Examination Fees : \(item.fees) LE"
-        self.ratingView.text = "\(item.reviews_count) Review"
+        self.waitingTimeLabel.text = "\(L10n.waitingTime)\(item.waiting_time) \(L10n.mins)"
+        self.feesLabel.text = "\(L10n.examinationFee)\(item.fees) \(L10n.le)"
+        self.ratingView.text = "\(item.reviews_count) \(L10n.review)"
         self.ratingView.rating = Double(item.rating)
         viewModel.downloadImage(with: item) { (image) in
             self.doctorImgView.image = image

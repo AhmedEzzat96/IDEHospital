@@ -72,7 +72,7 @@ extension MyFavoritesVC: MyFavoritesVCProtocol {
     }
     
     func showAlert(title: String, message: String, actions: [((UIAlertAction) -> Void)?]?) {
-        self.openAlert(title: title, message: message, alertStyle: .alert, actionTitles: ["No", "Yes"], actionStyles: [.cancel, .destructive], actions: actions)
+        self.openAlert(title: title, message: message, alertStyle: .alert, actionTitles: [L10n.no, L10n.yes], actionStyles: [.cancel, .destructive], actions: actions)
     }
 }
 

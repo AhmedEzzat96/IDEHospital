@@ -12,20 +12,21 @@ import Foundation
 struct Storyboards {
     static let serviceSearch = "ServiceSearch"
     static let home = "Home"
-    
-    
     static let homeNurse = "HomeNurse"
     static let searchResults = "SearchResults"
+    static let myFavorites = "MyFavorites"
+    static let myAppointments = "MyAppointments"
 }
 
 // ViewControllers
 struct ViewControllers {
     static let serviceSearchVC = "ServiceSearchVC"
     static let homeVC = "HomeVC"
-    
-    
     static let homeNurseVC = "HomeNurseVC"
     static let searchResultsVC = "SearchResultsVC"
+    static let myFavoritesVC = "MyFavoritesVC"
+    static let myAppointmentsVC = "MyAppointmentsVC"
+    
 }
 
 // UserDefaultsKeys
@@ -38,12 +39,15 @@ struct URLs {
     static let base = "http://ide-hospital.ideaeg.co/api"
     static let mainCategories = "/main_categories"
     static let nurseRequset = "/nursing_requests"
+    static let favorites = "/favorites/doctors"
+    static let appointments = "/user_appointments"
 }
 
 // HeaderKeys
 struct HeaderKeys {
     static let accept = "Content-Type"
     static let acceptLanguage = "Accept-Language"
+    static let authorization = "Authorization"
 }
 
 // HeaderValues
@@ -71,4 +75,6 @@ struct ParameterKeys {
 struct Cells {
     static let categoryCell = "CategoryCell"
     static let searchResultsCell = "SearchResultsCell"
+    static let myFavoriteCell = "MyFavoriteCell"
+    static let myAppointmentCell = "MyAppointmentCell"
 }

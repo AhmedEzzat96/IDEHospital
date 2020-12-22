@@ -57,13 +57,13 @@ extension MainTabBar {
     }
     
     private func createFavoriteVC() -> UIViewController {
-        let favoriteVC = UIViewController()
+        let favoriteVC = MyFavoritesVC.create()
         favoriteVC.tabBarItem = UITabBarItem(title: L10n.favorite, image: Asset.heart.image, tag: 2)
         return favoriteVC
     }
     
     private func createAppointmentsVC() -> UIViewController {
-        let appointmentsVC = UIViewController()
+        let appointmentsVC = MyAppointmentsVC.create()
         appointmentsVC.tabBarItem = UITabBarItem(title: L10n.schedule, image: Asset.calendar.image, tag: 3)
         return appointmentsVC
     }

@@ -10,6 +10,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// am
+  internal static let am = L10n.tr("Localizable", "am")
   /// Book Now
   internal static let bookNow = L10n.tr("Localizable", "bookNow")
   /// Choose City first
@@ -22,6 +24,12 @@ internal enum L10n {
   internal static let company = L10n.tr("Localizable", "company")
   /// Please enter all textfields above
   internal static let dataRequirements = L10n.tr("Localizable", "dataRequirements")
+  /// EEEE,d MMMM yyyy
+  internal static let dateFormat = L10n.tr("Localizable", "dateFormat")
+  /// Are You Sure Want to Delete this Appointment?
+  internal static let deleteAppointment = L10n.tr("Localizable", "deleteAppointment")
+  /// Are You Sure Want to Delete this Favorite?
+  internal static let deleteFavorite = L10n.tr("Localizable", "deleteFavorite")
   /// Dismiss
   internal static let dismiss = L10n.tr("Localizable", "dismiss")
   /// Doctor Name
@@ -34,8 +42,12 @@ internal enum L10n {
   internal static let en = L10n.tr("Localizable", "en")
   /// Enter Details
   internal static let enterDetails = L10n.tr("Localizable", "enterDetails")
+  /// Examination Fees : 
+  internal static let examinationFee = L10n.tr("Localizable", "examinationFee")
   /// Favorite
   internal static let favorite = L10n.tr("Localizable", "favorite")
+  /// this feature will be available soon
+  internal static let feature = L10n.tr("Localizable", "feature")
   /// Fees
   internal static let fees = L10n.tr("Localizable", "fees")
   /// Find a doctor
@@ -53,7 +65,9 @@ internal enum L10n {
   /// Invalid Phone Number
   internal static let invalidPhoneNumber = L10n.tr("Localizable", "invalidPhoneNumber")
   /// LE
-  internal static let le = L10n.tr("Localizable", "LE")
+  internal static let le = L10n.tr("Localizable", "le")
+  /// minutes
+  internal static let mins = L10n.tr("Localizable", "mins")
   /// Minutes
   internal static let minutes = L10n.tr("Localizable", "minutes")
   /// Missed Data
@@ -66,12 +80,22 @@ internal enum L10n {
   internal static let myFavorites = L10n.tr("Localizable", "myFavorites")
   /// Name should contain letters only, at least 3 characters and and at most 18 characters
   internal static let nameRequirements = L10n.tr("Localizable", "nameRequirements")
+  /// No
+  internal static let no = L10n.tr("Localizable", "no")
+  /// No Appointments Found!
+  internal static let noAppointmentFound = L10n.tr("Localizable", "noAppointmentFound")
   /// No Doctors Found
   internal static let noDoctorsFound = L10n.tr("Localizable", "noDoctorsFound")
+  /// No Favorites Found!
+  internal static let noFavoriteFound = L10n.tr("Localizable", "noFavoriteFound")
   /// Please enter valid phone number ex : 010xxxxxxxx
   internal static let phoneRequirements = L10n.tr("Localizable", "phoneRequirements")
+  /// pm
+  internal static let pm = L10n.tr("Localizable", "pm")
   /// Choose Region
   internal static let region = L10n.tr("Localizable", "region")
+  /// Review
+  internal static let review = L10n.tr("Localizable", "review")
   /// Reviews
   internal static let reviews = L10n.tr("Localizable", "reviews")
   /// Schedule
@@ -92,8 +116,14 @@ internal enum L10n {
   internal static let sortBy = L10n.tr("Localizable", "sortBy")
   /// Choose Specialist
   internal static let specialist = L10n.tr("Localizable", "specialist")
-  /// Waiting Time
+  /// hh:mm a
+  internal static let timeFormat = L10n.tr("Localizable", "timeFormat")
+  /// View Profile
+  internal static let viewProfile = L10n.tr("Localizable", "viewProfile")
+  /// Waiting Time : 
   internal static let waitingTime = L10n.tr("Localizable", "waitingTime")
+  /// Yes
+  internal static let yes = L10n.tr("Localizable", "yes")
   /// Your Email
   internal static let yourEmail = L10n.tr("Localizable", "yourEmail")
   /// Your Name

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My FavoritesVC-->
+        <scene sceneID="sym-o5-NSY">
+            <objects>
+                <viewController storyboardIdentifier="MyFavoritesVC" id="Dg5-KO-dhn" customClass="MyFavoritesVC" customModule="IDEHospital" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="MyFavoritesView" id="Q52-YO-acV" customClass="MyFavoritesView" customModule="IDEHospital" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IpU-S9-ps4">
+                                <rect key="frame" x="37.5" y="323" width="300" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LUz-VX-vc0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pNy-Zl-dAY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LUz-VX-vc0" firstAttribute="leading" secondItem="pNy-Zl-dAY" secondAttribute="leading" id="AIw-Qy-iwD"/>
+                            <constraint firstItem="pNy-Zl-dAY" firstAttribute="trailing" secondItem="LUz-VX-vc0" secondAttribute="trailing" id="D43-fU-UGi"/>
+                            <constraint firstItem="IpU-S9-ps4" firstAttribute="centerX" secondItem="pNy-Zl-dAY" secondAttribute="centerX" id="Eee-yO-Uug"/>
+                            <constraint firstItem="LUz-VX-vc0" firstAttribute="top" secondItem="pNy-Zl-dAY" secondAttribute="top" id="Fm7-DD-FVo"/>
+                            <constraint firstItem="IpU-S9-ps4" firstAttribute="width" secondItem="Q52-YO-acV" secondAttribute="width" multiplier="0.8" id="VZw-2Z-asH"/>
+                            <constraint firstItem="pNy-Zl-dAY" firstAttribute="bottom" secondItem="LUz-VX-vc0" secondAttribute="bottom" id="rQg-mO-3p6"/>
+                            <constraint firstItem="IpU-S9-ps4" firstAttribute="centerY" secondItem="pNy-Zl-dAY" secondAttribute="centerY" id="vlk-MR-hg6"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="noFavoriteLabel" destination="IpU-S9-ps4" id="dqH-gh-SSg"/>
+                            <outlet property="tableView" destination="LUz-VX-vc0" id="Hga-ju-HWl"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="myFavoritesView" destination="Q52-YO-acV" id="N3s-R1-yu6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gVM-k1-R3S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1814" y="-892"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

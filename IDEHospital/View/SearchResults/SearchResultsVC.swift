@@ -119,6 +119,7 @@ extension SearchResultsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = mainView.tableView.dequeueReusableCell(withIdentifier: Cells.searchResultsCell, for: indexPath) as! SearchResultsCell
+        cell.delegate = self
         cell.configure(with: viewModel.getItem(for: indexPath.row))
         return cell
     }
@@ -176,5 +177,18 @@ extension SearchResultsVC: SearchResultsVCProtocol {
         DispatchQueue.main.async {
             self.mainView.showNoDoctorsFoundLabel()
         }
+    }
+}
+
+//MARK:- Delegate Methods
+extension SearchResultsVC: CellButtonDelegate {
+    func bookNowAlert(customTableViewCell: UITableViewCell) {
+        guard let indexPath = mainView.tableView.indexPath(for: customTableViewCell) else {return}
+        viewModel.bookNowAlert(with: indexPath.row)
+    }
+    
+    func addFavorite(customTableViewCell: UITableViewCell) {
+        guard let indexPath = mainView.tableView.indexPath(for: customTableViewCell) else {return}
+        viewModel.addRemoveFavorite(with: indexPath.row)
     }
 }

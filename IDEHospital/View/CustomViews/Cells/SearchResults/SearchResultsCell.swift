@@ -24,6 +24,9 @@ class SearchResultsCell: UITableViewCell {
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var bookNowButton: UIButton!
     
+    //MARK:- Properties
+    weak var delegate: CellButtonDelegate?
+    
     // MARK:- LifeCycle Methods
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,7 +38,7 @@ class SearchResultsCell: UITableViewCell {
         favoriteButton.tintColor = .none
     }
     
-    func configure(with item: Item) {
+    func configure(with item: DoctorResultsResponse) {
         doctorImage.sd_setImage(with: URL(string: item.image), completed: nil)
         doctorNameLabel.text = item.name
         ratingView.rating = Double(item.rating)
@@ -50,6 +53,15 @@ class SearchResultsCell: UITableViewCell {
         } else {
             favoriteButton.setImage(Asset.emptyHeart.image, for: .normal)
         }
+    }
+    
+    //MARK:- IBActions
+    @IBAction func bookNowBtnPressed(_ sender: UIButton) {
+        self.delegate?.bookNowAlert(customTableViewCell: self)
+    }
+    
+    @IBAction func addFavoriteBtnPressed(_ sender: UIButton) {
+        self.delegate?.addFavorite(customTableViewCell: self)
     }
 }
 

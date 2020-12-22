@@ -13,8 +13,10 @@ protocol SearchResultsViewModelProtocol {
     func getSortTypes() -> [String]
     func sortTypeSelected(row: Int)
     func getItemsCount() -> Int
-    func getItem(for row: Int) -> Item
+    func getItem(for row: Int) -> DoctorResultsResponse
     func willDisplay(_ row: Int)
+    func bookNowAlert(with row: Int)
+    func addRemoveFavorite(with row: Int)
 }
 
 class SearchResultsViewModel {
@@ -90,7 +92,7 @@ extension SearchResultsViewModel: SearchResultsViewModelProtocol {
         }
     }
     
-    func getItem(for row: Int) -> Item {
+    func getItem(for row: Int) -> DoctorResultsResponse {
         return searchResults.items[row]
     }
     
@@ -98,6 +100,19 @@ extension SearchResultsViewModel: SearchResultsViewModelProtocol {
         if row == self.searchResults.items.count - 1, doctorsFilter.page < searchResults.totalPages {
             doctorsFilter.page += 1
             getDoctors()
+        }
+    }
+    
+    func bookNowAlert(with row: Int) {
+        view?.showAlert(title: L10n.sorry, message: L10n.feature)
+        print(searchResults.items[row].id)
+    }
+    
+    func addRemoveFavorite(with row: Int) {
+        APIManager.addRemoveFavorite(with: searchResults.items[row].id) { [weak self] (success) in
+            if success {
+                self?.getDoctors()
+            }
         }
     }
 }

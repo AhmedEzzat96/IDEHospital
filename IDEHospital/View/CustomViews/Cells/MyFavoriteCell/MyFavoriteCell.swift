@@ -13,6 +13,8 @@ protocol CellButtonDelegate: class {
     func showDeleteAlert(customTableViewCell: UITableViewCell)
     func viewProfileAlert(customTableViewCell: UITableViewCell)
     func viewOnMap(customTableViewCell: UITableViewCell)
+    func bookNowAlert(customTableViewCell: UITableViewCell)
+    func addFavorite(customTableViewCell: UITableViewCell)
 }
 
 class MyFavoriteCell: UITableViewCell {
@@ -116,11 +118,23 @@ extension MyFavoriteCell {
 }
 
 extension CellButtonDelegate {
+    func showDeleteAlert(customTableViewCell: UITableViewCell){
+        
+    }
+    
     func viewProfileAlert(customTableViewCell: UITableViewCell) {
         
     }
     
     func viewOnMap(customTableViewCell: UITableViewCell){
 
+    }
+    
+    func bookNowAlert(customTableViewCell: UITableViewCell) {
+        
+    }
+    
+    func addFavorite(customTableViewCell: UITableViewCell) {
+        
     }
 }

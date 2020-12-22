@@ -16,7 +16,7 @@ struct SearchResponse: Codable {
 
 struct SearchResults: Codable {
     let totalPages: Int
-    var items: [Item]
+    var items: [DoctorResultsResponse]
     
     enum CodingKeys: String, CodingKey {
         case items
@@ -25,7 +25,7 @@ struct SearchResults: Codable {
 }
 
 
-struct Item: Codable {
+struct DoctorResultsResponse: Codable {
     let id: Int
     let rating: Int
     let reviewsCount: Int

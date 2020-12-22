@@ -12,7 +12,7 @@ import SDWebImage
 protocol MyFavoritesViewModelProtocol {
     func getFavoriteItemsCount() -> Int
     func loadData()
-    func getItems() -> [MyFavoriteItem]
+    func getItem(at index: Int) -> MyFavoriteItem
     func showDeleteAlert(with doctorID: Int)
     func willDisplayCell(for row: Int)
 }
@@ -55,8 +55,8 @@ extension MyFavoritesViewModel: MyFavoritesViewModelProtocol {
         return favoriteItems.count
     }
     
-    func getItems() -> [MyFavoriteItem] {
-        return self.favoriteItems
+    func getItem(at index: Int) -> MyFavoriteItem {
+        return self.favoriteItems[index]
     }
     
     func showDeleteAlert(with row: Int) {

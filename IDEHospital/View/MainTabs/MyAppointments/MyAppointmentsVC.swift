@@ -60,7 +60,7 @@ extension MyAppointmentsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = myAppointmentsView.tableView.dequeueReusableCell(withIdentifier: Cells.myAppointmentCell, for: indexPath) as? MyAppointmentCell else { return UITableViewCell() }
-        cell.configureCell(viewModel.getItems()[indexPath.row])
+        cell.configureCell(viewModel.getItem(at: indexPath.row))
         cell.delegate = self
         return cell
     }

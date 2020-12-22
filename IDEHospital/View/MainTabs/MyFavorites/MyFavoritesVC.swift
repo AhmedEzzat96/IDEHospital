@@ -85,7 +85,7 @@ extension MyFavoritesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = myFavoritesView.tableView.dequeueReusableCell(withIdentifier: Cells.myFavoriteCell, for: indexPath) as? MyFavoriteCell else { return UITableViewCell() }
         cell.delegate = self
-        cell.configureCell(viewModel.getItems()[indexPath.row])
+        cell.configureCell(viewModel.getItem(at: indexPath.row))
         return cell
     }
     

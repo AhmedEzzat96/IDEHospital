@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 protocol MyAppointmentsViewModelProtocol {
     func getFavoriteItemsCount() -> Int
-    func getItems() -> [MyAppointmentItem]
+    func getItem(at index: Int) -> MyAppointmentItem
     func willDisplayCell(for row: Int)
     func loadData()
     func showDeleteAlert(with row: Int)
@@ -82,8 +82,8 @@ extension MyAppointmentsViewModel: MyAppointmentsViewModelProtocol {
         return appointmentItems.count
     }
     
-    func getItems() -> [MyAppointmentItem] {
-        return self.appointmentItems
+    func getItem(at index: Int) -> MyAppointmentItem {
+        return self.appointmentItems[index]
     }
     
     func willDisplayCell(for row: Int) {

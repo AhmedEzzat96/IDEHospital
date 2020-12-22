@@ -21,7 +21,7 @@ class MyFavoritesVC: UIViewController {
     @IBOutlet weak var myFavoritesView: MyFavoritesView!
     
     //MARK:- Properties
-    var viewModel: MyFavoritesViewModelProtocol!
+    private var viewModel: MyFavoritesViewModelProtocol!
 
     //MARK:- Lifecycle Methods
     override func viewDidLoad() {

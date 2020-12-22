@@ -21,7 +21,7 @@ class MyAppointmentCell: UITableViewCell {
     @IBOutlet weak var deleteBtn: UIButton!
     
     //MARK:- Properties
-    var viewModel: MyAppointmentCellViewModelProtocol!
+    private var viewModel: MyAppointmentCellViewModelProtocol!
     weak var delegate: CellButtonDelegate?
     
     //MARK:- Lifecycle Methods

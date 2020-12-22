@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My AppointmentsVC-->
+        <scene sceneID="8eh-ku-KWg">
+            <objects>
+                <viewController storyboardIdentifier="MyAppointmentsVC" id="F3t-cf-KsP" customClass="MyAppointmentsVC" customModule="IDEHospital" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qTj-26-k0e" customClass="MyAppointmentsView" customModule="IDEHospital" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1he-lR-VPf">
+                                <rect key="frame" x="37.5" y="323" width="300" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iYA-h2-xZ8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IZx-uV-NE9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IZx-uV-NE9" firstAttribute="trailing" secondItem="iYA-h2-xZ8" secondAttribute="trailing" id="IFd-rg-Fub"/>
+                            <constraint firstItem="iYA-h2-xZ8" firstAttribute="leading" secondItem="IZx-uV-NE9" secondAttribute="leading" id="R97-cB-NlN"/>
+                            <constraint firstItem="iYA-h2-xZ8" firstAttribute="top" secondItem="IZx-uV-NE9" secondAttribute="top" id="Rjf-y9-wyT"/>
+                            <constraint firstItem="IZx-uV-NE9" firstAttribute="bottom" secondItem="iYA-h2-xZ8" secondAttribute="bottom" id="USj-Jm-IC6"/>
+                            <constraint firstItem="1he-lR-VPf" firstAttribute="centerY" secondItem="IZx-uV-NE9" secondAttribute="centerY" id="cem-dR-zby"/>
+                            <constraint firstItem="1he-lR-VPf" firstAttribute="centerX" secondItem="IZx-uV-NE9" secondAttribute="centerX" id="dRX-zu-gYu"/>
+                            <constraint firstItem="1he-lR-VPf" firstAttribute="width" secondItem="qTj-26-k0e" secondAttribute="width" multiplier="0.8" id="sq4-2r-V3z"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="noAppointmentsLabel" destination="1he-lR-VPf" id="6hn-pd-8di"/>
+                            <outlet property="tableView" destination="iYA-h2-xZ8" id="B9Y-yi-B8w"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="myAppointmentsView" destination="qTj-26-k0e" id="G7e-eb-Bnb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1mn-EU-MvZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="43"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

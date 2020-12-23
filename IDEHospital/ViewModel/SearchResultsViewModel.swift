@@ -58,6 +58,7 @@ extension SearchResultsViewModel {
     }
     
     private func reloadTableView(toTop: Bool) {
+        guard getItemsCount() != 0 else { return }
         if toTop {
             view?.reloadToTop()
         } else {

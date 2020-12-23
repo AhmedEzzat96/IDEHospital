@@ -22,7 +22,7 @@ class SearchResultsCell: UITableViewCell {
     @IBOutlet weak var waitingTimeLabel: UILabel!
     @IBOutlet weak var feesLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
-    @IBOutlet weak var bookNowButton: UIButton!
+    @IBOutlet weak var bookNowButton: CustomButton!
     
     //MARK:- Properties
     weak var delegate: CellButtonDelegate?
@@ -46,12 +46,12 @@ class SearchResultsCell: UITableViewCell {
         specialtyLabel.text = item.specialty
         secondBioLabel.text = item.secondBio
         addressLabel.text = item.address
-        waitingTimeLabel.text = "\(L10n.waitingTime) : \(item.waitingTime) \(L10n.minutes)"
+        waitingTimeLabel.text = "\(L10n.waitingTime)\(item.waitingTime) \(L10n.mins)"
         feesLabel.text = "\(L10n.fees) : \(item.fees) \(L10n.le)"
         if item.isFavorited {
-            favoriteButton.setImage(Asset.filledHeart.image, for: .normal)
+            self.favoriteButton.setImage(Asset.filledHeart.image, for: .normal)
         } else {
-            favoriteButton.setImage(Asset.emptyHeart.image, for: .normal)
+            self.favoriteButton.setImage(Asset.emptyHeart.image, for: .normal)
         }
     }
     
@@ -97,8 +97,6 @@ extension SearchResultsCell {
     }
     
     private func setupButton() {
-        bookNowButton.setAttributedTitle(NSAttributedString(string: L10n.bookNow, attributes: [NSAttributedString.Key.font: FontFamily.PTSans.bold.font(size: 12), NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
-        bookNowButton.backgroundColor = ColorName.darkRoyalBlue.color
-        bookNowButton.setupCornerRadiuss()
+        bookNowButton.setTitle(L10n.bookNow, for: .normal)
     }
 }

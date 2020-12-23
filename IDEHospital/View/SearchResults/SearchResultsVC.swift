@@ -29,9 +29,13 @@ class SearchResultsVC: UIViewController {
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationController()
         mainView.setup()
         setupDelegates()
-        setupNavigationItems()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel.searchForDoctors()
     }
 
@@ -46,18 +50,9 @@ class SearchResultsVC: UIViewController {
 
 extension SearchResultsVC {
     // MARK:- Private Methods
-    private func setupNavigationItems() {
+    private func setupNavigationController() {
         title = L10n.searchResults
-        let backItem = UIBarButtonItem(image: Asset.back.image, style: .done, target: self, action: #selector(popUp))
-        backItem.tintColor = ColorName.steelGrey.color
-        let leftPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        leftPadding.width = 18
-        navigationItem.leftBarButtonItems = [leftPadding, backItem]
-        let settingsItem = UIBarButtonItem(image: Asset.settings.image, style: .done, target: self, action: #selector(showSettings))
-        settingsItem.tintColor = ColorName.steelGrey.color
-        let rightPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        rightPadding.width = 18
-        navigationItem.rightBarButtonItems = [rightPadding, settingsItem]
+        setupNavigationItems(backAction: .popUpCurrent)
     }
     
     private func setupDelegates() {
@@ -70,14 +65,6 @@ extension SearchResultsVC {
     }
     
     // MARK:- Objc Methods
-    @objc private func popUp() {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    @objc private func showSettings() {
-        print("Show Settings")
-    }
-    
     @objc private func cancelTapped() {
         mainView.sortTextField.resignFirstResponder()
     }
@@ -126,12 +113,6 @@ extension SearchResultsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 260
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        DispatchQueue.main.async {
-            self.mainView.tableView.deselectRow(at: indexPath, animated: true)
-        }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

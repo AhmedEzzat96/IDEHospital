@@ -10,6 +10,12 @@ import UIKit
 
 class PaddedTextField: UITextField {
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.layoutIfNeeded()
+        self.font = FontFamily.PTSans.regular.font(size: 20)
+    }
+    
     override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
         let rightBounds = CGRect(x: bounds.size.width - 33, y: 17.2, width: 20, height: 11.4)
         return rightBounds
@@ -31,5 +37,6 @@ class PaddedTextField: UITextField {
         let rightIcon = UIImageView(image: Asset.arrow.image)
         self.rightViewMode = .always
         self.rightView = rightIcon
+        
     }
 }

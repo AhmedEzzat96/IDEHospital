@@ -59,7 +59,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOB-JC-taI">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOB-JC-taI" customClass="CustomButton" customModule="IDEHospital" customModuleProvider="target">
                                                 <rect key="frame" x="30" y="535" width="315" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="tbv-ov-3fG"/>

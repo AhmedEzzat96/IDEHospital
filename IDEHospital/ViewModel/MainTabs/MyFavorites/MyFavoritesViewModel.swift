@@ -61,9 +61,7 @@ extension MyFavoritesViewModel: MyFavoritesViewModelProtocol {
     }
     
     func showDeleteAlert(with row: Int) {
-        view?.showAlert(title: L10n.sorry, message: L10n.deleteFavorite, actions: [nil, { [weak self] yesAction in
-            self?.removeFavorite(with: row)
-            }])
+        removeFavorite(with: row)
     }
     
     func viewProfileAlert(with row: Int) {
@@ -85,7 +83,6 @@ extension MyFavoritesViewModel {
                 let items = data.items
                 self.lastPage = data.total_pages
                 self.favoriteItems += items
-                print(self.favoriteItems.count)
                 
             case .failure(let error):
                 print(error.localizedDescription)

@@ -18,7 +18,7 @@ class ServiceSearchView: UIView {
     @IBOutlet weak var regionTextField: PaddedTextField!
     @IBOutlet weak var companiesTextField: PaddedTextField!
     @IBOutlet weak var doctorNameTextField: PaddedTextField!
-    @IBOutlet weak var findDoctorButton: UIButton!
+    @IBOutlet weak var findDoctorButton: CustomButton!
     
     // MARK:- Properties
     let pickerView = UIPickerView()
@@ -62,7 +62,6 @@ extension ServiceSearchView {
         textField.backgroundColor = .white
         textField.alpha = 0.8
         textField.tag = tag
-        textField.font = UIFont(font: FontFamily.PTSans.regular, size: 20)
         textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes:[NSAttributedString.Key.foregroundColor: ColorName.blackTwo.color, NSAttributedString.Key.font: UIFont(font: FontFamily.PTSans.regular, size: 20)!])
         textField.setTextFieldIcons(with: leftIcon)
         textField.setupCornerRadiuss()
@@ -73,8 +72,7 @@ extension ServiceSearchView {
     }
     
     private func setupButton() {
-        findDoctorButton.setAttributedTitle(NSAttributedString(string: L10n.findDoctor, attributes: [NSAttributedString.Key.font: UIFont(font: FontFamily.PTSans.bold, size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
-        findDoctorButton.backgroundColor = ColorName.darkRoyalBlue.color
-        findDoctorButton.setupCornerRadiuss()
+        findDoctorButton.setTitle(L10n.findDoctor, for: .normal)
+        findDoctorButton.titleLabel?.font = FontFamily.PTSans.bold.font(size: 20)
     }
 }

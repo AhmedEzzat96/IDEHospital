@@ -28,6 +28,7 @@ class ServiceSearchVC: UIViewController {
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationController()
         setupDelegates()
     }
     
@@ -52,6 +53,11 @@ class ServiceSearchVC: UIViewController {
 
 extension ServiceSearchVC {
     // MARK:- Private Methods
+    private func setupNavigationController() {
+        setupNavController(title: L10n.serviceSearch)
+        setupNavigationItems(backAction: .dismissCurrent)
+    }
+    
     private func setupDelegates() {
         mainView.specialistsTextField.delegate = self
         mainView.cityTextField.delegate = self
@@ -88,6 +94,10 @@ extension ServiceSearchVC: UITextFieldDelegate {
         viewModel.preparePickerItems(with: textField.tag)
         textField.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneTapped(_:)))
         return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
     }
 }
 
@@ -128,6 +138,8 @@ extension ServiceSearchVC: ServiceSearchVCProtocol {
     
     func switchToSearchResults(with doctorsFilter: DoctorsFilter) {
         let searchResultsVC = SearchResultsVC.create(with: doctorsFilter)
-        navigationController?.pushViewController(searchResultsVC, animated: true)
+        self.navigationController?.pushViewController(searchResultsVC, animated: true)
     }
 }
+
+

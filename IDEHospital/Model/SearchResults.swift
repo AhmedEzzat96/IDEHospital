@@ -39,7 +39,7 @@ struct DoctorResultsResponse: Codable {
     let city: String
     let region: String
     let companies: [String]
-    let isFavorited: Bool
+    var isFavorited: Bool
     
     enum CodingKeys: String, CodingKey {
         case id, rating, specialty, name, address, fees, image, city, region, companies

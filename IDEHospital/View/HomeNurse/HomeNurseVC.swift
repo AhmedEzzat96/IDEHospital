@@ -27,7 +27,7 @@ class HomeNurseVC: UIViewController {
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationItems()
+        setupNavigationController()
         mainView.setup()
         mainView.detailsTextView.delegate = self
     }
@@ -44,29 +44,12 @@ class HomeNurseVC: UIViewController {
         viewModel.requestTapped(with: RequestData(name: mainView.nameTextField.text, email: mainView.emailTextField.text, mobile: mainView.phoneTextField.text, message: mainView.detailsTextView.text))
     }
 }
-extension HomeNurseVC {
+
 // MARK:- Private Methods
-    private func setupNavigationItems() {
+extension HomeNurseVC {
+    private func setupNavigationController() {
         title = L10n.homeNurse
-        let backItem = UIBarButtonItem(image: Asset.back.image, style: .done, target: self, action: #selector(popUp))
-        backItem.tintColor = ColorName.steelGrey.color
-        let leftPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        leftPadding.width = 18
-        navigationItem.leftBarButtonItems = [leftPadding, backItem]
-        let settingsItem = UIBarButtonItem(image: Asset.settings.image, style: .done, target: self, action: #selector(showSettings))
-        settingsItem.tintColor = ColorName.steelGrey.color
-        let rightPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        rightPadding.width = 18
-        navigationItem.rightBarButtonItems = [rightPadding, settingsItem]
-    }
-    
-    // MARK:- Objc Methods
-    @objc private func popUp() {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    @objc private func showSettings() {
-        print("Show Settings")
+        setupNavigationItems(backAction: .popUpCurrent)
     }
 }
 
@@ -89,7 +72,7 @@ extension HomeNurseVC: UITextViewDelegate {
 extension HomeNurseVC: HomeNurseVCProtocol {
     func addPlaceholder() {
         DispatchQueue.main.async {
-            self.mainView.detailsTextView.text = "Enter Details"
+            self.mainView.detailsTextView.text = L10n.enterDetails
         }
     }
     
@@ -106,6 +89,6 @@ extension HomeNurseVC: HomeNurseVCProtocol {
     }
     
     func showHomeVC() {
-        popUp()
+        popUpCurrent()
     }
 }

@@ -68,8 +68,6 @@ internal enum L10n {
   internal static let le = L10n.tr("Localizable", "le")
   /// minutes
   internal static let mins = L10n.tr("Localizable", "mins")
-  /// Minutes
-  internal static let minutes = L10n.tr("Localizable", "minutes")
   /// Missed Data
   internal static let missedData = L10n.tr("Localizable", "missedData")
   /// Mobile Number

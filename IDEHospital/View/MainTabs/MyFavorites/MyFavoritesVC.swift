@@ -13,7 +13,6 @@ protocol MyFavoritesVCProtocol: class {
     func hideLoader()
     func reloadData()
     func isHidden(tableView: Bool, noItemsFound: Bool)
-    func showAlert(title: String, message: String, actions: [((UIAlertAction) -> Void)?]?)
     func simpleAlert(title: String, message: String)
 }
 
@@ -27,7 +26,7 @@ class MyFavoritesVC: UIViewController {
     //MARK:- Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavController(title: L10n.myFavorites)
+        setupNavigationController()
         myFavoritesView.setup()
         tableViewConfiguration()
     }
@@ -46,6 +45,11 @@ class MyFavoritesVC: UIViewController {
 
 //MARK:- Private Methods
 extension MyFavoritesVC {
+    private func setupNavigationController() {
+        setupNavController(title: L10n.myFavorites)
+        setupNavigationItems(backAction: .dismissCurrent)
+    }
+    
     private func tableViewConfiguration() {
         myFavoritesView.tableView.delegate = self
         myFavoritesView.tableView.dataSource = self
@@ -70,10 +74,6 @@ extension MyFavoritesVC: MyFavoritesVCProtocol {
     func isHidden(tableView: Bool, noItemsFound: Bool) {
         self.myFavoritesView.tableView.isHidden = tableView
         self.myFavoritesView.noFavoriteLabel.isHidden = noItemsFound
-    }
-    
-    func showAlert(title: String, message: String, actions: [((UIAlertAction) -> Void)?]?) {
-        self.openAlert(title: title, message: message, alertStyle: .alert, actionTitles: [L10n.no, L10n.yes], actionStyles: [.cancel, .destructive], actions: actions)
     }
     
     func simpleAlert(title: String, message: String) {
@@ -112,10 +112,6 @@ extension MyFavoritesVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             return 40
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.myFavoritesView.tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

@@ -44,6 +44,7 @@ extension SearchResultsView {
     private func setupTableView() {
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
+        tableView.allowsSelection = false
     }
     
     private func setupSortTextField() {

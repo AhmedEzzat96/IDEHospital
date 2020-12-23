@@ -16,7 +16,7 @@ class HomeNurseView: UIView {
     @IBOutlet weak var emailTextField: IDEAHospitalTextField!
     @IBOutlet weak var phoneTextField: IDEAHospitalTextField!
     @IBOutlet weak var detailsTextView: UITextView!
-    @IBOutlet weak var sendRequestButton: UIButton!
+    @IBOutlet weak var sendRequestButton: CustomButton!
     
     // MARK:- Public Methods
     func setup() {
@@ -56,8 +56,7 @@ extension HomeNurseView {
     }
     
     private func setupButton() {
-        sendRequestButton.setAttributedTitle(NSAttributedString(string: L10n.sendRequest, attributes: [NSAttributedString.Key.font: FontFamily.PTSans.bold.font(size: 20), NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
-        sendRequestButton.backgroundColor = ColorName.darkRoyalBlue.color
-        sendRequestButton.setupCornerRadiuss()
+        sendRequestButton.setTitle(L10n.sendRequest, for: .normal)
+        sendRequestButton.titleLabel?.font = FontFamily.PTSans.bold.font(size: 20)
     }
 }

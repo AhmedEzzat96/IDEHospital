@@ -66,7 +66,8 @@ extension HomeVC: HomeVCProtocol {
     
     func goToTabBar(with id: Int) {
         let tabBarVC = MainTabBar.create(with: id)
-        self.navigationController?.pushViewController(tabBarVC, animated: true)
+        tabBarVC.modalPresentationStyle = .fullScreen
+        present(tabBarVC, animated: true)
     }
     
     func goToHomeNurse() {

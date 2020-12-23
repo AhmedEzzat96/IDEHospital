@@ -69,7 +69,8 @@ extension SearchResultsViewModel {
 // MARK:- ViewModel Protocol
 extension SearchResultsViewModel: SearchResultsViewModelProtocol {
     func searchForDoctors() {
-        getDoctors()
+        doctorsFilter.page = 1
+        getDoctors(reloadToTop: true)
     }
     
     func getSortTypes() -> [String] {
@@ -111,7 +112,9 @@ extension SearchResultsViewModel: SearchResultsViewModelProtocol {
     func addRemoveFavorite(with row: Int) {
         APIManager.addRemoveFavorite(with: searchResults.items[row].id) { [weak self] (success) in
             if success {
-                self?.getDoctors()
+                let isFavourite = self?.searchResults.items[row].isFavorited
+                self?.searchResults.items[row].isFavorited = !isFavourite!
+                self?.view?.reloadData()
             }
         }
     }

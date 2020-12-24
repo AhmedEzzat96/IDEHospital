@@ -14,20 +14,16 @@ protocol ServiceSearchViewModelProtocol {
     func getItem(at row: Int) -> String
     func preparePickerItems(with tag: Int)
     func itemSelected(tag: Int, row: Int)
+    func findDoctorTapped(doctorName: String?)
 }
 
 class ServiceSearchViewModel {
     
     // MARK:- Properties
     private var view: ServiceSearchVCProtocol?
-    var categoryData: CategoryData!
-    var items: [String] = []
-    
-    // This ids i will handle it later while making the find doctor API calling
-    var specialtyID: Int?
-    var cityID: Int?
-    var regionID: Int?
-    var companyID: Int?
+    private var categoryData: CategoryData!
+    private var items: [String] = []
+    private var doctorsFilter: DoctorsFilter!
     
     // MARK:- Init
     init(view: ServiceSearchVCProtocol) {
@@ -52,6 +48,7 @@ extension ServiceSearchViewModel {
 // MARK:- ViewModel Protocol
 extension ServiceSearchViewModel: ServiceSearchViewModelProtocol {
     func prepareCategories(with categoryID: Int) {
+        self.doctorsFilter = DoctorsFilter(categoryId: categoryID, page: 1)
         getCategories(with: categoryID)
     }
     
@@ -71,7 +68,7 @@ extension ServiceSearchViewModel: ServiceSearchViewModelProtocol {
         case 2:
             items = categoryData.cities.map{$0.name}
         case 3:
-            if let city = categoryData.cities.first(where: {$0.id == cityID}) {
+            if let city = categoryData.cities.first(where: {$0.id == doctorsFilter.cityId}) {
                 view?.doneButtonEnabled(true, for: tag)
                 items = city.regions.map{$0.name}
             } else {
@@ -91,28 +88,34 @@ extension ServiceSearchViewModel: ServiceSearchViewModelProtocol {
         case 1:
             let specialty = categoryData.specialties[row]
             view?.addSelectedItem(tag, specialty.name)
-            specialtyID = specialty.id
+            doctorsFilter.specialtyId = specialty.id
         case 2:
             let city = categoryData.cities[row]
             view?.addSelectedItem(tag, city.name)
-            if city.id == cityID {
+            if city.id == doctorsFilter.cityId {
                 break
             }
-            cityID = city.id
-            view?.clearTextField(with: 3)
+            doctorsFilter?.cityId = city.id
+            view?.clearTextField(tag: 3)
         case 3:
-            if let city = categoryData.cities.first(where: {$0.id == cityID}) {
+            if let city = categoryData.cities.first(where: {$0.id == doctorsFilter?.cityId}) {
                 let region = city.regions[row]
                 view?.addSelectedItem(tag, region.name)
-                regionID = region.id
+                doctorsFilter.regionId = region.id
             }
             view?.addSelectedItem(tag, items[row])
         case 4:
             let company = categoryData.companies[row]
             view?.addSelectedItem(tag, company.name)
-            companyID = company.id
+            doctorsFilter.companyId = company.id
         default: break
         }
     }
     
+    func findDoctorTapped(doctorName: String?) {
+        doctorsFilter.doctorName = doctorName
+        if let doctorsFilter = doctorsFilter {
+            view?.switchToSearchResults(with: doctorsFilter)
+        }
+    }
 }

@@ -25,7 +25,7 @@ class HomeViewModel {
 extension HomeViewModel {
     private func downloadImage(for Index: Int, completion: @escaping (UIImage?) -> Void) {
         view?.showLoader()
-        SDWebImageManager.shared.loadImage(with: URL(string: categoriesData[Index].image), options: .highPriority, progress: nil) {[weak self] (image, _, error, _, _, _) in
+        SDWebImageManager.shared.loadImage(with: URL(string: categoriesData[Index].image), options: .highPriority, progress: nil) { [weak self] (image, _, error, _, _, _) in
             if let error = error {
                 print(error.localizedDescription)
             } else if let image = image {
@@ -71,9 +71,10 @@ extension HomeViewModel: HomeViewModelProtocol {
     
     func didSelectItem(item: Int) {
         let categoryID = categoriesData[item].id
-        if categoryID == 4 {
-            print(categoryID)
-        } else {
+        switch categoryID {
+        case 4:
+            self.view?.goToHomeNurse()
+        default:
             self.view?.goToTabBar(with: categoryID)
         }
     }

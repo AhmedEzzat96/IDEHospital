@@ -40,35 +40,37 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ClE-wt-UEw" customClass="PaddedTextField" customModule="IDEHospital" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ClE-wt-UEw" customClass="PaddedTextField" customModule="IDEHospital" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="219" width="315" height="45"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="315" id="h5Z-Hw-eHa"/>
                                                     <constraint firstAttribute="height" constant="45" id="nA9-hU-7pc"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LdX-9o-L6A" customClass="PaddedTextField" customModule="IDEHospital" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LdX-9o-L6A" customClass="PaddedTextField" customModule="IDEHospital" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="279" width="315" height="45"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KhO-q9-obp" customClass="PaddedTextField" customModule="IDEHospital" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KhO-q9-obp" customClass="PaddedTextField" customModule="IDEHospital" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="399" width="315" height="45"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oe6-qc-Qw3">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oe6-qc-Qw3" customClass="PaddedTextField" customModule="IDEHospital" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="459" width="315" height="45"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1Z-Kf-1o5">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1Z-Kf-1o5" customClass="CustomButton" customModule="IDEHospital" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="534" width="315" height="45"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="findDoctorButtonPressed:" destination="zzV-J9-Q7Y" eventType="touchUpInside" id="Rcv-az-gxq"/>
+                                                </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QZU-WK-YDS" customClass="PaddedTextField" customModule="IDEHospital" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QZU-WK-YDS" customClass="PaddedTextField" customModule="IDEHospital" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="339" width="315" height="45"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>

@@ -13,82 +13,48 @@ class MainTabBar: UITabBarController {
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.delegate = self
-        setupNavigationItems()
-        setupNavController(title: L10n.serviceSearch)
         setupTabBar()
     }
     
     // MARK:- Public Methods
     class func create(with categoryID: Int) -> MainTabBar {
         let mainTabBar = MainTabBar()
-        let serviceSearchVC = mainTabBar.createServiceSearchVC(with: categoryID)
-        let favoriteVC = mainTabBar.createFavoriteVC()
-        let appointmentsVC = mainTabBar.createAppointmentsVC()
-        mainTabBar.viewControllers = [serviceSearchVC, favoriteVC, appointmentsVC]
+        let searchNavigation = mainTabBar.createServiceSearchVC(with: categoryID)
+        let favoriteNavigation = mainTabBar.createFavoriteVC()
+        let appointmentsNavigation = mainTabBar.createAppointmentsVC()
+        mainTabBar.viewControllers = [searchNavigation, favoriteNavigation, appointmentsNavigation]
         return mainTabBar
     }
 }
 
+// MARK:- Private Methods
 extension MainTabBar {
-    // MARK:- Private Methods
-    private func setupNavigationItems() {
-        let backItem = UIBarButtonItem(image: Asset.back.image, style: .done, target: self, action: #selector(popUp))
-        backItem.tintColor = ColorName.steelGrey.color
-        let leftPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        leftPadding.width = 18
-        navigationItem.leftBarButtonItems = [leftPadding, backItem]
-        let settingsItem = UIBarButtonItem(image: Asset.settings.image, style: .done, target: self, action: #selector(showSettings))
-        settingsItem.tintColor = ColorName.steelGrey.color
-        let rightPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        rightPadding.width = 18
-        navigationItem.rightBarButtonItems = [rightPadding, settingsItem]
-    }
-    
     private func setupTabBar() {
         self.tabBar.backgroundColor = ColorName.whiteTwo.color
         self.tabBar.tintColor = ColorName.blackTwo.color
     }
     
-    private func createServiceSearchVC(with categoryID: Int) -> ServiceSearchVC {
+    private func createServiceSearchVC(with categoryID: Int) -> UINavigationController {
         let serviceSearchVC = ServiceSearchVC.create(with: categoryID)
         serviceSearchVC.tabBarItem = UITabBarItem(title: L10n.search, image: Asset.search.image, tag: 1)
-        return serviceSearchVC
+        let searchNavigation = UINavigationController()
+        searchNavigation.viewControllers = [serviceSearchVC]
+        return searchNavigation
     }
     
-    private func createFavoriteVC() -> UIViewController {
-        let favoriteVC = UIViewController()
+    private func createFavoriteVC() -> UINavigationController {
+        let favoriteVC = MyFavoritesVC.create()
         favoriteVC.tabBarItem = UITabBarItem(title: L10n.favorite, image: Asset.heart.image, tag: 2)
-        return favoriteVC
+        let favoriteNavigation = UINavigationController()
+        favoriteNavigation.viewControllers = [favoriteVC]
+        return favoriteNavigation
     }
     
-    private func createAppointmentsVC() -> UIViewController {
-        let appointmentsVC = UIViewController()
+    private func createAppointmentsVC() -> UINavigationController {
+        let appointmentsVC = MyAppointmentsVC.create()
         appointmentsVC.tabBarItem = UITabBarItem(title: L10n.schedule, image: Asset.calendar.image, tag: 3)
-        return appointmentsVC
-    }
-    
-    // MARK:- Objc Methods
-    @objc private func popUp() {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    @objc private func showSettings() {
-        print("Show Settings")
-    }
-    
-}
-
-// MARK:- TabBar Delegate
-extension MainTabBar: UITabBarControllerDelegate {
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        switch item.tag {
-        case 1:
-            title = L10n.serviceSearch
-        case 2:
-            title = L10n.myFavorites
-        default:
-            title = L10n.myAppointments
-        }
+        let appointmentsNavigation = UINavigationController()
+        appointmentsNavigation.viewControllers = [appointmentsVC]
+        return appointmentsNavigation
     }
 }

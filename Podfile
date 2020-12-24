@@ -10,4 +10,5 @@ pod 'Alamofire'
 pod 'SDWebImage'
 pod 'IQKeyboardManagerSwift'
 pod 'SwiftGen'
+pod 'Cosmos'
 end

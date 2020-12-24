@@ -12,8 +12,9 @@ protocol ServiceSearchVCProtocol {
     func showAlert(title: String, message: String)
     func showItems()
     func addSelectedItem(_ viewWithTag: Int, _ item: String)
-    func clearTextField(with tag: Int)
+    func clearTextField(tag: Int)
     func doneButtonEnabled(_ enabled: Bool, for tag: Int)
+    func switchToSearchResults(with doctorsFilter: DoctorsFilter)
 }
 
 class ServiceSearchVC: UIViewController {
@@ -22,11 +23,12 @@ class ServiceSearchVC: UIViewController {
     @IBOutlet weak var mainView: ServiceSearchView!
     
     // MARK:- Properties
-    var viewModel: ServiceSearchViewModelProtocol!
+    private var viewModel: ServiceSearchViewModelProtocol!
     
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationController()
         setupDelegates()
     }
     
@@ -42,10 +44,20 @@ class ServiceSearchVC: UIViewController {
         serviceSearchVC.viewModel.prepareCategories(with: categoryID)
         return serviceSearchVC
     }
+    
+    // MARK:- IBAction Methods
+    @IBAction func findDoctorButtonPressed(_ sender: UIButton) {
+        viewModel.findDoctorTapped(doctorName: mainView.doctorNameTextField.text)
+    }
 }
 
 extension ServiceSearchVC {
     // MARK:- Private Methods
+    private func setupNavigationController() {
+        setupNavController(title: L10n.serviceSearch)
+        setupNavigationItems(backAction: .dismissCurrent)
+    }
+    
     private func setupDelegates() {
         mainView.specialistsTextField.delegate = self
         mainView.cityTextField.delegate = self
@@ -57,7 +69,7 @@ extension ServiceSearchVC {
     
     // MARK:- Objc Methods
     @objc private func doneTapped(_ sender: UIBarButtonItem) {
-        viewModel.itemSelected(tag: sender.tag,row: mainView.pickerView.selectedRow(inComponent: 0))
+        viewModel.itemSelected(tag: sender.tag, row: mainView.pickerView.selectedRow(inComponent: 0))
     }
 }
 
@@ -83,6 +95,10 @@ extension ServiceSearchVC: UITextFieldDelegate {
         textField.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneTapped(_:)))
         return true
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
+    }
 }
 
 // MARK:- ServiceSearchVC Protocol
@@ -106,7 +122,7 @@ extension ServiceSearchVC: ServiceSearchVCProtocol {
         }
     }
     
-    func clearTextField(with tag: Int) {
+    func clearTextField(tag: Int) {
         DispatchQueue.main.async {
             let textField = self.mainView.viewWithTag(tag) as! UITextField
             textField.text = ""
@@ -119,4 +135,11 @@ extension ServiceSearchVC: ServiceSearchVCProtocol {
             textField.keyboardToolbar.doneBarButton.isEnabled = enabled
         }
     }
+    
+    func switchToSearchResults(with doctorsFilter: DoctorsFilter) {
+        let searchResultsVC = SearchResultsVC.create(with: doctorsFilter)
+        self.navigationController?.pushViewController(searchResultsVC, animated: true)
+    }
 }
+
+

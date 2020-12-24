@@ -26,7 +26,7 @@ class MyAppointmentsVC: UIViewController {
     //MARK:- Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupNavController(title: L10n.myAppointments)
+        setupNavigationController()
         myAppointmentsView.setup()
         tableViewConfiguration()
     }
@@ -45,6 +45,11 @@ class MyAppointmentsVC: UIViewController {
 
 //MARK:- Private Methods
 extension MyAppointmentsVC {
+    private func setupNavigationController() {
+        setupNavController(title: L10n.myAppointments)
+        setupNavigationItems(backAction: .dismissCurrent)
+    }
+    
     private func tableViewConfiguration() {
         myAppointmentsView.tableView.delegate = self
         myAppointmentsView.tableView.dataSource = self
@@ -83,12 +88,7 @@ extension MyAppointmentsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         viewModel.willDisplayCell(for: indexPath.row)
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.myAppointmentsView.tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
+    }    
 }
 
 //MARK:- MyAppointmentsVC Protocol

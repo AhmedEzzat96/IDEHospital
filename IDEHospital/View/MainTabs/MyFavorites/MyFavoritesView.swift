@@ -27,6 +27,7 @@ extension MyFavoritesView {
         tableView.isHidden = true
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
+        tableView.allowsSelection = false
     }
     
     private func setupNoFavoriteLabel() {

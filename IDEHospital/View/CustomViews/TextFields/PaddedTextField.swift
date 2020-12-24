@@ -1,14 +1,27 @@
 //
-//  UITextField+TextFieldIcons.swift
+//  PaddedTextField.swift
 //  IDEHospital
 //
-//  Created by Ziad on 12/9/20.
+//  Created by Ziad on 12/14/20.
 //  Copyright © 2020 IDEAcademy. All rights reserved.
 //
 
 import UIKit
 
-extension UITextField {
+class PaddedTextField: UITextField {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.layoutIfNeeded()
+        self.font = FontFamily.PTSans.regular.font(size: 20)
+    }
+    
+    override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
+        let rightBounds = CGRect(x: bounds.size.width - 33, y: 17.2, width: 20, height: 11.4)
+        return rightBounds
+    }
+
+    // MARK:- Public Methods
     func setTextFieldIcons(with leftImage: UIImage) {
         let leftIcon = UIImageView(image: leftImage)
         leftIcon.frame.size = CGSize(width: 24.6, height: 27.1)
@@ -20,9 +33,10 @@ extension UITextField {
         self.leftView = leftPadding
         
         guard self.tag != 5 else { return }
+        tintColor = .clear
         let rightIcon = UIImageView(image: Asset.arrow.image)
-        rightIcon.frame.size = CGSize(width: 20, height: 11.4)
         self.rightViewMode = .always
         self.rightView = rightIcon
+        
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomButton : UIButton{
+class CustomButton : UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         setTitleColor(UIColor.white, for: .normal)

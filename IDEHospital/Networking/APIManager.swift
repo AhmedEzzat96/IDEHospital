@@ -22,8 +22,21 @@ class APIManager {
         }
     }
     
+    // This request i will refactor it while making the Contact Us request
+    class func sendNurseRequest(_ requestData: RequestData, completion: @escaping (Result<NurseResponse, Error>) -> Void) {
+        request(APIRouter.nurseRequest(requestData)) { (response) in
+            completion(response)
+        }
+    }
+    
     class func addRemoveFavorite(with doctorID: Int, completion: @escaping (Bool) -> Void) {
         requestBool(APIRouter.addRemoveFavorite(doctorID)) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func searchForDoctors(with doctorsFilter: DoctorsFilter, completion: @escaping (Result<SearchResponse, Error>) -> Void) {
+        request(APIRouter.searchForDoctors(doctorsFilter)) { (response) in
             completion(response)
         }
     }

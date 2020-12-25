@@ -57,3 +57,5 @@
 "timeFormat" = "hh:mm a";
 "am" = "am";
 "pm" = "pm";
+"setNewPassword" = "Set New Password";
+"resetPassword" = "RESET PASSWORD";

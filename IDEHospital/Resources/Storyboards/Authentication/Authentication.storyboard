@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Z2-6a-mBE">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reset PasswordVC-->
+        <scene sceneID="1NT-Nq-UCI">
+            <objects>
+                <viewController storyboardIdentifier="ResetPasswordVC" id="93k-b7-TFs" customClass="ResetPasswordVC" customModule="IDEHospital" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="ResetPasswordView" id="e8e-Tw-ihV" customClass="ResetPasswordView" customModule="IDEHospital" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="drG-YV-VGO" customClass="IDEAHospitalTextField" customModule="IDEHospital" customModuleProvider="target">
+                                <rect key="frame" x="32" y="211.5" width="256" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="fxh-Jg-iAR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em3-uw-s5b" customClass="CustomButton" customModule="IDEHospital" customModuleProvider="target">
+                                <rect key="frame" x="32" y="294.5" width="256" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="ekP-Js-7iY"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="em3-uw-s5b" firstAttribute="top" secondItem="drG-YV-VGO" secondAttribute="bottom" constant="47" id="Eer-ok-7s5"/>
+                            <constraint firstItem="drG-YV-VGO" firstAttribute="centerY" secondItem="7at-xF-aOX" secondAttribute="centerY" multiplier="0.75" id="HJi-0k-obu"/>
+                            <constraint firstItem="em3-uw-s5b" firstAttribute="width" secondItem="drG-YV-VGO" secondAttribute="width" id="Yvf-Nb-s4y"/>
+                            <constraint firstItem="em3-uw-s5b" firstAttribute="centerX" secondItem="drG-YV-VGO" secondAttribute="centerX" id="aqT-ZA-bGY"/>
+                            <constraint firstItem="7at-xF-aOX" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="em3-uw-s5b" secondAttribute="bottom" constant="5" id="dCH-HT-fcA"/>
+                            <constraint firstItem="drG-YV-VGO" firstAttribute="centerX" secondItem="7at-xF-aOX" secondAttribute="centerX" id="qhf-Je-GRq"/>
+                            <constraint firstItem="drG-YV-VGO" firstAttribute="width" secondItem="e8e-Tw-ihV" secondAttribute="width" multiplier="0.8" id="vf2-yi-N9l"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7at-xF-aOX"/>
+                        <connections>
+                            <outlet property="emailTextField" destination="drG-YV-VGO" id="LmU-6c-Yxn"/>
+                            <outlet property="setNewPasswordBtn" destination="em3-uw-s5b" id="hgA-Ww-YqV"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="dmT-cc-bUK"/>
+                    <connections>
+                        <outlet property="resetPasswordView" destination="e8e-Tw-ihV" id="WfK-0y-4ot"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B30-rT-fFu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2139.375" y="129.92957746478874"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ODw-iR-ypV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Z2-6a-mBE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NJB-91-MBl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="93k-b7-TFs" kind="relationship" relationship="rootViewController" id="JVt-eJ-Do5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cK-n7-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1141.875" y="129.92957746478874"/>
+        </scene>
+    </scenes>
+</document>

@@ -13,6 +13,7 @@ class IDEAHospitalTextField: UITextField {
     // MARK:- Properties
     let padding = UIEdgeInsets(top: 0, left: 53, bottom: 0, right: 0)
     
+    //MARK:- Lifecycle Methods
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)
     }
@@ -33,7 +34,7 @@ class IDEAHospitalTextField: UITextField {
         self.leftViewMode = .always
         self.layoutIfNeeded()
         let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0, y: frame.height - 1, width: frame.width + 53, height: 2)
+        bottomLine.frame = CGRect(x: 0, y: frame.height - 2, width: frame.width + padding.left, height: 2)
         self.borderStyle = .none
         bottomLine.backgroundColor = ColorName.white.color.cgColor
         self.layer.addSublayer(bottomLine)

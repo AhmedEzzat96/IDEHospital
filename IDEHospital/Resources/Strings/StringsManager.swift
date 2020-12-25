@@ -92,6 +92,8 @@ internal enum L10n {
   internal static let pm = L10n.tr("Localizable", "pm")
   /// Choose Region
   internal static let region = L10n.tr("Localizable", "region")
+  /// RESET PASSWORD
+  internal static let resetPassword = L10n.tr("Localizable", "resetPassword")
   /// Review
   internal static let review = L10n.tr("Localizable", "review")
   /// Reviews
@@ -108,6 +110,8 @@ internal enum L10n {
   internal static let sendRequest = L10n.tr("Localizable", "sendRequest")
   /// Service Search
   internal static let serviceSearch = L10n.tr("Localizable", "serviceSearch")
+  /// Set New Password
+  internal static let setNewPassword = L10n.tr("Localizable", "setNewPassword")
   /// Sorry
   internal static let sorry = L10n.tr("Localizable", "sorry")
   /// Sort By

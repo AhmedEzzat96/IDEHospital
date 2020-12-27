@@ -59,3 +59,15 @@
 "pm" = "pm";
 "setNewPassword" = "Set New Password";
 "resetPassword" = "RESET PASSWORD";
+"yourPassword" = "Enter password";
+"login" = "Login";
+"forgotPassword" = "Forgot Password?";
+"don’tHaveAccount" = "Don’t Have account?";
+"signup" = "Sign up";
+"choosePassword" = "Choose Password";
+"confirmPassword" = "Confirm Password";
+"signup" = "Sign Up";
+"termsLabel" = "By clicking sign up, you agree to our";
+"termsBtn" = "Terms & Conditions";
+"signupNav" = "SIGN UP";
+"loginNav" = "LOGIN";

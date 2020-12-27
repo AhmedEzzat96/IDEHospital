@@ -49,6 +49,7 @@ internal enum Asset {
   internal static let background = ImageAsset(name: "background")
   internal static let component22 = ImageAsset(name: "component22")
   internal static let group1 = ImageAsset(name: "group1")
+  internal static let password = ImageAsset(name: "password")
   internal static let path1570 = ImageAsset(name: "path1570")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

@@ -31,6 +31,7 @@ class PaddedTextField: UITextField {
         leftPadding.addSubview(leftIcon)
         leftPadding.backgroundColor = ColorName.darkRoyalBlue.color
         self.leftView = leftPadding
+        self.layer.masksToBounds = true
         
         guard self.tag != 5 else { return }
         tintColor = .clear

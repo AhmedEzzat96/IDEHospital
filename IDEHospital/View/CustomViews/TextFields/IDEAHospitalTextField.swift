@@ -26,25 +26,22 @@ class IDEAHospitalTextField: UITextField {
         return bounds.inset(by: padding)
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    // MARK:- Public Methods
+    func setup(leftImage: UIImage, placeholder: String) {
+        self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: ColorName.white.color, NSAttributedString.Key.font: FontFamily.PTSans.bold.font(size: 15)])
+        let leftIcon = UIImageView(image: leftImage)
+        self.leftView = leftIcon
+        
         self.textColor = ColorName.white.color
         self.font = FontFamily.PTSans.bold.font(size: 15)
         self.backgroundColor = .clear
         self.leftViewMode = .always
         self.layoutIfNeeded()
         let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0, y: frame.height - 2, width: frame.width + padding.left, height: 2)
+        bottomLine.frame = CGRect(x: 0, y: frame.height - 2, width: frame.width, height: 2)
         self.borderStyle = .none
         bottomLine.backgroundColor = ColorName.white.color.cgColor
         self.layer.addSublayer(bottomLine)
         self.layer.masksToBounds = true
-    }
-    
-    // MARK:- Public Methods
-    func setup(leftImage: UIImage, placeholder: String) {
-        self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: ColorName.white.color, NSAttributedString.Key.font: FontFamily.PTSans.bold.font(size: 15)])
-        let leftIcon = UIImageView(image: leftImage)
-        self.leftView = leftIcon
     }
 }

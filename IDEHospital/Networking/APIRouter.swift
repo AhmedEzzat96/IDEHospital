@@ -16,6 +16,7 @@ enum APIRouter: URLRequestConvertible{
     case getCategoriesData(_ CategoriesID: Int)
     case mainCategories
     case nurseRequest(_ requestData: RequestData)
+    case contactRequest(_ requestData: RequestData)
     case searchForDoctors(_ doctorsFilter: DoctorsFilter)
     case favorites(_ page: Int)
     case addRemoveFavorite(_ doctorID: Int)
@@ -57,6 +58,8 @@ enum APIRouter: URLRequestConvertible{
             return URLs.mainCategories
         case .nurseRequest:
             return URLs.nurseRequset
+        case .contactRequest:
+            return URLs.contactRequest
         case .searchForDoctors(let doctorsFilter):
             return URLs.mainCategories + "/\(doctorsFilter.categoryId!)/doctors"
         case .addRemoveFavorite(let doctorID):
@@ -78,7 +81,7 @@ enum APIRouter: URLRequestConvertible{
         
         // Headers
         switch self {
-        case .nurseRequest:
+        case .nurseRequest, .contactRequest:
             urlRequest.setValue(L10n.en, forHTTPHeaderField: HeaderKeys.acceptLanguage)
             urlRequest.setValue(HeaderValues.appJSON, forHTTPHeaderField: HeaderKeys.accept)
         case .favorites, .addRemoveFavorite, .appointments, .removeAppointment, .searchForDoctors:
@@ -88,17 +91,17 @@ enum APIRouter: URLRequestConvertible{
             urlRequest.setValue(L10n.en, forHTTPHeaderField: HeaderKeys.acceptLanguage)
         }
         
-        
         // HTTP Body
         let httpBody: Data? = {
             switch self {
-            case .nurseRequest(let body):
+            case .nurseRequest(let body), .contactRequest(let body):
                 return encodeToJSON(body)
             default:
                 return nil
             }
         }()
         urlRequest.httpBody = httpBody
+        
         // Encoding
         let encoding: ParameterEncoding = {
             switch method {

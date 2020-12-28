@@ -12,7 +12,7 @@ import Foundation
 struct Storyboards {
     static let serviceSearch = "ServiceSearch"
     static let home = "Home"
-    static let homeNurse = "HomeNurse"
+    static let homeNurse = "HomeNurseContactUs"
     static let searchResults = "SearchResults"
     static let myFavorites = "MyFavorites"
     static let myAppointments = "MyAppointments"
@@ -22,7 +22,7 @@ struct Storyboards {
 struct ViewControllers {
     static let serviceSearchVC = "ServiceSearchVC"
     static let homeVC = "HomeVC"
-    static let homeNurseVC = "HomeNurseVC"
+    static let homeNurseContactUsVC = "HomeNurseContactUsVC"
     static let searchResultsVC = "SearchResultsVC"
     static let myFavoritesVC = "MyFavoritesVC"
     static let myAppointmentsVC = "MyAppointmentsVC"
@@ -39,6 +39,7 @@ struct URLs {
     static let base = "http://ide-hospital.ideaeg.co/api"
     static let mainCategories = "/main_categories"
     static let nurseRequset = "/nursing_requests"
+    static let contactRequest = "/contact_us_requests"
     static let favorites = "/favorites/doctors"
     static let appointments = "/user_appointments"
 }

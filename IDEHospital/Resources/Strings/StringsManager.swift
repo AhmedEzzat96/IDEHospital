@@ -22,6 +22,8 @@ internal enum L10n {
   internal static let city = L10n.tr("Localizable", "city")
   /// Choose Company
   internal static let company = L10n.tr("Localizable", "company")
+  /// CONTACT US
+  internal static let contactUs = L10n.tr("Localizable", "contactUs")
   /// Please enter all textfields above
   internal static let dataRequirements = L10n.tr("Localizable", "dataRequirements")
   /// EEEE,d MMMM yyyy
@@ -40,7 +42,7 @@ internal enum L10n {
   internal static let emailRequiremtnts = L10n.tr("Localizable", "emailRequiremtnts")
   /// en
   internal static let en = L10n.tr("Localizable", "en")
-  /// Enter Details
+  ///  Enter Details
   internal static let enterDetails = L10n.tr("Localizable", "enterDetails")
   /// Examination Fees : 
   internal static let examinationFee = L10n.tr("Localizable", "examinationFee")
@@ -86,6 +88,8 @@ internal enum L10n {
   internal static let noDoctorsFound = L10n.tr("Localizable", "noDoctorsFound")
   /// No Favorites Found!
   internal static let noFavoriteFound = L10n.tr("Localizable", "noFavoriteFound")
+  /// For More information call: 19199
+  internal static let number = L10n.tr("Localizable", "number")
   /// Please enter valid phone number ex : 010xxxxxxxx
   internal static let phoneRequirements = L10n.tr("Localizable", "phoneRequirements")
   /// pm
@@ -104,6 +108,8 @@ internal enum L10n {
   internal static let searchResults = L10n.tr("Localizable", "searchResults")
   /// IDEA EG HOSPITAL THE BEST CHOICE
   internal static let secondTitle = L10n.tr("Localizable", "secondTitle")
+  /// Send
+  internal static let send = L10n.tr("Localizable", "send")
   /// Send Request
   internal static let sendRequest = L10n.tr("Localizable", "sendRequest")
   /// Service Search

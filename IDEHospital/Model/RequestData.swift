@@ -15,7 +15,7 @@ struct RequestData: Codable {
     let message: String?
 }
 
-struct NurseResponse: Codable {
+struct RequestResponse: Codable {
     let code: Int
     let success: Bool
 }

@@ -8,7 +8,9 @@
 
 import Foundation
 
-protocol HomeNurseViewModelProtocol {
+protocol HomeNurseContactUsViewModelProtocol {
+    func getTitles() -> (String, String)
+    func isNumberLabelHidden() -> Bool
     func textViewShouldEndEditing(text: String)
     func requestTapped(with requestData: RequestData)
 }
@@ -16,19 +18,28 @@ protocol HomeNurseViewModelProtocol {
 class HomeNurseViewModel {
     
     // MARK:- Properties
-    private weak var view: HomeNurseVCProtocol?
+    private weak var view: HomeNurseContactUsVCProtocol?
+    private var status: Status
     
     // MARK:- Init
-    init(view: HomeNurseVCProtocol) {
+    init(view: HomeNurseContactUsVCProtocol, status: Status) {
         self.view = view
+        self.status = status
     }
 }
 
 // MARK:- Private Methods
-extension HomeNurseViewModel {    
+extension HomeNurseViewModel {
     private func sendNurseRequest(with requestData: RequestData) {
+        let request: APIRouter
+        switch status {
+        case .homeNurse:
+            request = APIRouter.nurseRequest(requestData)
+        default:
+            request = APIRouter.nurseRequest(requestData)
+        }
         view?.showLoader()
-        APIManager.sendNurseRequest(requestData) { [weak self] (response) in
+        APIManager.sendRequest(request) { [weak self] (response) in
             switch response {
             case .success(let response):
                 print(response.code)
@@ -47,7 +58,25 @@ extension HomeNurseViewModel {
 }
 
 // MARK:- ViewModel Protocol
-extension HomeNurseViewModel: HomeNurseViewModelProtocol {
+extension HomeNurseViewModel: HomeNurseContactUsViewModelProtocol {
+    func getTitles() -> (String, String) {
+        switch status {
+        case .homeNurse:
+            return (viewTitle: L10n.homeNurse, buttonTitle: L10n.sendRequest)
+        default:
+            return (viewTitle: L10n.contactUs, buttonTitle: L10n.send)
+        }
+    }
+    
+    func isNumberLabelHidden() -> Bool {
+        switch status {
+        case .homeNurse:
+            return true
+        default:
+            return false
+        }
+    }
+    
     func textViewShouldEndEditing(text: String) {
         if text.isEmpty {
             view?.addPlaceholder()

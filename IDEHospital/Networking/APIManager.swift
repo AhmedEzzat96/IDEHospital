@@ -22,9 +22,8 @@ class APIManager {
         }
     }
     
-    // This request i will refactor it while making the Contact Us request
-    class func sendNurseRequest(_ requestData: RequestData, completion: @escaping (Result<NurseResponse, Error>) -> Void) {
-        request(APIRouter.nurseRequest(requestData)) { (response) in
+    class func sendRequest(_ nurseOrContactRequest: URLRequestConvertible, completion: @escaping (Result<RequestResponse, Error>) -> Void) {
+        request(nurseOrContactRequest) { (response) in
             completion(response)
         }
     }

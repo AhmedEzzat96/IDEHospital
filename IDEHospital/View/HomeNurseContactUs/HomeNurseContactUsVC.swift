@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol HomeNurseVCProtocol: class {
+protocol HomeNurseContactUsVCProtocol: class {
     func addPlaceholder()
     func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)?)
     func showLoader()
@@ -16,27 +16,32 @@ protocol HomeNurseVCProtocol: class {
     func showHomeVC()
 }
 
-class HomeNurseVC: UIViewController {
+enum Status {
+    case homeNurse
+    case contactUs
+}
+
+class HomeNurseContactUsVC: UIViewController {
 
     // MARK:- Outlets
-    @IBOutlet weak var mainView: HomeNurseView!
+    @IBOutlet weak var mainView: HomeNurseContactUsView!
     
     // MARK:- Properties
-    private var viewModel: HomeNurseViewModelProtocol!
+    private var viewModel: HomeNurseContactUsViewModelProtocol!
     
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationController()
-        mainView.setup()
+        mainView.setup(buttonTitle: viewModel.getTitles().1, isNumberLabelHidden: viewModel.isNumberLabelHidden())
         mainView.detailsTextView.delegate = self
     }
 
     //MARK:- Public Methods
-    class func create() -> HomeNurseVC {
-        let homeNurseVC: HomeNurseVC = UIViewController.create(storyboardName: Storyboards.homeNurse, identifier: ViewControllers.homeNurseVC)
-        homeNurseVC.viewModel = HomeNurseViewModel(view: homeNurseVC)
-        return homeNurseVC
+    class func create(status: Status) -> HomeNurseContactUsVC {
+        let homeNurseContactUsVC: HomeNurseContactUsVC = UIViewController.create(storyboardName: Storyboards.homeNurse, identifier: ViewControllers.homeNurseContactUsVC)
+        homeNurseContactUsVC.viewModel = HomeNurseViewModel(view: homeNurseContactUsVC, status: status)
+        return homeNurseContactUsVC
     }
     
     // MARK:- Actions
@@ -46,15 +51,15 @@ class HomeNurseVC: UIViewController {
 }
 
 // MARK:- Private Methods
-extension HomeNurseVC {
+extension HomeNurseContactUsVC {
     private func setupNavigationController() {
-        title = L10n.homeNurse
+        title = viewModel.getTitles().0
         setupNavigationItems(backAction: .popUpCurrent)
     }
 }
 
 // MARK:- TextView Delegate
-extension HomeNurseVC: UITextViewDelegate {
+extension HomeNurseContactUsVC: UITextViewDelegate {
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         DispatchQueue.main.async {
             textView.text = ""
@@ -69,7 +74,7 @@ extension HomeNurseVC: UITextViewDelegate {
 }
 
 // MARK:- HomeNurseVC Protocol
-extension HomeNurseVC: HomeNurseVCProtocol {
+extension HomeNurseContactUsVC: HomeNurseContactUsVCProtocol {
     func addPlaceholder() {
         DispatchQueue.main.async {
             self.mainView.detailsTextView.text = L10n.enterDetails

@@ -27,18 +27,19 @@ extension UIViewController {
         ]
     }
     
-    func setupNavigationItems(backAction: Back) {
+    func setupNavigationItems(backAction: Back, isSettingEnabled: Bool = true) {
         let backItem = UIBarButtonItem(image: Asset.back.image, style: .done, target: self, action: Selector(backAction.rawValue))
         backItem.tintColor = ColorName.steelGrey.color
         let leftPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         leftPadding.width = 18
         navigationItem.leftBarButtonItems = [leftPadding, backItem]
-        
-        let settingsItem = UIBarButtonItem(image: Asset.settings.image, style: .done, target: self, action: #selector(showSettings))
-        settingsItem.tintColor = ColorName.steelGrey.color
-        let rightPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        rightPadding.width = 18
-        navigationItem.rightBarButtonItems = [rightPadding, settingsItem]
+        if isSettingEnabled {
+            let settingsItem = UIBarButtonItem(image: Asset.settings.image, style: .done, target: self, action: #selector(showSettings))
+            settingsItem.tintColor = ColorName.steelGrey.color
+            let rightPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+            rightPadding.width = 18
+            navigationItem.rightBarButtonItems = [rightPadding, settingsItem]
+        }
     }
     
     @objc func popUpCurrent() {

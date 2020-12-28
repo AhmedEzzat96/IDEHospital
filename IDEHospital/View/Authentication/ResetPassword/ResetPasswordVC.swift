@@ -10,7 +10,7 @@ import UIKit
 
 class ResetPasswordVC: UIViewController {
     //MARK:- IBOutlets
-    @IBOutlet var resetPasswordView: ResetPasswordView!
+    @IBOutlet weak var resetPasswordView: ResetPasswordView!
     
     //MARK:- Properties
     private var viewModel: ResetPasswordViewModelProtocol!

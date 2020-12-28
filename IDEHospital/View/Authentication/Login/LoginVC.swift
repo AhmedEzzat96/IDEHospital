@@ -10,7 +10,7 @@ import UIKit
 
 class LoginVC: UIViewController {
     //MARK:- IBOutlets
-    @IBOutlet var loginView: LoginView!
+    @IBOutlet weak var loginView: LoginView!
     
     //MARK:- Properties
     private var viewModel: LoginViewModelProtocol!

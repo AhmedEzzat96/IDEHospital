@@ -55,8 +55,20 @@ extension HomeNurseViewModel: HomeNurseViewModelProtocol {
     }
     
     func requestTapped(with requestData: RequestData) {
-        if let validationError = ValidationManager.shared().tryToCathchErrors(with: requestData) {
-            view?.showAlert(title: validationError.0, message: validationError.1, handler: nil)
+        if !ValidationManager.shared().isValid(with: requestData.name, validationType: .name) {
+            view?.showAlert(title: ValidationType.name.error.title, message: ValidationType.name.error.message, handler: nil)
+        }
+        
+        if !ValidationManager.shared().isValid(with: requestData.email, validationType: .email) {
+            view?.showAlert(title: ValidationType.email.error.title, message: ValidationType.email.error.message, handler: nil)
+        }
+        
+        if !ValidationManager.shared().isValid(with: requestData.mobile, validationType: .phone) {
+            view?.showAlert(title: ValidationType.phone.error.title, message: ValidationType.phone.error.message, handler: nil)
+        }
+        
+        if !ValidationManager.shared().isValid(with: requestData.message, validationType: .message) {
+            view?.showAlert(title: ValidationType.message.error.title, message: ValidationType.message.error.message, handler: nil)
         } else {
             sendNurseRequest(with: requestData)
         }

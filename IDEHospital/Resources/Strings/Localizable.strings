@@ -16,6 +16,7 @@
 "chooseCityFirst" = "Choose City first";
 "sorry" = "Sorry";
 "dismiss" = "Dismiss";
+"ok" = "OK";
 "en" = "en";
 "homeNurse" = "HOME NURSE";
 "info" = "If you would like further information about how we can help you and your health it would be great to hear from you";
@@ -33,7 +34,7 @@
 "invalidPhoneNumber" = "Invalid Phone Number";
 "phoneRequirements" = "Please enter valid phone number ex : 010xxxxxxxx";
 "missedData" = "Missed Data";
-"dataRequirements" = "Please enter all textfields above";
+"dataRequirements" = "You should enter your message details";
 "searchResults" = "SEARCH RESULTS";
 "noDoctorsFound" = "No Doctors Found";
 "reviews" = "Reviews";
@@ -57,3 +58,32 @@
 "timeFormat" = "hh:mm a";
 "am" = "am";
 "pm" = "pm";
+"setNewPassword" = "Set New Password";
+"resetPassword" = "RESET PASSWORD";
+"yourPassword" = "Enter password";
+"login" = "Login";
+"forgotPassword" = "Forgot Password?";
+"don’tHaveAccount" = "Don’t Have account?";
+"signup" = "Sign up";
+"choosePassword" = "Choose Password";
+"confirmPassword" = "Confirm Password";
+"signup" = "Sign Up";
+"termsLabel" = "By clicking sign up, you agree to our";
+"termsBtn" = "Terms & Conditions";
+"signupNav" = "SIGN UP";
+"loginNav" = "LOGIN";
+"warning" = "Warning!";
+"incorrectPassword" = "Incorrect Password";
+"passwordRequirements" = "The password must be at least 6 characters.";
+"confirmPasswordAlert" = "Your password and confirmation password do not match.";
+"resetPasswordMsg" = "Check your mail to reset your password.";
+"settings" = "SETTINGS";
+"aboutUs" = "About Us";
+"contactUs" = "Contact Us";
+"share" = "Share";
+"editProfile" = "Edit Profile";
+"bookedAppointment" = "Booked Appointments";
+"logout" = "Logouts";
+"favorites" = "Favourites";
+
+

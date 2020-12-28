@@ -80,8 +80,8 @@ extension MyFavoritesViewModel {
                 
             case .success(let response):
                 let data = response.data
-                let items = data.items
-                self.lastPage = data.total_pages
+                guard let items = data?.items else { return }
+                self.lastPage = data?.total_pages
                 self.favoriteItems += items
                 
             case .failure(let error):

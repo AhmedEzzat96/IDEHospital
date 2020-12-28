@@ -47,7 +47,6 @@ class MyFavoritesVC: UIViewController {
 extension MyFavoritesVC {
     private func setupNavigationController() {
         setupNavController(title: L10n.myFavorites)
-        setupNavigationItems(backAction: .dismissCurrent)
     }
     
     private func tableViewConfiguration() {

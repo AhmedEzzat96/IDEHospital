@@ -8,25 +8,27 @@
 
 import Foundation
 
-class ValidationManager {
+//MARK:- Enum
+enum ValidationType {
+    case name, email, phone, message, password
     
-    // MARK:- Enum
-    enum ValidationError {
-        case name, email, phone, missedData
-        
-        var error: (title: String, message: String) {
-            switch self {
-                case .name:
-                    return (L10n.invalidName, L10n.nameRequirements)
-            case .email:
-                return (L10n.invalidEmail, L10n.emailRequiremtnts)
-            case .phone:
-                return (L10n.invalidPhoneNumber, L10n.phoneRequirements)
-            case .missedData:
-                return (L10n.missedData, L10n.dataRequirements)
-            }
+    var error: (title: String, message: String) {
+        switch self {
+            case .name:
+                return (L10n.invalidName, L10n.nameRequirements)
+        case .email:
+            return (L10n.invalidEmail, L10n.emailRequiremtnts)
+        case .phone:
+            return (L10n.invalidPhoneNumber, L10n.phoneRequirements)
+        case .message:
+            return (L10n.missedData, L10n.dataRequirements)
+        case .password:
+            return (L10n.incorrectPassword, L10n.passwordRequirements)
         }
     }
+}
+
+class ValidationManager {
     
     // MARK:- Singleton
     private static let sharedInstance = ValidationManager()
@@ -35,51 +37,36 @@ class ValidationManager {
     }
     
     // MARK:- Public Methods
-    func tryToCathchErrors(with requestData: RequestData) -> (String, String)? {
-        if let name = requestData.name?.trimmed, !name.isEmpty, let email = requestData.email?.trimmed, !email.isEmpty, let phone = requestData.mobile?.trimmed, !phone.isEmpty, let message = requestData.message, !message.isEmpty, message != L10n.enterDetails {
-            
-            switch isValidName(name) {
-            case true: break
-            case false:
-                return ValidationError.name.error
+    func isValid(with string: String?, validationType: ValidationType?) -> Bool {
+        guard let string = string?.trimmed else {return false}
+        switch validationType {
+        case .email:
+            if !string.isValidEmail || string.isEmpty {
+                return false
             }
-            
-            switch isValidEmail(email) {
-            case true: break
-            case false:
-                return ValidationError.email.error
+            return true
+        case .password:
+            if !string.isValidPassword || string.isEmpty {
+                return false
             }
-            
-            switch isValidPhone(phone) {
-            case true: break
-            case false:
-                return ValidationError.phone.error
+            return true
+        case .name:
+            if !string.isValidName || string.isEmpty {
+                return false
             }
-            
-            return nil
+            return true
+        case .phone:
+            if !string.isValidPhone || string.isEmpty {
+                return false
+            }
+            return true
+        case .message:
+            if string == L10n.enterDetails || string.isEmpty  {
+                return false
+            }
+            return true
+        case .none:
+            return true
         }
-        return ValidationError.missedData.error
-    }
-}
-
-// MARK:- Private Methods
-extension ValidationManager {
-    private func isValidName(_ name: String) -> Bool {
-        guard name.count > 3, name.count < 18 else { return false }
-        let regularExpressionForName = "^(([^ ]?)(^[a-zA-Z].*[a-zA-Z]$)([^ ]?))$"
-        let testPassword = NSPredicate(format: "SELF MATCHES %@", regularExpressionForName)
-        return testPassword.evaluate(with: name)
-    }
-    
-    private func isValidEmail(_ email: String) -> Bool {
-        let regularExpressionForEmail = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let testEmail = NSPredicate(format:"SELF MATCHES %@", regularExpressionForEmail)
-        return testEmail.evaluate(with: email)
-    }
-    
-    private func isValidPhone(_ phone: String) -> Bool {
-        let phoneRegex = "^[0-9]{11}$"
-        let testPassword = NSPredicate(format:"SELF MATCHES %@", phoneRegex)
-        return testPassword.evaluate(with: phone)
     }
 }

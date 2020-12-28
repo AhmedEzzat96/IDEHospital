@@ -33,7 +33,7 @@
 "invalidPhoneNumber" = "Invalid Phone Number";
 "phoneRequirements" = "Please enter valid phone number ex : 010xxxxxxxx";
 "missedData" = "Missed Data";
-"dataRequirements" = "Please enter all textfields above";
+"dataRequirements" = "You should enter your message details";
 "searchResults" = "SEARCH RESULTS";
 "noDoctorsFound" = "No Doctors Found";
 "reviews" = "Reviews";
@@ -71,3 +71,7 @@
 "termsBtn" = "Terms & Conditions";
 "signupNav" = "SIGN UP";
 "loginNav" = "LOGIN";
+"warning" = "Warning!";
+"incorrectPassword" = "Incorrect Password";
+"passwordRequirements" = "The password must be at least 6 characters.";
+"confirmPasswordAlert" = "Your password and confirmation password do not match.";

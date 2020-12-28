@@ -26,7 +26,9 @@ internal enum L10n {
   internal static let company = L10n.tr("Localizable", "company")
   /// Confirm Password
   internal static let confirmPassword = L10n.tr("Localizable", "confirmPassword")
-  /// Please enter all textfields above
+  /// Your password and confirmation password do not match.
+  internal static let confirmPasswordAlert = L10n.tr("Localizable", "confirmPasswordAlert")
+  /// You should enter your message details
   internal static let dataRequirements = L10n.tr("Localizable", "dataRequirements")
   /// EEEE,d MMMM yyyy
   internal static let dateFormat = L10n.tr("Localizable", "dateFormat")
@@ -64,6 +66,8 @@ internal enum L10n {
   internal static let forgotPassword = L10n.tr("Localizable", "forgotPassword")
   /// HOME NURSE
   internal static let homeNurse = L10n.tr("Localizable", "homeNurse")
+  /// Incorrect Password
+  internal static let incorrectPassword = L10n.tr("Localizable", "incorrectPassword")
   /// If you would like further information about how we can help you and your health it would be great to hear from you
   internal static let info = L10n.tr("Localizable", "info")
   /// Invalid Email
@@ -98,6 +102,8 @@ internal enum L10n {
   internal static let noDoctorsFound = L10n.tr("Localizable", "noDoctorsFound")
   /// No Favorites Found!
   internal static let noFavoriteFound = L10n.tr("Localizable", "noFavoriteFound")
+  /// The password must be at least 6 characters.
+  internal static let passwordRequirements = L10n.tr("Localizable", "passwordRequirements")
   /// Please enter valid phone number ex : 010xxxxxxxx
   internal static let phoneRequirements = L10n.tr("Localizable", "phoneRequirements")
   /// pm
@@ -144,6 +150,8 @@ internal enum L10n {
   internal static let viewProfile = L10n.tr("Localizable", "viewProfile")
   /// Waiting Time : 
   internal static let waitingTime = L10n.tr("Localizable", "waitingTime")
+  /// Warning!
+  internal static let warning = L10n.tr("Localizable", "warning")
   /// Yes
   internal static let yes = L10n.tr("Localizable", "yes")
   /// Your Email

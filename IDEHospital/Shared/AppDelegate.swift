@@ -20,3 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
+
+extension AppDelegate {
+    static func sharedInstance() -> AppDelegate{
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+}

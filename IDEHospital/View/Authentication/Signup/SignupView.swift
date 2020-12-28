@@ -33,9 +33,13 @@ class SignupView: UIView {
 extension SignupView {
     private func setupTextFields() {
         nameTextField.setup(leftImage: Asset.name.image, placeholder: L10n.yourName)
+        emailTextField.keyboardType = .emailAddress
         emailTextField.setup(leftImage: Asset.email.image, placeholder: L10n.yourEmail)
+        mobileNoTextField.keyboardType = .numberPad
         mobileNoTextField.setup(leftImage: Asset.phone.image, placeholder: L10n.mobileNumber)
+        passwordTextField.isSecureTextEntry = true
         passwordTextField.setup(leftImage: Asset.password.image, placeholder: L10n.choosePassword)
+        confirmPasswordTextField.isSecureTextEntry = true
         confirmPasswordTextField.setup(leftImage: Asset.password.image, placeholder: L10n.confirmPassword)
     }
     

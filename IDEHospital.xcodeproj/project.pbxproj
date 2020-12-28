@@ -54,6 +54,10 @@
 		06EB2E94259910FE00AFEE13 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB2E93259910FE00AFEE13 /* LoginView.swift */; };
 		06EB2E962599177F00AFEE13 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB2E952599177F00AFEE13 /* SignupVC.swift */; };
 		06EB2E982599178E00AFEE13 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB2E972599178E00AFEE13 /* SignupView.swift */; };
+		06EB2E9A2599268500AFEE13 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB2E992599268500AFEE13 /* User.swift */; };
+		06EB2E9C259926F500AFEE13 /* SignupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB2E9B259926F500AFEE13 /* SignupResponse.swift */; };
+		06EB2E9E259930C800AFEE13 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB2E9D259930C800AFEE13 /* SignupViewModel.swift */; };
+		06EB2EA025994EB900AFEE13 /* String+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB2E9F25994EB900AFEE13 /* String+Regex.swift */; };
 		97D6CEE065259CA6151A715D /* Pods_IDEHospital.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C6039448DDB167416F6840 /* Pods_IDEHospital.framework */; };
 		991B7B6B258681CB00700114 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991B7B6A258681CB00700114 /* Localizable.strings */; };
 		991B7B6D2586877400700114 /* FontsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B7B6C2586877400700114 /* FontsManager.swift */; };
@@ -145,6 +149,10 @@
 		06EB2E93259910FE00AFEE13 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		06EB2E952599177F00AFEE13 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		06EB2E972599178E00AFEE13 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		06EB2E992599268500AFEE13 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		06EB2E9B259926F500AFEE13 /* SignupResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponse.swift; sourceTree = "<group>"; };
+		06EB2E9D259930C800AFEE13 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		06EB2E9F25994EB900AFEE13 /* String+Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Regex.swift"; sourceTree = "<group>"; };
 		39C6039448DDB167416F6840 /* Pods_IDEHospital.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDEHospital.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8569C0829D2161F9E9E57603 /* Pods-IDEHospital.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDEHospital.release.xcconfig"; path = "Target Support Files/Pods-IDEHospital/Pods-IDEHospital.release.xcconfig"; sourceTree = "<group>"; };
 		991B7B6A258681CB00700114 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -517,6 +525,7 @@
 		06E7DC4C2596984900382E2A /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				06EB2E9D259930C800AFEE13 /* SignupViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -524,6 +533,8 @@
 		06E7DC4D2596985500382E2A /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				06EB2E992599268500AFEE13 /* User.swift */,
+				06EB2E9B259926F500AFEE13 /* SignupResponse.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -716,6 +727,7 @@
 			isa = PBXGroup;
 			children = (
 				995CAC74258B9EC40042527F /* String+Trimming.swift */,
+				06EB2E9F25994EB900AFEE13 /* String+Regex.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -872,6 +884,7 @@
 			files = (
 				99F4D946259259C20078BE1D /* UIView+ActivityIndicator.swift in Sources */,
 				99F4D947259259C20078BE1D /* UIViewController+ShowSimpleAlert.swift in Sources */,
+				06EB2EA025994EB900AFEE13 /* String+Regex.swift in Sources */,
 				06E7DC55259698F400382E2A /* ResetPasswordVC.swift in Sources */,
 				99F4D948259259C20078BE1D /* UIImageView+CircularImage.swift in Sources */,
 				995CAC73258B9D6F0042527F /* ValidationManager.swift in Sources */,
@@ -911,16 +924,19 @@
 				062FDF79257E678D00949D54 /* Constants.swift in Sources */,
 				99F49F26258A8F6A0039A280 /* HomeNurseViewModel.swift in Sources */,
 				06DD9943257FBAA100D36344 /* HomeVC.swift in Sources */,
+				06EB2E9A2599268500AFEE13 /* User.swift in Sources */,
 				999A5C1D258E438900FC0792 /* SearchResultsView.swift in Sources */,
 				062FDF83257E6F4A00949D54 /* UIViewController+Storyboard.swift in Sources */,
 				9966C2FB2582636B0016A8CB /* ServiceSearchViewModel.swift in Sources */,
 				06EB2E962599177F00AFEE13 /* SignupVC.swift in Sources */,
+				06EB2E9E259930C800AFEE13 /* SignupViewModel.swift in Sources */,
 				9938FC25258173CC003781E5 /* UIView+CornerRadius.swift in Sources */,
 				0605D6722589541D006E38D8 /* MyFavoritesVC.swift in Sources */,
 				9938FC232580FBBB003781E5 /* UIView+SetupBackground.swift in Sources */,
 				99343E46258FC274008E069F /* SearchResults.swift in Sources */,
 				99F49F28258A955F0039A280 /* IDEAHospitalTextField.swift in Sources */,
 				0657F1A4259127B5003C9586 /* MyAppointmentCellViewModel.swift in Sources */,
+				06EB2E9C259926F500AFEE13 /* SignupResponse.swift in Sources */,
 				0657F1A225911E03003C9586 /* MyAppointmentResponse.swift in Sources */,
 				067584C9258D7CDD00A65404 /* UIViewController+ShowAlert.swift in Sources */,
 				0605D67C258959F3006E38D8 /* MyFavoriteCell.swift in Sources */,

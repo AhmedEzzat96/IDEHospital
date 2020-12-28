@@ -16,6 +16,7 @@ struct Storyboards {
     static let searchResults = "SearchResults"
     static let myFavorites = "MyFavorites"
     static let myAppointments = "MyAppointments"
+    static let authentication = "Authentication"
 }
 
 // ViewControllers
@@ -26,6 +27,9 @@ struct ViewControllers {
     static let searchResultsVC = "SearchResultsVC"
     static let myFavoritesVC = "MyFavoritesVC"
     static let myAppointmentsVC = "MyAppointmentsVC"
+    static let loginVC = "LoginVC"
+    static let signupVC = "SignupVC"
+    static let resetPasswordVC = "ResetPasswordVC"
     
 }
 
@@ -41,6 +45,7 @@ struct URLs {
     static let nurseRequset = "/nursing_requests"
     static let favorites = "/favorites/doctors"
     static let appointments = "/user_appointments"
+    static let register = "/register"
 }
 
 // HeaderKeys

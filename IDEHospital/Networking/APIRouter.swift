@@ -21,6 +21,7 @@ enum APIRouter: URLRequestConvertible{
     case addRemoveFavorite(_ doctorID: Int)
     case appointments(_ page: Int)
     case removeAppointment(_ appointmentID: Int)
+    case register(_ user: User)
     
     // MARK: - HttpMethod
     private var method: HTTPMethod {
@@ -65,6 +66,8 @@ enum APIRouter: URLRequestConvertible{
             return URLs.appointments
         case .removeAppointment(let appointmentID):
             return URLs.appointments + "/\(appointmentID)"
+        case .register:
+            return URLs.register
         }
     }
     
@@ -78,7 +81,7 @@ enum APIRouter: URLRequestConvertible{
         
         // Headers
         switch self {
-        case .nurseRequest:
+        case .nurseRequest, .register:
             urlRequest.setValue(L10n.en, forHTTPHeaderField: HeaderKeys.acceptLanguage)
             urlRequest.setValue(HeaderValues.appJSON, forHTTPHeaderField: HeaderKeys.accept)
         case .favorites, .addRemoveFavorite, .appointments, .removeAppointment, .searchForDoctors:
@@ -93,6 +96,8 @@ enum APIRouter: URLRequestConvertible{
         let httpBody: Data? = {
             switch self {
             case .nurseRequest(let body):
+                return encodeToJSON(body)
+            case .register(let body):
                 return encodeToJSON(body)
             default:
                 return nil

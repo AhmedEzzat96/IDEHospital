@@ -58,6 +58,12 @@ class APIManager {
             completion(response)
         }
     }
+    
+    class func register(with user: User, completion: @escaping (Result<SignupResponse, Error>) -> Void) {
+        request(APIRouter.register(user)) { (response) in
+            completion(response)
+        }
+    }
 }
 
 extension APIManager{

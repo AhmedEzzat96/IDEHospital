@@ -9,7 +9,11 @@
 import Foundation
 
 struct MyFavoriteResponse: Codable {
-    let data: MyFavoriteData
+    let code: Int
+    let data: MyFavoriteData?
+    let success: Bool?
+    let message: String?
+    let errors: String?
 }
 
 struct MyFavoriteData: Codable {

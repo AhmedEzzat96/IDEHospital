@@ -16,9 +16,9 @@
 		0605D67F2589B602006E38D8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0605D67E2589B602006E38D8 /* CustomButton.swift */; };
 		06064CEA2582C693006ADB86 /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06064CE92582C693006ADB86 /* AssetsManager.swift */; };
 		06264484259A53F000279C7C /* CategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06264483259A53F000279C7C /* CategoryCellViewModel.swift */; };
+		06264490259A606A00279C7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0626448F259A606A00279C7C /* LaunchScreen.storyboard */; };
 		062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF5B257E669B00949D54 /* AppDelegate.swift */; };
 		062FDF63257E669B00949D54 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 062FDF61257E669B00949D54 /* Home.storyboard */; };
-		062FDF68257E669E00949D54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 062FDF66257E669E00949D54 /* LaunchScreen.storyboard */; };
 		062FDF79257E678D00949D54 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF78257E678D00949D54 /* Constants.swift */; };
 		062FDF7D257E67F200949D54 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF7C257E67F200949D54 /* UserDefaultsManager.swift */; };
 		062FDF7F257E687D00949D54 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF7E257E687D00949D54 /* APIManager.swift */; };
@@ -117,11 +117,11 @@
 		06064D2125830A8A006ADB86 /* Colors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
 		06064D2325830CBB006ADB86 /* ColorsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsManager.swift; sourceTree = "<group>"; };
 		06264483259A53F000279C7C /* CategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellViewModel.swift; sourceTree = "<group>"; };
+		0626448F259A606A00279C7C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		062FDF58257E669B00949D54 /* IDEHospital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDEHospital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		062FDF5B257E669B00949D54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		062FDF62257E669B00949D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		062FDF64257E669E00949D54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		062FDF67257E669E00949D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		062FDF69257E669E00949D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		062FDF78257E678D00949D54 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		062FDF7C257E67F200949D54 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 		06243E0C258522FB00CC67EC /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
-				062FDF66257E669E00949D54 /* LaunchScreen.storyboard */,
+				0626448F259A606A00279C7C /* LaunchScreen.storyboard */,
 			);
 			path = LaunchScreen;
 			sourceTree = "<group>";
@@ -857,7 +857,6 @@
 			files = (
 				06BB4E1F2585337200D2C4E3 /* Assets.xcassets in Resources */,
 				0644BB342590F6E600963D65 /* MyAppointments.storyboard in Resources */,
-				062FDF68257E669E00949D54 /* LaunchScreen.storyboard in Resources */,
 				991B7B6B258681CB00700114 /* Localizable.strings in Resources */,
 				0644BB2A2590EE0300963D65 /* MyAppointmentCell.xib in Resources */,
 				99F90A7025847B4A006E7B91 /* Colors.txt in Resources */,
@@ -874,6 +873,7 @@
 				06EB2EB125998DB000AFEE13 /* SettingCell.xib in Resources */,
 				998F8B14258E41BA006AB00A /* SearchResults.storyboard in Resources */,
 				06DD995D257FE68E00D36344 /* PTSans-Bold.ttf in Resources */,
+				06264490259A606A00279C7C /* LaunchScreen.storyboard in Resources */,
 				0605D67625895473006E38D8 /* MyFavorites.storyboard in Resources */,
 				0678C11F2581B09500949700 /* CategoryCell.xib in Resources */,
 			);
@@ -1032,14 +1032,6 @@
 				062FDF62257E669B00949D54 /* Base */,
 			);
 			name = Home.storyboard;
-			sourceTree = "<group>";
-		};
-		062FDF66257E669E00949D54 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				062FDF67257E669E00949D54 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

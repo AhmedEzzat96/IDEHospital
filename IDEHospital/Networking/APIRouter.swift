@@ -88,8 +88,8 @@ enum APIRouter: URLRequestConvertible{
         // Headers
         switch self {
         case .nurseRequest, .register, .login, .forgetPassword:
-            urlRequest.setValue(L10n.en, forHTTPHeaderField: HeaderKeys.acceptLanguage)
             urlRequest.setValue(HeaderValues.appJSON, forHTTPHeaderField: HeaderKeys.accept)
+            
         case .favorites, .addRemoveFavorite, .appointments, .removeAppointment, .searchForDoctors:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().token ?? "")",
                 forHTTPHeaderField: HeaderKeys.authorization)

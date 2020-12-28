@@ -20,8 +20,6 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         loginView.setup()
         setupNavigation()
-        self.viewModel = LoginViewModel(view: self)
-        
     }
     
     //MARK:- Public Methods

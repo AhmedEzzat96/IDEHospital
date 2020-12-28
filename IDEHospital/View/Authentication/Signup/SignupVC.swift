@@ -27,7 +27,6 @@ class SignupVC: UIViewController {
         super.viewDidLoad()
         signupView.setup()
         setupNavigation()
-        self.viewModel = SignupViewModel(view: self)
     }
     
     //MARK:- Public Methods

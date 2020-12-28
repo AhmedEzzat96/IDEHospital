@@ -20,7 +20,6 @@ class ResetPasswordVC: UIViewController {
         super.viewDidLoad()
         resetPasswordView.setup()
         setupNavigation()
-        self.viewModel = ResetPasswordViewModel(view: self)
     }
     
     //MARK:- Public Methods

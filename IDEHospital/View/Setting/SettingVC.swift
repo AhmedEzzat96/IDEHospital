@@ -38,7 +38,7 @@ class SettingVC: UIViewController {
     class func create() -> SettingVC {
         let settingVC: SettingVC = UIViewController.create(storyboardName: Storyboards.setting, identifier: ViewControllers.settingVC)
         settingVC.viewModel = SettingViewModel(view: settingVC)
-        settingVC.viewModel.configureModels()
+        settingVC.viewModel.configureModel()
         return settingVC
     }
 
@@ -93,12 +93,18 @@ extension SettingVC: SettingVCProtocol {
     
     func goToFavorites() {
         let myFavoriteVC = MyFavoritesVC.create()
-        navigationController?.pushViewController(myFavoriteVC, animated: true)
+        myFavoriteVC.setupNavigationItems(backAction: .dismissCurrent, isSettingEnable: false)
+        let myFavoriteNav = UINavigationController(rootViewController: myFavoriteVC)
+        myFavoriteNav.modalPresentationStyle = .fullScreen
+        present(myFavoriteNav, animated: true)
     }
     
     func goToAppointment() {
         let myAppointmentVC = MyAppointmentsVC.create()
-        navigationController?.pushViewController(myAppointmentVC, animated: true)
+        myAppointmentVC.setupNavigationItems(backAction: .dismissCurrent, isSettingEnable: false)
+        let myAppointmentNav = UINavigationController(rootViewController: myAppointmentVC)
+        myAppointmentNav.modalPresentationStyle = .fullScreen
+        present(myAppointmentNav, animated: true)
     }
     
     func goToHome() {

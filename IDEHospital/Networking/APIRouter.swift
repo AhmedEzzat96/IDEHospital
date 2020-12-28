@@ -91,8 +91,8 @@ enum APIRouter: URLRequestConvertible{
             urlRequest.setValue(L10n.en, forHTTPHeaderField: HeaderKeys.acceptLanguage)
             urlRequest.setValue(HeaderValues.appJSON, forHTTPHeaderField: HeaderKeys.accept)
         case .favorites, .addRemoveFavorite, .appointments, .removeAppointment, .searchForDoctors:
-            urlRequest.setValue(UserDefaultsManager.shared().token,
-                                forHTTPHeaderField: HeaderKeys.authorization)
+            urlRequest.setValue("Bearer \(UserDefaultsManager.shared().token ?? "")",
+                forHTTPHeaderField: HeaderKeys.authorization)
         default:
             urlRequest.setValue(L10n.en, forHTTPHeaderField: HeaderKeys.acceptLanguage)
         }

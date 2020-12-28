@@ -10,7 +10,7 @@ import Foundation
 
 protocol SettingViewModelProtocol {
     func settingCount() -> Int
-    func configureModels()
+    func configureModel()
     func getSetting(for index: Int) -> Setting
 }
 
@@ -27,7 +27,7 @@ class SettingViewModel {
 
 //MARK:- SettingViewModel Protocol
 extension SettingViewModel: SettingViewModelProtocol {
-    func configureModels() {
+    func configureModel() {
         var notAuthSetting = [Setting]()
         var authSetting = [Setting]()
         

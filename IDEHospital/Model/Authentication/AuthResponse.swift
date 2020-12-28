@@ -8,18 +8,19 @@
 
 import Foundation
 
-struct SignupResponse: Codable {
-    let data: SignupData?
+struct AuthResponse: Codable {
+    let data: AuthData?
     let code: Int
     let success: Bool?
     let errors: SignupErrors?
+    let message: String?
 }
 
 struct SignupErrors: Codable {
     let email: [String]?
 }
 
-struct SignupData: Codable {
+struct AuthData: Codable {
     let id: Int?
     let email: String?
     let name: String?

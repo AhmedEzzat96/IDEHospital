@@ -32,7 +32,9 @@ class LoginView: UIView {
 //MARK:- Private Methods
 extension LoginView {
     private func setupTextFields() {
+        emailTextField.keyboardType = .emailAddress
         emailTextField.setup(leftImage: Asset.email.image, placeholder: L10n.yourEmail)
+        passwordTextField.isSecureTextEntry = true
         passwordTextField.setup(leftImage: Asset.password.image, placeholder: L10n.yourPassword)
     }
     

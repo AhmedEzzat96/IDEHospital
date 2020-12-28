@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SignupVCProtocol: class {
+protocol AuthProtocol: class {
     func showAlert(title: String, message: String)
     func showLoader()
     func hideLoader()
@@ -31,7 +31,7 @@ class SignupVC: UIViewController {
     }
     
     @IBAction func signupBtnPressed(_ sender: CustomButton) {
-        let user = User(name: signupView.nameTextField.text, email: signupView.emailTextField.text, mobile: signupView.mobileNoTextField.text, password: signupView.passwordTextField.text)
+        let user = User(name: signupView.nameTextField.text, email: signupView.emailTextField.text!, mobile: signupView.mobileNoTextField.text, password: signupView.passwordTextField.text!)
         viewModel.goToHome(user: user, confirmPassword: signupView.confirmPasswordTextField.text)
     }
     
@@ -55,7 +55,7 @@ extension SignupVC {
 }
 
 //MARK:- SignupVC Protocol
-extension SignupVC: SignupVCProtocol {
+extension SignupVC: AuthProtocol {
     func goToHomeScreen() {
         let window = AppDelegate.sharedInstance().window
         let homeVC = HomeVC.create()

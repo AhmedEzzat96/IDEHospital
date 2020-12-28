@@ -66,7 +66,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M4L-pL-nhr" customClass="IDEAHospitalTextField" customModule="IDEHospital" customModuleProvider="target">
-                                <rect key="frame" x="32" y="120" width="256" height="36"/>
+                                <rect key="frame" x="32" y="164" width="256" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="72I-ba-qG1"/>
                                 </constraints>
@@ -74,26 +74,32 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RWy-V9-ZFH" customClass="IDEAHospitalTextField" customModule="IDEHospital" customModuleProvider="target">
-                                <rect key="frame" x="32" y="176" width="256" height="36"/>
+                                <rect key="frame" x="32" y="220" width="256" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cW-ED-Hvj" customClass="CustomButton" customModule="IDEHospital" customModuleProvider="target">
-                                <rect key="frame" x="32" y="238" width="256" height="45"/>
+                                <rect key="frame" x="32" y="282" width="256" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="uxv-Bu-odX"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="bEc-mj-u67" eventType="touchUpInside" id="zmz-bI-Kj7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkD-sN-cOy">
-                                <rect key="frame" x="137" y="308" width="46" height="17"/>
+                                <rect key="frame" x="137" y="352" width="46" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="77x-gb-lpF"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="forgetPasswordBtnPressed:" destination="bEc-mj-u67" eventType="touchUpInside" id="dQf-yH-Go4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qk-az-OPv">
-                                <rect key="frame" x="144.5" y="369" width="31" height="14"/>
+                                <rect key="frame" x="144.5" y="413" width="31" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="lfy-5A-E6J"/>
                                 </constraints>
@@ -102,25 +108,28 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ht8-Dz-AXg">
-                                <rect key="frame" x="46.5" y="375" width="85.5" height="2"/>
+                                <rect key="frame" x="46.5" y="419" width="85.5" height="2"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="zAf-tg-4R0"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B95-8J-Q3q">
-                                <rect key="frame" x="188" y="375" width="85.5" height="2"/>
+                                <rect key="frame" x="188" y="419" width="85.5" height="2"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="Eoc-AC-OtV"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3I-fj-jxs" customClass="CustomButton" customModule="IDEHospital" customModuleProvider="target">
-                                <rect key="frame" x="32" y="429" width="256" height="45"/>
+                                <rect key="frame" x="32" y="473" width="256" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="kF5-VN-ZUJ"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="signupBtnPressed:" destination="bEc-mj-u67" eventType="touchUpInside" id="znt-lb-Jtw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -180,7 +189,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="4h9-m4-FwU" kind="relationship" relationship="rootViewController" id="CJH-Vb-fr9"/>
+                        <segue destination="bEc-mj-u67" kind="relationship" relationship="rootViewController" id="H7R-iw-cT2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cK-n7-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -196,7 +205,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ESa-Jv-NbN" customClass="IDEAHospitalTextField" customModule="IDEHospital" customModuleProvider="target">
-                                <rect key="frame" x="23" y="148" width="274" height="36"/>
+                                <rect key="frame" x="23" y="104" width="274" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="rlp-gd-BQy"/>
                                 </constraints>
@@ -204,27 +213,27 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3kh-WN-3pn" customClass="IDEAHospitalTextField" customModule="IDEHospital" customModuleProvider="target">
-                                <rect key="frame" x="23" y="210" width="274" height="36"/>
+                                <rect key="frame" x="23" y="166" width="274" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ael-hb-QhR" customClass="IDEAHospitalTextField" customModule="IDEHospital" customModuleProvider="target">
-                                <rect key="frame" x="23" y="272" width="274" height="36"/>
+                                <rect key="frame" x="23" y="228" width="274" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nED-iT-VHH" customClass="IDEAHospitalTextField" customModule="IDEHospital" customModuleProvider="target">
-                                <rect key="frame" x="23" y="334" width="274" height="35.5"/>
+                                <rect key="frame" x="23" y="290" width="274" height="35.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QhU-bm-N4G" customClass="IDEAHospitalTextField" customModule="IDEHospital" customModuleProvider="target">
-                                <rect key="frame" x="23" y="395.5" width="274" height="36"/>
+                                <rect key="frame" x="23" y="351.5" width="274" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBY-gU-oLC" customClass="CustomButton" customModule="IDEHospital" customModuleProvider="target">
-                                <rect key="frame" x="25.5" y="473.5" width="269" height="45"/>
+                                <rect key="frame" x="25.5" y="429.5" width="269" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="k9C-a1-ydU"/>
                                 </constraints>
@@ -234,7 +243,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIk-Gq-nh3">
-                                <rect key="frame" x="16.5" y="533.5" width="287" height="14"/>
+                                <rect key="frame" x="16.5" y="489.5" width="287" height="14"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wl5-hJ-mQj">
                                         <rect key="frame" x="0.0" y="0.0" width="42" height="14"/>

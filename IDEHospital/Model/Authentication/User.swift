@@ -9,8 +9,15 @@
 import Foundation
 
 struct User: Codable {
-    let name: String!
-    let email: String!
-    let mobile: String!
-    let password: String!
+    let name: String?
+    let email: String?
+    let mobile: String?
+    let password: String?
+    
+    init(name: String? = nil, email: String?, mobile: String? = nil, password: String?) {
+        self.name = name
+        self.email = email
+        self.mobile = mobile
+        self.password = password
+    }
 }

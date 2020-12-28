@@ -46,6 +46,7 @@ struct URLs {
     static let favorites = "/favorites/doctors"
     static let appointments = "/user_appointments"
     static let register = "/register"
+    static let login = "/login"
 }
 
 // HeaderKeys

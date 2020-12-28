@@ -70,6 +70,12 @@ class APIManager {
             completion(response)
         }
     }
+    
+    class func forgetPassword(with user: User, completion: @escaping (Result<AuthResponse, Error>) -> Void) {
+        request(APIRouter.forgetPassword(user)) { (response) in
+            completion(response)
+        }
+    }
 }
 
 extension APIManager{

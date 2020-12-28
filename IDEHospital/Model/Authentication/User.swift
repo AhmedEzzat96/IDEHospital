@@ -14,7 +14,7 @@ struct User: Codable {
     let mobile: String?
     let password: String?
     
-    init(name: String? = nil, email: String?, mobile: String? = nil, password: String?) {
+    init(name: String? = nil, email: String?, mobile: String? = nil, password: String? = nil) {
         self.name = name
         self.email = email
         self.mobile = mobile

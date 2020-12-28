@@ -16,6 +16,7 @@
 "chooseCityFirst" = "Choose City first";
 "sorry" = "Sorry";
 "dismiss" = "Dismiss";
+"ok" = "OK";
 "en" = "en";
 "homeNurse" = "HOME NURSE";
 "info" = "If you would like further information about how we can help you and your health it would be great to hear from you";
@@ -75,3 +76,4 @@
 "incorrectPassword" = "Incorrect Password";
 "passwordRequirements" = "The password must be at least 6 characters.";
 "confirmPasswordAlert" = "Your password and confirmation password do not match.";
+"resetPasswordMsg" = "Check your mail to reset your password.";

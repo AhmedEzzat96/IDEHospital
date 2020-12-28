@@ -11,7 +11,7 @@ import UIKit
 extension UIViewController {
     func showSimpleAlert(title: String, message: String?, handler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: L10n.dismiss, style: .cancel, handler: handler))
+        alert.addAction(UIAlertAction(title: L10n.ok, style: .cancel, handler: handler))
         present(alert, animated: true)
     }
 }

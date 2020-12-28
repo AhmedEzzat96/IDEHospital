@@ -30,6 +30,9 @@
                                     <constraint firstAttribute="height" constant="45" id="tfr-GK-go5"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="setNewPasswordBtnPressed:" destination="93k-b7-TFs" eventType="touchUpInside" id="1ek-6p-zmP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -189,7 +192,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="bEc-mj-u67" kind="relationship" relationship="rootViewController" id="H7R-iw-cT2"/>
+                        <segue destination="bEc-mj-u67" kind="relationship" relationship="rootViewController" id="3aw-GE-zDg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cK-n7-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

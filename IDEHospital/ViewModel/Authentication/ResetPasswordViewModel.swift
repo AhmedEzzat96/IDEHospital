@@ -1,5 +1,5 @@
 //
-//  LoginViewModel.swift
+//  ResetPasswordViewModel.swift
 //  IDEHospital
 //
 //  Created by Ahmed Ezzat on 28/12/2020.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol LoginViewModelProtocol {
+protocol ResetPasswordViewModelProtocol {
     func goToHome(user: User?)
 }
 
-class LoginViewModel {
+class ResetPasswordViewModel {
     //MARK:- Properties
     private weak var view: AuthProtocol?
     
@@ -22,31 +22,36 @@ class LoginViewModel {
     }
 }
 
-//MARK:- LoginViewModel Protocol
-extension LoginViewModel: LoginViewModelProtocol {
+//MARK:- ResetPasswordViewModel Protocol
+extension ResetPasswordViewModel: ResetPasswordViewModelProtocol {
     func goToHome(user: User?) {
-        if validateUser(with: user) {
-            register(with: user!)
+        if validateEmail(with: user) {
+            resetPassword(with: user!)
         }
     }
     
 }
 
 //MARK:- Private Methods
-extension LoginViewModel {
-    private func register(with user: User) {
+extension ResetPasswordViewModel {
+    private func resetPassword(with user: User) {
         self.view?.showLoader()
-        APIManager.login(with: user) { [weak self] (result) in
+        APIManager.forgetPassword(with: user) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
                 
             case .success(let response):
-                if response.code == 201 && response.success == true {
-                    UserDefaultsManager.shared().token = response.data?.access_token
-                    self.view?.goToHomeScreen()
+                if response.code == 202 && response.success == true {
+                    self.view?.showAlert(title: L10n.yourRequestWasSent, message: L10n.resetPasswordMsg, handler: { [weak self] (alert) in
+                        
+                        DispatchQueue.main.async {
+                            self?.view?.goToHomeScreen()
+                        }
+                        
+                    })
                 } else {
-                    if let message = response.message {
-                        self.view?.showAlert(title: L10n.warning, message: message, handler: nil)
+                    if let error = response.errors?.email?[0] {
+                        self.view?.showAlert(title: L10n.warning, message: error, handler: nil)
                     }
                 }
             case .failure(let error):
@@ -56,15 +61,10 @@ extension LoginViewModel {
         }
     }
     
-    private func validateUser(with user: User?) -> Bool {
+    private func validateEmail(with user: User?) -> Bool {
         
         if !ValidationManager.shared().isValid(with: user?.email, validationType: .email) {
             self.view?.showAlert(title: ValidationType.email.error.title, message: ValidationType.email.error.message, handler: nil)
-            return false
-        }
-        
-        if !ValidationManager.shared().isValid(with: user?.password, validationType: .password) {
-            self.view?.showAlert(title: ValidationType.password.error.title, message: ValidationType.password.error.message, handler: nil)
             return false
         }
         

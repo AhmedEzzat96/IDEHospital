@@ -24,6 +24,13 @@ class LoginVC: UIViewController {
         
     }
     
+    //MARK:- Public Methods
+    class func create() -> LoginVC {
+        let loginVC: LoginVC = UIViewController.create(storyboardName: Storyboards.authentication, identifier: ViewControllers.loginVC)
+        loginVC.viewModel = LoginViewModel(view: loginVC)
+        return loginVC
+    }
+    
     //MARK:- IBActions
     @IBAction func loginBtnPressed(_ sender: CustomButton) {
         let user = User(email: loginView.emailTextField.text, password: loginView.passwordTextField.text)
@@ -31,9 +38,11 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func forgetPasswordBtnPressed(_ sender: UIButton) {
+        goToResetPasswordVC()
     }
     
     @IBAction func signupBtnPressed(_ sender: CustomButton) {
+        goToSignUpVC()
     }
     
 }
@@ -44,10 +53,24 @@ extension LoginVC {
         self.setupNavController(title: L10n.loginNav)
         self.setupNavigationItems(backAction: .popUpCurrent)
     }
+    
+    private func goToSignUpVC() {
+        let signupVC = SignupVC.create()
+        navigationController?.pushViewController(signupVC, animated: true)
+    }
+    
+    private func goToResetPasswordVC() {
+        let resetPasswordVC = ResetPasswordVC.create()
+        navigationController?.pushViewController(resetPasswordVC, animated: true)
+    }
 }
 
-//MARK:- LoginVC Protocol
+//MARK:- Auth Protocol
 extension LoginVC: AuthProtocol {
+    func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)?) {
+        self.showSimpleAlert(title: title, message: message, handler: handler)
+    }
+    
     func goToHomeScreen() {
         let window = AppDelegate.sharedInstance().window
         let homeVC = HomeVC.create()
@@ -63,9 +86,4 @@ extension LoginVC: AuthProtocol {
     func hideLoader() {
         self.view.hideActivityIndicator()
     }
-    
-    func showAlert(title: String, message: String) {
-        self.showSimpleAlert(title: title, message: message)
-    }
-    
 }

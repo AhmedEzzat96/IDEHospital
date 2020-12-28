@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AuthProtocol: class {
-    func showAlert(title: String, message: String)
+    func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)?)
     func showLoader()
     func hideLoader()
     func goToHomeScreen()
@@ -30,6 +30,14 @@ class SignupVC: UIViewController {
         self.viewModel = SignupViewModel(view: self)
     }
     
+    //MARK:- Public Methods
+    class func create() -> SignupVC {
+        let signupVC: SignupVC = UIViewController.create(storyboardName: Storyboards.authentication, identifier: ViewControllers.signupVC)
+        signupVC.viewModel = SignupViewModel(view: signupVC)
+        return signupVC
+    }
+    
+    //MARK:- IBActions
     @IBAction func signupBtnPressed(_ sender: CustomButton) {
         let user = User(name: signupView.nameTextField.text, email: signupView.emailTextField.text!, mobile: signupView.mobileNoTextField.text, password: signupView.passwordTextField.text!)
         viewModel.goToHome(user: user, confirmPassword: signupView.confirmPasswordTextField.text)
@@ -38,12 +46,6 @@ class SignupVC: UIViewController {
     @IBAction func termsBtnPressed(_ sender: UIButton) {
     }
     
-    //MARK:- Public Methods
-    class func create() -> SignupVC {
-        let signupVC: SignupVC = UIViewController.create(storyboardName: Storyboards.authentication, identifier: ViewControllers.signupVC)
-        signupVC.viewModel = SignupViewModel(view: signupVC)
-        return signupVC
-    }
 }
 
 //MARK:- Private Methods
@@ -54,8 +56,12 @@ extension SignupVC {
     }
 }
 
-//MARK:- SignupVC Protocol
+//MARK:- Auth Protocol
 extension SignupVC: AuthProtocol {
+    func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)? = nil) {
+        self.showSimpleAlert(title: title, message: message, handler: handler)
+    }
+    
     func goToHomeScreen() {
         let window = AppDelegate.sharedInstance().window
         let homeVC = HomeVC.create()
@@ -70,10 +76,6 @@ extension SignupVC: AuthProtocol {
     
     func hideLoader() {
         self.view.hideActivityIndicator()
-    }
-    
-    func showAlert(title: String, message: String) {
-        self.showSimpleAlert(title: title, message: message)
     }
     
     

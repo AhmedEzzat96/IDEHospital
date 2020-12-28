@@ -12,11 +12,11 @@ struct AuthResponse: Codable {
     let data: AuthData?
     let code: Int
     let success: Bool?
-    let errors: SignupErrors?
+    let errors: AuthError?
     let message: String?
 }
 
-struct SignupErrors: Codable {
+struct AuthError: Codable {
     let email: [String]?
 }
 

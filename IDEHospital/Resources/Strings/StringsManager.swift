@@ -102,6 +102,8 @@ internal enum L10n {
   internal static let noDoctorsFound = L10n.tr("Localizable", "noDoctorsFound")
   /// No Favorites Found!
   internal static let noFavoriteFound = L10n.tr("Localizable", "noFavoriteFound")
+  /// OK
+  internal static let ok = L10n.tr("Localizable", "ok")
   /// The password must be at least 6 characters.
   internal static let passwordRequirements = L10n.tr("Localizable", "passwordRequirements")
   /// Please enter valid phone number ex : 010xxxxxxxx
@@ -112,6 +114,8 @@ internal enum L10n {
   internal static let region = L10n.tr("Localizable", "region")
   /// RESET PASSWORD
   internal static let resetPassword = L10n.tr("Localizable", "resetPassword")
+  /// Check your mail to reset your password.
+  internal static let resetPasswordMsg = L10n.tr("Localizable", "resetPasswordMsg")
   /// Review
   internal static let review = L10n.tr("Localizable", "review")
   /// Reviews

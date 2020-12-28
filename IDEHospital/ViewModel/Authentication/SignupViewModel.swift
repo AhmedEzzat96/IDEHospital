@@ -45,7 +45,7 @@ extension SignupViewModel {
                     self.view?.goToHomeScreen()
                 } else {
                     if let email = response.errors?.email?[0] {
-                        self.view?.showAlert(title: L10n.warning, message: email)
+                        self.view?.showAlert(title: L10n.warning, message: email, handler: nil)
                     }
                 }
             case .failure(let error):
@@ -57,27 +57,27 @@ extension SignupViewModel {
     
     private func validateUser(with user: User?, confirmPassword: String?) -> Bool {
         if !ValidationManager.shared().isValid(with: user?.name, validationType: .name) {
-            self.view?.showAlert(title: ValidationType.name.error.title, message: ValidationType.name.error.message)
+            self.view?.showAlert(title: ValidationType.name.error.title, message: ValidationType.name.error.message, handler: nil)
             return false
         }
         
         if !ValidationManager.shared().isValid(with: user?.email, validationType: .email) {
-            self.view?.showAlert(title: ValidationType.email.error.title, message: ValidationType.email.error.message)
+            self.view?.showAlert(title: ValidationType.email.error.title, message: ValidationType.email.error.message, handler: nil)
             return false
         }
         
         if !ValidationManager.shared().isValid(with: user?.mobile, validationType: .phone) {
-            self.view?.showAlert(title: ValidationType.phone.error.title, message: ValidationType.phone.error.message)
+            self.view?.showAlert(title: ValidationType.phone.error.title, message: ValidationType.phone.error.message, handler: nil)
             return false
         }
         
         if !ValidationManager.shared().isValid(with: user?.password, validationType: .password) {
-            self.view?.showAlert(title: ValidationType.password.error.title, message: ValidationType.password.error.message)
+            self.view?.showAlert(title: ValidationType.password.error.title, message: ValidationType.password.error.message, handler: nil)
             return false
         }
         
         if confirmPassword != user?.password {
-            self.view?.showAlert(title: L10n.incorrectPassword, message: L10n.confirmPasswordAlert)
+            self.view?.showAlert(title: L10n.incorrectPassword, message: L10n.confirmPasswordAlert, handler: nil)
             return false
         }
         

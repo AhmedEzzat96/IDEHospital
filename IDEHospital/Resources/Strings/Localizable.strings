@@ -77,3 +77,13 @@
 "passwordRequirements" = "The password must be at least 6 characters.";
 "confirmPasswordAlert" = "Your password and confirmation password do not match.";
 "resetPasswordMsg" = "Check your mail to reset your password.";
+"settings" = "SETTINGS";
+"aboutUs" = "About Us";
+"contactUs" = "Contact Us";
+"share" = "Share";
+"editProfile" = "Edit Profile";
+"bookedAppointment" = "Booked Appointments";
+"logout" = "Logouts";
+"favorites" = "Favourites";
+
+

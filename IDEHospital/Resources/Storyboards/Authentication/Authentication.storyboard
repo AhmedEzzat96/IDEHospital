@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="drG-YV-VGO" customClass="IDEAHospitalTextField" customModule="IDEHospital" customModuleProvider="target">
-                                <rect key="frame" x="32" y="195" width="256" height="36"/>
+                                <rect key="frame" x="32" y="209" width="256" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="MqV-j6-gLc"/>
                                 </constraints>
@@ -25,7 +25,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em3-uw-s5b" customClass="CustomButton" customModule="IDEHospital" customModuleProvider="target">
-                                <rect key="frame" x="32" y="278" width="256" height="45"/>
+                                <rect key="frame" x="32" y="292" width="256" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="tfr-GK-go5"/>
                                 </constraints>
@@ -38,7 +38,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="em3-uw-s5b" firstAttribute="top" secondItem="drG-YV-VGO" secondAttribute="bottom" constant="47" id="Eer-ok-7s5"/>
-                            <constraint firstItem="drG-YV-VGO" firstAttribute="centerY" secondItem="7at-xF-aOX" secondAttribute="centerY" multiplier="0.75" id="HJi-0k-obu"/>
+                            <constraint firstItem="drG-YV-VGO" firstAttribute="centerY" secondItem="7at-xF-aOX" secondAttribute="centerY" multiplier="0.8" id="HJi-0k-obu"/>
                             <constraint firstItem="em3-uw-s5b" firstAttribute="width" secondItem="drG-YV-VGO" secondAttribute="width" id="Yvf-Nb-s4y"/>
                             <constraint firstItem="em3-uw-s5b" firstAttribute="centerX" secondItem="drG-YV-VGO" secondAttribute="centerX" id="aqT-ZA-bGY"/>
                             <constraint firstItem="7at-xF-aOX" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="em3-uw-s5b" secondAttribute="bottom" constant="5" id="dCH-HT-fcA"/>

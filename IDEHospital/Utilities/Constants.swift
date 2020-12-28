@@ -17,6 +17,7 @@ struct Storyboards {
     static let myFavorites = "MyFavorites"
     static let myAppointments = "MyAppointments"
     static let authentication = "Authentication"
+    static let setting = "Setting"
 }
 
 // ViewControllers
@@ -30,6 +31,7 @@ struct ViewControllers {
     static let loginVC = "LoginVC"
     static let signupVC = "SignupVC"
     static let resetPasswordVC = "ResetPasswordVC"
+    static let settingVC = "SettingVC"
     
 }
 
@@ -84,4 +86,5 @@ struct Cells {
     static let searchResultsCell = "SearchResultsCell"
     static let myFavoriteCell = "MyFavoriteCell"
     static let myAppointmentCell = "MyAppointmentCell"
+    static let settingCell = "SettingCell"
 }

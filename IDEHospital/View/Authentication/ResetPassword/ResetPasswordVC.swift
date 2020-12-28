@@ -42,7 +42,7 @@ class ResetPasswordVC: UIViewController {
 extension ResetPasswordVC {
     private func setupNavigation() {
         self.setupNavController(title: L10n.resetPassword)
-        self.setupNavigationItems(backAction: .popUpCurrent)
+        self.setupNavigationItems(backAction: .popUpCurrent, isSettingEnable: false)
     }
 }
 

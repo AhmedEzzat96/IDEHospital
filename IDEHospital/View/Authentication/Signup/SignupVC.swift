@@ -52,7 +52,7 @@ class SignupVC: UIViewController {
 extension SignupVC {
     private func setupNavigation() {
         self.setupNavController(title: L10n.signupNav)
-        self.setupNavigationItems(backAction: .popUpCurrent)
+        self.setupNavigationItems(backAction: .popUpCurrent, isSettingEnable: false)
     }
 }
 

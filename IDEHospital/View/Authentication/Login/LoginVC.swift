@@ -51,7 +51,7 @@ class LoginVC: UIViewController {
 extension LoginVC {
     private func setupNavigation() {
         self.setupNavController(title: L10n.loginNav)
-        self.setupNavigationItems(backAction: .popUpCurrent)
+        self.setupNavigationItems(backAction: .popUpCurrent, isSettingEnable: false)
     }
     
     private func goToSignUpVC() {

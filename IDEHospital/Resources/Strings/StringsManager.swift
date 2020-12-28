@@ -10,8 +10,12 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// About Us
+  internal static let aboutUs = L10n.tr("Localizable", "aboutUs")
   /// am
   internal static let am = L10n.tr("Localizable", "am")
+  /// Booked Appointments
+  internal static let bookedAppointment = L10n.tr("Localizable", "bookedAppointment")
   /// Book Now
   internal static let bookNow = L10n.tr("Localizable", "bookNow")
   /// Choose City first
@@ -28,6 +32,8 @@ internal enum L10n {
   internal static let confirmPassword = L10n.tr("Localizable", "confirmPassword")
   /// Your password and confirmation password do not match.
   internal static let confirmPasswordAlert = L10n.tr("Localizable", "confirmPasswordAlert")
+  /// Contact Us
+  internal static let contactUs = L10n.tr("Localizable", "contactUs")
   /// You should enter your message details
   internal static let dataRequirements = L10n.tr("Localizable", "dataRequirements")
   /// EEEE,d MMMM yyyy
@@ -44,6 +50,8 @@ internal enum L10n {
   internal static let done = L10n.tr("Localizable", "done")
   /// Don’t Have account?
   internal static let donTHaveAccount = L10n.tr("Localizable", "don’tHaveAccount")
+  /// Edit Profile
+  internal static let editProfile = L10n.tr("Localizable", "editProfile")
   /// Email should be : example@mail.com
   internal static let emailRequiremtnts = L10n.tr("Localizable", "emailRequiremtnts")
   /// en
@@ -54,6 +62,8 @@ internal enum L10n {
   internal static let examinationFee = L10n.tr("Localizable", "examinationFee")
   /// Favorite
   internal static let favorite = L10n.tr("Localizable", "favorite")
+  /// Favourites
+  internal static let favorites = L10n.tr("Localizable", "favorites")
   /// this feature will be available soon
   internal static let feature = L10n.tr("Localizable", "feature")
   /// Fees
@@ -82,6 +92,8 @@ internal enum L10n {
   internal static let login = L10n.tr("Localizable", "login")
   /// LOGIN
   internal static let loginNav = L10n.tr("Localizable", "loginNav")
+  /// Logouts
+  internal static let logout = L10n.tr("Localizable", "logout")
   /// minutes
   internal static let mins = L10n.tr("Localizable", "mins")
   /// Missed Data
@@ -134,6 +146,10 @@ internal enum L10n {
   internal static let serviceSearch = L10n.tr("Localizable", "serviceSearch")
   /// Set New Password
   internal static let setNewPassword = L10n.tr("Localizable", "setNewPassword")
+  /// SETTINGS
+  internal static let settings = L10n.tr("Localizable", "settings")
+  /// Share
+  internal static let share = L10n.tr("Localizable", "share")
   /// Sign Up
   internal static let signup = L10n.tr("Localizable", "signup")
   /// SIGN UP

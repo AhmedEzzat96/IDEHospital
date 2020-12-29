@@ -81,6 +81,12 @@ class APIManager {
             completion(response)
         }
     }
+    
+    class func logout(completion: @escaping (Result<AuthResponse, Error>) -> Void) {
+        request(APIRouter.logout) { (response) in
+            completion(response)
+        }
+    }
 }
 
 extension APIManager{

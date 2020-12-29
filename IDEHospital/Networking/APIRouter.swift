@@ -27,6 +27,7 @@ enum APIRouter: URLRequestConvertible{
     case register(_ user: User)
     case login(_ user: User)
     case forgetPassword(_ user: User)
+    case logout
     
     // MARK: - HttpMethod
     private var method: HTTPMethod {
@@ -83,6 +84,8 @@ enum APIRouter: URLRequestConvertible{
             return URLs.login
         case .forgetPassword:
             return URLs.forgetPassword
+        case .logout:
+            return URLs.logout
         }
     }
     
@@ -99,7 +102,7 @@ enum APIRouter: URLRequestConvertible{
         case .nurseRequest, .register, .login, .forgetPassword, .contactRequest:
             urlRequest.setValue(HeaderValues.appJSON, forHTTPHeaderField: HeaderKeys.accept)
             
-        case .favorites, .addRemoveFavorite, .appointments, .removeAppointment, .searchForDoctors:
+        case .favorites, .addRemoveFavorite, .appointments, .removeAppointment, .searchForDoctors, .logout:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().token ?? "")",
                 forHTTPHeaderField: HeaderKeys.authorization)
         default:

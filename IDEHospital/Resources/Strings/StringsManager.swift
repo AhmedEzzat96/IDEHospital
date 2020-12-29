@@ -100,6 +100,12 @@ internal enum L10n {
   internal static let loginNav = L10n.tr("Localizable", "loginNav")
   /// Logouts
   internal static let logout = L10n.tr("Localizable", "logout")
+  /// Logout
+  internal static let logOutBtn = L10n.tr("Localizable", "logOutBtn")
+  /// Are you sure you want to log out?
+  internal static let logoutMessage = L10n.tr("Localizable", "logoutMessage")
+  /// Logout?
+  internal static let logoutTitle = L10n.tr("Localizable", "logoutTitle")
   /// minutes
   internal static let mins = L10n.tr("Localizable", "mins")
   /// Missed Data

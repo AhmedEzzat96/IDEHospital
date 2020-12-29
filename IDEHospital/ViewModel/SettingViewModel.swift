@@ -25,6 +25,29 @@ class SettingViewModel {
     }
 }
 
+//MARK:- Private Methods
+extension SettingViewModel {
+    private func logout() {
+        APIManager.logout { [weak self] (result) in
+            switch result {
+            case .success(let response):
+                if response.code == 202 && response.success == true {
+                    UserDefaultsManager.shared().token = nil
+                    self?.view?.goToHome()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func logoutAlert() {
+        self.view?.alertWithAction(title: L10n.logoutTitle, message: L10n.logoutMessage, handler: { [weak self] (alert) in
+            self?.logout()
+        })
+    }
+}
+
 //MARK:- SettingViewModel Protocol
 extension SettingViewModel: SettingViewModelProtocol {
     func configureModel() {
@@ -64,8 +87,7 @@ extension SettingViewModel: SettingViewModelProtocol {
         }
         
         let logout = Setting(title: L10n.logout, icon: Asset.logout.image) { [weak self] in
-            UserDefaultsManager.shared().token = nil
-            self?.view?.goToHome()
+            self?.logoutAlert()
         }
         notAuthSetting = [login, aboutUs, contactUs, share, terms]
         authSetting = [editProfile, favorites, appointment, aboutUs, contactUs, share, terms, logout]

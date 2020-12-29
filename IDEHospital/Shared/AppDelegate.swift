@@ -17,10 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
-        
-        let aboutVC = AboutAndTermsVC.create(status: .aboutUs)
-        let nav = UINavigationController(rootViewController: aboutVC)
-        window?.rootViewController = nav
         return true
     }
 }

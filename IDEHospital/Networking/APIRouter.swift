@@ -22,11 +22,13 @@ enum APIRouter: URLRequestConvertible{
     case addRemoveFavorite(_ doctorID: Int)
     case appointments(_ page: Int)
     case removeAppointment(_ appointmentID: Int)
+    case aboutUs
+    case terms
     
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
-        case .getCategoriesData, .mainCategories, .favorites, .appointments, .searchForDoctors:
+        case .getCategoriesData, .mainCategories, .favorites, .appointments, .searchForDoctors, .aboutUs, .terms:
             return .get
         case .removeAppointment:
             return .delete
@@ -68,6 +70,10 @@ enum APIRouter: URLRequestConvertible{
             return URLs.appointments
         case .removeAppointment(let appointmentID):
             return URLs.appointments + "/\(appointmentID)"
+        case .aboutUs:
+            return URLs.aboutUs
+        case .terms:
+            return URLs.terms
         }
     }
     

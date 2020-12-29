@@ -51,6 +51,11 @@
 		991B7B6B258681CB00700114 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991B7B6A258681CB00700114 /* Localizable.strings */; };
 		991B7B6D2586877400700114 /* FontsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B7B6C2586877400700114 /* FontsManager.swift */; };
 		991B7B6F2586878300700114 /* StringsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B7B6E2586878300700114 /* StringsManager.swift */; };
+		991ED241259A7303008E3C76 /* String+ToHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991ED240259A7303008E3C76 /* String+ToHTML.swift */; };
+		991ED243259A73F2008E3C76 /* AboutAndTerms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991ED242259A73F2008E3C76 /* AboutAndTerms.swift */; };
+		991ED245259A82E0008E3C76 /* AboutAndTerms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 991ED244259A82E0008E3C76 /* AboutAndTerms.storyboard */; };
+		991ED247259A84CA008E3C76 /* AboutAndTermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991ED246259A84CA008E3C76 /* AboutAndTermsVC.swift */; };
+		991ED249259A851E008E3C76 /* AboutAndTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991ED248259A851E008E3C76 /* AboutAndTermsView.swift */; };
 		99245A7C2592366800608FE1 /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99245A7B2592366800608FE1 /* RequestData.swift */; };
 		99343E46258FC274008E069F /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99343E45258FC274008E069F /* SearchResults.swift */; };
 		99343E4825902FFF008E069F /* SearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99343E4725902FFF008E069F /* SearchResultsViewModel.swift */; };
@@ -58,6 +63,7 @@
 		9938FC232580FBBB003781E5 /* UIView+SetupBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */; };
 		9938FC25258173CC003781E5 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938FC24258173CC003781E5 /* UIView+CornerRadius.swift */; };
 		993AD11B25873212005311CD /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993AD11A25873212005311CD /* PaddedTextField.swift */; };
+		9951E0C3259AB1E000DDB266 /* AboutAndTermsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951E0C2259AB1DF00DDB266 /* AboutAndTermsViewModel.swift */; };
 		995CAC73258B9D6F0042527F /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995CAC72258B9D6F0042527F /* ValidationManager.swift */; };
 		995CAC75258B9EC40042527F /* String+Trimming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995CAC74258B9EC40042527F /* String+Trimming.swift */; };
 		9966C2FB2582636B0016A8CB /* ServiceSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966C2FA2582636B0016A8CB /* ServiceSearchViewModel.swift */; };
@@ -136,6 +142,11 @@
 		991B7B6A258681CB00700114 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		991B7B6C2586877400700114 /* FontsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsManager.swift; sourceTree = "<group>"; };
 		991B7B6E2586878300700114 /* StringsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringsManager.swift; sourceTree = "<group>"; };
+		991ED240259A7303008E3C76 /* String+ToHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ToHTML.swift"; sourceTree = "<group>"; };
+		991ED242259A73F2008E3C76 /* AboutAndTerms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAndTerms.swift; sourceTree = "<group>"; };
+		991ED244259A82E0008E3C76 /* AboutAndTerms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutAndTerms.storyboard; sourceTree = "<group>"; };
+		991ED246259A84CA008E3C76 /* AboutAndTermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAndTermsVC.swift; sourceTree = "<group>"; };
+		991ED248259A851E008E3C76 /* AboutAndTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAndTermsView.swift; sourceTree = "<group>"; };
 		99245A7B2592366800608FE1 /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
 		99343E45258FC274008E069F /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		99343E4725902FFF008E069F /* SearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModel.swift; sourceTree = "<group>"; };
@@ -143,6 +154,7 @@
 		9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SetupBackground.swift"; sourceTree = "<group>"; };
 		9938FC24258173CC003781E5 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
 		993AD11A25873212005311CD /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
+		9951E0C2259AB1DF00DDB266 /* AboutAndTermsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAndTermsViewModel.swift; sourceTree = "<group>"; };
 		995CAC72258B9D6F0042527F /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 		995CAC74258B9EC40042527F /* String+Trimming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Trimming.swift"; sourceTree = "<group>"; };
 		9966C2FA2582636B0016A8CB /* ServiceSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceSearchViewModel.swift; path = IDEHospital/ViewModel/MainTabs/ServiceSearchViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -285,6 +297,7 @@
 				99245A7B2592366800608FE1 /* RequestData.swift */,
 				0699F05C258D1F3E00C2AF5F /* MyFavoriteResponse.swift */,
 				0657F1A125911E03003C9586 /* MyAppointmentResponse.swift */,
+				991ED242259A73F2008E3C76 /* AboutAndTerms.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -297,6 +310,7 @@
 				99F395DD2589880600ACBD3B /* HomeNurseContactUs */,
 				999A5C1E258E43A200FC0792 /* SearchResults */,
 				06AB4F0F2583F87500A0B658 /* CustomViews */,
+				991ED24A259A8529008E3C76 /* AboutAndTerms */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,6 +322,7 @@
 				06DD993D257FBA0B00D36344 /* HomeViewModel.swift */,
 				99F49F25258A8F6A0039A280 /* HomeNurseContactUsViewModel.swift */,
 				99343E4725902FFF008E069F /* SearchResultsViewModel.swift */,
+				9951E0C2259AB1DF00DDB266 /* AboutAndTermsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -341,6 +356,7 @@
 				99163DB62584B5AB007C351D /* MainTabs */,
 				99F395E22589899C00ACBD3B /* HomeNurseContactUs */,
 				998F8B15258E41C7006AB00A /* SearchResults */,
+				9951E0C1259AB15E00DDB266 /* AboutAndTerms */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -522,6 +538,15 @@
 			path = Strings;
 			sourceTree = "<group>";
 		};
+		991ED24A259A8529008E3C76 /* AboutAndTerms */ = {
+			isa = PBXGroup;
+			children = (
+				991ED246259A84CA008E3C76 /* AboutAndTermsVC.swift */,
+				991ED248259A851E008E3C76 /* AboutAndTermsView.swift */,
+			);
+			path = AboutAndTerms;
+			sourceTree = "<group>";
+		};
 		993AD118258731C9005311CD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +566,14 @@
 				99D14841258EF48E009443F2 /* SortTextField.swift */,
 			);
 			path = TextFields;
+			sourceTree = "<group>";
+		};
+		9951E0C1259AB15E00DDB266 /* AboutAndTerms */ = {
+			isa = PBXGroup;
+			children = (
+				991ED244259A82E0008E3C76 /* AboutAndTerms.storyboard */,
+			);
+			path = AboutAndTerms;
 			sourceTree = "<group>";
 		};
 		9966C2FC258263980016A8CB /* MainTabs */ = {
@@ -638,6 +671,7 @@
 		99FD522C258CF80C0005110E /* String */ = {
 			isa = PBXGroup;
 			children = (
+				991ED240259A7303008E3C76 /* String+ToHTML.swift */,
 				995CAC74258B9EC40042527F /* String+Trimming.swift */,
 			);
 			path = String;
@@ -705,6 +739,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06BB4E1F2585337200D2C4E3 /* Assets.xcassets in Resources */,
+				991ED245259A82E0008E3C76 /* AboutAndTerms.storyboard in Resources */,
 				0644BB342590F6E600963D65 /* MyAppointments.storyboard in Resources */,
 				062FDF68257E669E00949D54 /* LaunchScreen.storyboard in Resources */,
 				991B7B6B258681CB00700114 /* Localizable.strings in Resources */,
@@ -796,11 +831,14 @@
 				99F4D947259259C20078BE1D /* UIViewController+ShowSimpleAlert.swift in Sources */,
 				99F4D948259259C20078BE1D /* UIImageView+CircularImage.swift in Sources */,
 				995CAC73258B9D6F0042527F /* ValidationManager.swift in Sources */,
+				991ED249259A851E008E3C76 /* AboutAndTermsView.swift in Sources */,
 				99D14842258EF48E009443F2 /* SortTextField.swift in Sources */,
 				06BB4E1E2585334700D2C4E3 /* APIRouter.swift in Sources */,
 				99697C67257F80DB00B6BFBE /* ServiceSearchView.swift in Sources */,
 				0644BB322590F4E000963D65 /* MyAppointmentsViewModel.swift in Sources */,
+				9951E0C3259AB1E000DDB266 /* AboutAndTermsViewModel.swift in Sources */,
 				99E7AD0725824E2800AAB5B0 /* MainTabBar.swift in Sources */,
+				991ED241259A7303008E3C76 /* String+ToHTML.swift in Sources */,
 				99697C65257F80BD00B6BFBE /* ServiceSearchVC.swift in Sources */,
 				0678C11E2581B09500949700 /* CategoryCell.swift in Sources */,
 				993AD11B25873212005311CD /* PaddedTextField.swift in Sources */,
@@ -812,6 +850,7 @@
 				062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */,
 				0644BB2C2590F47900963D65 /* MyAppointmentsVC.swift in Sources */,
 				06DD993E257FBA0B00D36344 /* HomeViewModel.swift in Sources */,
+				991ED243259A73F2008E3C76 /* AboutAndTerms.swift in Sources */,
 				06AB4F11258404CA00A0B658 /* UIViewController+NavControllerSetup.swift in Sources */,
 				0644BB292590EE0300963D65 /* MyAppointmentCell.swift in Sources */,
 				0678C1212581CA4C00949700 /* UIColor+getColorByHex.swift in Sources */,
@@ -844,6 +883,7 @@
 				0605D678258954E1006E38D8 /* MyFavoritesViewModel.swift in Sources */,
 				0605D6742589544F006E38D8 /* MyFavoritesView.swift in Sources */,
 				0699F05F258D5A3A00C2AF5F /* MyFavoriteCellViewModel.swift in Sources */,
+				991ED247259A84CA008E3C76 /* AboutAndTermsVC.swift in Sources */,
 				0655740E2582829900CFEE4F /* MainCategoriesResponse.swift in Sources */,
 				99245A7C2592366800608FE1 /* RequestData.swift in Sources */,
 				999A5C1B258E434200FC0792 /* SearchResultsVC.swift in Sources */,

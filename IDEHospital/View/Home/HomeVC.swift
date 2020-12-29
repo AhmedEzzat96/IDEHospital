@@ -71,7 +71,7 @@ extension HomeVC: HomeVCProtocol {
     }
     
     func goToHomeNurse() {
-        let homeNurseVC = HomeNurseContactUsVC.create(status: .contactUs)
+        let homeNurseVC = HomeNurseContactUsVC.create(status: .homeNurse)
         navigationController?.pushViewController(homeNurseVC, animated: true)
     }
     

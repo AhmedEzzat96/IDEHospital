@@ -57,6 +57,12 @@ class APIManager {
             completion(response)
         }
     }
+    
+    class func getAboutOrTerms(_ aboutOrTermsRequest: URLRequestConvertible, completion: @escaping (Result<AboutAndTermsResponse, Error>) -> Void) {
+        request(aboutOrTermsRequest) { (response) in
+            completion(response)
+        }
+    }
 }
 
 extension APIManager{

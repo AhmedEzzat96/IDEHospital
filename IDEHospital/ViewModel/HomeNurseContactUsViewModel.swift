@@ -19,10 +19,10 @@ class HomeNurseViewModel {
     
     // MARK:- Properties
     private weak var view: HomeNurseContactUsVCProtocol?
-    private var status: Status
+    private var status: RequestStatus
     
     // MARK:- Init
-    init(view: HomeNurseContactUsVCProtocol, status: Status) {
+    init(view: HomeNurseContactUsVCProtocol, status: RequestStatus) {
         self.view = view
         self.status = status
     }
@@ -30,13 +30,13 @@ class HomeNurseViewModel {
 
 // MARK:- Private Methods
 extension HomeNurseViewModel {
-    private func sendNurseRequest(with requestData: RequestData) {
+    private func sendRequest(with requestData: RequestData) {
         let request: APIRouter
         switch status {
         case .homeNurse:
             request = APIRouter.nurseRequest(requestData)
         default:
-            request = APIRouter.nurseRequest(requestData)
+            request = APIRouter.contactRequest(requestData)
         }
         view?.showLoader()
         APIManager.sendRequest(request) { [weak self] (response) in
@@ -87,7 +87,7 @@ extension HomeNurseViewModel: HomeNurseContactUsViewModelProtocol {
         if let validationError = ValidationManager.shared().tryToCathchErrors(with: requestData) {
             view?.showAlert(title: validationError.0, message: validationError.1, handler: nil)
         } else {
-            sendNurseRequest(with: requestData)
+            sendRequest(with: requestData)
         }
     }
 }

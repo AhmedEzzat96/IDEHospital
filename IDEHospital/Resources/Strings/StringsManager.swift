@@ -10,6 +10,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// ABOUT
+  internal static let about = L10n.tr("Localizable", "about")
   /// am
   internal static let am = L10n.tr("Localizable", "am")
   /// Book Now
@@ -120,6 +122,8 @@ internal enum L10n {
   internal static let sortBy = L10n.tr("Localizable", "sortBy")
   /// Choose Specialist
   internal static let specialist = L10n.tr("Localizable", "specialist")
+  /// TERMS & CONDITIONS
+  internal static let termsAndConditions = L10n.tr("Localizable", "termsAndConditions")
   /// hh:mm a
   internal static let timeFormat = L10n.tr("Localizable", "timeFormat")
   /// View Profile

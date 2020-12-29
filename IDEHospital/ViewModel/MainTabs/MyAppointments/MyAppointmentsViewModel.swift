@@ -40,20 +40,21 @@ extension MyAppointmentsViewModel {
                 
             case .success(let response):
                 let data = response.data
-                let items = data.items
-                self.lastPage = data.total_pages
+                guard let items = data?.items else { return }
+                self.lastPage = data?.total_pages
                 self.appointmentItems += items
                 
-                if self.appointmentItems.count != 0 {
-                    DispatchQueue.main.async {
-                        self.view?.isHidden(tableView: false, noItemsFound: true)
-                        self.view?.reloadData()
-                    }
-                } else {
-                    self.view?.isHidden(tableView: true, noItemsFound: false)
-                }
             case .failure(let error):
-                print(error.localizedDescription)
+                print(error)
+            }
+            
+            if self.appointmentItems.count != 0 {
+                DispatchQueue.main.async {
+                    self.view?.isHidden(tableView: false, noItemsFound: true)
+                    self.view?.reloadData()
+                }
+            } else {
+                self.view?.isHidden(tableView: true, noItemsFound: false)
             }
             self.view?.hideLoader()
         }

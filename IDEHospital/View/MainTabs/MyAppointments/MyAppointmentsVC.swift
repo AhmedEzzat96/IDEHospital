@@ -41,15 +41,14 @@ class MyAppointmentsVC: UIViewController {
         myAppointmentsVC.viewModel = MyAppointmentsViewModel(view: myAppointmentsVC)
         return myAppointmentsVC
     }
+    
+    func setupNavigationController() {
+        setupNavController(title: L10n.myAppointments)
+    }
 }
 
 //MARK:- Private Methods
 extension MyAppointmentsVC {
-    private func setupNavigationController() {
-        setupNavController(title: L10n.myAppointments)
-        setupNavigationItems(backAction: .dismissCurrent)
-    }
-    
     private func tableViewConfiguration() {
         myAppointmentsView.tableView.delegate = self
         myAppointmentsView.tableView.dataSource = self

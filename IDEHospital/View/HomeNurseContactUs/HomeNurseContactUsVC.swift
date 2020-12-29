@@ -53,8 +53,7 @@ class HomeNurseContactUsVC: UIViewController {
 // MARK:- Private Methods
 extension HomeNurseContactUsVC {
     private func setupNavigationController() {
-        title = viewModel.getTitles().0
-        setupNavigationItems(backAction: .popUpCurrent)
+        setupNavController(title: viewModel.getTitles().0)
     }
 }
 

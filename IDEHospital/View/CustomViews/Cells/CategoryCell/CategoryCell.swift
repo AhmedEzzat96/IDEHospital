@@ -13,21 +13,26 @@ class CategoryCell: UICollectionViewCell {
     @IBOutlet weak var categoryImgView: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     
+    //MARK:- Properties
+    private var viewModel: CategoryCellViewModelProtocol!
+    
     //MARK:- Lifecycle Methods
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.viewModel = CategoryCellViewModel()
         setupView()
         setupLabel()
         setupImage()
     }
     
     //MARK:- Public Methods
-    func configure(_ category: MainCategoriesData, _ image: UIImage) {
+    func configure(_ category: MainCategoriesData) {
         categoryLabel.text = category.name
         backgroundColor = UIColor(hexString: category.color)
-        categoryImgView.image = image
+        viewModel.downloadImage(with: category) { [weak self] (image) in
+            self?.categoryImgView.image = image
+        }
     }
-    
 }
 
 //MARK:- Private Methods

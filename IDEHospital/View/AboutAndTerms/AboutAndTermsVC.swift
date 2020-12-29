@@ -48,7 +48,7 @@ class AboutAndTermsVC: UIViewController {
 extension AboutAndTermsVC {
     private func setupNavigationController() {
         setupNavController(title: viewModel.getTitle())
-        setupNavigationItems(backAction: .dismissCurrent, isSettingEnabled: false)
+        setupNavigationItems(backAction: .dismissCurrent, isSettingEnable: false)
     }
 }
 

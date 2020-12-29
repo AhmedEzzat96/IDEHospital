@@ -3,9 +3,9 @@ import Foundation
 import SDWebImage
 
 protocol HomeViewModelProtocol {
-    func getCategoriesCount() -> Int
-    func getCategoryData(for indexPath: IndexPath)
     func mainCategoriesData()
+    func getCategoriesCount() -> Int
+    func getCategoryData(for index: Int) -> MainCategoriesData
     func didSelectItem(item: Int)
 }
 
@@ -18,21 +18,6 @@ class HomeViewModel {
     //MARK:- init
     init(view: HomeVCProtocol) {
         self.view = view
-    }
-}
-
-//MARK:- Private Methods
-extension HomeViewModel {
-    private func downloadImage(for Index: Int, completion: @escaping (UIImage?) -> Void) {
-        view?.showLoader()
-        SDWebImageManager.shared.loadImage(with: URL(string: categoriesData[Index].image), options: .highPriority, progress: nil) { [weak self] (image, _, error, _, _, _) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else if let image = image {
-                completion(image)
-            }
-            self?.view?.hideLoader()
-        }
     }
 }
 
@@ -60,13 +45,8 @@ extension HomeViewModel: HomeViewModelProtocol {
         return categoriesData.count
     }
     
-    func getCategoryData(for indexPath: IndexPath) {
-        downloadImage(for: indexPath.row) { [weak self] (image) in
-            guard let self = self else {return}
-            if let image = image {
-                self.view?.configureCell(for: indexPath, categoryData: self.categoriesData[indexPath.row], image: image)
-            }
-        }
+    func getCategoryData(for index: Int) -> MainCategoriesData {
+        return categoriesData[index]
     }
     
     func didSelectItem(item: Int) {

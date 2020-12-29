@@ -13,6 +13,7 @@ class CustomButton : UIButton {
         super.awakeFromNib()
         setTitleColor(UIColor.white, for: .normal)
         layer.cornerRadius = 10
+        layer.masksToBounds = true
         backgroundColor = ColorName.darkRoyalBlue.color
         titleLabel?.font = FontFamily.PTSans.bold.font(size: 12)
     }

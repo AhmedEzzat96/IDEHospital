@@ -63,6 +63,24 @@ class APIManager {
             completion(response)
         }
     }
+    
+    class func register(with user: User, completion: @escaping (Result<AuthResponse, Error>) -> Void) {
+        request(APIRouter.register(user)) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func login(with user: User, completion: @escaping (Result<AuthResponse, Error>) -> Void) {
+        request(APIRouter.login(user)) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func forgetPassword(with user: User, completion: @escaping (Result<AuthResponse, Error>) -> Void) {
+        request(APIRouter.forgetPassword(user)) { (response) in
+            completion(response)
+        }
+    }
 }
 
 extension APIManager{

@@ -16,24 +16,25 @@ extension UIViewController {
         case popUpCurrent
     }
     
-    func setupNavController(title: String) {
+    func setupNavController(title: String, barTintColor: UIColor = ColorName.veryLightPink.color, fontColor: UIColor = ColorName.white.color) {
         self.navigationItem.title = title
         self.navigationController?.navigationBar.clipsToBounds = true
-        navigationController?.navigationBar.barTintColor = ColorName.veryLightPink.color
+        navigationController?.navigationBar.barTintColor = barTintColor
         self.navigationController?.navigationBar.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         self.navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor : ColorName.white.color,
+            NSAttributedString.Key.foregroundColor : fontColor,
             NSAttributedString.Key.font: FontFamily.PTSans.bold.font(size: 20) as Any
         ]
     }
     
-    func setupNavigationItems(backAction: Back, isSettingEnabled: Bool = true) {
+    func setupNavigationItems(backAction: Back, isSettingEnable: Bool = true, tintColor: UIColor = ColorName.steelGrey.color) {
         let backItem = UIBarButtonItem(image: Asset.back.image, style: .done, target: self, action: Selector(backAction.rawValue))
-        backItem.tintColor = ColorName.steelGrey.color
+        backItem.tintColor = tintColor
         let leftPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         leftPadding.width = 18
         navigationItem.leftBarButtonItems = [leftPadding, backItem]
-        if isSettingEnabled {
+        
+        if isSettingEnable {
             let settingsItem = UIBarButtonItem(image: Asset.settings.image, style: .done, target: self, action: #selector(showSettings))
             settingsItem.tintColor = ColorName.steelGrey.color
             let rightPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
@@ -51,7 +52,10 @@ extension UIViewController {
     }
     
     @objc func showSettings() {
-        print("Show Settings")
+        let settingVC = SettingVC.create()
+        let settingNav = UINavigationController(rootViewController: settingVC)
+        settingNav.modalPresentationStyle = .fullScreen
+        present(settingNav, animated: true)
     }
 }
 

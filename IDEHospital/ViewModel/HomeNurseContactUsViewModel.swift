@@ -19,10 +19,10 @@ class HomeNurseContactUsViewModel {
     
     // MARK:- Properties
     private weak var view: HomeNurseContactUsVCProtocol?
-    private var status: RequestStatus
+    private var status: RequestType
     
     // MARK:- Init
-    init(view: HomeNurseContactUsVCProtocol, status: RequestStatus) {
+    init(view: HomeNurseContactUsVCProtocol, status: RequestType) {
         self.view = view
         self.status = status
     }

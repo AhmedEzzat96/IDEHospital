@@ -15,7 +15,7 @@ protocol AboutAndTermsVCProtocol: class {
     func displayText(_ text: String)
 }
 
-enum InfoStatus {
+enum InfoType {
     case aboutUs
     case termsAndConditions
 }
@@ -37,7 +37,7 @@ class AboutAndTermsVC: UIViewController {
     }
 
     //MARK:- Public Methods
-    class func create(status: InfoStatus) -> AboutAndTermsVC {
+    class func create(status: InfoType) -> AboutAndTermsVC {
         let aboutAndTermsVC: AboutAndTermsVC = UIViewController.create(storyboardName: Storyboards.aboutAndTerms, identifier: ViewControllers.aboutAndTerms)
         aboutAndTermsVC.viewModel = AboutAndTermsViewModel(view: aboutAndTermsVC, status: status)
         return aboutAndTermsVC

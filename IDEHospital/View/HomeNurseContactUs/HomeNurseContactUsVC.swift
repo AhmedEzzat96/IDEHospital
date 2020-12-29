@@ -16,7 +16,7 @@ protocol HomeNurseContactUsVCProtocol: class {
     func showHomeVC()
 }
 
-enum RequestStatus {
+enum RequestType {
     case homeNurse
     case contactUs
 }
@@ -38,7 +38,7 @@ class HomeNurseContactUsVC: UIViewController {
     }
 
     //MARK:- Public Methods
-    class func create(status: RequestStatus) -> HomeNurseContactUsVC {
+    class func create(status: RequestType) -> HomeNurseContactUsVC {
         let homeNurseContactUsVC: HomeNurseContactUsVC = UIViewController.create(storyboardName: Storyboards.homeNurse, identifier: ViewControllers.homeNurseContactUsVC)
         homeNurseContactUsVC.viewModel = HomeNurseContactUsViewModel(view: homeNurseContactUsVC, status: status)
         return homeNurseContactUsVC

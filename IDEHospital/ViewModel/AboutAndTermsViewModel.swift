@@ -17,10 +17,10 @@ class AboutAndTermsViewModel {
     
     // MARK:- Properties
     private weak var view: AboutAndTermsVCProtocol?
-    private let status: InfoStatus!
+    private let status: InfoType!
     
     // MARK:- Init
-    init(view: AboutAndTermsVCProtocol, status: InfoStatus) {
+    init(view: AboutAndTermsVCProtocol, status: InfoType) {
         self.view = view
         self.status = status
     }

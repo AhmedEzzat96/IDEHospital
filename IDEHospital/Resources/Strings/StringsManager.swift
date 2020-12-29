@@ -16,6 +16,8 @@ internal enum L10n {
   internal static let aboutUs = L10n.tr("Localizable", "aboutUs")
   /// am
   internal static let am = L10n.tr("Localizable", "am")
+  /// https://apps.apple.com/us/app/pubg-mobile-metro-royale/id1330123889
+  internal static let appLink = L10n.tr("Localizable", "appLink")
   /// Booked Appointments
   internal static let bookedAppointment = L10n.tr("Localizable", "bookedAppointment")
   /// Book Now
@@ -156,6 +158,8 @@ internal enum L10n {
   internal static let settings = L10n.tr("Localizable", "settings")
   /// Share
   internal static let share = L10n.tr("Localizable", "share")
+  /// This App is awesome!  Check out this Link to try it!
+  internal static let shareText = L10n.tr("Localizable", "shareText")
   /// Sign Up
   internal static let signup = L10n.tr("Localizable", "signup")
   /// SIGN UP

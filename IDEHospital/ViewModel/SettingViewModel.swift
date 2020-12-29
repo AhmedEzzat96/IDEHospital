@@ -43,8 +43,8 @@ extension SettingViewModel: SettingViewModelProtocol {
             self?.view?.goToContactUs()
         }
         
-        let share = Setting(title: L10n.share, icon: Asset.share.image) {
-            print(L10n.share)
+        let share = Setting(title: L10n.share, icon: Asset.share.image) { [weak self] in
+            self?.view?.goToShare()
         }
         
         let terms = Setting(title: L10n.termsBtn, icon: Asset.terms.image) { [weak self] in

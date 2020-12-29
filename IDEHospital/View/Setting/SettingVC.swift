@@ -15,6 +15,7 @@ protocol SettingVCProtocol: class {
     func goToHome()
     func goToContactUs()
     func goToAboutUsOrTerms(status: InfoType)
+    func goToShare()
 }
 
 class SettingVC: UIViewController {
@@ -137,6 +138,17 @@ extension SettingVC: SettingVCProtocol {
         let aboutUsOrTermsNav = UINavigationController(rootViewController: aboutUsOrTermsVC)
         aboutUsOrTermsNav.modalPresentationStyle = .fullScreen
         present(aboutUsOrTermsNav, animated: true)
+    }
+    
+    func goToShare() {
+        let textToShare = L10n.shareText
+        
+        if let myWebsite = URL(string: L10n.appLink) {
+            let objectsToShare = [textToShare, myWebsite] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            activityVC.popoverPresentationController?.sourceView = settingView.tableView
+            self.present(activityVC, animated: true)
+        }
     }
     
 }

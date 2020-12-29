@@ -40,7 +40,7 @@ class HomeNurseContactUsVC: UIViewController {
     //MARK:- Public Methods
     class func create(status: RequestStatus) -> HomeNurseContactUsVC {
         let homeNurseContactUsVC: HomeNurseContactUsVC = UIViewController.create(storyboardName: Storyboards.homeNurse, identifier: ViewControllers.homeNurseContactUsVC)
-        homeNurseContactUsVC.viewModel = HomeNurseViewModel(view: homeNurseContactUsVC, status: status)
+        homeNurseContactUsVC.viewModel = HomeNurseContactUsViewModel(view: homeNurseContactUsVC, status: status)
         return homeNurseContactUsVC
     }
     

@@ -15,7 +15,7 @@ protocol HomeNurseContactUsViewModelProtocol {
     func requestTapped(with requestData: RequestData)
 }
 
-class HomeNurseViewModel {
+class HomeNurseContactUsViewModel {
     
     // MARK:- Properties
     private weak var view: HomeNurseContactUsVCProtocol?
@@ -29,7 +29,7 @@ class HomeNurseViewModel {
 }
 
 // MARK:- Private Methods
-extension HomeNurseViewModel {
+extension HomeNurseContactUsViewModel {
     private func sendRequest(with requestData: RequestData) {
         let request: APIRouter
         switch status {
@@ -58,7 +58,7 @@ extension HomeNurseViewModel {
 }
 
 // MARK:- ViewModel Protocol
-extension HomeNurseViewModel: HomeNurseContactUsViewModelProtocol {
+extension HomeNurseContactUsViewModel: HomeNurseContactUsViewModelProtocol {
     func getTitles() -> (String, String) {
         switch status {
         case .homeNurse:

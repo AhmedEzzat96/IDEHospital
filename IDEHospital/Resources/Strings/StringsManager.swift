@@ -14,6 +14,8 @@ internal enum L10n {
   internal static let about = L10n.tr("Localizable", "about")
   /// About Us
   internal static let aboutUs = L10n.tr("Localizable", "aboutUs")
+  /// You must login to add/remove favorite
+  internal static let addOrRemoveFavorite = L10n.tr("Localizable", "addOrRemoveFavorite")
   /// am
   internal static let am = L10n.tr("Localizable", "am")
   /// https://apps.apple.com/us/app/pubg-mobile-metro-royale/id1330123889

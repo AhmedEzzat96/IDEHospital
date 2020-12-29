@@ -92,3 +92,4 @@
 "favorites" = "Favourites";
 "shareText" = "This App is awesome!  Check out this Link to try it!";
 "appLink" = "https://apps.apple.com/us/app/pubg-mobile-metro-royale/id1330123889";
+"addOrRemoveFavorite" = "You must login to add/remove favorite";

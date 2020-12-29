@@ -16,6 +16,7 @@ protocol SettingVCProtocol: class {
     func goToContactUs()
     func goToAboutUsOrTerms(status: InfoType)
     func goToShare()
+    func showAlert(title: String, message: String)
 }
 
 class SettingVC: UIViewController {
@@ -97,6 +98,10 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
 
 //MARK:- SettingVC Protocol
 extension SettingVC: SettingVCProtocol {
+    func showAlert(title: String, message: String) {
+        self.showSimpleAlert(title: title, message: message)
+    }
+    
     func goToLogin() {
         let loginVC = LoginVC.create()
         navigationController?.pushViewController(loginVC, animated: true)

@@ -35,7 +35,7 @@ class MyFavoriteCell: UITableViewCell {
     @IBOutlet weak var ratingView: CosmosView!
     
     //MARK:- Properties
-    private var viewModel: MyFavoriteCellViewModelProtocol!
+    private var viewModel: MyFavoriteCellViewModel!
     weak var delegate: CellButtonDelegate?
     
     //MARK:- Lifecycle Methods

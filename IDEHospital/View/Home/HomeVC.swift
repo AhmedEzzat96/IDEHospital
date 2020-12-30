@@ -14,7 +14,6 @@ protocol HomeVCProtocol: class {
     func reloadCollectionView()
     func goToTabBar(with id: Int)
     func goToHomeNurse()
-    func configureCell(for indexPath: IndexPath, categoryData: MainCategoriesData, image: UIImage)
 }
 
 class HomeVC: UIViewController {
@@ -37,6 +36,7 @@ class HomeVC: UIViewController {
     //MARK:- Public Methods
     class func create() -> HomeVC {
         let homeVC: HomeVC = UIViewController.create(storyboardName: Storyboards.home, identifier: ViewControllers.homeVC)
+        homeVC.viewModel = HomeViewModel(view: homeVC)
         return homeVC
     }
 }
@@ -71,13 +71,9 @@ extension HomeVC: HomeVCProtocol {
     }
     
     func goToHomeNurse() {
-        let homeNurseVC = HomeNurseVC.create()
+        let homeNurseVC = HomeNurseContactUsVC.create(status: .homeNurse)
+        homeNurseVC.setupNavigationItems(backAction: .popUpCurrent)
         navigationController?.pushViewController(homeNurseVC, animated: true)
-    }
-    
-    func configureCell(for indexPath: IndexPath, categoryData: MainCategoriesData, image: UIImage) {
-        let cell = homeView.collectionView.cellForItem(at: indexPath) as! CategoryCell
-        cell.configure(categoryData, image)
     }
 }
 
@@ -91,7 +87,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cells.categoryCell, for: indexPath) as? CategoryCell else {
             return UICollectionViewCell()
         }
-        viewModel.getCategoryData(for: indexPath)
+        cell.configure(viewModel.getCategoryData(for: indexPath.row))
         return cell
     }
     

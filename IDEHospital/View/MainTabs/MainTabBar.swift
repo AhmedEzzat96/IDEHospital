@@ -30,7 +30,7 @@ class MainTabBar: UITabBarController {
 // MARK:- Private Methods
 extension MainTabBar {
     private func setupTabBar() {
-        self.tabBar.backgroundColor = ColorName.whiteTwo.color
+        self.tabBar.backgroundColor = .lightGray
         self.tabBar.tintColor = ColorName.blackTwo.color
     }
     
@@ -44,6 +44,7 @@ extension MainTabBar {
     
     private func createFavoriteVC() -> UINavigationController {
         let favoriteVC = MyFavoritesVC.create()
+        favoriteVC.setupNavigationItems(backAction: .dismissCurrent)
         favoriteVC.tabBarItem = UITabBarItem(title: L10n.favorite, image: Asset.heart.image, tag: 2)
         let favoriteNavigation = UINavigationController()
         favoriteNavigation.viewControllers = [favoriteVC]
@@ -52,6 +53,7 @@ extension MainTabBar {
     
     private func createAppointmentsVC() -> UINavigationController {
         let appointmentsVC = MyAppointmentsVC.create()
+        appointmentsVC.setupNavigationItems(backAction: .dismissCurrent)
         appointmentsVC.tabBarItem = UITabBarItem(title: L10n.schedule, image: Asset.calendar.image, tag: 3)
         let appointmentsNavigation = UINavigationController()
         appointmentsNavigation.viewControllers = [appointmentsVC]

@@ -9,14 +9,18 @@
 import Foundation
 
 struct MyAppointmentResponse: Codable {
-    let data: MyAppointmentData
+    let code: Int
+    let data: MyAppointmentData?
+    let success: Bool?
+    let message: String?
+    let errors: String?
 }
 
 struct MyAppointmentData: Codable {
-    let items: [MyAppointmentItem]
-    let page: Int
-    let total_pages: Int
-    let total: Int
+    let items: [MyAppointmentItem]?
+    let page: Int?
+    let total_pages: Int?
+    let total: Int?
 }
 
 struct MyAppointmentItem: Codable {

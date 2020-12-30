@@ -22,9 +22,8 @@ class APIManager {
         }
     }
     
-    // This request i will refactor it while making the Contact Us request
-    class func sendNurseRequest(_ requestData: RequestData, completion: @escaping (Result<NurseResponse, Error>) -> Void) {
-        request(APIRouter.nurseRequest(requestData)) { (response) in
+    class func sendRequest(_ nurseOrContactRequest: URLRequestConvertible, completion: @escaping (Result<RequestResponse, Error>) -> Void) {
+        request(nurseOrContactRequest) { (response) in
             completion(response)
         }
     }
@@ -55,6 +54,36 @@ class APIManager {
     
     class func removeAppointment(with appointmentID: Int, completion: @escaping (Bool) -> Void) {
         requestBool(APIRouter.removeAppointment(appointmentID)) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func getAboutOrTerms(_ aboutOrTermsRequest: URLRequestConvertible, completion: @escaping (Result<AboutAndTermsResponse, Error>) -> Void) {
+        request(aboutOrTermsRequest) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func register(with user: User, completion: @escaping (Result<AuthResponse, Error>) -> Void) {
+        request(APIRouter.register(user)) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func login(with user: User, completion: @escaping (Result<AuthResponse, Error>) -> Void) {
+        request(APIRouter.login(user)) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func forgetPassword(with user: User, completion: @escaping (Result<AuthResponse, Error>) -> Void) {
+        request(APIRouter.forgetPassword(user)) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func logout(completion: @escaping (Result<AuthResponse, Error>) -> Void) {
+        request(APIRouter.logout) { (response) in
             completion(response)
         }
     }

@@ -111,6 +111,10 @@ extension SearchResultsViewModel: SearchResultsViewModelProtocol {
     }
     
     func addRemoveFavorite(with row: Int) {
+        guard UserDefaultsManager.shared().token != nil else {
+            self.view?.showAlert(title: L10n.warning, message: L10n.addOrRemoveFavorite)
+            return
+        }
         APIManager.addRemoveFavorite(with: searchResults.items[row].id) { [weak self] (success) in
             if success {
                 let isFavourite = self?.searchResults.items[row].isFavorited

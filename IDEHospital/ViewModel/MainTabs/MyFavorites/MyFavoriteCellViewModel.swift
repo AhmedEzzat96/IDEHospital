@@ -17,7 +17,7 @@ class MyFavoriteCellViewModel {
     
 }
 
-//MARK:- MyFavoriteCell viewModel Protocol
+//MARK:- MyFavoriteCell ViewModel Protocol
 extension MyFavoriteCellViewModel: MyFavoriteCellViewModelProtocol {
     func downloadImage(with item: MyFavoriteItem, completion: @escaping (UIImage?) -> Void) {
         SDWebImageManager.shared.loadImage(with: URL(string: item.image), options: .highPriority, progress: nil) { (image, _, error, _, _, _) in

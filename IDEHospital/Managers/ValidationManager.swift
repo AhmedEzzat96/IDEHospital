@@ -8,6 +8,7 @@
 
 import Foundation
 
+//MARK:- Enum
 enum ValidationError {
     case name(_ name: String?)
     case email(_ email: String?)
@@ -58,71 +59,15 @@ enum ValidationError {
         }
     }
 }
-//MARK:- Enum
-enum ValidationType {
-    case name
-    case email
-    case phone
-    case message
-    case password
-    
-    var error: (title: String, message: String) {
-        switch self {
-        case .name:
-            return (L10n.invalidName, L10n.nameRequirements)
-        case .email:
-            return (L10n.invalidEmail, L10n.emailRequiremtnts)
-        case .phone:
-            return (L10n.invalidPhoneNumber, L10n.phoneRequirements)
-        case .message:
-            return (L10n.missedData, L10n.dataRequirements)
-        case .password:
-            return (L10n.incorrectPassword, L10n.passwordRequirements)
-        }
-    }
-}
 
 class ValidationManager {
     
     // MARK:- Singleton
     private static let sharedInstance = ValidationManager()
+    
+    //MARK:- Public Methods
     class func shared() -> ValidationManager {
         return ValidationManager.sharedInstance
-    }
-    
-    // MARK:- Public Methods
-    func isValid(with string: String?, validationType: ValidationType?) -> Bool {
-        guard let string = string?.trimmed, !string.isEmpty else { return false}
-        
-        switch validationType {
-        case .email:
-            if !string.isValidEmail {
-                return false
-            }
-            return true
-        case .password:
-            if !string.isValidPassword {
-                return false
-            }
-            return true
-        case .name:
-            if !string.isValidName {
-                return false
-            }
-            return true
-        case .phone:
-            if !string.isValidPhone {
-                return false
-            }
-            return true
-        case .message:
-            if string == L10n.enterDetails {
-                return false
-            }
-            return true
-        case .none:
-            return true
-        }
     }
     
     func isValidData(with validationType: ValidationError) -> String? {

@@ -33,6 +33,7 @@ extension UIViewController {
         let leftPadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         leftPadding.width = 18
         navigationItem.leftBarButtonItems = [leftPadding, backItem]
+        
         if isSettingEnable {
             let settingsItem = UIBarButtonItem(image: Asset.settings.image, style: .done, target: self, action: #selector(showSettings))
             settingsItem.tintColor = ColorName.steelGrey.color

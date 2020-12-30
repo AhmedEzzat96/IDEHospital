@@ -10,10 +10,16 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// ABOUT
+  internal static let about = L10n.tr("Localizable", "about")
   /// About Us
   internal static let aboutUs = L10n.tr("Localizable", "aboutUs")
+  /// You must login to add/remove favorite
+  internal static let addOrRemoveFavorite = L10n.tr("Localizable", "addOrRemoveFavorite")
   /// am
   internal static let am = L10n.tr("Localizable", "am")
+  /// https://apps.apple.com/us/app/pubg-mobile-metro-royale/id1330123889
+  internal static let appLink = L10n.tr("Localizable", "appLink")
   /// Booked Appointments
   internal static let bookedAppointment = L10n.tr("Localizable", "bookedAppointment")
   /// Book Now
@@ -32,6 +38,8 @@ internal enum L10n {
   internal static let confirmPassword = L10n.tr("Localizable", "confirmPassword")
   /// Your password and confirmation password do not match.
   internal static let confirmPasswordAlert = L10n.tr("Localizable", "confirmPasswordAlert")
+  /// confirm password field is empty
+  internal static let confirmPwEmpty = L10n.tr("Localizable", "confirmPwEmpty")
   /// Contact Us
   internal static let contactUs = L10n.tr("Localizable", "contactUs")
   /// You should enter your message details
@@ -52,11 +60,13 @@ internal enum L10n {
   internal static let donTHaveAccount = L10n.tr("Localizable", "don’tHaveAccount")
   /// Edit Profile
   internal static let editProfile = L10n.tr("Localizable", "editProfile")
+  /// email field is empty
+  internal static let emailEmpty = L10n.tr("Localizable", "emailEmpty")
   /// Email should be : example@mail.com
   internal static let emailRequiremtnts = L10n.tr("Localizable", "emailRequiremtnts")
   /// en
   internal static let en = L10n.tr("Localizable", "en")
-  /// Enter Details
+  ///  Enter Details
   internal static let enterDetails = L10n.tr("Localizable", "enterDetails")
   /// Examination Fees : 
   internal static let examinationFee = L10n.tr("Localizable", "examinationFee")
@@ -94,6 +104,12 @@ internal enum L10n {
   internal static let loginNav = L10n.tr("Localizable", "loginNav")
   /// Logouts
   internal static let logout = L10n.tr("Localizable", "logout")
+  /// Logout
+  internal static let logOutBtn = L10n.tr("Localizable", "logOutBtn")
+  /// Are you sure you want to log out?
+  internal static let logoutMessage = L10n.tr("Localizable", "logoutMessage")
+  /// Logout?
+  internal static let logoutTitle = L10n.tr("Localizable", "logoutTitle")
   /// minutes
   internal static let mins = L10n.tr("Localizable", "mins")
   /// Missed Data
@@ -104,6 +120,8 @@ internal enum L10n {
   internal static let myAppointments = L10n.tr("Localizable", "myAppointments")
   /// MY FAVORITES
   internal static let myFavorites = L10n.tr("Localizable", "myFavorites")
+  /// name field is empty
+  internal static let nameEmpty = L10n.tr("Localizable", "nameEmpty")
   /// Name should contain letters only, at least 3 characters and and at most 18 characters
   internal static let nameRequirements = L10n.tr("Localizable", "nameRequirements")
   /// No
@@ -114,10 +132,16 @@ internal enum L10n {
   internal static let noDoctorsFound = L10n.tr("Localizable", "noDoctorsFound")
   /// No Favorites Found!
   internal static let noFavoriteFound = L10n.tr("Localizable", "noFavoriteFound")
+  /// For More information call: 19199
+  internal static let number = L10n.tr("Localizable", "number")
   /// OK
   internal static let ok = L10n.tr("Localizable", "ok")
+  /// password field is empty
+  internal static let passwordEmpty = L10n.tr("Localizable", "passwordEmpty")
   /// The password must be at least 6 characters.
   internal static let passwordRequirements = L10n.tr("Localizable", "passwordRequirements")
+  /// mobile No. field is empty
+  internal static let phoneEmpty = L10n.tr("Localizable", "phoneEmpty")
   /// Please enter valid phone number ex : 010xxxxxxxx
   internal static let phoneRequirements = L10n.tr("Localizable", "phoneRequirements")
   /// pm
@@ -140,6 +164,8 @@ internal enum L10n {
   internal static let searchResults = L10n.tr("Localizable", "searchResults")
   /// IDEA EG HOSPITAL THE BEST CHOICE
   internal static let secondTitle = L10n.tr("Localizable", "secondTitle")
+  /// Send
+  internal static let send = L10n.tr("Localizable", "send")
   /// Send Request
   internal static let sendRequest = L10n.tr("Localizable", "sendRequest")
   /// Service Search
@@ -150,6 +176,8 @@ internal enum L10n {
   internal static let settings = L10n.tr("Localizable", "settings")
   /// Share
   internal static let share = L10n.tr("Localizable", "share")
+  /// This App is awesome!  Check out this Link to try it!
+  internal static let shareText = L10n.tr("Localizable", "shareText")
   /// Sign Up
   internal static let signup = L10n.tr("Localizable", "signup")
   /// SIGN UP
@@ -160,6 +188,8 @@ internal enum L10n {
   internal static let sortBy = L10n.tr("Localizable", "sortBy")
   /// Choose Specialist
   internal static let specialist = L10n.tr("Localizable", "specialist")
+  /// TERMS & CONDITIONS
+  internal static let termsAndConditions = L10n.tr("Localizable", "termsAndConditions")
   /// Terms & Conditions
   internal static let termsBtn = L10n.tr("Localizable", "termsBtn")
   /// By clicking sign up, you agree to our
@@ -176,6 +206,8 @@ internal enum L10n {
   internal static let yes = L10n.tr("Localizable", "yes")
   /// Your Email
   internal static let yourEmail = L10n.tr("Localizable", "yourEmail")
+  ///  Your Message
+  internal static let yourMsg = L10n.tr("Localizable", "yourMsg")
   /// Your Name
   internal static let yourName = L10n.tr("Localizable", "yourName")
   /// Enter password

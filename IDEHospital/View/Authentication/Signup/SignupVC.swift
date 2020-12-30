@@ -43,6 +43,7 @@ class SignupVC: UIViewController {
     }
     
     @IBAction func termsBtnPressed(_ sender: UIButton) {
+        goToTerms()
     }
     
 }
@@ -52,6 +53,13 @@ extension SignupVC {
     private func setupNavigation() {
         self.setupNavController(title: L10n.signupNav)
         self.setupNavigationItems(backAction: .popUpCurrent, isSettingEnable: false)
+    }
+    
+    private func goToTerms() {
+        let termsVC = AboutAndTermsVC.create(status: .termsAndConditions)
+        let termsNav = UINavigationController(rootViewController: termsVC)
+        termsNav.modalPresentationStyle = .fullScreen
+        present(termsNav, animated: true)
     }
 }
 

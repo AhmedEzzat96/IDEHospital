@@ -8,10 +8,11 @@
 
 import UIKit
 
-class HomeNurseView: UIView {
+class HomeNurseContactUsView: UIView {
 
     // MARK:- Outlets
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var nameTextField: IDEAHospitalTextField!
     @IBOutlet weak var emailTextField: IDEAHospitalTextField!
     @IBOutlet weak var phoneTextField: IDEAHospitalTextField!
@@ -19,23 +20,36 @@ class HomeNurseView: UIView {
     @IBOutlet weak var sendRequestButton: CustomButton!
     
     // MARK:- Public Methods
-    func setup() {
+    func setup(buttonTitle: String, isNumberLabelHidden: Bool, textViewPlaceHolder: String) {
         setupBackground()
-        setupInfoLabel()
+        setupLabels(isNumberLabelHidden)
         setupTextFields()
-        setupDetailsTextView()
-        setupButton()
+        setupDetailsTextView(textViewPlaceHolder: textViewPlaceHolder)
+        setupButton(title: buttonTitle)
     }
 }
 
 // MARK:- Private Methods
-extension HomeNurseView {
+extension HomeNurseContactUsView {
+    private func setupLabels(_ isNumberLabelHidden: Bool) {
+        setupInfoLabel()
+        setupNumberLabel(isNumberLabelHidden)
+    }
+    
     private func setupInfoLabel() {
         infoLabel.text = L10n.info
         infoLabel.font = FontFamily.PTSans.regular.font(size: 12)
         infoLabel.textAlignment = .center
         infoLabel.textColor = ColorName.white.color
         infoLabel.numberOfLines = 2
+    }
+    
+    private func setupNumberLabel(_ isHidden: Bool) {
+        numberLabel.isHidden = isHidden
+        numberLabel.text = L10n.number
+        numberLabel.font = FontFamily.PTSans.regular.font(size: 12)
+        numberLabel.textAlignment = .center
+        numberLabel.textColor = ColorName.white.color
     }
     
     private func setupTextFields() {
@@ -46,8 +60,8 @@ extension HomeNurseView {
         phoneTextField.keyboardType = .phonePad
     }
     
-    private func setupDetailsTextView() {
-        detailsTextView.attributedText = NSAttributedString(string: L10n.enterDetails, attributes: [NSAttributedString.Key.foregroundColor: ColorName.white.color, NSAttributedString.Key.font: FontFamily.PTSans.bold.font(size: 15)])
+    private func setupDetailsTextView(textViewPlaceHolder: String) {
+        detailsTextView.attributedText = NSAttributedString(string: textViewPlaceHolder, attributes: [NSAttributedString.Key.foregroundColor: ColorName.white.color, NSAttributedString.Key.font: FontFamily.PTSans.bold.font(size: 15)])
         infoLabel.adjustsFontSizeToFitWidth = true
         detailsTextView.backgroundColor = .clear
         detailsTextView.layer.borderWidth = 1
@@ -55,8 +69,8 @@ extension HomeNurseView {
         detailsTextView.layer.cornerRadius = 10
     }
     
-    private func setupButton() {
-        sendRequestButton.setTitle(L10n.sendRequest, for: .normal)
+    private func setupButton(title: String) {
+        sendRequestButton.setTitle(title, for: .normal)
         sendRequestButton.titleLabel?.font = FontFamily.PTSans.bold.font(size: 20)
     }
 }

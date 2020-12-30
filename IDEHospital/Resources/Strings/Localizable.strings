@@ -23,7 +23,7 @@
 "yourName" = "Your Name";
 "yourEmail" = "Your Email";
 "mobileNumber" = "Mobile Number";
-"enterDetails" = "Enter Details";
+"enterDetails" = " Enter Details";
 "sendRequest" = "Send Request";
 "done" = "Done";
 "yourRequestWasSent" = "Your request was sent";
@@ -58,6 +58,11 @@
 "timeFormat" = "hh:mm a";
 "am" = "am";
 "pm" = "pm";
+"contactUs" = "CONTACT US";
+"send" = "Send";
+"number" = "For More information call: 19199";
+"about" = "ABOUT";
+"termsAndConditions" = "TERMS & CONDITIONS";
 "setNewPassword" = "Set New Password";
 "resetPassword" = "RESET PASSWORD";
 "yourPassword" = "Enter password";
@@ -85,5 +90,16 @@
 "bookedAppointment" = "Booked Appointments";
 "logout" = "Logouts";
 "favorites" = "Favourites";
-
+"shareText" = "This App is awesome!  Check out this Link to try it!";
+"appLink" = "https://apps.apple.com/us/app/pubg-mobile-metro-royale/id1330123889";
+"addOrRemoveFavorite" = "You must login to add/remove favorite";
+"logoutTitle" = "Logout?";
+"logoutMessage" = "Are you sure you want to log out?";
+"logOutBtn" = "Logout";
+"yourMsg" = " Your Message";
+"nameEmpty" = "name field is empty";
+"emailEmpty" = "email field is empty";
+"passwordEmpty" = "password field is empty";
+"confirmPwEmpty" = "confirm password field is empty";
+"phoneEmpty" = "mobile No. field is empty";
 

@@ -56,28 +56,33 @@ extension SignupViewModel {
     }
     
     private func validateUser(with user: User?, confirmPassword: String?) -> Bool {
-        if !ValidationManager.shared().isValid(with: user?.name, validationType: .name) {
-            self.view?.showAlert(title: ValidationType.name.error.title, message: ValidationType.name.error.message, handler: nil)
+        if let nameError = ValidationManager.shared().isValidData(with: .name(user?.name)) {
+            self.view?.showAlert(title: L10n.sorry, message: nameError, handler: nil)
             return false
         }
         
-        if !ValidationManager.shared().isValid(with: user?.email, validationType: .email) {
-            self.view?.showAlert(title: ValidationType.email.error.title, message: ValidationType.email.error.message, handler: nil)
+        if let emailError = ValidationManager.shared().isValidData(with: .email(user?.email)) {
+            self.view?.showAlert(title: L10n.sorry, message: emailError, handler: nil)
             return false
         }
         
-        if !ValidationManager.shared().isValid(with: user?.mobile, validationType: .phone) {
-            self.view?.showAlert(title: ValidationType.phone.error.title, message: ValidationType.phone.error.message, handler: nil)
+        if let mobileNoError = ValidationManager.shared().isValidData(with: .phone(user?.mobile)) {
+            self.view?.showAlert(title: L10n.sorry, message: mobileNoError, handler: nil)
             return false
         }
         
-        if !ValidationManager.shared().isValid(with: user?.password, validationType: .password) {
-            self.view?.showAlert(title: ValidationType.password.error.title, message: ValidationType.password.error.message, handler: nil)
+        if let passwordError = ValidationManager.shared().isValidData(with: .password(user?.password)) {
+            self.view?.showAlert(title: L10n.sorry, message: passwordError, handler: nil)
+            return false
+        }
+        
+        if let confirmPwError = ValidationManager.shared().isValidData(with: .confirmPassword(confirmPassword)) {
+            self.view?.showAlert(title: L10n.sorry, message: confirmPwError, handler: nil)
             return false
         }
         
         if confirmPassword != user?.password {
-            self.view?.showAlert(title: L10n.incorrectPassword, message: L10n.confirmPasswordAlert, handler: nil)
+            self.view?.showAlert(title: L10n.sorry, message: L10n.confirmPasswordAlert, handler: nil)
             return false
         }
         

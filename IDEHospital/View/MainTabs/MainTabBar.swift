@@ -30,7 +30,7 @@ class MainTabBar: UITabBarController {
 // MARK:- Private Methods
 extension MainTabBar {
     private func setupTabBar() {
-        self.tabBar.backgroundColor = ColorName.whiteTwo.color
+        self.tabBar.backgroundColor = .lightGray
         self.tabBar.tintColor = ColorName.blackTwo.color
     }
     

@@ -13,6 +13,11 @@ protocol SettingVCProtocol: class {
     func goToFavorites()
     func goToAppointment()
     func goToHome()
+    func goToContactUs()
+    func goToAboutUsOrTerms(status: InfoType)
+    func goToShare()
+    func showAlert(title: String, message: String)
+    func alertWithAction(title: String, message: String, handler: ((UIAlertAction) -> Void)?)
 }
 
 class SettingVC: UIViewController {
@@ -94,6 +99,14 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
 
 //MARK:- SettingVC Protocol
 extension SettingVC: SettingVCProtocol {
+    func showAlert(title: String, message: String) {
+        self.showSimpleAlert(title: title, message: message)
+    }
+    
+    func alertWithAction(title: String, message: String, handler: ((UIAlertAction) -> Void)?) {
+        self.openAlert(title: title, message: message, alertStyle: .alert, actionTitles: [L10n.no, L10n.logOutBtn], actionStyles: [.cancel, .destructive], actions: [nil, handler])
+    }
+    
     func goToLogin() {
         let loginVC = LoginVC.create()
         navigationController?.pushViewController(loginVC, animated: true)
@@ -120,6 +133,32 @@ extension SettingVC: SettingVCProtocol {
         let homeVC = HomeVC.create()
         let homeNav = UINavigationController(rootViewController: homeVC)
         window?.rootViewController = homeNav
+    }
+    
+    func goToContactUs() {
+        let contactUsVC = HomeNurseContactUsVC.create(status: .contactUs)
+        contactUsVC.setupNavigationItems(backAction: .dismissCurrent, isSettingEnable: false)
+        let contactUsNav = UINavigationController(rootViewController: contactUsVC)
+        contactUsNav.modalPresentationStyle = .fullScreen
+        present(contactUsNav, animated: true)
+    }
+    
+    func goToAboutUsOrTerms(status: InfoType) {
+        let aboutUsOrTermsVC = AboutAndTermsVC.create(status: status)
+        let aboutUsOrTermsNav = UINavigationController(rootViewController: aboutUsOrTermsVC)
+        aboutUsOrTermsNav.modalPresentationStyle = .fullScreen
+        present(aboutUsOrTermsNav, animated: true)
+    }
+    
+    func goToShare() {
+        let textToShare = L10n.shareText
+        
+        if let myWebsite = URL(string: L10n.appLink) {
+            let objectsToShare = [textToShare, myWebsite] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            activityVC.popoverPresentationController?.sourceView = settingView.tableView
+            self.present(activityVC, animated: true)
+        }
     }
     
 }

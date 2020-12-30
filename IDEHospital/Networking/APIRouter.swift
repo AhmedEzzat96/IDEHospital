@@ -16,19 +16,23 @@ enum APIRouter: URLRequestConvertible{
     case getCategoriesData(_ CategoriesID: Int)
     case mainCategories
     case nurseRequest(_ requestData: RequestData)
+    case contactRequest(_ requestData: RequestData)
     case searchForDoctors(_ doctorsFilter: DoctorsFilter)
     case favorites(_ page: Int)
     case addRemoveFavorite(_ doctorID: Int)
     case appointments(_ page: Int)
     case removeAppointment(_ appointmentID: Int)
+    case aboutUs
+    case terms
     case register(_ user: User)
     case login(_ user: User)
     case forgetPassword(_ user: User)
+    case logout
     
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
-        case .getCategoriesData, .mainCategories, .favorites, .appointments, .searchForDoctors:
+        case .getCategoriesData, .mainCategories, .favorites, .appointments, .searchForDoctors, .aboutUs, .terms:
             return .get
         case .removeAppointment:
             return .delete
@@ -60,6 +64,8 @@ enum APIRouter: URLRequestConvertible{
             return URLs.mainCategories
         case .nurseRequest:
             return URLs.nurseRequset
+        case .contactRequest:
+            return URLs.contactRequest
         case .searchForDoctors(let doctorsFilter):
             return URLs.mainCategories + "/\(doctorsFilter.categoryId!)/doctors"
         case .addRemoveFavorite(let doctorID):
@@ -68,12 +74,18 @@ enum APIRouter: URLRequestConvertible{
             return URLs.appointments
         case .removeAppointment(let appointmentID):
             return URLs.appointments + "/\(appointmentID)"
+        case .aboutUs:
+            return URLs.aboutUs
+        case .terms:
+            return URLs.terms
         case .register:
             return URLs.register
         case .login:
             return URLs.login
         case .forgetPassword:
             return URLs.forgetPassword
+        case .logout:
+            return URLs.logout
         }
     }
     
@@ -87,21 +99,20 @@ enum APIRouter: URLRequestConvertible{
         
         // Headers
         switch self {
-        case .nurseRequest, .register, .login, .forgetPassword:
+        case .nurseRequest, .register, .login, .forgetPassword, .contactRequest:
             urlRequest.setValue(HeaderValues.appJSON, forHTTPHeaderField: HeaderKeys.accept)
             
-        case .favorites, .addRemoveFavorite, .appointments, .removeAppointment, .searchForDoctors:
+        case .favorites, .addRemoveFavorite, .appointments, .removeAppointment, .searchForDoctors, .logout:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().token ?? "")",
                 forHTTPHeaderField: HeaderKeys.authorization)
         default:
             urlRequest.setValue(L10n.en, forHTTPHeaderField: HeaderKeys.acceptLanguage)
         }
         
-        
         // HTTP Body
         let httpBody: Data? = {
             switch self {
-            case .nurseRequest(let body):
+            case .nurseRequest(let body), .contactRequest(let body):
                 return encodeToJSON(body)
             case .register(let body):
                 return encodeToJSON(body)
@@ -114,6 +125,7 @@ enum APIRouter: URLRequestConvertible{
             }
         }()
         urlRequest.httpBody = httpBody
+        
         // Encoding
         let encoding: ParameterEncoding = {
             switch method {

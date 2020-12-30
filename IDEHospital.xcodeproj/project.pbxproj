@@ -36,6 +36,7 @@
 		0678C11E2581B09500949700 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678C11C2581B09500949700 /* CategoryCell.swift */; };
 		0678C11F2581B09500949700 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0678C11D2581B09500949700 /* CategoryCell.xib */; };
 		0678C1212581CA4C00949700 /* UIColor+getColorByHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678C1202581CA4C00949700 /* UIColor+getColorByHex.swift */; };
+		06950BAA259C295400DF4ACB /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06950BA9259C295400DF4ACB /* CustomScrollView.swift */; };
 		0699F05D258D1F3E00C2AF5F /* MyFavoriteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699F05C258D1F3E00C2AF5F /* MyFavoriteResponse.swift */; };
 		06AB4F11258404CA00A0B658 /* UIViewController+NavControllerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB4F10258404CA00A0B658 /* UIViewController+NavControllerSetup.swift */; };
 		06BB4E1E2585334700D2C4E3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF80257E694700949D54 /* APIRouter.swift */; };
@@ -148,6 +149,7 @@
 		0678C11C2581B09500949700 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		0678C11D2581B09500949700 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		0678C1202581CA4C00949700 /* UIColor+getColorByHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+getColorByHex.swift"; sourceTree = "<group>"; };
+		06950BA9259C295400DF4ACB /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		0699F05C258D1F3E00C2AF5F /* MyFavoriteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteResponse.swift; sourceTree = "<group>"; };
 		0699F05E258D5A3A00C2AF5F /* MyFavoriteCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteCellViewModel.swift; sourceTree = "<group>"; };
 		06AB4F10258404CA00A0B658 /* UIViewController+NavControllerSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavControllerSetup.swift"; sourceTree = "<group>"; };
@@ -503,6 +505,14 @@
 			path = CategoryCell;
 			sourceTree = "<group>";
 		};
+		06950BA8259C293B00DF4ACB /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				06950BA9259C295400DF4ACB /* CustomScrollView.swift */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
 		06AB4F0B2583F84100A0B658 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,6 +543,7 @@
 		06AB4F0F2583F87500A0B658 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				06950BA8259C293B00DF4ACB /* ScrollView */,
 				0605D6802589B608006E38D8 /* Buttons */,
 				993AD119258731E1005311CD /* TextFields */,
 				993AD118258731C9005311CD /* Cells */,
@@ -1035,6 +1046,7 @@
 				06EB2EB52599A09A00AFEE13 /* SettingViewModel.swift in Sources */,
 				06EB2EA425997D5F00AFEE13 /* ResetPasswordViewModel.swift in Sources */,
 				06DD9943257FBAA100D36344 /* HomeVC.swift in Sources */,
+				06950BAA259C295400DF4ACB /* CustomScrollView.swift in Sources */,
 				06EB2E9A2599268500AFEE13 /* User.swift in Sources */,
 				999A5C1D258E438900FC0792 /* SearchResultsView.swift in Sources */,
 				062FDF83257E6F4A00949D54 /* UIViewController+Storyboard.swift in Sources */,

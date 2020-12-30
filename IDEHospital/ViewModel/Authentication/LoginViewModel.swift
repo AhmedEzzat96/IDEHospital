@@ -29,7 +29,6 @@ extension LoginViewModel: LoginViewModelProtocol {
             register(with: user!)
         }
     }
-    
 }
 
 //MARK:- Private Methods
@@ -57,17 +56,15 @@ extension LoginViewModel {
     }
     
     private func validateUser(with user: User?) -> Bool {
-        
-        if !ValidationManager.shared().isValid(with: user?.email, validationType: .email) {
-            self.view?.showAlert(title: ValidationType.email.error.title, message: ValidationType.email.error.message, handler: nil)
+        if let emailError = ValidationManager.shared().isValidData(with: .email(user?.email)) {
+            self.view?.showAlert(title: L10n.sorry, message: emailError, handler: nil)
             return false
         }
         
-        if !ValidationManager.shared().isValid(with: user?.password, validationType: .password) {
-            self.view?.showAlert(title: ValidationType.password.error.title, message: ValidationType.password.error.message, handler: nil)
+        if let passwordError = ValidationManager.shared().isValidData(with: .password(user?.password)) {
+            self.view?.showAlert(title: L10n.sorry, message: passwordError, handler: nil)
             return false
         }
-        
         return true
     }
 }

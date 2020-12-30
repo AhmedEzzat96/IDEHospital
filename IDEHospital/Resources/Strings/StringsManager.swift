@@ -38,6 +38,8 @@ internal enum L10n {
   internal static let confirmPassword = L10n.tr("Localizable", "confirmPassword")
   /// Your password and confirmation password do not match.
   internal static let confirmPasswordAlert = L10n.tr("Localizable", "confirmPasswordAlert")
+  /// confirm password field is empty
+  internal static let confirmPwEmpty = L10n.tr("Localizable", "confirmPwEmpty")
   /// Contact Us
   internal static let contactUs = L10n.tr("Localizable", "contactUs")
   /// You should enter your message details
@@ -58,6 +60,8 @@ internal enum L10n {
   internal static let donTHaveAccount = L10n.tr("Localizable", "don’tHaveAccount")
   /// Edit Profile
   internal static let editProfile = L10n.tr("Localizable", "editProfile")
+  /// email field is empty
+  internal static let emailEmpty = L10n.tr("Localizable", "emailEmpty")
   /// Email should be : example@mail.com
   internal static let emailRequiremtnts = L10n.tr("Localizable", "emailRequiremtnts")
   /// en
@@ -116,6 +120,8 @@ internal enum L10n {
   internal static let myAppointments = L10n.tr("Localizable", "myAppointments")
   /// MY FAVORITES
   internal static let myFavorites = L10n.tr("Localizable", "myFavorites")
+  /// name field is empty
+  internal static let nameEmpty = L10n.tr("Localizable", "nameEmpty")
   /// Name should contain letters only, at least 3 characters and and at most 18 characters
   internal static let nameRequirements = L10n.tr("Localizable", "nameRequirements")
   /// No
@@ -130,8 +136,12 @@ internal enum L10n {
   internal static let number = L10n.tr("Localizable", "number")
   /// OK
   internal static let ok = L10n.tr("Localizable", "ok")
+  /// password field is empty
+  internal static let passwordEmpty = L10n.tr("Localizable", "passwordEmpty")
   /// The password must be at least 6 characters.
   internal static let passwordRequirements = L10n.tr("Localizable", "passwordRequirements")
+  /// mobile No. field is empty
+  internal static let phoneEmpty = L10n.tr("Localizable", "phoneEmpty")
   /// Please enter valid phone number ex : 010xxxxxxxx
   internal static let phoneRequirements = L10n.tr("Localizable", "phoneRequirements")
   /// pm
@@ -196,6 +206,8 @@ internal enum L10n {
   internal static let yes = L10n.tr("Localizable", "yes")
   /// Your Email
   internal static let yourEmail = L10n.tr("Localizable", "yourEmail")
+  ///  Your Message
+  internal static let yourMsg = L10n.tr("Localizable", "yourMsg")
   /// Your Name
   internal static let yourName = L10n.tr("Localizable", "yourName")
   /// Enter password

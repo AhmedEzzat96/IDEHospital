@@ -9,11 +9,12 @@
 import UIKit
 
 protocol HomeNurseContactUsVCProtocol: class {
-    func addPlaceholder()
+    func addPlaceholder(_ text: String)
     func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)?)
     func showLoader()
     func hideLoader()
-    func showHomeVC()
+    func popUp()
+    func dismiss()
 }
 
 enum RequestType {
@@ -33,7 +34,7 @@ class HomeNurseContactUsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationController()
-        mainView.setup(buttonTitle: viewModel.getTitles().1, isNumberLabelHidden: viewModel.isNumberLabelHidden())
+        mainView.setup(buttonTitle: viewModel.getTitles().1, isNumberLabelHidden: viewModel.isNumberLabelHidden(), textViewPlaceHolder: viewModel.getPlaceHolder())
         mainView.detailsTextView.delegate = self
     }
 
@@ -74,9 +75,9 @@ extension HomeNurseContactUsVC: UITextViewDelegate {
 
 // MARK:- HomeNurseVC Protocol
 extension HomeNurseContactUsVC: HomeNurseContactUsVCProtocol {
-    func addPlaceholder() {
+    func addPlaceholder(_ text: String) {
         DispatchQueue.main.async {
-            self.mainView.detailsTextView.text = L10n.enterDetails
+            self.mainView.detailsTextView.text = text
         }
     }
     
@@ -92,7 +93,11 @@ extension HomeNurseContactUsVC: HomeNurseContactUsVCProtocol {
         view.hideActivityIndicator()
     }
     
-    func showHomeVC() {
+    func popUp() {
         popUpCurrent()
+    }
+    
+    func dismiss() {
+        dismissCurrent()
     }
 }

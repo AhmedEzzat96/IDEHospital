@@ -96,3 +96,10 @@
 "logoutTitle" = "Logout?";
 "logoutMessage" = "Are you sure you want to log out?";
 "logOutBtn" = "Logout";
+"yourMsg" = " Your Message";
+"nameEmpty" = "name field is empty";
+"emailEmpty" = "email field is empty";
+"passwordEmpty" = "password field is empty";
+"confirmPwEmpty" = "confirm password field is empty";
+"phoneEmpty" = "mobile No. field is empty";
+

@@ -13,6 +13,7 @@ protocol HomeNurseContactUsViewModelProtocol {
     func isNumberLabelHidden() -> Bool
     func textViewShouldEndEditing(text: String)
     func requestTapped(with requestData: RequestData)
+    func getPlaceHolder() -> String
 }
 
 class HomeNurseContactUsViewModel {
@@ -45,7 +46,7 @@ extension HomeNurseContactUsViewModel {
                 print(response.code)
                 if response.success, response.code == 202 {
                     self?.view?.showAlert(title: L10n.done, message: L10n.yourRequestWasSent) { (action) in
-                        self?.view?.showHomeVC()
+                        self?.popOrDismiss()
                     }
                 }
             case .failure(let error):
@@ -53,6 +54,15 @@ extension HomeNurseContactUsViewModel {
                 self?.view?.showAlert(title: L10n.sorry, message: error.localizedDescription, handler: nil)
             }
             self?.view?.hideLoader()
+        }
+    }
+    
+    private func popOrDismiss() {
+        switch status {
+        case .homeNurse:
+            view?.popUp()
+        default:
+            view?.dismiss()
         }
     }
 }
@@ -77,27 +87,45 @@ extension HomeNurseContactUsViewModel: HomeNurseContactUsViewModelProtocol {
         }
     }
     
+    func getPlaceHolder() -> String {
+        switch status {
+        case .homeNurse:
+            return L10n.enterDetails
+        default:
+            return L10n.yourMsg
+        }
+    }
+    
     func textViewShouldEndEditing(text: String) {
-        if text.isEmpty {
-            view?.addPlaceholder()
+        guard text.isEmpty else { return }
+        switch status {
+        case .homeNurse:
+            view?.addPlaceholder(L10n.enterDetails)
+        default:
+            view?.addPlaceholder(L10n.yourMsg)
         }
     }
     
     func requestTapped(with requestData: RequestData) {
-        if !ValidationManager.shared().isValid(with: requestData.name, validationType: .name) {
-            view?.showAlert(title: ValidationType.name.error.title, message: ValidationType.name.error.message, handler: nil)
+        
+        if let nameError = ValidationManager.shared().isValidData(with: .name(requestData.name)) {
+            self.view?.showAlert(title: L10n.sorry, message: nameError, handler: nil)
+            return
         }
         
-        if !ValidationManager.shared().isValid(with: requestData.email, validationType: .email) {
-            view?.showAlert(title: ValidationType.email.error.title, message: ValidationType.email.error.message, handler: nil)
+        if let emailError = ValidationManager.shared().isValidData(with: .email(requestData.email)) {
+            self.view?.showAlert(title: L10n.sorry, message: emailError, handler: nil)
+            return
         }
         
-        if !ValidationManager.shared().isValid(with: requestData.mobile, validationType: .phone) {
-            view?.showAlert(title: ValidationType.phone.error.title, message: ValidationType.phone.error.message, handler: nil)
+        if let phoneError = ValidationManager.shared().isValidData(with: .phone(requestData.mobile)) {
+            self.view?.showAlert(title: L10n.sorry, message: phoneError, handler: nil)
+            return
         }
         
-        if !ValidationManager.shared().isValid(with: requestData.message, validationType: .message) {
-            view?.showAlert(title: ValidationType.message.error.title, message: ValidationType.message.error.message, handler: nil)
+        if let messageError = ValidationManager.shared().isValidData(with: .message(requestData.message)) {
+            self.view?.showAlert(title: L10n.sorry, message: messageError, handler: nil)
+            return
         } else {
             sendRequest(with: requestData)
         }

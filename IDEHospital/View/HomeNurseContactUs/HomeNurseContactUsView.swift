@@ -20,11 +20,11 @@ class HomeNurseContactUsView: UIView {
     @IBOutlet weak var sendRequestButton: CustomButton!
     
     // MARK:- Public Methods
-    func setup(buttonTitle: String, isNumberLabelHidden: Bool) {
+    func setup(buttonTitle: String, isNumberLabelHidden: Bool, textViewPlaceHolder: String) {
         setupBackground()
         setupLabels(isNumberLabelHidden)
         setupTextFields()
-        setupDetailsTextView()
+        setupDetailsTextView(textViewPlaceHolder: textViewPlaceHolder)
         setupButton(title: buttonTitle)
     }
 }
@@ -60,8 +60,8 @@ extension HomeNurseContactUsView {
         phoneTextField.keyboardType = .phonePad
     }
     
-    private func setupDetailsTextView() {
-        detailsTextView.attributedText = NSAttributedString(string: L10n.enterDetails, attributes: [NSAttributedString.Key.foregroundColor: ColorName.white.color, NSAttributedString.Key.font: FontFamily.PTSans.bold.font(size: 15)])
+    private func setupDetailsTextView(textViewPlaceHolder: String) {
+        detailsTextView.attributedText = NSAttributedString(string: textViewPlaceHolder, attributes: [NSAttributedString.Key.foregroundColor: ColorName.white.color, NSAttributedString.Key.font: FontFamily.PTSans.bold.font(size: 15)])
         infoLabel.adjustsFontSizeToFitWidth = true
         detailsTextView.backgroundColor = .clear
         detailsTextView.layer.borderWidth = 1

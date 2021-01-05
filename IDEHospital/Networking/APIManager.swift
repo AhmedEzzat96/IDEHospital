@@ -87,6 +87,24 @@ class APIManager {
             completion(response)
         }
     }
+    
+    class func doctors(with doctorID: Int, completion: @escaping (Result<Doctor, Error>) -> Void) {
+        request(APIRouter.doctors(doctorID)) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func reviews(with doctorID: Int, page: Int, completion: @escaping (Result<Reviews, Error>) -> Void) {
+        request(APIRouter.reviews(doctorID, page)) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func doctorAppointments(with doctorID: Int, completion: @escaping (Result<DoctorAppointment, Error>) -> Void) {
+        request(APIRouter.doctorAppointments(doctorID)) { (response) in
+            completion(response)
+        }
+    }
 }
 
 extension APIManager{

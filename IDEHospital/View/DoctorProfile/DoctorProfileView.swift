@@ -57,6 +57,32 @@ class DoctorProfileView: UIView {
         setupLabel(label: companiesLabel, color: .black)
     }
     
+    func hideOrShowDoctorDetails(dotorProfileBtn: Bool = true, reviewBtn: Bool = false, doctorView: Bool = false, tableViewHidden: Bool = true) {
+        doctorProfileBtn.isSelected = dotorProfileBtn
+        reviewsBtn.isSelected = reviewBtn
+        doctorDetailsView.isHidden = doctorView
+        tableView.isHidden = tableViewHidden
+    }
+    
+    func showDoctorData(item: DoctorData) {
+        doctorNameLabel.text = item.name
+        doctorBioLabel.text = item.bio
+        ratingView.rating = Double(item.rating)
+        addressLabel.text = item.address
+        feesLabel.text = "\(L10n.examinationFee)\(item.fees) \(L10n.le)"
+        waitingTimeLabel.text = "\(L10n.waitingTime)\(item.waiting_time) \(L10n.mins)"
+        specialtyLabel.text = item.specialty
+        secondBioLabel.text = item.second_bio
+        companiesLabel.text = item.companies.map {$0}.compactMap({$0}).joined(separator: ", ")
+        doctorImgView.sd_setImage(with: URL(string: item.image), completed: nil)
+        reviewsCountLabel.text = "\(item.reviews_count) \(L10n.review)"
+        if item.is_favorited {
+            favoriteBtn.setImage(Asset.filledHeart.image, for: .normal)
+        } else {
+            favoriteBtn.setImage(Asset.emptyHeart.image, for: .normal)
+        }
+    }
+    
 }
 // MARK:- Private Methods
 extension DoctorProfileView {

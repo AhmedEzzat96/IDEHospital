@@ -102,4 +102,24 @@
 "passwordEmpty" = "password field is empty";
 "confirmPwEmpty" = "confirm password field is empty";
 "phoneEmpty" = "mobile No. field is empty";
-
+"review" = "REVIEW";
+"rateInfo" = "Please rate your experience with the doctor";
+"addComment" = "Add Comment";
+"submitReview" = "Submit Review";
+"commentRequirements" = "Comment should be at least 3 characters and and at most 18 characters";
+"emptyComment" = "comment field is empty";
+"voucherTitle" = "Do you have a Voucher Code?";
+"yes" = "Yes";
+"no" = "No";
+"enterCode" = "Enter Code";
+"bookingAnotherPerson" = "Are you Booking for another person?";
+"enterName" = "Enter Name";
+"continue" = "Continue";
+"confirmAppointment" = "Confirm Your Appointment";
+"youAreAboutToBook" = "You are about to book an appointment on";
+"withDoctor" = "with Doctor";
+"confirm" = "Confirm";
+"emptyVoucher" = "voucher field is empty";
+"voucherRequirements" = "voucher should be at least 3 characters";
+"sureToCancel" = "Are you sure you want to cancel this appointment";
+"successfully Booked" = "Appointment Successfully Booked";

@@ -87,6 +87,18 @@ class APIManager {
             completion(response)
         }
     }
+    
+    class func addReview(_ review: Review, completion: @escaping (Result<RequestResponse, Error>) -> Void) {
+        request(APIRouter.addReview(review)) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func bookAppointment(_ appointment: Appointment, completion: @escaping (Result<AppointmentResponse, Error>) -> Void) {
+        request(APIRouter.bookAppointment(appointment)) { (response) in
+            completion(response)
+        }
+    }
 }
 
 extension APIManager{

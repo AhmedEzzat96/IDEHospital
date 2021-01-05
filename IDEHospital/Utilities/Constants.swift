@@ -19,6 +19,10 @@ struct Storyboards {
     static let aboutAndTerms = "AboutAndTerms"
     static let authentication = "Authentication"
     static let setting = "Setting"
+    static let review = "Review"
+    static let voucherPopUp = "VoucherPopUp"
+    static let confirmAppointmentPopUp = "ConfirmAppointmentPopUp"
+    static let yesOrNoPopUp = "YesOrNoPopUp"
 }
 
 // ViewControllers
@@ -34,6 +38,10 @@ struct ViewControllers {
     static let signupVC = "SignupVC"
     static let resetPasswordVC = "ResetPasswordVC"
     static let settingVC = "SettingVC"
+    static let reviewVC = "ReviewVC"
+    static let voucherPopUpVC = "VoucherPopUpVC"
+    static let confirmAppointmentPopUpVC = "ConfirmAppointmentPopUpVC"
+    static let yesOrNoPopUpVC = "YesOrNoPopUpVC"
 }
 
 // UserDefaultsKeys
@@ -55,6 +63,8 @@ struct URLs {
     static let login = "/login"
     static let forgetPassword = "/forget_password"
     static let logout = "/logout"
+    static let addReview = "/doctors"
+    static let bookAppointment = "/user_appointments"
 }
 
 // HeaderKeys
@@ -83,6 +93,8 @@ struct ParameterKeys {
     static let regionId = "region_id"
     static let companyId = "company_id"
     static let orderBy = "order_by"
+    static let rating = "rating"
+    static let comment = "comment"
 }
 
 // Cells

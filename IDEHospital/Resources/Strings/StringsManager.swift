@@ -14,6 +14,8 @@ internal enum L10n {
   internal static let about = L10n.tr("Localizable", "about")
   /// About Us
   internal static let aboutUs = L10n.tr("Localizable", "aboutUs")
+  /// Add Comment
+  internal static let addComment = L10n.tr("Localizable", "addComment")
   /// You must login to add/remove favorite
   internal static let addOrRemoveFavorite = L10n.tr("Localizable", "addOrRemoveFavorite")
   /// am
@@ -22,6 +24,8 @@ internal enum L10n {
   internal static let appLink = L10n.tr("Localizable", "appLink")
   /// Booked Appointments
   internal static let bookedAppointment = L10n.tr("Localizable", "bookedAppointment")
+  /// Are you Booking for another person?
+  internal static let bookingAnotherPerson = L10n.tr("Localizable", "bookingAnotherPerson")
   /// Book Now
   internal static let bookNow = L10n.tr("Localizable", "bookNow")
   /// Choose City first
@@ -32,8 +36,14 @@ internal enum L10n {
   internal static let chooseServices = L10n.tr("Localizable", "chooseServices")
   /// Choose City
   internal static let city = L10n.tr("Localizable", "city")
+  /// Comment should be at least 3 characters and and at most 18 characters
+  internal static let commentRequirements = L10n.tr("Localizable", "commentRequirements")
   /// Choose Company
   internal static let company = L10n.tr("Localizable", "company")
+  /// Confirm
+  internal static let confirm = L10n.tr("Localizable", "confirm")
+  /// Confirm Your Appointment
+  internal static let confirmAppointment = L10n.tr("Localizable", "confirmAppointment")
   /// Confirm Password
   internal static let confirmPassword = L10n.tr("Localizable", "confirmPassword")
   /// Your password and confirmation password do not match.
@@ -42,6 +52,8 @@ internal enum L10n {
   internal static let confirmPwEmpty = L10n.tr("Localizable", "confirmPwEmpty")
   /// Contact Us
   internal static let contactUs = L10n.tr("Localizable", "contactUs")
+  /// Continue
+  internal static let `continue` = L10n.tr("Localizable", "continue")
   /// You should enter your message details
   internal static let dataRequirements = L10n.tr("Localizable", "dataRequirements")
   /// EEEE,d MMMM yyyy
@@ -64,10 +76,18 @@ internal enum L10n {
   internal static let emailEmpty = L10n.tr("Localizable", "emailEmpty")
   /// Email should be : example@mail.com
   internal static let emailRequiremtnts = L10n.tr("Localizable", "emailRequiremtnts")
+  /// comment field is empty
+  internal static let emptyComment = L10n.tr("Localizable", "emptyComment")
+  /// voucher field is empty
+  internal static let emptyVoucher = L10n.tr("Localizable", "emptyVoucher")
   /// en
   internal static let en = L10n.tr("Localizable", "en")
+  /// Enter Code
+  internal static let enterCode = L10n.tr("Localizable", "enterCode")
   ///  Enter Details
   internal static let enterDetails = L10n.tr("Localizable", "enterDetails")
+  /// Enter Name
+  internal static let enterName = L10n.tr("Localizable", "enterName")
   /// Examination Fees : 
   internal static let examinationFee = L10n.tr("Localizable", "examinationFee")
   /// Favorite
@@ -146,13 +166,15 @@ internal enum L10n {
   internal static let phoneRequirements = L10n.tr("Localizable", "phoneRequirements")
   /// pm
   internal static let pm = L10n.tr("Localizable", "pm")
+  /// Please rate your experience with the doctor
+  internal static let rateInfo = L10n.tr("Localizable", "rateInfo")
   /// Choose Region
   internal static let region = L10n.tr("Localizable", "region")
   /// RESET PASSWORD
   internal static let resetPassword = L10n.tr("Localizable", "resetPassword")
   /// Check your mail to reset your password.
   internal static let resetPasswordMsg = L10n.tr("Localizable", "resetPasswordMsg")
-  /// Review
+  /// REVIEW
   internal static let review = L10n.tr("Localizable", "review")
   /// Reviews
   internal static let reviews = L10n.tr("Localizable", "reviews")
@@ -188,6 +210,12 @@ internal enum L10n {
   internal static let sortBy = L10n.tr("Localizable", "sortBy")
   /// Choose Specialist
   internal static let specialist = L10n.tr("Localizable", "specialist")
+  /// Submit Review
+  internal static let submitReview = L10n.tr("Localizable", "submitReview")
+  /// Appointment Successfully Booked
+  internal static let successfullyBooked = L10n.tr("Localizable", "successfully Booked")
+  /// Are you sure you want to cancel this appointment
+  internal static let sureToCancel = L10n.tr("Localizable", "sureToCancel")
   /// TERMS & CONDITIONS
   internal static let termsAndConditions = L10n.tr("Localizable", "termsAndConditions")
   /// Terms & Conditions
@@ -198,12 +226,20 @@ internal enum L10n {
   internal static let timeFormat = L10n.tr("Localizable", "timeFormat")
   /// View Profile
   internal static let viewProfile = L10n.tr("Localizable", "viewProfile")
+  /// voucher should be at least 3 characters
+  internal static let voucherRequirements = L10n.tr("Localizable", "voucherRequirements")
+  /// Do you have a Voucher Code?
+  internal static let voucherTitle = L10n.tr("Localizable", "voucherTitle")
   /// Waiting Time : 
   internal static let waitingTime = L10n.tr("Localizable", "waitingTime")
   /// Warning!
   internal static let warning = L10n.tr("Localizable", "warning")
+  /// with Doctor
+  internal static let withDoctor = L10n.tr("Localizable", "withDoctor")
   /// Yes
   internal static let yes = L10n.tr("Localizable", "yes")
+  /// You are about to book an appointment on
+  internal static let youAreAboutToBook = L10n.tr("Localizable", "youAreAboutToBook")
   /// Your Email
   internal static let yourEmail = L10n.tr("Localizable", "yourEmail")
   ///  Your Message

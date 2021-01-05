@@ -54,6 +54,8 @@ internal enum L10n {
   internal static let dismiss = L10n.tr("Localizable", "dismiss")
   /// Doctor Name
   internal static let doctorName = L10n.tr("Localizable", "doctorName")
+  /// Doctor Profile
+  internal static let doctorProfile = L10n.tr("Localizable", "doctorProfile")
   /// Done
   internal static let done = L10n.tr("Localizable", "done")
   /// Don’t Have account?
@@ -188,6 +190,8 @@ internal enum L10n {
   internal static let sortBy = L10n.tr("Localizable", "sortBy")
   /// Choose Specialist
   internal static let specialist = L10n.tr("Localizable", "specialist")
+  /// TAB REVIEW
+  internal static let tabReview = L10n.tr("Localizable", "tabReview")
   /// TERMS & CONDITIONS
   internal static let termsAndConditions = L10n.tr("Localizable", "termsAndConditions")
   /// Terms & Conditions
@@ -196,6 +200,8 @@ internal enum L10n {
   internal static let termsLabel = L10n.tr("Localizable", "termsLabel")
   /// hh:mm a
   internal static let timeFormat = L10n.tr("Localizable", "timeFormat")
+  /// View on map
+  internal static let viewOnMap = L10n.tr("Localizable", "viewOnMap")
   /// View Profile
   internal static let viewProfile = L10n.tr("Localizable", "viewProfile")
   /// Waiting Time : 

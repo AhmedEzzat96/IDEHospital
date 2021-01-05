@@ -57,7 +57,7 @@ class SearchResultsCell: UITableViewCell {
     
     //MARK:- IBActions
     @IBAction func bookNowBtnPressed(_ sender: UIButton) {
-        self.delegate?.bookNowAlert(customTableViewCell: self)
+        self.delegate?.bookNow(customTableViewCell: self)
     }
     
     @IBAction func addFavoriteBtnPressed(_ sender: UIButton) {

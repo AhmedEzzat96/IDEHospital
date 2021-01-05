@@ -19,6 +19,7 @@ struct Storyboards {
     static let aboutAndTerms = "AboutAndTerms"
     static let authentication = "Authentication"
     static let setting = "Setting"
+    static let doctorProfile = "DoctorProfile"
 }
 
 // ViewControllers
@@ -34,6 +35,7 @@ struct ViewControllers {
     static let signupVC = "SignupVC"
     static let resetPasswordVC = "ResetPasswordVC"
     static let settingVC = "SettingVC"
+    static let doctorProfileVC = "DoctorProfileVC"
 }
 
 // UserDefaultsKeys
@@ -55,6 +57,9 @@ struct URLs {
     static let login = "/login"
     static let forgetPassword = "/forget_password"
     static let logout = "/logout"
+    static let doctor = "/doctors"
+    static let review = "/reviews"
+    static let doctorAppointments = "/appointments"
 }
 
 // HeaderKeys
@@ -92,4 +97,6 @@ struct Cells {
     static let myFavoriteCell = "MyFavoriteCell"
     static let myAppointmentCell = "MyAppointmentCell"
     static let settingCell = "SettingCell"
+    static let timeCell = "TimeCell"
+    static let reviewCell = "ReviewCell"
 }

@@ -15,7 +15,7 @@ protocol SearchResultsViewModelProtocol {
     func getItemsCount() -> Int
     func getItem(for row: Int) -> DoctorResultsResponse
     func willDisplay(_ row: Int)
-    func bookNowAlert(with row: Int)
+    func bookNow(with row: Int)
     func addRemoveFavorite(with row: Int)
 }
 
@@ -105,9 +105,8 @@ extension SearchResultsViewModel: SearchResultsViewModelProtocol {
         }
     }
     
-    func bookNowAlert(with row: Int) {
-        view?.showAlert(title: L10n.sorry, message: L10n.feature)
-        print(searchResults.items[row].id)
+    func bookNow(with row: Int) {
+        view?.goToDoctorProfile(with: searchResults.items[row].id)
     }
     
     func addRemoveFavorite(with row: Int) {

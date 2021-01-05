@@ -102,4 +102,8 @@
 "passwordEmpty" = "password field is empty";
 "confirmPwEmpty" = "confirm password field is empty";
 "phoneEmpty" = "mobile No. field is empty";
+"doctorProfile" = "Doctor Profile";
+"viewOnMap" = "View on map";
+"tabReview" = "TAB REVIEW";
+
 

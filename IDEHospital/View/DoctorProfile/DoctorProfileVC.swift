@@ -43,17 +43,11 @@ class DoctorProfileVC: UIViewController {
     
     // MARK:- IBActions
     @IBAction func doctorProfileBtnPressed(_ sender: UIButton) {
-        doctorProfileView.doctorProfileBtn.isSelected = true
-        doctorProfileView.reviewsBtn.isSelected = false
-        doctorProfileView.doctorDetailsView.isHidden = false
-        doctorProfileView.tableView.isHidden = true
+        doctorProfileView.hideOrShowDoctorDetails()
     }
     
     @IBAction func reviewsBtnPressed(_ sender: UIButton) {
-        doctorProfileView.doctorProfileBtn.isSelected = false
-        doctorProfileView.reviewsBtn.isSelected = true
-        doctorProfileView.doctorDetailsView.isHidden = true
-        doctorProfileView.tableView.isHidden = false
+        doctorProfileView.hideOrShowDoctorDetails(dotorProfileBtn: false, reviewBtn: true, doctorView: true, tableViewHidden: false)
     }
     
     @IBAction func previousDateBtnPressed(_ sender: UIButton) {
@@ -156,22 +150,7 @@ extension DoctorProfileVC: UITableViewDelegate, UITableViewDataSource {
 // MARK:- DoctorProfileVC Protocol
 extension DoctorProfileVC: DoctorProfileVCProtocol {
     func showDoctorData(item: DoctorData) {
-        doctorProfileView.doctorNameLabel.text = item.name
-        doctorProfileView.doctorBioLabel.text = item.bio
-        doctorProfileView.ratingView.rating = Double(item.rating)
-        doctorProfileView.addressLabel.text = item.address
-        doctorProfileView.feesLabel.text = "\(L10n.examinationFee)\(item.fees) \(L10n.le)"
-        doctorProfileView.waitingTimeLabel.text = "\(L10n.waitingTime)\(item.waiting_time) \(L10n.mins)"
-        doctorProfileView.specialtyLabel.text = item.specialty
-        doctorProfileView.secondBioLabel.text = item.second_bio
-        doctorProfileView.companiesLabel.text = item.companies.map {$0}.compactMap({$0}).joined(separator: ", ")
-        doctorProfileView.doctorImgView.sd_setImage(with: URL(string: item.image), completed: nil)
-        doctorProfileView.reviewsCountLabel.text = "\(item.reviews_count) \(L10n.review)"
-        if item.is_favorited {
-            doctorProfileView.favoriteBtn.setImage(Asset.filledHeart.image, for: .normal)
-        } else {
-            doctorProfileView.favoriteBtn.setImage(Asset.emptyHeart.image, for: .normal)
-        }
+        doctorProfileView.showDoctorData(item: item)
     }
     
     func reloadTableView() {

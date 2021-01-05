@@ -123,3 +123,6 @@
 "voucherRequirements" = "voucher should be at least 3 characters";
 "sureToCancel" = "Are you sure you want to cancel this appointment";
 "successfully Booked" = "Appointment Successfully Booked";
+"doctorProfile" = "Doctor Profile";
+"viewOnMap" = "View on map";
+"tabReview" = "TAB REVIEW";

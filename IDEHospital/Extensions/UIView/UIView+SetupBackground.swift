@@ -9,8 +9,8 @@
 import UIKit
 
 extension UIView {
-    func setupBackground() {
-        let background = UIImageView(image: Asset.background.image)
+    func setupBackground(image: UIImage = Asset.background.image) {
+        let background = UIImageView(image: image)
         background.frame = UIScreen.main.bounds
         background.contentMode =  .scaleAspectFill
         self.insertSubview(background, at: 0)

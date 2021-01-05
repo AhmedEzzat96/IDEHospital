@@ -23,6 +23,7 @@ struct Storyboards {
     static let voucherPopUp = "VoucherPopUp"
     static let confirmAppointmentPopUp = "ConfirmAppointmentPopUp"
     static let yesOrNoPopUp = "YesOrNoPopUp"
+    static let doctorProfile = "DoctorProfile"
 }
 
 // ViewControllers
@@ -42,6 +43,7 @@ struct ViewControllers {
     static let voucherPopUpVC = "VoucherPopUpVC"
     static let confirmAppointmentPopUpVC = "ConfirmAppointmentPopUpVC"
     static let yesOrNoPopUpVC = "YesOrNoPopUpVC"
+    static let doctorProfileVC = "DoctorProfileVC"
 }
 
 // UserDefaultsKeys
@@ -65,6 +67,9 @@ struct URLs {
     static let logout = "/logout"
     static let addReview = "/doctors"
     static let bookAppointment = "/user_appointments"
+    static let doctor = "/doctors"
+    static let review = "/reviews"
+    static let doctorAppointments = "/appointments"
 }
 
 // HeaderKeys
@@ -104,4 +109,6 @@ struct Cells {
     static let myFavoriteCell = "MyFavoriteCell"
     static let myAppointmentCell = "MyAppointmentCell"
     static let settingCell = "SettingCell"
+    static let timeCell = "TimeCell"
+    static let reviewCell = "ReviewCell"
 }

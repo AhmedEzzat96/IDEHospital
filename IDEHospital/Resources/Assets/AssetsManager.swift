@@ -59,10 +59,23 @@ internal enum Asset {
   internal static let search = ImageAsset(name: "search")
   internal static let back2 = ImageAsset(name: "back2")
   internal static let background = ImageAsset(name: "background")
+  internal static let company = ImageAsset(name: "company")
   internal static let component22 = ImageAsset(name: "component22")
   internal static let group1 = ImageAsset(name: "group1")
+  internal static let group1164 = ImageAsset(name: "group1164")
+  internal static let leftArrowWhite = ImageAsset(name: "leftArrowWhite")
+  internal static let money3 = ImageAsset(name: "money3")
   internal static let password = ImageAsset(name: "password")
+  internal static let path1564 = ImageAsset(name: "path1564")
+  internal static let path1565 = ImageAsset(name: "path1565")
   internal static let path1570 = ImageAsset(name: "path1570")
+  internal static let pin1 = ImageAsset(name: "pin1")
+  internal static let pin2 = ImageAsset(name: "pin2")
+  internal static let rectangle1791 = ImageAsset(name: "rectangle1791")
+  internal static let rectangle1794 = ImageAsset(name: "rectangle1794")
+  internal static let rectangle1795 = ImageAsset(name: "rectangle1795")
+  internal static let rightArrowWhite = ImageAsset(name: "rightArrowWhite")
+  internal static let secondBio = ImageAsset(name: "secondBio")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

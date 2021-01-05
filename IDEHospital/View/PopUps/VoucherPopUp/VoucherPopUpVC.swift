@@ -22,6 +22,7 @@ class VoucherPopUpVC: UIViewController {
     
     // MARK:- Properties
     var viewModel: VoucherPopUpViewModelProtocol!
+    weak var delegate: DismissView?
     
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
@@ -94,9 +95,15 @@ extension VoucherPopUpVC: VoucherPopUpVCProtocol {
     
     func askForConfirmation(for appointment: Appointment, doctorName: String) {
         let confirmAppointmentPopUpVC = ConfirmAppointmentPopUpVC.create(for: appointment, doctorName: doctorName)
+        confirmAppointmentPopUpVC.delegate = self
         let topVC = self.presentingViewController
         dismiss(animated: true) {
             topVC?.present(confirmAppointmentPopUpVC, animated: true)
         }
+    }
+}
+
+extension VoucherPopUpVC: DismissView {
+    func dismissPopup() {
     }
 }

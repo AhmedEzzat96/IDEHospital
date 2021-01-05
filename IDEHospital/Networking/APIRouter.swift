@@ -30,11 +30,14 @@ enum APIRouter: URLRequestConvertible{
     case logout
     case addReview(_ review: Review)
     case bookAppointment(_ appointment: Appointment)
+    case doctors(_ doctorID: Int)
+    case reviews(_ doctorID: Int,_ page: Int)
+    case doctorAppointments(_ doctorID: Int)
     
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
-        case .getCategoriesData, .mainCategories, .favorites, .appointments, .searchForDoctors, .aboutUs, .terms:
+        case .getCategoriesData, .mainCategories, .favorites, .appointments, .searchForDoctors, .aboutUs, .terms, .doctors, .reviews, .doctorAppointments:
             return .get
         case .removeAppointment:
             return .delete
@@ -48,7 +51,7 @@ enum APIRouter: URLRequestConvertible{
         switch self {
         case .searchForDoctors(let doctorsFilter):
             return doctorsFilter.parameters()
-        case .favorites(let page), .appointments(let page):
+        case .favorites(let page), .appointments(let page), .reviews(_, let page):
             return [ParameterKeys.page: page]
         case .addReview(let review):
             return review.parameters()
@@ -94,6 +97,12 @@ enum APIRouter: URLRequestConvertible{
             return URLs.addReview + "/\(review.doctorID)/reviews"
         case .bookAppointment:
             return URLs.bookAppointment
+        case .doctors(let doctorID):
+            return URLs.doctor + "/\(doctorID)"
+        case .reviews(let doctorID, _):
+            return URLs.doctor + "/\(doctorID)" + URLs.review
+        case .doctorAppointments(let doctorID):
+            return URLs.doctor + "/\(doctorID)" + URLs.doctorAppointments
         }
     }
     
@@ -110,7 +119,7 @@ enum APIRouter: URLRequestConvertible{
         case .nurseRequest, .register, .login, .forgetPassword, .contactRequest:
             urlRequest.setValue(HeaderValues.appJSON, forHTTPHeaderField: HeaderKeys.accept)
             
-        case .favorites, .addRemoveFavorite, .appointments, .removeAppointment, .searchForDoctors, .logout, .addReview:
+        case .favorites, .addRemoveFavorite, .appointments, .removeAppointment, .searchForDoctors, .logout, .doctors:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().token ?? "")",
                 forHTTPHeaderField: HeaderKeys.authorization)
         case .bookAppointment:

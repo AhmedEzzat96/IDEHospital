@@ -64,7 +64,6 @@ extension MyAppointmentCell {
         setupLabel(label: dateLabel)
         setupLabel(label: timeLabel)
         setupRatingView()
-        doctorNameLabel.text = "Dr. Mohamed Yehia"
         setupImgView()
     }
     
@@ -79,7 +78,7 @@ extension MyAppointmentCell {
     }
     
     private func setupBtn() {
-        mapBtn.setTitle("View on map", for: .normal)
+        mapBtn.setTitle(L10n.viewOnMap, for: .normal)
         mapBtn.titleLabel?.font = FontFamily.PTSans.regular.font(size: 13)
         mapBtn.titleLabel?.textAlignment = .left
         mapBtn.tintColor = .white

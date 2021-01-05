@@ -8,10 +8,14 @@
 
 import UIKit
 
+protocol DismissView: class {
+    func dismissPopup()
+}
 protocol ConfirmAppointmentPopUpVCProtocol: class {
     func showLoader()
     func hideLoader()
-    func showAlert(title: String, message: String)
+    func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)?)
+    func dismissPopup()
 }
 
 class ConfirmAppointmentPopUpVC: UIViewController {
@@ -21,6 +25,7 @@ class ConfirmAppointmentPopUpVC: UIViewController {
     
     // MARK:- Properties
     var viewModel: ConfirmAppointmentPopUpViewModelProtocol!
+    weak var delegate: DismissView?
     
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
@@ -68,7 +73,12 @@ extension ConfirmAppointmentPopUpVC: ConfirmAppointmentPopUpVCProtocol {
         view.hideActivityIndicator()
     }
     
-    func showAlert(title: String, message: String) {
-        showSimpleAlert(title: title, message: message)
+    func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)? = nil) {
+        showSimpleAlert(title: title, message: message, handler: handler)
+    }
+    
+    func dismissPopup() {
+        self.delegate?.dismissPopup()
+        self.dismiss(animated: true, completion: nil)
     }
 }

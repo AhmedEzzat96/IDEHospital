@@ -17,6 +17,12 @@ enum PopUpType {
     case failure(_ title: String)
 }
 
+enum OkButtonAction: String {
+    case dismissCurrent
+    case dismissCurrentAndPrevious
+    case switchToHome
+}
+
 class SuccessOrFailurePopUpVC: UIViewController {
 
     // MARK:- Outlets
@@ -41,17 +47,22 @@ class SuccessOrFailurePopUpVC: UIViewController {
     }
     
     // MARK:- Public Methods
-    class func create(_ popUpType: PopUpType, switchToHome: Bool) -> SuccessOrFailurePopUpVC {
+    class func create(_ popUpType: PopUpType, okButtonAction: OkButtonAction) -> SuccessOrFailurePopUpVC {
         let successOrFailurePopUpVC: SuccessOrFailurePopUpVC = UIViewController.create(storyboardName: Storyboards.successOrFailurePopUp, identifier: ViewControllers.successOrFailurePopUpVC)
-        successOrFailurePopUpVC.viewModel = SuccessOrFailurePopUpViewModel(view: successOrFailurePopUpVC, popUpType: popUpType, switchToHome: switchToHome)
+        successOrFailurePopUpVC.viewModel = SuccessOrFailurePopUpViewModel(view: successOrFailurePopUpVC, popUpType: popUpType, okButtonAction: okButtonAction)
         return successOrFailurePopUpVC
     }
 }
 
-// MARK:- Private Methods
 extension SuccessOrFailurePopUpVC {
+    // MARK:- Private Methods
     private func setOkButtonTarget() {
-        mainView.okButton.addTarget(self, action: Selector(viewModel.getOkButtonTarget()), for: .touchUpInside)
+        mainView.okButton.addTarget(self, action: Selector(viewModel.getOkButtonAction()), for: .touchUpInside)
+    }
+    
+    // MARK:- Objc Methods
+    @objc private func dismissCurrentAndPrevious() {
+        
     }
 }
 

@@ -10,7 +10,7 @@ import Foundation
 
 protocol SuccessOrFailurePopUpViewModelProtocol {
     func getImageAndTitle() -> (String, String)
-    func getOkButtonTarget() -> String
+    func getOkButtonAction() -> String
 }
 
 class SuccessOrFailurePopUpViewModel {
@@ -18,13 +18,13 @@ class SuccessOrFailurePopUpViewModel {
     // MARK:- Properties
     private weak var view: SuccessOrFailurePopUpVCProtocol?
     private let popUpType: PopUpType
-    private let switchToHome: Bool
+    private let okButtonAction: OkButtonAction
     
     // MARK:- Init
-    init(view: SuccessOrFailurePopUpVCProtocol, popUpType: PopUpType, switchToHome: Bool) {
+    init(view: SuccessOrFailurePopUpVCProtocol, popUpType: PopUpType, okButtonAction: OkButtonAction) {
         self.view = view
         self.popUpType = popUpType
-        self.switchToHome = switchToHome
+        self.okButtonAction = okButtonAction
     }
 }
 
@@ -39,11 +39,7 @@ extension SuccessOrFailurePopUpViewModel: SuccessOrFailurePopUpViewModelProtocol
         }
     }
     
-    func getOkButtonTarget() -> String {
-        if switchToHome {
-            return "switchToHome"
-        } else {
-            return "dismissCurrent"
-        }
+    func getOkButtonAction() -> String {
+        return okButtonAction.rawValue
     }
 }

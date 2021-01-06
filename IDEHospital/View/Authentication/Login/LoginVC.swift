@@ -65,8 +65,8 @@ extension LoginVC {
 
 //MARK:- Auth Protocol
 extension LoginVC: AuthProtocol {
-    func showAlert(type: PopUpType, switchToHome: Bool = false) {
-        showSimpleAlert(type: type, switchToHome)
+    func showAlert(_ type: PopUpType, okButtonAction: OkButtonAction) {
+        showSimpleAlert(type: type, okButtonAction: okButtonAction)
     }
     
     func goToHomeScreen() {

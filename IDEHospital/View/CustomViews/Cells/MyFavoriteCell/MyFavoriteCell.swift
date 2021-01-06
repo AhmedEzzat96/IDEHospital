@@ -10,7 +10,7 @@ import UIKit
 import Cosmos
 
 protocol CellButtonDelegate: class {
-    func showDeleteAlert(customTableViewCell: UITableViewCell)
+    func deleteTapped(customTableViewCell: UITableViewCell)
     func viewProfile(customTableViewCell: UITableViewCell)
     func viewOnMap(customTableViewCell: UITableViewCell)
     func bookNow(customTableViewCell: UITableViewCell)
@@ -62,7 +62,7 @@ class MyFavoriteCell: UITableViewCell {
     
     //MARK:- IBActions
     @IBAction func deleteBtnPressed(_ sender: UIButton) {
-        self.delegate?.showDeleteAlert(customTableViewCell: self)
+        self.delegate?.deleteTapped(customTableViewCell: self)
     }
     
     @IBAction func viewProfileBtnPressed(_ sender: CustomButton) {
@@ -119,7 +119,7 @@ extension MyFavoriteCell {
 }
 
 extension CellButtonDelegate {
-    func showDeleteAlert(customTableViewCell: UITableViewCell){
+    func deleteTapped(customTableViewCell: UITableViewCell){
         
     }
     

@@ -28,16 +28,18 @@ class ReviewViewModel {
 // MARK:- Private Methods
 extension ReviewViewModel {
     private func addReview() {
+        view?.showLoader()
         APIManager.addReview(review) { [weak self] (result) in
             switch result {
             case .success(let response):
                 if response.success, response.code == 202 {
-                    self?.view?.showAlert(type: .success(L10n.reviewSubmitted))
+                    self?.view?.showAlert(.success(L10n.reviewSubmitted), okButtonAction: .dismissCurrentAndPrevious)
                 }
             case .failure(let error):
                 print(error)
-                self?.view?.showAlert(type: .failure(L10n.responseError))
+                self?.view?.showAlert(.failure(L10n.responseError), okButtonAction: .dismissCurrent)
             }
+            self?.view?.hideLoader()
         }
     }
 }
@@ -46,7 +48,7 @@ extension ReviewViewModel {
 extension ReviewViewModel: ReviewViewModelProtocol {
     func submitReviewTapped(rating: Double, comment: String?) {
         if let commentError = ValidationManager.shared().isValidData(with: .reviewComment(comment)) {
-            view?.showAlert(type: .failure(commentError))
+            view?.showAlert(.failure(commentError), okButtonAction: .dismissCurrent)
         } else {
             review.rating = Int(rating)
             review.comment = comment

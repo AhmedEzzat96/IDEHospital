@@ -32,6 +32,7 @@ extension YesOrNoPopUpView {
     
     func setupTitleLabel(_ text: String) {
         titleLabel.text = text
+        titleLabel.textAlignment = .center
         titleLabel.textColor = ColorName.darkRoyalBlue.color
         titleLabel.font = FontFamily.PTSans.bold.font(size: 15)
     }

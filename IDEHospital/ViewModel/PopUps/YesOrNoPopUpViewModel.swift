@@ -15,11 +15,11 @@ protocol YesOrNoPopUpViewModelProtocol {
 class YesOrNoPopUpViewModel {
     
     // MARK:- Properties
-    private weak var view: YesOrNoPopUpVCProtocol?
+    private weak var view: YesOrNoPopUpVCDelegate?
     private let title: String
     
     // MARK:- Init
-    init(view: YesOrNoPopUpVCProtocol, title: String) {
+    init(view: YesOrNoPopUpVCDelegate, title: String) {
         self.view = view
         self.title = title
     }

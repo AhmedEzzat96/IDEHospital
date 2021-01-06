@@ -11,7 +11,7 @@
         <!--Voucher Pop UpVC-->
         <scene sceneID="3N7-Ka-uTG">
             <objects>
-                <viewController storyboardIdentifier="VoucherPopUpVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="nMn-aO-zMF" customClass="VoucherPopUpVC" customModule="IDEHospital" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VoucherPopUpVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="nMn-aO-zMF" customClass="VoucherPopUpVC" customModule="IDEHospital" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PL0-1s-f02" customClass="VoucherPopUpView" customModule="IDEHospital" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,12 +142,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="r3w-oz-Rbu" firstAttribute="centerX" secondItem="eXq-iG-mxH" secondAttribute="centerX" id="BeV-kD-uQZ"/>
+                            <constraint firstItem="r3w-oz-Rbu" firstAttribute="centerX" secondItem="PL0-1s-f02" secondAttribute="centerX" id="BeV-kD-uQZ"/>
                             <constraint firstItem="r3w-oz-Rbu" firstAttribute="width" secondItem="PL0-1s-f02" secondAttribute="width" multiplier="0.930667" id="N1W-aO-kTq"/>
                             <constraint firstItem="r3w-oz-Rbu" firstAttribute="height" secondItem="PL0-1s-f02" secondAttribute="height" multiplier="0.553223" id="SqX-hP-XB6"/>
-                            <constraint firstItem="r3w-oz-Rbu" firstAttribute="centerY" secondItem="eXq-iG-mxH" secondAttribute="centerY" id="nwm-ZL-KWx"/>
+                            <constraint firstItem="r3w-oz-Rbu" firstAttribute="centerY" secondItem="PL0-1s-f02" secondAttribute="centerY" id="nwm-ZL-KWx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="eXq-iG-mxH"/>
+                        <viewLayoutGuide key="safeArea" id="UVa-mT-rJz"/>
                         <connections>
                             <outlet property="anotherPersonLabel" destination="Y07-QQ-3cz" id="CaL-7H-QbL"/>
                             <outlet property="anotherPersonNameTextField" destination="FVd-Kc-yUN" id="F5Q-mz-1n4"/>

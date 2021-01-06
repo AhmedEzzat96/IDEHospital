@@ -11,7 +11,7 @@
         <!--Success Or Failure Pop UpVC-->
         <scene sceneID="BdU-Qk-vEu">
             <objects>
-                <viewController storyboardIdentifier="SuccessOrFailurePopUpVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="kqc-2f-m7Y" customClass="SuccessOrFailurePopUpVC" customModule="IDEHospital" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SuccessOrFailurePopUpVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="kqc-2f-m7Y" customClass="SuccessOrFailurePopUpVC" customModule="IDEHospital" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yIf-7T-MTN" customClass="SuccessOrFailurePopUpView" customModule="IDEHospital" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,19 +23,19 @@
                                         <rect key="frame" x="148" y="15" width="54" height="54"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gCj-OS-zkK">
-                                        <rect key="frame" x="25" y="78" width="300" height="17"/>
+                                        <rect key="frame" x="25" y="69" width="300" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yy-qR-oWo" customClass="CustomButton" customModule="IDEHospital" customModuleProvider="target">
-                                        <rect key="frame" x="125" y="109" width="100" height="25"/>
+                                        <rect key="frame" x="125" y="100" width="100" height="25"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="gCj-OS-zkK" firstAttribute="top" secondItem="fe7-ob-x2T" secondAttribute="bottom" multiplier="1.13" id="350-Kd-RSc"/>
+                                    <constraint firstItem="gCj-OS-zkK" firstAttribute="top" secondItem="fe7-ob-x2T" secondAttribute="bottom" id="350-Kd-RSc"/>
                                     <constraint firstItem="0yy-qR-oWo" firstAttribute="centerX" secondItem="gCj-OS-zkK" secondAttribute="centerX" id="3Bx-Na-9ZH"/>
                                     <constraint firstItem="fe7-ob-x2T" firstAttribute="centerY" secondItem="len-3p-SaM" secondAttribute="centerY" multiplier="0.57" id="3s3-DE-tbP"/>
                                     <constraint firstItem="0yy-qR-oWo" firstAttribute="height" secondItem="len-3p-SaM" secondAttribute="height" multiplier="0.169492" id="BJ0-eu-N4h"/>

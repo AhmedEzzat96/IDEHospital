@@ -9,8 +9,8 @@
 import UIKit
 
 extension UIViewController {
-    func showSimpleAlert(type: PopUpType, _ switchToHome: Bool = false) {
-        let successOrFailurePopUpVC = SuccessOrFailurePopUpVC.create(type, switchToHome: switchToHome)
+    func showSimpleAlert(type: PopUpType, okButtonAction: OkButtonAction = .dismissCurrent) {
+        let successOrFailurePopUpVC = SuccessOrFailurePopUpVC.create(type, okButtonAction: okButtonAction)
         present(successOrFailurePopUpVC, animated: true)
     }
     

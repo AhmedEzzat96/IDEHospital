@@ -122,9 +122,9 @@ extension MyFavoritesVC: UITableViewDelegate, UITableViewDataSource {
 
 //MARK:- ShowAlert Delegate
 extension MyFavoritesVC: CellButtonDelegate {
-    func showDeleteAlert(customTableViewCell: UITableViewCell) {
+    func deleteTapped(customTableViewCell: UITableViewCell) {
         guard let indexPath = myFavoritesView.tableView.indexPath(for: customTableViewCell) else {return}
-        viewModel.showDeleteAlert(with: indexPath.row)
+        viewModel.deleteFavoriteTapped(with: indexPath.row)
     }
     
     func viewProfile(customTableViewCell: UITableViewCell) {

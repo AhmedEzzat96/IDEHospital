@@ -8,11 +8,9 @@
 
 import UIKit
 
-protocol YesOrNoPopUpVCProtocol: class {
-    
+protocol YesOrNoPopUpVCDelegate: class {
+    func yesPressed()
 }
-
-
 
 class YesOrNoPopUpVC: UIViewController {
 
@@ -20,47 +18,35 @@ class YesOrNoPopUpVC: UIViewController {
     @IBOutlet weak var mainView: YesOrNoPopUpView!
     
     // MARK:- Properties
-    private var viewModel: YesOrNoPopUpViewModelProtocol!
+    private var popUpTitle: String!
+    weak var delegate: YesOrNoPopUpVCDelegate?
     
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainView.setup(title: viewModel.getTitle())
+        mainView.setup(title: popUpTitle)
         setYesAndNoActions()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
-//            self.view.backgroundColor = ColorName.greyishBrown87.color.withAlphaComponent(0.87)
-//        })
-//    }
 
     // MARK:- Public Methods
     class func create(title: String) -> YesOrNoPopUpVC {
         let yesOrNoPopUpVC: YesOrNoPopUpVC = UIViewController.create(storyboardName: Storyboards.yesOrNoPopUp, identifier: ViewControllers.yesOrNoPopUpVC)
-        yesOrNoPopUpVC.viewModel = YesOrNoPopUpViewModel(view: yesOrNoPopUpVC, title: title)
+        yesOrNoPopUpVC.popUpTitle = title
         return yesOrNoPopUpVC
     }
 }
 
-// MARK:- Private Methods
 extension YesOrNoPopUpVC {
+    // MARK:- Private Methods
     private func setYesAndNoActions() {
-        mainView.yesButton.addTarget(self, action: #selector(cancelAppointment), for: .touchUpInside)
+        mainView.yesButton.addTarget(self, action: #selector(yesPressed), for: .touchUpInside)
         mainView.noButton.addTarget(self, action: #selector(dismissCurrent), for: .touchUpInside)
-        
     }
     
-    @objc private func cancelAppointment() {
-        let topVC = self.presentingViewController
+    // MARK:- Objc Methods
+    @objc private func yesPressed() {
         dismiss(animated: true) {
-            topVC?.dismissCurrent()
+            self.delegate?.yesPressed()
         }
     }
-}
-
-// MARK:- YesOrNoPopUpVC Protocol
-extension YesOrNoPopUpVC: YesOrNoPopUpVCProtocol {
-    
 }

@@ -11,7 +11,7 @@
         <!--Yes Or No Pop UpVC-->
         <scene sceneID="SYQ-mA-0ml">
             <objects>
-                <viewController storyboardIdentifier="YesOrNoPopUpVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="nOP-rf-H5G" customClass="YesOrNoPopUpVC" customModule="IDEHospital" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YesOrNoPopUpVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="nOP-rf-H5G" customClass="YesOrNoPopUpVC" customModule="IDEHospital" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DE3-8d-Cjg" customClass="YesOrNoPopUpView" customModule="IDEHospital" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

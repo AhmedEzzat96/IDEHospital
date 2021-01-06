@@ -13,7 +13,7 @@ protocol MyFavoritesViewModelProtocol {
     func getFavoriteItemsCount() -> Int
     func loadData()
     func getItem(at index: Int) -> MyFavoriteItem
-    func showDeleteAlert(with doctorID: Int)
+    func deleteFavoriteTapped(with doctorID: Int)
     func willDisplayCell(for row: Int)
     func viewProfile(with row: Int)
 }
@@ -60,7 +60,7 @@ extension MyFavoritesViewModel: MyFavoritesViewModelProtocol {
         return self.favoriteItems[index]
     }
     
-    func showDeleteAlert(with row: Int) {
+    func deleteFavoriteTapped(with row: Int) {
         removeFavorite(with: row)
     }
     

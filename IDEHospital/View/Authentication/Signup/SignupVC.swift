@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AuthProtocol: class {
-    func showAlert(type: PopUpType, switchToHome: Bool)
+    func showAlert(_ type: PopUpType, okButtonAction: OkButtonAction)
     func showLoader()
     func hideLoader()
     func goToHomeScreen()
@@ -65,8 +65,8 @@ extension SignupVC {
 
 //MARK:- Auth Protocol
 extension SignupVC: AuthProtocol {
-    func showAlert(type: PopUpType, switchToHome: Bool = false) {
-        showSimpleAlert(type: type, switchToHome)
+    func showAlert(_ type: PopUpType, okButtonAction: OkButtonAction = .dismissCurrent) {
+        showSimpleAlert(type: type, okButtonAction: okButtonAction)
     }
     
     func goToHomeScreen() {

@@ -45,6 +45,7 @@ class ConfirmAppointmentPopUpVC: UIViewController {
     // MARK:- Actions
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
         let yesOrNoPopUpVC = YesOrNoPopUpVC.create(title: L10n.sureToCancel)
+        yesOrNoPopUpVC.delegate = self
         present(yesOrNoPopUpVC, animated: true)
     }
     
@@ -74,4 +75,17 @@ extension ConfirmAppointmentPopUpVC: ConfirmAppointmentPopUpVCProtocol {
             topVC?.showSimpleAlert(type: type)
         }
     }
+}
+
+// MARK:- YesOrNoPopUp Delegate
+extension ConfirmAppointmentPopUpVC: YesOrNoPopUpVCDelegate {
+    func yesPressed() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func noPressed() {
+        print("Called")
+    }
+    
+    
 }

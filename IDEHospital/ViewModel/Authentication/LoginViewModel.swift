@@ -45,7 +45,7 @@ extension LoginViewModel {
                     self.view?.goToHomeScreen()
                 } else {
                     if let message = response.message {
-                        self.view?.showAlert(type: .failure(message), switchToHome: false)
+                        self.view?.showAlert(.failure(message), okButtonAction: .dismissCurrent)
                     }
                 }
             case .failure(let error):
@@ -57,12 +57,12 @@ extension LoginViewModel {
     
     private func validateUser(with user: User?) -> Bool {
         if let emailError = ValidationManager.shared().isValidData(with: .email(user?.email)) {
-            self.view?.showAlert(type: .failure(emailError), switchToHome: false)
+            self.view?.showAlert(.failure(emailError), okButtonAction: .dismissCurrent)
             return false
         }
         
         if let passwordError = ValidationManager.shared().isValidData(with: .password(user?.password)) {
-            self.view?.showAlert(type: .failure(passwordError), switchToHome: false)
+            self.view?.showAlert(.failure(passwordError), okButtonAction: .dismissCurrent)
             return false
         }
         return true

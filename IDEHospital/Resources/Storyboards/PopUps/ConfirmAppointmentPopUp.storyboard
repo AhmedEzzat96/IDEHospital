@@ -11,7 +11,7 @@
         <!--Confirm Appointment Pop UpVC-->
         <scene sceneID="ehh-Pq-o1B">
             <objects>
-                <viewController storyboardIdentifier="ConfirmAppointmentPopUpVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="WwF-o9-mv6" customClass="ConfirmAppointmentPopUpVC" customModule="IDEHospital" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfirmAppointmentPopUpVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="WwF-o9-mv6" customClass="ConfirmAppointmentPopUpVC" customModule="IDEHospital" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Jg-9w-QcC" customClass="ConfirmAppointmentPopUpView" customModule="IDEHospital" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

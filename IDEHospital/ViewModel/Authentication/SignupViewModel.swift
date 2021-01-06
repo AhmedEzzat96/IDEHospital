@@ -45,7 +45,7 @@ extension SignupViewModel {
                     self.view?.goToHomeScreen()
                 } else {
                     if let emailError = response.errors?.email?[0] {
-                        self.view?.showAlert(type: .failure(emailError), switchToHome: false)
+                        self.view?.showAlert(.failure(emailError), okButtonAction: .dismissCurrent)
                     }
                 }
             case .failure(let error):
@@ -57,32 +57,32 @@ extension SignupViewModel {
     
     private func validateUser(with user: User?, confirmPassword: String?) -> Bool {
         if let nameError = ValidationManager.shared().isValidData(with: .name(user?.name)) {
-            self.view?.showAlert(type: .failure(nameError), switchToHome: false)
+            self.view?.showAlert(.failure(nameError), okButtonAction: .dismissCurrent)
             return false
         }
         
         if let emailError = ValidationManager.shared().isValidData(with: .email(user?.email)) {
-            self.view?.showAlert(type: .failure(emailError), switchToHome: false)
+            self.view?.showAlert(.failure(emailError), okButtonAction: .dismissCurrent)
             return false
         }
         
         if let mobileNoError = ValidationManager.shared().isValidData(with: .phone(user?.mobile)) {
-            self.view?.showAlert(type: .failure(mobileNoError), switchToHome: false)
+            self.view?.showAlert(.failure(mobileNoError), okButtonAction: .dismissCurrent)
             return false
         }
         
         if let passwordError = ValidationManager.shared().isValidData(with: .password(user?.password)) {
-            self.view?.showAlert(type: .failure(passwordError), switchToHome: false)
+            self.view?.showAlert(.failure(passwordError), okButtonAction: .dismissCurrent)
             return false
         }
         
         if let confirmPwError = ValidationManager.shared().isValidData(with: .confirmPassword(confirmPassword)) {
-            self.view?.showAlert(type: .failure(confirmPwError), switchToHome: false)
+            self.view?.showAlert(.failure(confirmPwError), okButtonAction: .dismissCurrent)
             return false
         }
         
         if confirmPassword != user?.password {
-            self.view?.showAlert(type: .failure(L10n.confirmPasswordAlert), switchToHome: false)
+            self.view?.showAlert(.failure(L10n.confirmPasswordAlert), okButtonAction: .dismissCurrent)
             return false
         }
         

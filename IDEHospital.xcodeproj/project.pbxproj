@@ -822,8 +822,7 @@
 				9907EDAD25A4A3A800C42E7B /* YesOrNoPopUp */,
 				9907EDA225A4442D00C42E7B /* ConfirmAppointmentPopUp */,
 				9907ED9825A3DD9B00C42E7B /* VoucherPopUp */,
-				9907EDB625A4FAFB00C42E7B /* SuccessOrFailurePopUpView.swift */,
-				9907EDB825A4FB1900C42E7B /* SuccessOrFailurePopUpVC.swift */,
+				99EEA1C025A638680081D336 /* SuccessOrFailurePopUp */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -1016,6 +1015,15 @@
 				0605D66F258953B7006E38D8 /* MyFavorites */,
 			);
 			path = MainTabs;
+			sourceTree = "<group>";
+		};
+		99EEA1C025A638680081D336 /* SuccessOrFailurePopUp */ = {
+			isa = PBXGroup;
+			children = (
+				9907EDB625A4FAFB00C42E7B /* SuccessOrFailurePopUpView.swift */,
+				9907EDB825A4FB1900C42E7B /* SuccessOrFailurePopUpVC.swift */,
+			);
+			path = SuccessOrFailurePopUp;
 			sourceTree = "<group>";
 		};
 		99F395DD2589880600ACBD3B /* HomeNurseContactUs */ = {

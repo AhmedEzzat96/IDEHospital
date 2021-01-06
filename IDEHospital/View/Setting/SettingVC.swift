@@ -17,7 +17,9 @@ protocol SettingVCProtocol: class {
     func goToAboutUsOrTerms(status: InfoType)
     func goToShare()
     func showAlert(type: PopUpType)
-    func alertWithAction(title: String, message: String, handler: ((UIAlertAction) -> Void)?)
+    func alertWithAction(message: String)
+    func showLoader()
+    func hideLoader()
 }
 
 class SettingVC: UIViewController {
@@ -103,8 +105,10 @@ extension SettingVC: SettingVCProtocol {
         self.showSimpleAlert(type: type)
     }
     
-    func alertWithAction(title: String, message: String, handler: ((UIAlertAction) -> Void)?) {
-        self.openAlert(title: title, message: message, alertStyle: .alert, actionTitles: [L10n.no, L10n.logOutBtn], actionStyles: [.cancel, .destructive], actions: [nil, handler])
+    func alertWithAction(message: String) {
+        let yesOrNoPopUp = YesOrNoPopUpVC.create(title: message)
+        yesOrNoPopUp.delegate = self
+        present(yesOrNoPopUp, animated: true, completion: nil)
     }
     
     func goToLogin() {
@@ -161,4 +165,18 @@ extension SettingVC: SettingVCProtocol {
         }
     }
     
+    func showLoader() {
+        view.showActivityIndicator()
+    }
+    
+    func hideLoader() {
+        view.hideActivityIndicator()
+    }
+}
+
+// MARK:- YesOrNoPopUp Delegate
+extension SettingVC: YesOrNoPopUpVCDelegate {
+    func yesPressed() {
+        viewModel.logOut()
+    }
 }

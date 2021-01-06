@@ -15,6 +15,8 @@ protocol DoctorProfileVCProtocol: class {
     func showDate(date: String)
     func reloadCollectionView()
     func showPopup(doctorID: Int, timeStamp: Int, doctorName: String)
+    func goToAddReview(with doctorID: Int)
+    func showAlert(type: PopUpType)
 }
 
 class DoctorProfileVC: UIViewController {
@@ -49,6 +51,10 @@ class DoctorProfileVC: UIViewController {
     // MARK:- IBActions
     @IBAction func doctorProfileBtnPressed(_ sender: UIButton) {
         doctorProfileView.hideOrShowDoctorDetails()
+    }
+    
+    @IBAction func addReviewButtonPressed(_ sender: UIButton) {
+        viewModel.addReviewTapped()
     }
     
     @IBAction func bookNowBtnPressed(_ sender: CustomButton) {
@@ -177,13 +183,15 @@ extension DoctorProfileVC: DoctorProfileVCProtocol {
     
     func showPopup(doctorID: Int, timeStamp: Int, doctorName: String) {
         let voucherVC = VoucherPopUpVC.create(doctorID: doctorID, timestamp: timeStamp, doctorName: doctorName)
-        voucherVC.delegate = self
         self.present(voucherVC, animated: true)
     }
-}
-
-extension DoctorProfileVC: DismissView {
-    func dismissPopup() {
-        viewModel.viewWillAppear()
+    
+    func goToAddReview(with doctorID: Int) {
+        let reviewVC = ReviewVC.create(for: doctorID)
+        navigationController?.pushViewController(reviewVC, animated: true)
+    }
+    
+    func showAlert(type: PopUpType) {
+        showSimpleAlert(type: type)
     }
 }

@@ -59,21 +59,13 @@ extension ConfirmAppointmentPopUpViewModel {
     
     private func checkSuccessResponse(_ response: AppointmentResponse) {
         if response.success == true, response.code == 202 {
-            view?.showAlert(title: L10n.done, message: L10n.successfullyBooked, handler: { alert in
-                self.view?.dismissPopup()
-            })
-        } else if let message = response.message {
-            view?.showAlert(title: L10n.sorry, message: message, handler: { alert in
-                self.view?.dismissPopup()
-            })
-        } else if let error = response.errors?.voucher?[0] {
-            view?.showAlert(title: L10n.sorry, message: error, handler: { alert in
-                self.view?.dismissPopup()
-            })
-        } else if let e = response.errors?.appointment?[0] {
-            view?.showAlert(title: L10n.sorry, message: e, handler: { alert in
-                self.view?.dismissPopup()
-            })
+            view?.showAlert(type: .success(L10n.successfullyBooked))
+        } else if let responseMessage = response.message {
+            view?.showAlert(type: .failure(responseMessage))
+        } else if let voucherError = response.errors?.voucher?[0] {
+            view?.showAlert(type: .failure(voucherError))
+        } else if let appointmentError = response.errors?.appointment?[0] {
+            view?.showAlert(type: .failure(appointmentError))
         }
     }
 }
@@ -90,9 +82,7 @@ extension ConfirmAppointmentPopUpViewModel: ConfirmAppointmentPopUpViewModelProt
     }
     func confirmTapped() {
         guard UserDefaultsManager.shared().token != nil else {
-            view?.showAlert(title: L10n.sorry, message: "Must be Authenticated", handler: { alert in
-                self.view?.dismissPopup()
-            })
+            view?.showAlert(type: .failure("Must be Authenticated"))
             return
         }
         APIManager.bookAppointment(appointment) { [weak self] (result) in
@@ -101,9 +91,7 @@ extension ConfirmAppointmentPopUpViewModel: ConfirmAppointmentPopUpViewModelProt
                 self?.checkSuccessResponse(response)
             case .failure(let error):
                 print(error)
-                self?.view?.showAlert(title: L10n.sorry, message: error.localizedDescription, handler: { alert in
-                    self?.view?.dismissPopup()
-                })
+                self?.view?.showAlert(type: .failure(L10n.responseError))
             }
         }
     }

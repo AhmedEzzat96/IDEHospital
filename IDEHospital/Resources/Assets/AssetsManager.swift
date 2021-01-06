@@ -37,6 +37,8 @@ internal enum Asset {
   internal static let money = ImageAsset(name: "money")
   internal static let whiteArrow = ImageAsset(name: "whiteArrow")
   internal static let cancel = ImageAsset(name: "cancel")
+  internal static let failure = ImageAsset(name: "failure")
+  internal static let success = ImageAsset(name: "success")
   internal static let `switch` = ImageAsset(name: "switch")
   internal static let arrow = ImageAsset(name: "arrow")
   internal static let back = ImageAsset(name: "back")

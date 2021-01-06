@@ -138,6 +138,8 @@ internal enum L10n {
   internal static let missedData = L10n.tr("Localizable", "missedData")
   /// Mobile Number
   internal static let mobileNumber = L10n.tr("Localizable", "mobileNumber")
+  /// You must be registered to access this page
+  internal static let mustRegister = L10n.tr("Localizable", "mustRegister")
   /// MY APPOINTMENTS
   internal static let myAppointments = L10n.tr("Localizable", "myAppointments")
   /// MY FAVORITES
@@ -176,10 +178,14 @@ internal enum L10n {
   internal static let resetPassword = L10n.tr("Localizable", "resetPassword")
   /// Check your mail to reset your password.
   internal static let resetPasswordMsg = L10n.tr("Localizable", "resetPasswordMsg")
+  /// Error Occured, Please try again later
+  internal static let responseError = L10n.tr("Localizable", "responseError")
   /// REVIEW
   internal static let review = L10n.tr("Localizable", "review")
   /// Reviews
   internal static let reviews = L10n.tr("Localizable", "reviews")
+  /// Your review submitted succesfully
+  internal static let reviewSubmitted = L10n.tr("Localizable", "reviewSubmitted")
   /// Schedule
   internal static let schedule = L10n.tr("Localizable", "schedule")
   /// search

@@ -30,6 +30,7 @@ protocol DoctorProfileViewModelProtocol {
     func openMapForPlace()
     func showVoucher()
     func viewWillAppear()
+    func addReviewTapped()
 }
 
 class DoctorProfileViewModel {
@@ -236,10 +237,21 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
     }
     
     func viewWillAppear() {
-        print("Ahmed")
         if let doctorID = doctorData?.id {
             print(doctorID)
             getDoctor(with: doctorID)
+        }
+    }
+    
+    func addReviewTapped() {
+        guard UserDefaultsManager.shared().token != nil else {
+            view?.showAlert(type: .failure(L10n.mustRegister))
+            return
+        }
+        if let doctorID = doctorData?.id {
+            view?.goToAddReview(with: doctorID)
+        } else {
+            view?.showAlert(type: .failure(L10n.responseError))
         }
     }
 }

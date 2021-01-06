@@ -32,11 +32,11 @@ extension ReviewViewModel {
             switch result {
             case .success(let response):
                 if response.success, response.code == 202 {
-                    self?.view?.showAlert(title: L10n.done, message: "Your review submitted succesfully")
+                    self?.view?.showAlert(type: .success(L10n.reviewSubmitted))
                 }
             case .failure(let error):
                 print(error)
-                self?.view?.showAlert(title: L10n.sorry, message: error.localizedDescription)
+                self?.view?.showAlert(type: .failure(L10n.responseError))
             }
         }
     }
@@ -46,7 +46,7 @@ extension ReviewViewModel {
 extension ReviewViewModel: ReviewViewModelProtocol {
     func submitReviewTapped(rating: Double, comment: String?) {
         if let commentError = ValidationManager.shared().isValidData(with: .reviewComment(comment)) {
-            view?.showAlert(title: L10n.sorry, message: commentError)
+            view?.showAlert(type: .failure(commentError))
         } else {
             review.rating = Int(rating)
             review.comment = comment

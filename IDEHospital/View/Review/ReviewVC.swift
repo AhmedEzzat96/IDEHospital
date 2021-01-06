@@ -11,7 +11,7 @@ import UIKit
 protocol ReviewVCProtocol: class {
     func showLoader()
     func hideLoader()
-    func showAlert(title: String, message: String)
+    func showAlert(type: PopUpType)
 }
 
 class ReviewVC: UIViewController {
@@ -60,9 +60,7 @@ extension ReviewVC: ReviewVCProtocol {
         view.hideActivityIndicator()
     }
     
-    func showAlert(title: String, message: String) {
-        showSimpleAlert(title: title, message: message)
+    func showAlert(type: PopUpType) {
+        showSimpleAlert(type: type)
     }
-    
-    
 }

@@ -47,7 +47,7 @@ extension VoucherPopUpViewModel {
     
     private func isValidVoucher() -> Bool {
         if let voucherError = ValidationManager.shared().isValidData(with: .voucher(view?.getVoucherCode())) {
-            view?.showAlert(title: L10n.sorry, message: voucherError)
+            view?.showAlert(type: .failure(voucherError))
             return false
         } else {
             appointment.voucher = view?.getVoucherCode()
@@ -57,7 +57,7 @@ extension VoucherPopUpViewModel {
     
     private func isValidPatientName() -> Bool {
         if let nameError = ValidationManager.shared().isValidData(with: .name(view?.getPatientName())) {
-            view?.showAlert(title: L10n.sorry, message: nameError)
+            view?.showAlert(type: .failure(nameError))
             appointment.isBookingForAnotherPerson = 0
             return false
         } else {

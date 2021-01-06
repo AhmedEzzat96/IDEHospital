@@ -37,7 +37,8 @@ extension AboutAndTermsViewModel {
                     self?.view?.displayText(text)
                 }
             case .failure(let error):
-                self?.view?.showAlert(title: L10n.sorry, message: error.localizedDescription)
+                print(error)
+                self?.view?.showAlert(type: .failure(L10n.responseError))
             }
             self?.view?.hideLoader()
         }

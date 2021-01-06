@@ -23,6 +23,7 @@ struct Storyboards {
     static let voucherPopUp = "VoucherPopUp"
     static let confirmAppointmentPopUp = "ConfirmAppointmentPopUp"
     static let yesOrNoPopUp = "YesOrNoPopUp"
+    static let successOrFailurePopUp = "SuccessOrFailurePopUp"
     static let doctorProfile = "DoctorProfile"
 }
 
@@ -43,6 +44,7 @@ struct ViewControllers {
     static let voucherPopUpVC = "VoucherPopUpVC"
     static let confirmAppointmentPopUpVC = "ConfirmAppointmentPopUpVC"
     static let yesOrNoPopUpVC = "YesOrNoPopUpVC"
+    static let successOrFailurePopUpVC = "SuccessOrFailurePopUpVC"
     static let doctorProfileVC = "DoctorProfileVC"
 }
 

@@ -44,8 +44,8 @@ extension SignupViewModel {
                     UserDefaultsManager.shared().token = response.data?.access_token
                     self.view?.goToHomeScreen()
                 } else {
-                    if let email = response.errors?.email?[0] {
-                        self.view?.showAlert(title: L10n.warning, message: email, handler: nil)
+                    if let emailError = response.errors?.email?[0] {
+                        self.view?.showAlert(type: .failure(emailError), switchToHome: false)
                     }
                 }
             case .failure(let error):
@@ -57,32 +57,32 @@ extension SignupViewModel {
     
     private func validateUser(with user: User?, confirmPassword: String?) -> Bool {
         if let nameError = ValidationManager.shared().isValidData(with: .name(user?.name)) {
-            self.view?.showAlert(title: L10n.sorry, message: nameError, handler: nil)
+            self.view?.showAlert(type: .failure(nameError), switchToHome: false)
             return false
         }
         
         if let emailError = ValidationManager.shared().isValidData(with: .email(user?.email)) {
-            self.view?.showAlert(title: L10n.sorry, message: emailError, handler: nil)
+            self.view?.showAlert(type: .failure(emailError), switchToHome: false)
             return false
         }
         
         if let mobileNoError = ValidationManager.shared().isValidData(with: .phone(user?.mobile)) {
-            self.view?.showAlert(title: L10n.sorry, message: mobileNoError, handler: nil)
+            self.view?.showAlert(type: .failure(mobileNoError), switchToHome: false)
             return false
         }
         
         if let passwordError = ValidationManager.shared().isValidData(with: .password(user?.password)) {
-            self.view?.showAlert(title: L10n.sorry, message: passwordError, handler: nil)
+            self.view?.showAlert(type: .failure(passwordError), switchToHome: false)
             return false
         }
         
         if let confirmPwError = ValidationManager.shared().isValidData(with: .confirmPassword(confirmPassword)) {
-            self.view?.showAlert(title: L10n.sorry, message: confirmPwError, handler: nil)
+            self.view?.showAlert(type: .failure(confirmPwError), switchToHome: false)
             return false
         }
         
         if confirmPassword != user?.password {
-            self.view?.showAlert(title: L10n.sorry, message: L10n.confirmPasswordAlert, handler: nil)
+            self.view?.showAlert(type: .failure(L10n.confirmPasswordAlert), switchToHome: false)
             return false
         }
         

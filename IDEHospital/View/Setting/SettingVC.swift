@@ -16,7 +16,7 @@ protocol SettingVCProtocol: class {
     func goToContactUs()
     func goToAboutUsOrTerms(status: InfoType)
     func goToShare()
-    func showAlert(title: String, message: String)
+    func showAlert(type: PopUpType)
     func alertWithAction(title: String, message: String, handler: ((UIAlertAction) -> Void)?)
 }
 
@@ -99,8 +99,8 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
 
 //MARK:- SettingVC Protocol
 extension SettingVC: SettingVCProtocol {
-    func showAlert(title: String, message: String) {
-        self.showSimpleAlert(title: title, message: message)
+    func showAlert(type: PopUpType) {
+        self.showSimpleAlert(type: type)
     }
     
     func alertWithAction(title: String, message: String, handler: ((UIAlertAction) -> Void)?) {

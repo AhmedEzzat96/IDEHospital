@@ -11,7 +11,7 @@ import UIKit
 protocol VoucherPopUpVCProtocol: class {
     func getVoucherCode() -> String?
     func getPatientName() -> String?
-    func showAlert(title: String, message: String)
+    func showAlert(type: PopUpType)
     func askForConfirmation(for appointment: Appointment, doctorName: String)
 }
 
@@ -22,7 +22,6 @@ class VoucherPopUpVC: UIViewController {
     
     // MARK:- Properties
     var viewModel: VoucherPopUpViewModelProtocol!
-    weak var delegate: DismissView?
     
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
@@ -89,13 +88,12 @@ extension VoucherPopUpVC: VoucherPopUpVCProtocol {
         return mainView.anotherPersonNameTextField.text
     }
     
-    func showAlert(title: String, message: String) {
-        showSimpleAlert(title: title, message: message)
+    func showAlert(type: PopUpType) {
+        showSimpleAlert(type: type)
     }
     
     func askForConfirmation(for appointment: Appointment, doctorName: String) {
         let confirmAppointmentPopUpVC = ConfirmAppointmentPopUpVC.create(for: appointment, doctorName: doctorName)
-        confirmAppointmentPopUpVC.delegate = self
         let topVC = self.presentingViewController
         dismiss(animated: true) {
             topVC?.present(confirmAppointmentPopUpVC, animated: true)
@@ -103,7 +101,3 @@ extension VoucherPopUpVC: VoucherPopUpVCProtocol {
     }
 }
 
-extension VoucherPopUpVC: DismissView {
-    func dismissPopup() {
-    }
-}

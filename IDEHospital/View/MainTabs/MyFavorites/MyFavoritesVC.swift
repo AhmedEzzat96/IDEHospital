@@ -77,7 +77,7 @@ extension MyFavoritesVC: MyFavoritesVCProtocol {
     }
     
     func simpleAlert(title: String, message: String) {
-        self.showSimpleAlert(title: title, message: message)
+//        self.showSimpleAlert(title: title, message: message)
     }
     
     func goToProfile(with doctorID: Int) {

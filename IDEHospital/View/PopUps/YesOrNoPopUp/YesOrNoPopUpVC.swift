@@ -29,12 +29,12 @@ class YesOrNoPopUpVC: UIViewController {
         setYesAndNoActions()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
-            self.view.backgroundColor = ColorName.greyishBrown87.color.withAlphaComponent(0.87)
-        })
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
+//            self.view.backgroundColor = ColorName.greyishBrown87.color.withAlphaComponent(0.87)
+//        })
+//    }
 
     // MARK:- Public Methods
     class func create(title: String) -> YesOrNoPopUpVC {

@@ -99,6 +99,10 @@
 		9907EDAF25A4A3C100C42E7B /* YesOrNoPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907EDAE25A4A3C100C42E7B /* YesOrNoPopUpVC.swift */; };
 		9907EDB125A4A42F00C42E7B /* YesOrNoPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907EDB025A4A42F00C42E7B /* YesOrNoPopUpView.swift */; };
 		9907EDB325A4A78F00C42E7B /* YesOrNoPopUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907EDB225A4A78F00C42E7B /* YesOrNoPopUpViewModel.swift */; };
+		9907EDB525A4FAE000C42E7B /* SuccessOrFailurePopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9907EDB425A4FAE000C42E7B /* SuccessOrFailurePopUp.storyboard */; };
+		9907EDB725A4FAFB00C42E7B /* SuccessOrFailurePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907EDB625A4FAFB00C42E7B /* SuccessOrFailurePopUpView.swift */; };
+		9907EDB925A4FB1900C42E7B /* SuccessOrFailurePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907EDB825A4FB1900C42E7B /* SuccessOrFailurePopUpVC.swift */; };
+		9907EDBB25A4FC5D00C42E7B /* SuccessOrFailurePopUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907EDBA25A4FC5D00C42E7B /* SuccessOrFailurePopUpViewModel.swift */; };
 		991B7B6B258681CB00700114 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991B7B6A258681CB00700114 /* Localizable.strings */; };
 		991B7B6D2586877400700114 /* FontsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B7B6C2586877400700114 /* FontsManager.swift */; };
 		991B7B6F2586878300700114 /* StringsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B7B6E2586878300700114 /* StringsManager.swift */; };
@@ -238,6 +242,10 @@
 		9907EDAE25A4A3C100C42E7B /* YesOrNoPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesOrNoPopUpVC.swift; sourceTree = "<group>"; };
 		9907EDB025A4A42F00C42E7B /* YesOrNoPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesOrNoPopUpView.swift; sourceTree = "<group>"; };
 		9907EDB225A4A78F00C42E7B /* YesOrNoPopUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesOrNoPopUpViewModel.swift; sourceTree = "<group>"; };
+		9907EDB425A4FAE000C42E7B /* SuccessOrFailurePopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SuccessOrFailurePopUp.storyboard; sourceTree = "<group>"; };
+		9907EDB625A4FAFB00C42E7B /* SuccessOrFailurePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessOrFailurePopUpView.swift; sourceTree = "<group>"; };
+		9907EDB825A4FB1900C42E7B /* SuccessOrFailurePopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessOrFailurePopUpVC.swift; sourceTree = "<group>"; };
+		9907EDBA25A4FC5D00C42E7B /* SuccessOrFailurePopUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessOrFailurePopUpViewModel.swift; sourceTree = "<group>"; };
 		991B7B6A258681CB00700114 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		991B7B6C2586877400700114 /* FontsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsManager.swift; sourceTree = "<group>"; };
 		991B7B6E2586878300700114 /* StringsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringsManager.swift; sourceTree = "<group>"; };
@@ -803,6 +811,7 @@
 				9907ED9525A3B55100C42E7B /* VoucherPopUp.storyboard */,
 				9907EDA025A43F9A00C42E7B /* ConfirmAppointmentPopUp.storyboard */,
 				9907EDAB25A49F0800C42E7B /* YesOrNoPopUp.storyboard */,
+				9907EDB425A4FAE000C42E7B /* SuccessOrFailurePopUp.storyboard */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -813,6 +822,8 @@
 				9907EDAD25A4A3A800C42E7B /* YesOrNoPopUp */,
 				9907EDA225A4442D00C42E7B /* ConfirmAppointmentPopUp */,
 				9907ED9825A3DD9B00C42E7B /* VoucherPopUp */,
+				9907EDB625A4FAFB00C42E7B /* SuccessOrFailurePopUpView.swift */,
+				9907EDB825A4FB1900C42E7B /* SuccessOrFailurePopUpVC.swift */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -832,6 +843,7 @@
 				9907ED9E25A421F000C42E7B /* VoucherPopUpViewModel.swift */,
 				9907EDA925A481A700C42E7B /* ConfirmAppointmentPopUpViewModel.swift */,
 				9907EDB225A4A78F00C42E7B /* YesOrNoPopUpViewModel.swift */,
+				9907EDBA25A4FC5D00C42E7B /* SuccessOrFailurePopUpViewModel.swift */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -1094,6 +1106,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9907EDB525A4FAE000C42E7B /* SuccessOrFailurePopUp.storyboard in Resources */,
 				06D046D2259B50B000F4B8C2 /* HomeNurseContactUs.storyboard in Resources */,
 				06BB4E1F2585337200D2C4E3 /* Assets.xcassets in Resources */,
 				991ED245259A82E0008E3C76 /* AboutAndTerms.storyboard in Resources */,
@@ -1206,6 +1219,7 @@
 				06EB2EA025994EB900AFEE13 /* String+Regex.swift in Sources */,
 				06E7DC55259698F400382E2A /* ResetPasswordVC.swift in Sources */,
 				99F4D948259259C20078BE1D /* UIImageView+CircularImage.swift in Sources */,
+				9907EDBB25A4FC5D00C42E7B /* SuccessOrFailurePopUpViewModel.swift in Sources */,
 				995CAC73258B9D6F0042527F /* ValidationManager.swift in Sources */,
 				991ED249259A851E008E3C76 /* AboutAndTermsView.swift in Sources */,
 				99D14842258EF48E009443F2 /* SortTextField.swift in Sources */,
@@ -1223,6 +1237,7 @@
 				0678C11E2581B09500949700 /* CategoryCell.swift in Sources */,
 				993AD11B25873212005311CD /* PaddedTextField.swift in Sources */,
 				995CAC75258B9EC40042527F /* String+Trimming.swift in Sources */,
+				9907EDB925A4FB1900C42E7B /* SuccessOrFailurePopUpVC.swift in Sources */,
 				0644BB2E2590F48900963D65 /* MyAppointmentsView.swift in Sources */,
 				06EB2EAA25998A7E00AFEE13 /* SettingVC.swift in Sources */,
 				999D8CF22582929900CAEA06 /* CategoryResponse.swift in Sources */,
@@ -1276,6 +1291,7 @@
 				995901E925A2D64300A5D5AF /* Review.swift in Sources */,
 				0605D6722589541D006E38D8 /* MyFavoritesVC.swift in Sources */,
 				9938FC232580FBBB003781E5 /* UIView+SetupBackground.swift in Sources */,
+				9907EDB725A4FAFB00C42E7B /* SuccessOrFailurePopUpView.swift in Sources */,
 				06D046CD259B4FCD00F4B8C2 /* HomeViewModel.swift in Sources */,
 				99343E46258FC274008E069F /* SearchResults.swift in Sources */,
 				99F49F28258A955F0039A280 /* IDEAHospitalTextField.swift in Sources */,

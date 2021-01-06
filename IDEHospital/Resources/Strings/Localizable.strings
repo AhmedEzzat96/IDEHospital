@@ -126,3 +126,6 @@
 "doctorProfile" = "Doctor Profile";
 "viewOnMap" = "View on map";
 "tabReview" = "TAB REVIEW";
+"responseError" = "Error Occured, Please try again later";
+"reviewSubmitted" = "Your review submitted succesfully";
+"mustRegister" = "You must be registered to access this page";

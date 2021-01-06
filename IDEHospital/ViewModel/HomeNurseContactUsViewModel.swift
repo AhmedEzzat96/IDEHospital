@@ -44,11 +44,11 @@ extension HomeNurseContactUsViewModel {
             switch response {
             case .success(let response):
                 if response.success, response.code == 202 {
-                    self?.view?.showAlert(type: .success(L10n.yourRequestWasSent))
+                    self?.view?.showSuccesAlert(type: .success(L10n.yourRequestWasSent))
                 }
             case .failure(let error):
                 print(error)
-                self?.view?.showAlert(type: .failure(L10n.responseError))
+                self?.view?.showFailureAlert(type: .failure(L10n.responseError))
             }
             self?.view?.hideLoader()
         }
@@ -106,22 +106,22 @@ extension HomeNurseContactUsViewModel: HomeNurseContactUsViewModelProtocol {
     func requestTapped(with requestData: RequestData) {
         
         if let nameError = ValidationManager.shared().isValidData(with: .name(requestData.name)) {
-            self.view?.showAlert(type: .failure(nameError))
+            self.view?.showFailureAlert(type: .failure(nameError))
             return
         }
         
         if let emailError = ValidationManager.shared().isValidData(with: .email(requestData.email)) {
-            self.view?.showAlert(type: .failure(emailError))
+            self.view?.showFailureAlert(type: .failure(emailError))
             return
         }
         
         if let phoneError = ValidationManager.shared().isValidData(with: .phone(requestData.mobile)) {
-            self.view?.showAlert(type: .failure(phoneError))
+            self.view?.showFailureAlert(type: .failure(phoneError))
             return
         }
         
         if let messageError = ValidationManager.shared().isValidData(with: .message(requestData.message)) {
-            self.view?.showAlert(type: .failure(messageError))
+            self.view?.showFailureAlert(type: .failure(messageError))
             return
         } else {
             sendRequest(with: requestData)

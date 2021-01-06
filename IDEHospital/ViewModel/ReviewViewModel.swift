@@ -33,7 +33,7 @@ extension ReviewViewModel {
             switch result {
             case .success(let response):
                 if response.success, response.code == 202 {
-                    self?.view?.showAlert(.success(L10n.reviewSubmitted), okButtonAction: .dismissCurrentAndPrevious)
+                    self?.view?.showAlert(.success(L10n.reviewSubmitted), okButtonAction: .delegation)
                 }
             case .failure(let error):
                 print(error)

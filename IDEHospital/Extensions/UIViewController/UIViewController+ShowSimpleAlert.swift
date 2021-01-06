@@ -9,8 +9,9 @@
 import UIKit
 
 extension UIViewController {
-    func showSimpleAlert(type: PopUpType, okButtonAction: OkButtonAction = .dismissCurrent) {
+    func showSimpleAlert(type: PopUpType, okButtonAction: OkButtonAction = .dismissCurrent, delegate: SuccessOrFailurePopUpOkButtonDelegate? = nil) {
         let successOrFailurePopUpVC = SuccessOrFailurePopUpVC.create(type, okButtonAction: okButtonAction)
+        successOrFailurePopUpVC.delegate = delegate
         present(successOrFailurePopUpVC, animated: true)
     }
     

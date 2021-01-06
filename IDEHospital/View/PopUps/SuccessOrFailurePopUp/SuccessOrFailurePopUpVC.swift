@@ -8,8 +8,8 @@
 
 import UIKit
 
-protocol SuccessOrFailurePopUpVCProtocol: class {
-    
+protocol SuccessOrFailurePopUpOkButtonDelegate: class {
+    func okTapped()
 }
 
 enum PopUpType {
@@ -19,7 +19,7 @@ enum PopUpType {
 
 enum OkButtonAction: String {
     case dismissCurrent
-    case dismissCurrentAndPrevious
+    case delegation
     case switchToHome
 }
 
@@ -31,6 +31,7 @@ class SuccessOrFailurePopUpVC: UIViewController {
     
     // MARK:- Properties
     private var viewModel: SuccessOrFailurePopUpViewModelProtocol!
+    weak var delegate: SuccessOrFailurePopUpOkButtonDelegate?
     
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
@@ -49,7 +50,7 @@ class SuccessOrFailurePopUpVC: UIViewController {
     // MARK:- Public Methods
     class func create(_ popUpType: PopUpType, okButtonAction: OkButtonAction) -> SuccessOrFailurePopUpVC {
         let successOrFailurePopUpVC: SuccessOrFailurePopUpVC = UIViewController.create(storyboardName: Storyboards.successOrFailurePopUp, identifier: ViewControllers.successOrFailurePopUpVC)
-        successOrFailurePopUpVC.viewModel = SuccessOrFailurePopUpViewModel(view: successOrFailurePopUpVC, popUpType: popUpType, okButtonAction: okButtonAction)
+        successOrFailurePopUpVC.viewModel = SuccessOrFailurePopUpViewModel(popUpType: popUpType, okButtonAction: okButtonAction)
         return successOrFailurePopUpVC
     }
 }
@@ -61,12 +62,8 @@ extension SuccessOrFailurePopUpVC {
     }
     
     // MARK:- Objc Methods
-    @objc private func dismissCurrentAndPrevious() {
-        
+    @objc private func delegation() {
+        self.dismissCurrent()
+        delegate?.okTapped()
     }
-}
-
-// MARK:- SuccessOrFailurePopUpVC Protocol
-extension SuccessOrFailurePopUpVC: SuccessOrFailurePopUpVCProtocol {
-    
 }

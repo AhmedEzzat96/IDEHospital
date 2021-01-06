@@ -61,6 +61,13 @@ extension ReviewVC: ReviewVCProtocol {
     }
     
     func showAlert(_ type: PopUpType, okButtonAction: OkButtonAction) {
-        showSimpleAlert(type: type, okButtonAction: okButtonAction)
+        showSimpleAlert(type: type, okButtonAction: okButtonAction, delegate: self)
+    }
+}
+
+// MARK:- Popup Delegate
+extension ReviewVC: SuccessOrFailurePopUpOkButtonDelegate {
+    func okTapped() {
+        self.popUpCurrent()
     }
 }

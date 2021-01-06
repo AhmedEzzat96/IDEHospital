@@ -16,13 +16,11 @@ protocol SuccessOrFailurePopUpViewModelProtocol {
 class SuccessOrFailurePopUpViewModel {
     
     // MARK:- Properties
-    private weak var view: SuccessOrFailurePopUpVCProtocol?
     private let popUpType: PopUpType
     private let okButtonAction: OkButtonAction
     
     // MARK:- Init
-    init(view: SuccessOrFailurePopUpVCProtocol, popUpType: PopUpType, okButtonAction: OkButtonAction) {
-        self.view = view
+    init(popUpType: PopUpType, okButtonAction: OkButtonAction) {
         self.popUpType = popUpType
         self.okButtonAction = okButtonAction
     }

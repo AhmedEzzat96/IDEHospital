@@ -124,7 +124,7 @@ internal enum L10n {
   internal static let login = L10n.tr("Localizable", "login")
   /// LOGIN
   internal static let loginNav = L10n.tr("Localizable", "loginNav")
-  /// Logouts
+  /// Logout
   internal static let logout = L10n.tr("Localizable", "logout")
   /// Logout
   internal static let logOutBtn = L10n.tr("Localizable", "logOutBtn")
@@ -152,6 +152,8 @@ internal enum L10n {
   internal static let no = L10n.tr("Localizable", "no")
   /// No Appointments Found!
   internal static let noAppointmentFound = L10n.tr("Localizable", "noAppointmentFound")
+  /// No appointments found for this date
+  internal static let noAppointments = L10n.tr("Localizable", "noAppointments")
   /// No Doctors Found
   internal static let noDoctorsFound = L10n.tr("Localizable", "noDoctorsFound")
   /// No Favorites Found!

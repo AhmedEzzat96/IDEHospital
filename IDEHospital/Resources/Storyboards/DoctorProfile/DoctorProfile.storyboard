@@ -108,6 +108,12 @@ YXRyaWMgQW5lc3RoZXNpb2xvZ3kgQW5lc3RoZXNpb2xvZ3kgUGVkaWF0cmljIFBlZGlhdHJpYw
                                     <constraint firstItem="I48-Oc-eqU" firstAttribute="centerX" secondItem="GPM-pJ-BLH" secondAttribute="centerX" id="z4w-e3-o7D"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l31-qd-LxE">
+                                <rect key="frame" x="166.5" y="274" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="57a-ka-xHj">
                                 <rect key="frame" x="0.0" y="249" width="375" height="70"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -347,6 +353,7 @@ YXRyaWMgQW5lc3RoZXNpb2xvZ3kgQW5lc3RoZXNpb2xvZ3kgUGVkaWF0cmljIFBlZGlhdHJpYw
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="oUz-nt-hY7" firstAttribute="trailing" secondItem="yN0-Jy-Aqh" secondAttribute="trailing" id="1tQ-t6-33z"/>
+                            <constraint firstItem="l31-qd-LxE" firstAttribute="centerX" secondItem="57a-ka-xHj" secondAttribute="centerX" id="2ZJ-ps-HVy"/>
                             <constraint firstItem="dSx-Bz-66c" firstAttribute="centerY" secondItem="6qw-dE-uIK" secondAttribute="centerY" id="2dY-yo-lrA"/>
                             <constraint firstItem="dSx-Bz-66c" firstAttribute="leading" secondItem="6qw-dE-uIK" secondAttribute="trailing" id="3Z9-gF-E3K"/>
                             <constraint firstItem="6qw-dE-uIK" firstAttribute="width" secondItem="0Je-ez-3dF" secondAttribute="width" multiplier="187.5/375" id="5Bo-iJ-qkU"/>
@@ -356,6 +363,7 @@ YXRyaWMgQW5lc3RoZXNpb2xvZ3kgQW5lc3RoZXNpb2xvZ3kgUGVkaWF0cmljIFBlZGlhdHJpYw
                             <constraint firstItem="yN0-Jy-Aqh" firstAttribute="top" secondItem="6qw-dE-uIK" secondAttribute="bottom" id="Dlw-MC-M9W"/>
                             <constraint firstItem="KSN-cB-Hhg" firstAttribute="centerX" secondItem="dSx-Bz-66c" secondAttribute="centerX" id="GJu-N4-yM7"/>
                             <constraint firstItem="a3z-2s-6vf" firstAttribute="leading" secondItem="Mlx-Pa-gcn" secondAttribute="leading" constant="25" id="GXg-Du-iIX"/>
+                            <constraint firstItem="l31-qd-LxE" firstAttribute="centerY" secondItem="57a-ka-xHj" secondAttribute="centerY" id="Gvc-zl-0C8"/>
                             <constraint firstItem="57a-ka-xHj" firstAttribute="top" secondItem="GPM-pJ-BLH" secondAttribute="bottom" id="HOy-Fv-czV"/>
                             <constraint firstItem="KkS-4X-gKE" firstAttribute="top" secondItem="CEt-cz-Bmu" secondAttribute="bottom" constant="5" id="I8C-TR-zi6"/>
                             <constraint firstItem="6qw-dE-uIK" firstAttribute="top" secondItem="eeJ-4I-JdD" secondAttribute="bottom" constant="25" id="LZp-x2-JS4"/>
@@ -406,6 +414,7 @@ YXRyaWMgQW5lc3RoZXNpb2xvZ3kgQW5lc3RoZXNpb2xvZ3kgUGVkaWF0cmljIFBlZGlhdHJpYw
                             <outlet property="feesLabel" destination="qBN-cE-wV9" id="P9n-UO-15m"/>
                             <outlet property="mapBtn" destination="d2t-wI-Ngl" id="1ml-7t-9jE"/>
                             <outlet property="nextPageBtn" destination="21v-TH-Czn" id="58o-th-cvj"/>
+                            <outlet property="noAppointmentsForDateLabel" destination="l31-qd-LxE" id="JSA-w4-rHi"/>
                             <outlet property="previousDateBtn" destination="4FH-q9-e2x" id="jml-4e-ywf"/>
                             <outlet property="ratingView" destination="KkS-4X-gKE" id="jDV-78-rS6"/>
                             <outlet property="reviewsBtn" destination="dSx-Bz-66c" id="yjw-RY-coe"/>

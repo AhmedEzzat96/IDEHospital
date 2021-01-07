@@ -43,7 +43,7 @@ class DoctorProfileViewModel {
     private var lastPage: Int!
     private var dateIndex = 0
     private var index: Int?
-    private var currentAppointment: Int?
+    private var selectedAppointment: Int?
     
     // MARK:- Init
     init(view: DoctorProfileVCProtocol) {
@@ -54,9 +54,9 @@ class DoctorProfileViewModel {
 // MARK:- Private Methods
 extension DoctorProfileViewModel {
     private func getReviews(with id: Int) {
+        view?.showLoader()
         APIManager.reviews(with: id, page: currentPage) { [weak self] (result) in
             switch result {
-                
             case .success(let response):
                 if response.code == 200 && response.success == true {
                     guard let items = response.data?.items else { return }
@@ -67,6 +67,7 @@ extension DoctorProfileViewModel {
             case .failure(let error):
                 print(error)
             }
+            self?.view?.hideLoader()
         }
     }
     
@@ -107,6 +108,7 @@ extension DoctorProfileViewModel {
 // MARK:- DoctorProfileViewModel Protocol
 extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
     func getDoctor(with id: Int) {
+        view?.showLoader()
         APIManager.doctors(with: id) { [weak self] (result) in
             switch result {
                 
@@ -121,6 +123,7 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
             case .failure(let error):
                 print(error)
             }
+            self?.view?.hideLoader()
         }
     }
     
@@ -134,9 +137,9 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
     }
     
     func getDoctorAppointment(with doctorID: Int) {
+        view?.showLoader()
         APIManager.doctorAppointments(with: doctorID) { [weak self] (result) in
             switch result {
-                
             case .success(let response):
                 if response.code == 200 && response.success == true {
                     guard let data = response.data else { return }
@@ -147,6 +150,7 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
             case .failure(let error):
                 print(error)
             }
+            self?.view?.hideLoader()
         }
     }
     
@@ -154,7 +158,6 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
     
     func getDate(dateDirection: DateDirection? = nil) {
         switch dateDirection {
-            
         case .previous:
             if dateIndex > 0 {
                 dateIndex -= 1
@@ -174,11 +177,11 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
     
     func getTime(for item: Int) -> DoctorAppointmentTime {
         return appointmentsDate[dateIndex].times[item]
-    
     }
     
     func getTimeItemsCount() -> Int {
         guard appointmentsDate.indices.contains(dateIndex) else { return 0 }
+        view?.hideNoAppointmentsLabel(appointmentsDate[dateIndex].times.count != 0)
         return appointmentsDate[dateIndex].times.count
     }
     
@@ -201,7 +204,7 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
     
     func didSelectItem(with item: Int) {
         let appointment = appointmentsDate[dateIndex].times[item].time
-        self.currentAppointment = appointment
+        self.selectedAppointment = appointment
     }
     
     func getLastSelectedIndex() -> Int? {
@@ -209,9 +212,7 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
     }
     
     func showVoucher() {
-        guard let doctorID = doctorData?.id, let timeStamp = currentAppointment, let doctorName = doctorData?.name else { print("else")
-            return }
-        print("Ahmed")
+        guard let doctorID = doctorData?.id, let timeStamp = selectedAppointment, let doctorName = doctorData?.name else { return }
         self.view?.showPopup(doctorID: doctorID, timeStamp: timeStamp, doctorName: doctorName)
     }
     
@@ -238,7 +239,6 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
     
     func viewWillAppear() {
         if let doctorID = doctorData?.id {
-            print(doctorID)
             getDoctor(with: doctorID)
         }
     }

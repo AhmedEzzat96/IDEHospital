@@ -10,8 +10,7 @@ import UIKit
 
 protocol HomeNurseContactUsVCProtocol: class {
     func addPlaceholder(_ text: String)
-    func showSuccesAlert(type: PopUpType)
-    func showFailureAlert(type: PopUpType)
+    func showAlert(type: PopUpType, okButtonAction: OkButtonAction)
     func showLoader()
     func hideLoader()
     func popUp()
@@ -82,12 +81,8 @@ extension HomeNurseContactUsVC: HomeNurseContactUsVCProtocol {
         }
     }
     
-    func showSuccesAlert(type: PopUpType) {
-        showSimpleAlert(type: type, okButtonAction: .delegation, delegate: self)
-    }
-    
-    func showFailureAlert(type: PopUpType) {
-        showSimpleAlert(type: type, okButtonAction: .dismissCurrent)
+    func showAlert(type: PopUpType, okButtonAction: OkButtonAction) {
+        showSimpleAlert(type: type, okButtonAction: okButtonAction, delegate: self)
     }
     
     func showLoader() {
@@ -110,6 +105,6 @@ extension HomeNurseContactUsVC: HomeNurseContactUsVCProtocol {
 // MARK:- Popup Button Delegate
 extension HomeNurseContactUsVC: SuccessOrFailurePopUpOkButtonDelegate {
     func okTapped() {
-        self.popUpCurrent()
+        viewModel.okTapped()
     }
 }

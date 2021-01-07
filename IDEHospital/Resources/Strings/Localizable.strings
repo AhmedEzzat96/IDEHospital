@@ -88,7 +88,7 @@
 "share" = "Share";
 "editProfile" = "Edit Profile";
 "bookedAppointment" = "Booked Appointments";
-"logout" = "Logouts";
+"logout" = "Logout";
 "favorites" = "Favourites";
 "shareText" = "This App is awesome!  Check out this Link to try it!";
 "appLink" = "https://apps.apple.com/us/app/pubg-mobile-metro-royale/id1330123889";
@@ -129,3 +129,4 @@
 "responseError" = "Error Occured, Please try again later";
 "reviewSubmitted" = "Your review submitted succesfully";
 "mustRegister" = "You must be registered to access this page";
+"noAppointments" = "No appointments found for this date";

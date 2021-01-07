@@ -17,16 +17,20 @@ protocol DoctorProfileVCProtocol: class {
     func showPopup(doctorID: Int, timeStamp: Int, doctorName: String)
     func goToAddReview(with doctorID: Int)
     func showAlert(type: PopUpType)
+    func showLoader()
+    func hideLoader()
+    func hideNoAppointmentsLabel(_ isHidden: Bool)
 }
 
 class DoctorProfileVC: UIViewController {
+    
     // MARK:- IBOutlets
     @IBOutlet weak var doctorProfileView: DoctorProfileView!
     
     // MARK:- Properties
     private var viewModel: DoctorProfileViewModelProtocol!
     
-    // MARK:- Lifecycle Methods
+    // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         doctorProfileView.setup()
@@ -193,5 +197,19 @@ extension DoctorProfileVC: DoctorProfileVCProtocol {
     
     func showAlert(type: PopUpType) {
         showSimpleAlert(type: type)
+    }
+    
+    func showLoader() {
+        view.showActivityIndicator()
+    }
+    
+    func hideLoader() {
+        view.hideActivityIndicator()
+    }
+    
+    func hideNoAppointmentsLabel(_ isHidden: Bool) {
+        DispatchQueue.main.async {
+            self.doctorProfileView.noAppointmentsForDateLabel.isHidden = isHidden
+        }
     }
 }

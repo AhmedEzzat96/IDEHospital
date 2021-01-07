@@ -42,7 +42,7 @@ class DoctorProfileViewModel {
     private var currentPage: Int!
     private var lastPage: Int!
     private var dateIndex = 0
-    private var index: Int?
+    private var lastSelectedAppointmentIndex: Int?
     private var selectedAppointment: Int?
     
     // MARK:- Init
@@ -208,7 +208,7 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
     }
     
     func getLastSelectedIndex() -> Int? {
-        return index
+        return lastSelectedAppointmentIndex
     }
     
     func showVoucher() {

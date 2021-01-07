@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol DoctorProfilePopupDelegate: class {
+    func voucherPopupAction(appointment: Appointment)
+    func confirmationPopupAction()
+    func successOrFailurePopupAction()
+}
+
 protocol VoucherPopUpVCProtocol: class {
     func getVoucherCode() -> String?
     func getPatientName() -> String?
@@ -21,7 +27,8 @@ class VoucherPopUpVC: UIViewController {
     @IBOutlet weak var mainView: VoucherPopUpView!
     
     // MARK:- Properties
-    var viewModel: VoucherPopUpViewModelProtocol!
+    private var viewModel: VoucherPopUpViewModelProtocol!
+    weak var delegate: DoctorProfilePopupDelegate?
     
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
@@ -55,6 +62,7 @@ class VoucherPopUpVC: UIViewController {
     
     // MARK:- Actions
     @IBAction func continueButtonPressed(_ sender: CustomButton) {
+        delegate?.voucherPopupAction()
         viewModel.continueTapped(mainView.voucherSwitch.isOn, mainView.anotherPersonSwitch.isOn)
     }
 }

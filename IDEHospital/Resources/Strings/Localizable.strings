@@ -130,3 +130,4 @@
 "reviewSubmitted" = "Your review submitted succesfully";
 "mustRegister" = "You must be registered to access this page";
 "noAppointments" = "No appointments found for this date";
+"mustAuthenticate" = "Must be Authenticated";

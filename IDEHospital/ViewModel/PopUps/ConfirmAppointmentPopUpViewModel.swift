@@ -82,7 +82,7 @@ extension ConfirmAppointmentPopUpViewModel: ConfirmAppointmentPopUpViewModelProt
     }
     func confirmTapped() {
         guard UserDefaultsManager.shared().token != nil else {
-            view?.showAlert(type: .failure("Must be Authenticated"))
+            view?.showAlert(type: .failure(L10n.mustAuthenticate))
             return
         }
         APIManager.bookAppointment(appointment) { [weak self] (result) in

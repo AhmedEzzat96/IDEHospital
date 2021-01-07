@@ -42,6 +42,7 @@ class DoctorProfileVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("Ahmed")
     }
     
     // MARK:- Public Methods
@@ -212,4 +213,21 @@ extension DoctorProfileVC: DoctorProfileVCProtocol {
             self.doctorProfileView.noAppointmentsForDateLabel.isHidden = isHidden
         }
     }
+}
+
+// MARK:- Popup delegate
+extension DoctorProfileVC: DoctorProfilePopupDelegate {
+    func voucherPopupAction(appointment: Appointment) {
+        <#code#>
+    }
+    
+    func confirmationPopupAction() {
+        <#code#>
+    }
+    
+    func successOrFailurePopupAction() {
+        <#code#>
+    }
+    
+    
 }

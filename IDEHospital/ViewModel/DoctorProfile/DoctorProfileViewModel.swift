@@ -212,6 +212,10 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
     }
     
     func showVoucher() {
+        guard UserDefaultsManager.shared().token != nil else {
+            self.view?.showAlert(type: .failure(L10n.mustAuthenticate))
+            return
+        }
         guard let doctorID = doctorData?.id, let timeStamp = selectedAppointment, let doctorName = doctorData?.name else { return }
         self.view?.showPopup(doctorID: doctorID, timeStamp: timeStamp, doctorName: doctorName)
     }

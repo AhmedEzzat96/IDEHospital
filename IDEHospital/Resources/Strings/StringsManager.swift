@@ -138,6 +138,8 @@ internal enum L10n {
   internal static let missedData = L10n.tr("Localizable", "missedData")
   /// Mobile Number
   internal static let mobileNumber = L10n.tr("Localizable", "mobileNumber")
+  /// Must be Authenticated
+  internal static let mustAuthenticate = L10n.tr("Localizable", "mustAuthenticate")
   /// You must be registered to access this page
   internal static let mustRegister = L10n.tr("Localizable", "mustRegister")
   /// MY APPOINTMENTS

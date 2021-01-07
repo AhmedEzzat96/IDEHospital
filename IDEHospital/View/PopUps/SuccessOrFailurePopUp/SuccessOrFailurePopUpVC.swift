@@ -27,8 +27,7 @@ class SuccessOrFailurePopUpVC: UIViewController {
 
     // MARK:- Outlets
     @IBOutlet weak var mainView: SuccessOrFailurePopUpView!
-    
-    
+        
     // MARK:- Properties
     private var viewModel: SuccessOrFailurePopUpViewModelProtocol!
     weak var delegate: SuccessOrFailurePopUpOkButtonDelegate?

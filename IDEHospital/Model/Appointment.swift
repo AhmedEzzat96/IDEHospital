@@ -9,9 +9,9 @@
 import Foundation
 
 struct Appointment: Codable {
-    let doctorID: Int
-    let timestamp: Int
-    var isBookingForAnotherPerson: Int
+    var doctorID: Int
+    var timestamp: Int?
+    var isBookingForAnotherPerson: Int?
     var patientName: String?
     var voucher: String?
     

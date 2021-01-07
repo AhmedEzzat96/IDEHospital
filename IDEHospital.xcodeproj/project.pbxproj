@@ -34,7 +34,6 @@
 		0657F1A4259127B5003C9586 /* MyAppointmentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0657F1A3259127B5003C9586 /* MyAppointmentCellViewModel.swift */; };
 		066B5AB425A4594B005BF3B9 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066B5AB325A4594B005BF3B9 /* Reviews.swift */; };
 		066B5AB625A46AB1005BF3B9 /* DoctorAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066B5AB525A46AB1005BF3B9 /* DoctorAppointment.swift */; };
-		066B5AB925A48CA4005BF3B9 /* TimeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066B5AB825A48CA4005BF3B9 /* TimeCellViewModel.swift */; };
 		067584C9258D7CDD00A65404 /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067584C8258D7CDD00A65404 /* UIViewController+ShowAlert.swift */; };
 		0678C11E2581B09500949700 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678C11C2581B09500949700 /* CategoryCell.swift */; };
 		0678C11F2581B09500949700 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0678C11D2581B09500949700 /* CategoryCell.xib */; };
@@ -118,6 +117,7 @@
 		9938FC232580FBBB003781E5 /* UIView+SetupBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */; };
 		9938FC25258173CC003781E5 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938FC24258173CC003781E5 /* UIView+CornerRadius.swift */; };
 		993AD11B25873212005311CD /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993AD11A25873212005311CD /* PaddedTextField.swift */; };
+		99430DE725A7C7BC000A850D /* Int+Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99430DE625A7C7BC000A850D /* Int+Timestamp.swift */; };
 		9951E0C3259AB1E000DDB266 /* AboutAndTermsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951E0C2259AB1DF00DDB266 /* AboutAndTermsViewModel.swift */; };
 		995901DF25A29D7700A5D5AF /* Review.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 995901DE25A29D7700A5D5AF /* Review.storyboard */; };
 		995901E225A29EAF00A5D5AF /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995901E125A29EAF00A5D5AF /* ReviewView.swift */; };
@@ -181,7 +181,6 @@
 		0657F1A3259127B5003C9586 /* MyAppointmentCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentCellViewModel.swift; sourceTree = "<group>"; };
 		066B5AB325A4594B005BF3B9 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		066B5AB525A46AB1005BF3B9 /* DoctorAppointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorAppointment.swift; sourceTree = "<group>"; };
-		066B5AB825A48CA4005BF3B9 /* TimeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCellViewModel.swift; sourceTree = "<group>"; };
 		067584C8258D7CDD00A65404 /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
 		0678C11C2581B09500949700 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		0678C11D2581B09500949700 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
@@ -261,6 +260,7 @@
 		9938FC222580FBBB003781E5 /* UIView+SetupBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SetupBackground.swift"; sourceTree = "<group>"; };
 		9938FC24258173CC003781E5 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
 		993AD11A25873212005311CD /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
+		99430DE625A7C7BC000A850D /* Int+Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Timestamp.swift"; sourceTree = "<group>"; };
 		9951E0C2259AB1DF00DDB266 /* AboutAndTermsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAndTermsViewModel.swift; sourceTree = "<group>"; };
 		995901DE25A29D7700A5D5AF /* Review.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Review.storyboard; sourceTree = "<group>"; };
 		995901E125A29EAF00A5D5AF /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
@@ -521,6 +521,7 @@
 				06AB4F0C2583F84C00A0B658 /* UIImageVIew */,
 				06AB4F0D2583F85500A0B658 /* UIColor */,
 				99FD522C258CF80C0005110E /* String */,
+				99430DE825A7C8AF000A850D /* Int */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -582,7 +583,6 @@
 			isa = PBXGroup;
 			children = (
 				06FE099125A34FF10002F0A4 /* DoctorProfileViewModel.swift */,
-				066B5AB825A48CA4005BF3B9 /* TimeCellViewModel.swift */,
 			);
 			path = DoctorProfile;
 			sourceTree = "<group>";
@@ -917,6 +917,14 @@
 			path = TextFields;
 			sourceTree = "<group>";
 		};
+		99430DE825A7C8AF000A850D /* Int */ = {
+			isa = PBXGroup;
+			children = (
+				99430DE625A7C7BC000A850D /* Int+Timestamp.swift */,
+			);
+			path = Int;
+			sourceTree = "<group>";
+		};
 		9951E0C1259AB15E00DDB266 /* AboutAndTerms */ = {
 			isa = PBXGroup;
 			children = (
@@ -1239,7 +1247,6 @@
 				9951E0C3259AB1E000DDB266 /* AboutAndTermsViewModel.swift in Sources */,
 				06C0DD8525A25D16002ED4DF /* DoctorProfileVC.swift in Sources */,
 				99E7AD0725824E2800AAB5B0 /* MainTabBar.swift in Sources */,
-				066B5AB925A48CA4005BF3B9 /* TimeCellViewModel.swift in Sources */,
 				991ED241259A7303008E3C76 /* String+ToHTML.swift in Sources */,
 				99697C65257F80BD00B6BFBE /* ServiceSearchVC.swift in Sources */,
 				0678C11E2581B09500949700 /* CategoryCell.swift in Sources */,
@@ -1285,6 +1292,7 @@
 				066B5AB425A4594B005BF3B9 /* Reviews.swift in Sources */,
 				06FE098825A321B30002F0A4 /* TimeCell.swift in Sources */,
 				062FDF79257E678D00949D54 /* Constants.swift in Sources */,
+				99430DE725A7C7BC000A850D /* Int+Timestamp.swift in Sources */,
 				06EB2EB52599A09A00AFEE13 /* SettingViewModel.swift in Sources */,
 				06EB2EA425997D5F00AFEE13 /* ResetPasswordViewModel.swift in Sources */,
 				06DD9943257FBAA100D36344 /* HomeVC.swift in Sources */,

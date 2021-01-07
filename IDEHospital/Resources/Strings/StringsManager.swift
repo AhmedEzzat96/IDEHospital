@@ -56,7 +56,7 @@ internal enum L10n {
   internal static let `continue` = L10n.tr("Localizable", "continue")
   /// You should enter your message details
   internal static let dataRequirements = L10n.tr("Localizable", "dataRequirements")
-  /// EEEE,d MMMM yyyy
+  /// EEEE, d MMMM yyyy
   internal static let dateFormat = L10n.tr("Localizable", "dateFormat")
   /// Are You Sure Want to Delete this Appointment?
   internal static let deleteAppointment = L10n.tr("Localizable", "deleteAppointment")

@@ -54,7 +54,7 @@
 "mins" = "minutes";
 "no" = "No";
 "yes" = "Yes";
-"dateFormat" = "EEEE,d MMMM yyyy";
+"dateFormat" = "EEEE, d MMMM yyyy";
 "timeFormat" = "hh:mm a";
 "am" = "am";
 "pm" = "pm";

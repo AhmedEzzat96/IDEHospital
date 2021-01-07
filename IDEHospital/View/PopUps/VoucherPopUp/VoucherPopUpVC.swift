@@ -8,10 +8,9 @@
 
 import UIKit
 
-protocol DoctorProfilePopupDelegate: class {
-    func voucherPopupAction(appointment: Appointment)
-    func confirmationPopupAction()
-    func successOrFailurePopupAction()
+protocol DoctorProfilePopupsDelegate: class {
+    func continueTapped(appointment: Appointment, doctorName: String)
+    func confirmTapped()
 }
 
 protocol VoucherPopUpVCProtocol: class {
@@ -28,7 +27,7 @@ class VoucherPopUpVC: UIViewController {
     
     // MARK:- Properties
     private var viewModel: VoucherPopUpViewModelProtocol!
-    weak var delegate: DoctorProfilePopupDelegate?
+    weak var delegate: DoctorProfilePopupsDelegate?
     
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
@@ -54,15 +53,15 @@ class VoucherPopUpVC: UIViewController {
     }
     
     // MARK:- Public Methods
-    class func create(doctorID: Int, timestamp: Int, doctorName: String) -> VoucherPopUpVC {
+    class func create(appointment: Appointment, doctorName: String) -> VoucherPopUpVC {
         let voucherPopUpVC: VoucherPopUpVC = UIViewController.create(storyboardName: Storyboards.voucherPopUp, identifier: ViewControllers.voucherPopUpVC)
-        voucherPopUpVC.viewModel = VoucherPopUpViewModel(view: voucherPopUpVC, doctorID: doctorID, timestamp: timestamp, doctorName: doctorName)
+        voucherPopUpVC.viewModel = VoucherPopUpViewModel(view: voucherPopUpVC, appointment: appointment, doctorName: doctorName)
         return voucherPopUpVC
     }
     
     // MARK:- Actions
     @IBAction func continueButtonPressed(_ sender: CustomButton) {
-        delegate?.voucherPopupAction()
+//        delegate?.voucherPopupAction(appointment: )
         viewModel.continueTapped(mainView.voucherSwitch.isOn, mainView.anotherPersonSwitch.isOn)
     }
 }
@@ -101,11 +100,8 @@ extension VoucherPopUpVC: VoucherPopUpVCProtocol {
     }
     
     func askForConfirmation(for appointment: Appointment, doctorName: String) {
-        let confirmAppointmentPopUpVC = ConfirmAppointmentPopUpVC.create(for: appointment, doctorName: doctorName)
-        let topVC = self.presentingViewController
-        dismiss(animated: true) {
-            topVC?.present(confirmAppointmentPopUpVC, animated: true)
-        }
+        dismissCurrent()
+        delegate?.continueTapped(appointment: appointment, doctorName: doctorName)
     }
 }
 

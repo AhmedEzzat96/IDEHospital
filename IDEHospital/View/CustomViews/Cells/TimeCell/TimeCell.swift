@@ -12,19 +12,15 @@ class TimeCell: UICollectionViewCell {
     // MARK:- IBOutlets
     @IBOutlet weak var timeLabel: UILabel!
     
-    //MARK:- Properties
-    private var viewModel: TimeCellViewModelProtocol!
-    
     // MARK:- Lifecycle Methods
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
-        viewModel = TimeCellViewModel()
     }
     
     // MARK:- Public Methods
     func configure(item: DoctorAppointmentTime) {
-        timeLabel.text = viewModel.createTime(timestamp: item.time)
+        timeLabel.text = item.time.createTime()
         if item.booked {
             self.backgroundColor = ColorName.steelGrey.color
             self.isUserInteractionEnabled = false

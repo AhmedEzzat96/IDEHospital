@@ -8,12 +8,6 @@
 
 import UIKit
 
-protocol ConfirmAppointmentPopUpVCProtocol: class {
-    func showLoader()
-    func hideLoader()
-    func showAlert(type: PopUpType)
-}
-
 class ConfirmAppointmentPopUpVC: UIViewController {
 
     // MARK:- Outlets
@@ -21,6 +15,7 @@ class ConfirmAppointmentPopUpVC: UIViewController {
     
     // MARK:- Properties
     private var viewModel: ConfirmAppointmentPopUpViewModelProtocol!
+    weak var delegate: DoctorProfilePopupsDelegate?
     
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
@@ -38,7 +33,7 @@ class ConfirmAppointmentPopUpVC: UIViewController {
     // MARK:- Public Methods
     class func create(for appointment: Appointment, doctorName: String) -> ConfirmAppointmentPopUpVC {
         let confirmAppointmentPopUpVC: ConfirmAppointmentPopUpVC = UIViewController.create(storyboardName: Storyboards.confirmAppointmentPopUp, identifier: ViewControllers.confirmAppointmentPopUpVC)
-        confirmAppointmentPopUpVC.viewModel = ConfirmAppointmentPopUpViewModel(view: confirmAppointmentPopUpVC, appointment: appointment, doctorName: doctorName)
+        confirmAppointmentPopUpVC.viewModel = ConfirmAppointmentPopUpViewModel(appointment: appointment, doctorName: doctorName)
         return confirmAppointmentPopUpVC
     }
     
@@ -50,30 +45,8 @@ class ConfirmAppointmentPopUpVC: UIViewController {
     }
     
     @IBAction func confirmButtonPressed(_ sender: CustomButton) {
-        viewModel.confirmTapped()
-    }
-}
-
-// MARK:- Private Methods
-extension ConfirmAppointmentPopUpVC {
-    
-}
-
-// MARK:- ConfirmAppointmentVC Protocol
-extension ConfirmAppointmentPopUpVC: ConfirmAppointmentPopUpVCProtocol {
-    func showLoader() {
-        view.showActivityIndicator()
-    }
-    
-    func hideLoader() {
-        view.hideActivityIndicator()
-    }
-    
-    func showAlert(type: PopUpType) {
-        let topVC = self.presentingViewController
-        dismiss(animated: true) {
-            topVC?.showSimpleAlert(type: type)
-        }
+        dismissCurrent()
+        delegate?.confirmTapped()
     }
 }
 
@@ -82,10 +55,4 @@ extension ConfirmAppointmentPopUpVC: YesOrNoPopUpVCDelegate {
     func yesPressed() {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    func noPressed() {
-        print("Called")
-    }
-    
-    
 }

@@ -20,9 +20,9 @@ class VoucherPopUpViewModel {
     private var doctorName: String
     
     // MARK:- Init
-    init(view: VoucherPopUpVCProtocol, doctorID: Int, timestamp: Int, doctorName: String) {
+    init(view: VoucherPopUpVCProtocol, appointment: Appointment, doctorName: String) {
         self.view = view
-        self.appointment = Appointment(doctorID: doctorID, timestamp: timestamp, isBookingForAnotherPerson: 1)
+        self.appointment = appointment
         self.doctorName = doctorName
     }
 }

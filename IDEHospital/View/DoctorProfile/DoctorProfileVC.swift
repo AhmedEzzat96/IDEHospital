@@ -14,12 +14,13 @@ protocol DoctorProfileVCProtocol: class {
     func showDoctorData(item: DoctorData)
     func showDate(date: String)
     func reloadCollectionView()
-    func showPopup(doctorID: Int, timeStamp: Int, doctorName: String)
+    func showVoucherPopup(appointment: Appointment, doctorName: String, delegate: DoctorProfilePopupsDelegate)
     func goToAddReview(with doctorID: Int)
     func showAlert(type: PopUpType)
     func showLoader()
     func hideLoader()
     func hideNoAppointmentsLabel(_ isHidden: Bool)
+    func askForConfirmation(with appointment: Appointment, doctorName: String, delegate: DoctorProfilePopupsDelegate)
 }
 
 class DoctorProfileVC: UIViewController {
@@ -42,14 +43,14 @@ class DoctorProfileVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("Ahmed")
+        getDoctorData()
     }
     
     // MARK:- Public Methods
     class func create(with doctorID: Int) -> DoctorProfileVC {
         let doctorProfileVC: DoctorProfileVC = UIViewController.create(storyboardName: Storyboards.doctorProfile, identifier: ViewControllers.doctorProfileVC)
-        doctorProfileVC.viewModel = DoctorProfileViewModel(view: doctorProfileVC)
-        doctorProfileVC.getDoctorData(with: doctorID)
+        doctorProfileVC.viewModel = DoctorProfileViewModel(view: doctorProfileVC, doctorID: doctorID)
+        doctorProfileVC.getDoctorData()
         return doctorProfileVC
     }
     
@@ -101,10 +102,10 @@ extension DoctorProfileVC {
         doctorProfileView.tableView.register(UINib(nibName: Cells.reviewCell, bundle: nil), forCellReuseIdentifier: Cells.reviewCell)
     }
     
-    private func getDoctorData(with doctorID: Int) {
-        viewModel.getDoctor(with: doctorID)
-        viewModel.loadReviewData(with: doctorID)
-        viewModel.getDoctorAppointment(with: doctorID)
+    private func getDoctorData() {
+        viewModel.getDoctor()
+        viewModel.getDoctorAppointment(fromBeginning: true)
+        viewModel.loadReviewData()
     }
     
     private func setupNavigation() {
@@ -181,13 +182,15 @@ extension DoctorProfileVC: DoctorProfileVCProtocol {
         doctorProfileView.dateLabel.text = date
     }
     
+    
     func reloadCollectionView() {
         doctorProfileView.collectionView.reloadData()
         doctorProfileView.bookNowBtn.isEnabled = false
     }
     
-    func showPopup(doctorID: Int, timeStamp: Int, doctorName: String) {
-        let voucherVC = VoucherPopUpVC.create(doctorID: doctorID, timestamp: timeStamp, doctorName: doctorName)
+    func showVoucherPopup(appointment: Appointment, doctorName: String, delegate: DoctorProfilePopupsDelegate) {
+        let voucherVC = VoucherPopUpVC.create(appointment: appointment, doctorName: doctorName)
+        voucherVC.delegate = delegate
         self.present(voucherVC, animated: true)
     }
     
@@ -213,21 +216,10 @@ extension DoctorProfileVC: DoctorProfileVCProtocol {
             self.doctorProfileView.noAppointmentsForDateLabel.isHidden = isHidden
         }
     }
-}
-
-// MARK:- Popup delegate
-extension DoctorProfileVC: DoctorProfilePopupDelegate {
-    func voucherPopupAction(appointment: Appointment) {
-        <#code#>
+    
+    func askForConfirmation(with appointment: Appointment, doctorName: String, delegate: DoctorProfilePopupsDelegate) {
+        let confirmationPopUp = ConfirmAppointmentPopUpVC.create(for: appointment, doctorName: doctorName)
+        present(confirmationPopUp, animated: true)
+        confirmationPopUp.delegate = delegate
     }
-    
-    func confirmationPopupAction() {
-        <#code#>
-    }
-    
-    func successOrFailurePopupAction() {
-        <#code#>
-    }
-    
-    
 }

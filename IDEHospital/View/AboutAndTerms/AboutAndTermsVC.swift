@@ -11,7 +11,7 @@ import UIKit
 protocol AboutAndTermsVCProtocol: class {
     func showLoader()
     func hideLoader()
-    func showAlert(title: String, message: String)
+    func showAlert(type: PopUpType)
     func displayText(_ text: String)
 }
 
@@ -62,8 +62,8 @@ extension AboutAndTermsVC: AboutAndTermsVCProtocol {
         view.hideActivityIndicator()
     }
     
-    func showAlert(title: String, message: String) {
-        showSimpleAlert(title: title, message: message)
+    func showAlert(type: PopUpType) {
+        showSimpleAlert(type: type)
     }
     
     func displayText(_ text: String) {

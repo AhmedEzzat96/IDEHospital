@@ -54,7 +54,7 @@
 "mins" = "minutes";
 "no" = "No";
 "yes" = "Yes";
-"dateFormat" = "EEEE,d MMMM yyyy";
+"dateFormat" = "EEEE, d MMMM yyyy";
 "timeFormat" = "hh:mm a";
 "am" = "am";
 "pm" = "pm";
@@ -88,7 +88,7 @@
 "share" = "Share";
 "editProfile" = "Edit Profile";
 "bookedAppointment" = "Booked Appointments";
-"logout" = "Logouts";
+"logout" = "Logout";
 "favorites" = "Favourites";
 "shareText" = "This App is awesome!  Check out this Link to try it!";
 "appLink" = "https://apps.apple.com/us/app/pubg-mobile-metro-royale/id1330123889";
@@ -102,8 +102,32 @@
 "passwordEmpty" = "password field is empty";
 "confirmPwEmpty" = "confirm password field is empty";
 "phoneEmpty" = "mobile No. field is empty";
+"review" = "REVIEW";
+"rateInfo" = "Please rate your experience with the doctor";
+"addComment" = "Add Comment";
+"submitReview" = "Submit Review";
+"commentRequirements" = "Comment should be at least 3 characters and and at most 18 characters";
+"emptyComment" = "comment field is empty";
+"voucherTitle" = "Do you have a Voucher Code?";
+"yes" = "Yes";
+"no" = "No";
+"enterCode" = "Enter Code";
+"bookingAnotherPerson" = "Are you Booking for another person?";
+"enterName" = "Enter Name";
+"continue" = "Continue";
+"confirmAppointment" = "Confirm Your Appointment";
+"youAreAboutToBook" = "You are about to book an appointment on";
+"withDoctor" = "with Doctor";
+"confirm" = "Confirm";
+"emptyVoucher" = "voucher field is empty";
+"voucherRequirements" = "voucher should be at least 3 characters";
+"sureToCancel" = "Are you sure you want to cancel this appointment";
+"successfully Booked" = "Appointment Successfully Booked";
 "doctorProfile" = "Doctor Profile";
 "viewOnMap" = "View on map";
 "tabReview" = "TAB REVIEW";
-
-
+"responseError" = "Error Occured, Please try again later";
+"reviewSubmitted" = "Your review submitted succesfully";
+"mustRegister" = "You must be registered to access this page";
+"noAppointments" = "No appointments found for this date";
+"mustAuthenticate" = "Must be Authenticated";

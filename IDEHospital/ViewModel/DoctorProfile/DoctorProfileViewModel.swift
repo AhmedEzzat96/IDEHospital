@@ -15,19 +15,21 @@ enum DateDirection {
 }
 
 protocol DoctorProfileViewModelProtocol {
-    func getDoctor(with id: Int)
+    func getDoctor()
     func willDisplayReviewCell(for row: Int)
-    func loadReviewData(with doctorID: Int)
+    func loadReviewData()
     func getReviewItem(at index: Int) -> ReviewsItem
     func getReviewItemsCount() -> Int
     func getDate(dateDirection: DateDirection?)
-    func getDoctorAppointment(with doctorID: Int)
+    func getDoctorAppointment(fromBeginning: Bool)
     func getTime(for item: Int) -> DoctorAppointmentTime
     func getTimeItemsCount() -> Int
     func addRemoveFavorite()
     func didSelectItem(with item: Int)
     func getLastSelectedIndex() -> Int?
     func openMapForPlace()
+    func showVoucher()
+    func addReviewTapped()
 }
 
 class DoctorProfileViewModel {
@@ -39,20 +41,22 @@ class DoctorProfileViewModel {
     private var currentPage: Int!
     private var lastPage: Int!
     private var dateIndex = 0
-    private var index: Int?
+    private var lastSelectedAppointmentIndex: Int?
+    private var appointment: Appointment!
     
     // MARK:- Init
-    init(view: DoctorProfileVCProtocol) {
+    init(view: DoctorProfileVCProtocol, doctorID: Int) {
         self.view = view
+        self.appointment = Appointment(doctorID: doctorID)
     }
 }
 
 // MARK:- Private Methods
 extension DoctorProfileViewModel {
-    private func getReviews(with id: Int) {
-        APIManager.reviews(with: id, page: currentPage) { [weak self] (result) in
+    private func getReviews() {
+        view?.showLoader()
+        APIManager.reviews(with: appointment.doctorID, page: currentPage) { [weak self] (result) in
             switch result {
-                
             case .success(let response):
                 if response.code == 200 && response.success == true {
                     guard let items = response.data?.items else { return }
@@ -63,47 +67,48 @@ extension DoctorProfileViewModel {
             case .failure(let error):
                 print(error)
             }
+            self?.view?.hideLoader()
         }
     }
     
     private func loadMoreReviewData(with DoctorID: Int) {
         if currentPage < lastPage {
             currentPage += 1
-            getReviews(with: DoctorID)
+            getReviews()
         }
     }
     
-    private func createDate(timestamp: Int) -> String {
-        var strDate = ""
-        let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
-        let dateFormatter = DateFormatter()
-        let timezone = TimeZone.current.abbreviation() ?? "CET"  // get current TimeZone abbreviation or set to CET
-        dateFormatter.timeZone = TimeZone(abbreviation: timezone) //Set timezone that you want
-        dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = L10n.dateFormat //Specify your format that you want
-        strDate = dateFormatter.string(from: date)
-        return strDate
+    private func checkAppointmentResponse(_ response: AppointmentResponse) {
+        if response.success == true, response.code == 202 {
+            view?.showAlert(type: .success(L10n.successfullyBooked))
+            self.getDoctorAppointment(fromBeginning: false)
+        } else if let responseMessage = response.message {
+            view?.showAlert(type: .failure(responseMessage))
+        } else if let voucherError = response.errors?.voucher?[0] {
+            view?.showAlert(type: .failure(voucherError))
+        } else if let appointmentError = response.errors?.appointment?[0] {
+            view?.showAlert(type: .failure(appointmentError))
+        }
     }
     
-    private func createTime(timestamp: Int) -> String {
-        var strDate = ""
-        let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
-        let dateFormatter = DateFormatter()
-        let timezone = TimeZone.current.abbreviation() ?? "CET"  // get current TimeZone abbreviation or set to CET
-        dateFormatter.timeZone = TimeZone(abbreviation: timezone) //Set timezone that you want
-        dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = L10n.timeFormat //Specify your format that you want
-        dateFormatter.amSymbol = L10n.am
-        dateFormatter.pmSymbol = L10n.pm
-        strDate = dateFormatter.string(from: date)
-        return strDate
+    private func bookAppointment() {
+        APIManager.bookAppointment(appointment) { [weak self] (result) in
+            switch result {
+            case .success(let response):
+                self?.checkAppointmentResponse(response)
+            case .failure(let error):
+                print(error)
+                self?.view?.showAlert(type: .failure(L10n.responseError))
+            }
+        }
     }
 }
 
 // MARK:- DoctorProfileViewModel Protocol
 extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
-    func getDoctor(with id: Int) {
-        APIManager.doctors(with: id) { [weak self] (result) in
+    func getDoctor() {
+        view?.showLoader()
+        APIManager.doctors(with: appointment.doctorID) { [weak self] (result) in
             switch result {
                 
             case .success(let response):
@@ -112,36 +117,43 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
                     guard let data = response.data else { return }
                     self?.doctorData = data
                     self?.view?.showDoctorData(item: data)
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    func addRemoveFavorite() {
-        guard let doctorID = self.doctorData?.id else { return }
-        APIManager.addRemoveFavorite(with: doctorID) { [weak self] (success) in
-            if success {
-                self?.getDoctor(with: doctorID)
-            }
-        }
-    }
-    
-    func getDoctorAppointment(with doctorID: Int) {
-        APIManager.doctorAppointments(with: doctorID) { [weak self] (result) in
-            switch result {
-                
-            case .success(let response):
-                if response.code == 200 && response.success == true {
-                    guard let data = response.data else { return }
-                    self?.appointmentsDate = data
-                    self?.getDate()
                     self?.view?.reloadCollectionView()
                 }
             case .failure(let error):
                 print(error)
             }
+            self?.view?.hideLoader()
+        }
+    }
+    
+    func addRemoveFavorite() {
+        guard UserDefaultsManager.shared().token != nil else {
+            view?.showAlert(type: .failure(L10n.mustAuthenticate))
+            return
+        }
+        guard let doctorID = self.doctorData?.id else { return }
+        APIManager.addRemoveFavorite(with: doctorID) { [weak self] (success) in
+            if success {
+                self?.getDoctor()
+            }
+        }
+    }
+    
+    func getDoctorAppointment(fromBeginning: Bool) {
+        view?.showLoader()
+        APIManager.doctorAppointments(with: appointment.doctorID) { [weak self] (result) in
+            switch result {
+            case .success(let response):
+                if response.code == 200 && response.success == true {
+                    guard let data = response.data else { return }
+                    self?.appointmentsDate = data
+                    if fromBeginning { self?.getDate() }
+                    self?.view?.reloadCollectionView()
+                }
+            case .failure(let error):
+                print(error)
+            }
+            self?.view?.hideLoader()
         }
     }
     
@@ -149,7 +161,6 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
     
     func getDate(dateDirection: DateDirection? = nil) {
         switch dateDirection {
-            
         case .previous:
             if dateIndex > 0 {
                 dateIndex -= 1
@@ -162,18 +173,19 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
             dateIndex = 0
         }
         DispatchQueue.main.async {
-            self.view?.showDate(date: self.createDate(timestamp: self.appointmentsDate[self.dateIndex].date))
+            guard self.appointmentsDate.indices.contains(self.dateIndex) else { return }
+            self.view?.showDate(date: self.appointmentsDate[self.dateIndex].date.createDate())
             self.view?.reloadCollectionView()
         }
     }
     
     func getTime(for item: Int) -> DoctorAppointmentTime {
         return appointmentsDate[dateIndex].times[item]
-    
     }
     
     func getTimeItemsCount() -> Int {
         guard appointmentsDate.indices.contains(dateIndex) else { return 0 }
+        view?.hideNoAppointmentsLabel(appointmentsDate[dateIndex].times.count != 0)
         return appointmentsDate[dateIndex].times.count
     }
     
@@ -181,10 +193,10 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
         return reviewsItem.count
     }
     
-    func loadReviewData(with doctorID: Int) {
+    func loadReviewData() {
         self.reviewsItem.removeAll()
         self.currentPage = 1
-        getReviews(with: doctorID)
+        getReviews()
     }
     
     func willDisplayReviewCell(for row: Int) {
@@ -195,17 +207,20 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
     }
     
     func didSelectItem(with item: Int) {
-//        let appointment = appointmentsDate[dateIndex].times[item].time
-        
-        if let selectedIndex = index, item == selectedIndex {
-            index = nil
-        } else {
-        self.index = item
-        }
+        self.appointment.timestamp = appointmentsDate[dateIndex].times[item].time
     }
     
     func getLastSelectedIndex() -> Int? {
-        return index
+        return lastSelectedAppointmentIndex
+    }
+    
+    func showVoucher() {
+        guard UserDefaultsManager.shared().token != nil else {
+            self.view?.showAlert(type: .failure(L10n.mustAuthenticate))
+            return
+        }
+        guard appointment.timestamp != nil, let doctorName = doctorData?.name else { return }
+        self.view?.showVoucherPopup(appointment: self.appointment, doctorName: doctorName, delegate: self)
     }
     
     func getReviewItem(at index: Int) -> ReviewsItem {
@@ -227,5 +242,35 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = doctorData?.address
         mapItem.openInMaps(launchOptions: options)
+    }
+    
+    func addReviewTapped() {
+        guard UserDefaultsManager.shared().token != nil else {
+            view?.showAlert(type: .failure(L10n.mustRegister))
+            return
+        }
+        if let doctorID = doctorData?.id {
+            view?.goToAddReview(with: doctorID)
+        } else {
+            view?.showAlert(type: .failure(L10n.responseError))
+        }
+    }
+}
+
+// MARK:- Popups Delegate
+extension DoctorProfileViewModel: DoctorProfilePopupsDelegate {
+    func continueTapped(appointment: Appointment, doctorName: String) {
+        self.appointment = appointment
+        view?.askForConfirmation(with: appointment, doctorName: doctorName, delegate: self)
+    }
+    
+    func confirmTapped() {
+        bookAppointment()
+    }
+}
+
+extension DoctorProfileViewModel: SuccessOrFailurePopUpOkButtonDelegate {
+    func okTapped() {
+        getReviews()
     }
 }

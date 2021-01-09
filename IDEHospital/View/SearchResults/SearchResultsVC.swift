@@ -11,7 +11,7 @@ import UIKit
 protocol SearchResultsVCProtocol: class {
     func showLoader()
     func hideLoader()
-    func showAlert(title: String, message: String)
+    func showAlert(type: PopUpType)
     func showSortType(_ sortType: String)
     func reloadData()
     func reloadToTop()
@@ -131,8 +131,8 @@ extension SearchResultsVC: SearchResultsVCProtocol {
         view.hideActivityIndicator()
     }
     
-    func showAlert(title: String, message: String) {
-        showSimpleAlert(title: title, message: message)
+    func showAlert(type: PopUpType) {
+        showSimpleAlert(type: type)
     }
     
     func showSortType(_ sortType: String) {

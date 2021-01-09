@@ -10,7 +10,7 @@ import UIKit
 
 protocol HomeNurseContactUsVCProtocol: class {
     func addPlaceholder(_ text: String)
-    func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)?)
+    func showAlert(type: PopUpType, okButtonAction: OkButtonAction)
     func showLoader()
     func hideLoader()
     func popUp()
@@ -81,8 +81,8 @@ extension HomeNurseContactUsVC: HomeNurseContactUsVCProtocol {
         }
     }
     
-    func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)?) {
-        showSimpleAlert(title: title, message: message, handler: handler)
+    func showAlert(type: PopUpType, okButtonAction: OkButtonAction) {
+        showSimpleAlert(type: type, okButtonAction: okButtonAction, delegate: self)
     }
     
     func showLoader() {
@@ -99,5 +99,12 @@ extension HomeNurseContactUsVC: HomeNurseContactUsVCProtocol {
     
     func dismiss() {
         dismissCurrent()
+    }
+}
+
+// MARK:- Popup Button Delegate
+extension HomeNurseContactUsVC: SuccessOrFailurePopUpOkButtonDelegate {
+    func okTapped() {
+        viewModel.okTapped()
     }
 }

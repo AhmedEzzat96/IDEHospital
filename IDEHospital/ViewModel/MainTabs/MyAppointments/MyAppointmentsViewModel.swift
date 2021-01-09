@@ -13,8 +13,9 @@ protocol MyAppointmentsViewModelProtocol {
     func getItem(at index: Int) -> MyAppointmentItem
     func willDisplayCell(for row: Int)
     func loadData()
-    func showDeleteAlert(with row: Int)
+    func deleteTapped(with row: Int)
     func openMapForPlace(for row: Int)
+    func removeAppointment()
 }
 
 class MyAppointmentsViewModel {
@@ -23,6 +24,7 @@ class MyAppointmentsViewModel {
     private var appointmentItems = [MyAppointmentItem]()
     private var currentPage: Int!
     private var lastPage: Int!
+    private var appointmentToDelete: Int?
     
     // MARK:- Init
     init(view: MyAppointmentsVCProtocol) {
@@ -66,15 +68,6 @@ extension MyAppointmentsViewModel {
             getAppointments()
         }
     }
-    
-    private func removeAppointment(with row: Int) {
-        APIManager.removeAppointment(with: appointmentItems[row].id) { [weak self] (success) in
-            if success {
-                self?.appointmentItems.removeAll()
-                self?.loadData()
-            }
-        }
-    }
 }
 
 //MARK:- MyAppointmentsViewModel Protocol
@@ -99,10 +92,19 @@ extension MyAppointmentsViewModel: MyAppointmentsViewModelProtocol {
         getAppointments()
     }
     
-    func showDeleteAlert(with row: Int) {
-        view?.showAlert(title: L10n.sorry, message: L10n.deleteAppointment, actions: [nil, { [weak self] yesAction in
-            self?.removeAppointment(with: row)
-            }])
+    func deleteTapped(with row: Int) {
+        self.appointmentToDelete = row
+        view?.showAlert(message: L10n.deleteAppointment)
+    }
+    
+    func removeAppointment() {
+        guard let appointmentToDelete = appointmentToDelete else { return }
+        APIManager.removeAppointment(with: appointmentItems[appointmentToDelete].id) { [weak self] (success) in
+            if success {
+                self?.appointmentItems.removeAll()
+                self?.loadData()
+            }
+        }
     }
     
     func openMapForPlace(for row: Int) {

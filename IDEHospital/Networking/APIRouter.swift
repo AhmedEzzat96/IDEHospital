@@ -28,6 +28,8 @@ enum APIRouter: URLRequestConvertible{
     case login(_ user: User)
     case forgetPassword(_ user: User)
     case logout
+    case addReview(_ review: Review)
+    case bookAppointment(_ appointment: Appointment)
     case doctors(_ doctorID: Int)
     case reviews(_ doctorID: Int,_ page: Int)
     case doctorAppointments(_ doctorID: Int)
@@ -51,6 +53,8 @@ enum APIRouter: URLRequestConvertible{
             return doctorsFilter.parameters()
         case .favorites(let page), .appointments(let page), .reviews(_, let page):
             return [ParameterKeys.page: page]
+        case .addReview(let review):
+            return review.parameters()
         default:
             return nil
         }
@@ -89,6 +93,10 @@ enum APIRouter: URLRequestConvertible{
             return URLs.forgetPassword
         case .logout:
             return URLs.logout
+        case .addReview(let review):
+            return URLs.addReview + "/\(review.doctorID)/reviews"
+        case .bookAppointment:
+            return URLs.bookAppointment
         case .doctors(let doctorID):
             return URLs.doctor + "/\(doctorID)"
         case .reviews(let doctorID, _):
@@ -114,6 +122,10 @@ enum APIRouter: URLRequestConvertible{
         case .favorites, .addRemoveFavorite, .appointments, .removeAppointment, .searchForDoctors, .logout, .doctors:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().token ?? "")",
                 forHTTPHeaderField: HeaderKeys.authorization)
+        case .bookAppointment, .addReview:
+            urlRequest.setValue("Bearer \(UserDefaultsManager.shared().token ?? "")",
+                forHTTPHeaderField: HeaderKeys.authorization)
+            urlRequest.setValue(HeaderValues.appJSON, forHTTPHeaderField: HeaderKeys.accept)
         default:
             urlRequest.setValue(L10n.en, forHTTPHeaderField: HeaderKeys.acceptLanguage)
         }
@@ -128,6 +140,8 @@ enum APIRouter: URLRequestConvertible{
             case .login(let body):
                 return encodeToJSON(body)
             case .forgetPassword(let body):
+                return encodeToJSON(body)
+            case .bookAppointment(let body):
                 return encodeToJSON(body)
             default:
                 return nil

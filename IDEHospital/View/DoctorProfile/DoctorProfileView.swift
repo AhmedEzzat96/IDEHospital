@@ -27,6 +27,7 @@ class DoctorProfileView: UIView {
     @IBOutlet weak var reviewsBtn: UIButton!
     @IBOutlet weak var reviewsCountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noAppointmentsForDateLabel: UILabel!
     // Scroll View Components
     @IBOutlet weak var doctorDetailsView: UIView!
     @IBOutlet weak var specialtyLabel: UILabel!
@@ -44,17 +45,8 @@ class DoctorProfileView: UIView {
         setupDateView()
         setupImgView()
         setupTableView()
-        setupCustomButton()
-        setupSwitchButton(button: doctorProfileBtn, title: L10n.doctorProfile, notSelected: Asset.rectangle1794.image, selected: Asset.path1565.image)
-        setupSwitchButton(button: reviewsBtn, title: L10n.reviews, notSelected: Asset.rectangle1795.image, selected: Asset.path1564.image)
-        setupMapBtn()
-        setupTabReviewBtn()
-        setupLabel(label: specialtyLabel, color: .black)
-        setupLabel(label: secondBioLabel, color: .black)
-        setupLabel(label: addressLabel, color: .black)
-        setupLabel(label: waitingTimeLabel, color: .black)
-        setupLabel(label: feesLabel, color: .black)
-        setupLabel(label: companiesLabel, color: .black)
+        setupButtons()
+        setupLabels()
     }
     
     func hideOrShowDoctorDetails(dotorProfileBtn: Bool = true, reviewBtn: Bool = false, doctorView: Bool = false, tableViewHidden: Bool = true) {
@@ -108,9 +100,28 @@ extension DoctorProfileView {
         setupRatingView()
     }
     
-    private func setupLabel(label: UILabel, color: UIColor = .white, font: UIFont = FontFamily.PTSans.regular.font(size: 12)) {
+    private func setupLabels() {
+        setupLabel(label: specialtyLabel, color: .black)
+        setupLabel(label: secondBioLabel, color: .black)
+        setupLabel(label: addressLabel, color: .black)
+        setupLabel(label: waitingTimeLabel, color: .black)
+        setupLabel(label: feesLabel, color: .black)
+        setupLabel(label: companiesLabel, color: .black)
+        setupLabel(label: noAppointmentsForDateLabel, font: FontFamily.PTSans.bold.font(size: 15), text: L10n.noAppointments)
+    }
+    
+    private func setupLabel(label: UILabel, color: UIColor = .white, font: UIFont = FontFamily.PTSans.regular.font(size: 12), text: String? = nil) {
+        label.text = text
         label.textColor = color
         label.font = font
+    }
+    
+    private func setupButtons() {
+        setupCustomButton()
+        setupSwitchButton(button: doctorProfileBtn, title: L10n.doctorProfile, notSelected: Asset.rectangle1794.image, selected: Asset.path1565.image)
+        setupSwitchButton(button: reviewsBtn, title: L10n.reviews, notSelected: Asset.rectangle1795.image, selected: Asset.path1564.image)
+        setupMapBtn()
+        setupTabReviewBtn()
     }
     
     private func setupCustomButton() {

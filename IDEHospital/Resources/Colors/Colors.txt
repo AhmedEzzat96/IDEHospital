@@ -9,3 +9,5 @@ white : #ffffff
 black : #0a0a0a
 steelGrey : #848585
 brownishGrey : #707070
+greyishBrown87 : #575757
+richPurpleTwo : #6f0466

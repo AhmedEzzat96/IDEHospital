@@ -50,7 +50,7 @@ class MyAppointmentCell: UITableViewCell {
     }
     
     @IBAction func deleteBtnPressed(_ sender: UIButton) {
-        delegate?.showDeleteAlert(customTableViewCell: self)
+        delegate?.deleteTapped(customTableViewCell: self)
     }
     
 }

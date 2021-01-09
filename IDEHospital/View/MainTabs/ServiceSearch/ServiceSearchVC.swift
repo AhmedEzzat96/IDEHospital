@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ServiceSearchVCProtocol {
-    func showAlert(title: String, message: String)
+    func showAlert(type: PopUpType)
     func showItems()
     func addSelectedItem(_ viewWithTag: Int, _ item: String)
     func clearTextField(tag: Int)
@@ -109,9 +109,9 @@ extension ServiceSearchVC: ServiceSearchVCProtocol {
         }
     }
     
-    func showAlert(title: String, message: String) {
+    func showAlert(type: PopUpType) {
         DispatchQueue.main.async {
-            self.showSimpleAlert(title: title, message: message)
+            self.showSimpleAlert(type: type)
         }
     }
     

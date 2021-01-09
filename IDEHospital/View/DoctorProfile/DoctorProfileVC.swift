@@ -14,16 +14,24 @@ protocol DoctorProfileVCProtocol: class {
     func showDoctorData(item: DoctorData)
     func showDate(date: String)
     func reloadCollectionView()
+    func showVoucherPopup(appointment: Appointment, doctorName: String, delegate: DoctorProfilePopupsDelegate)
+    func goToAddReview(with doctorID: Int)
+    func showAlert(type: PopUpType)
+    func showLoader()
+    func hideLoader()
+    func hideNoAppointmentsLabel(_ isHidden: Bool)
+    func askForConfirmation(with appointment: Appointment, doctorName: String, delegate: DoctorProfilePopupsDelegate)
 }
 
 class DoctorProfileVC: UIViewController {
+    
     // MARK:- IBOutlets
     @IBOutlet weak var doctorProfileView: DoctorProfileView!
     
     // MARK:- Properties
     private var viewModel: DoctorProfileViewModelProtocol!
     
-    // MARK:- Lifecycle Methods
+    // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         doctorProfileView.setup()
@@ -33,17 +41,30 @@ class DoctorProfileVC: UIViewController {
         doctorProfileBtnPressed(doctorProfileView.doctorProfileBtn)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getDoctorData()
+    }
+    
     // MARK:- Public Methods
     class func create(with doctorID: Int) -> DoctorProfileVC {
         let doctorProfileVC: DoctorProfileVC = UIViewController.create(storyboardName: Storyboards.doctorProfile, identifier: ViewControllers.doctorProfileVC)
-        doctorProfileVC.viewModel = DoctorProfileViewModel(view: doctorProfileVC)
-        doctorProfileVC.getDoctorData(with: doctorID)
+        doctorProfileVC.viewModel = DoctorProfileViewModel(view: doctorProfileVC, doctorID: doctorID)
+        doctorProfileVC.getDoctorData()
         return doctorProfileVC
     }
     
     // MARK:- IBActions
     @IBAction func doctorProfileBtnPressed(_ sender: UIButton) {
         doctorProfileView.hideOrShowDoctorDetails()
+    }
+    
+    @IBAction func addReviewButtonPressed(_ sender: UIButton) {
+        viewModel.addReviewTapped()
+    }
+    
+    @IBAction func bookNowBtnPressed(_ sender: CustomButton) {
+        viewModel.showVoucher()
     }
     
     @IBAction func reviewsBtnPressed(_ sender: UIButton) {
@@ -81,10 +102,10 @@ extension DoctorProfileVC {
         doctorProfileView.tableView.register(UINib(nibName: Cells.reviewCell, bundle: nil), forCellReuseIdentifier: Cells.reviewCell)
     }
     
-    private func getDoctorData(with doctorID: Int) {
-        viewModel.getDoctor(with: doctorID)
-        viewModel.loadReviewData(with: doctorID)
-        viewModel.getDoctorAppointment(with: doctorID)
+    private func getDoctorData() {
+        viewModel.getDoctor()
+        viewModel.getDoctorAppointment(fromBeginning: true)
+        viewModel.loadReviewData()
     }
     
     private func setupNavigation() {
@@ -109,7 +130,7 @@ extension DoctorProfileVC: UICollectionViewDelegate, UICollectionViewDataSource 
         let cell = collectionView.cellForItem(at: indexPath)
         doctorProfileView.bookNowBtn.isEnabled = true
         cell?.backgroundColor = ColorName.darkRoyalBlue.color
-        print(indexPath.item)
+        viewModel.didSelectItem(with: indexPath.item)
 
     }
 
@@ -161,8 +182,44 @@ extension DoctorProfileVC: DoctorProfileVCProtocol {
         doctorProfileView.dateLabel.text = date
     }
     
+    
     func reloadCollectionView() {
         doctorProfileView.collectionView.reloadData()
         doctorProfileView.bookNowBtn.isEnabled = false
+    }
+    
+    func showVoucherPopup(appointment: Appointment, doctorName: String, delegate: DoctorProfilePopupsDelegate) {
+        let voucherVC = VoucherPopUpVC.create(appointment: appointment, doctorName: doctorName)
+        voucherVC.delegate = delegate
+        self.present(voucherVC, animated: true)
+    }
+    
+    func goToAddReview(with doctorID: Int) {
+        let reviewVC = ReviewVC.create(for: doctorID)
+        navigationController?.pushViewController(reviewVC, animated: true)
+    }
+    
+    func showAlert(type: PopUpType) {
+        showSimpleAlert(type: type)
+    }
+    
+    func showLoader() {
+        view.showActivityIndicator()
+    }
+    
+    func hideLoader() {
+        view.hideActivityIndicator()
+    }
+    
+    func hideNoAppointmentsLabel(_ isHidden: Bool) {
+        DispatchQueue.main.async {
+            self.doctorProfileView.noAppointmentsForDateLabel.isHidden = isHidden
+        }
+    }
+    
+    func askForConfirmation(with appointment: Appointment, doctorName: String, delegate: DoctorProfilePopupsDelegate) {
+        let confirmationPopUp = ConfirmAppointmentPopUpVC.create(for: appointment, doctorName: doctorName)
+        present(confirmationPopUp, animated: true)
+        confirmationPopUp.delegate = delegate
     }
 }

@@ -87,9 +87,39 @@ class APIManager {
             completion(response)
         }
     }
+    
+    class func addReview(_ review: Review, completion: @escaping (Result<RequestResponse, Error>) -> Void) {
+        request(APIRouter.addReview(review)) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func doctors(with doctorID: Int, completion: @escaping (Result<Doctor, Error>) -> Void) {
+        request(APIRouter.doctors(doctorID)) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func bookAppointment(_ appointment: Appointment, completion: @escaping (Result<AppointmentResponse, Error>) -> Void) {
+        request(APIRouter.bookAppointment(appointment)) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func reviews(with doctorID: Int, page: Int, completion: @escaping (Result<Reviews, Error>) -> Void) {
+        request(APIRouter.reviews(doctorID, page)) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func doctorAppointments(with doctorID: Int, completion: @escaping (Result<DoctorAppointment, Error>) -> Void) {
+        request(APIRouter.doctorAppointments(doctorID)) { (response) in
+            completion(response)
+        }
+    }
 }
 
-extension APIManager{
+extension APIManager {
     // MARK:- The request function to get results in a closure
     private static func request<T: Decodable>(_ urlConvertible: URLRequestConvertible, completion:  @escaping (Result<T, Error>) -> ()) {
         // Trigger the HttpRequest using AlamoFire

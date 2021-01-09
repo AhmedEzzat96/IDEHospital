@@ -11,11 +11,12 @@ import UIKit
 protocol SearchResultsVCProtocol: class {
     func showLoader()
     func hideLoader()
-    func showAlert(title: String, message: String)
+    func showAlert(type: PopUpType)
     func showSortType(_ sortType: String)
     func reloadData()
     func reloadToTop()
     func showNoDoctrosFoundLabel()
+    func goToDoctorProfile(with doctorID: Int)
 }
 
 class SearchResultsVC: UIViewController {
@@ -130,8 +131,8 @@ extension SearchResultsVC: SearchResultsVCProtocol {
         view.hideActivityIndicator()
     }
     
-    func showAlert(title: String, message: String) {
-        showSimpleAlert(title: title, message: message)
+    func showAlert(type: PopUpType) {
+        showSimpleAlert(type: type)
     }
     
     func showSortType(_ sortType: String) {
@@ -159,13 +160,18 @@ extension SearchResultsVC: SearchResultsVCProtocol {
             self.mainView.showNoDoctorsFoundLabel()
         }
     }
+    
+    func goToDoctorProfile(with doctorID: Int) {
+        let doctorProfileVC = DoctorProfileVC.create(with: doctorID)
+        self.navigationController?.pushViewController(doctorProfileVC, animated: true)
+    }
 }
 
 //MARK:- Delegate Methods
 extension SearchResultsVC: CellButtonDelegate {
-    func bookNowAlert(customTableViewCell: UITableViewCell) {
+    func bookNow(customTableViewCell: UITableViewCell) {
         guard let indexPath = mainView.tableView.indexPath(for: customTableViewCell) else {return}
-        viewModel.bookNowAlert(with: indexPath.row)
+        viewModel.bookNow(with: indexPath.row)
     }
     
     func addFavorite(customTableViewCell: UITableViewCell) {

@@ -14,6 +14,7 @@ protocol MyFavoritesVCProtocol: class {
     func reloadData()
     func isHidden(tableView: Bool, noItemsFound: Bool)
     func simpleAlert(title: String, message: String)
+    func goToProfile(with doctorID: Int)
 }
 
 class MyFavoritesVC: UIViewController {
@@ -76,7 +77,12 @@ extension MyFavoritesVC: MyFavoritesVCProtocol {
     }
     
     func simpleAlert(title: String, message: String) {
-        self.showSimpleAlert(title: title, message: message)
+//        self.showSimpleAlert(title: title, message: message)
+    }
+    
+    func goToProfile(with doctorID: Int) {
+        let doctorProfileVC = DoctorProfileVC.create(with: doctorID)
+        self.navigationController?.pushViewController(doctorProfileVC, animated: true)
     }
 }
 
@@ -116,13 +122,13 @@ extension MyFavoritesVC: UITableViewDelegate, UITableViewDataSource {
 
 //MARK:- ShowAlert Delegate
 extension MyFavoritesVC: CellButtonDelegate {
-    func showDeleteAlert(customTableViewCell: UITableViewCell) {
+    func deleteTapped(customTableViewCell: UITableViewCell) {
         guard let indexPath = myFavoritesView.tableView.indexPath(for: customTableViewCell) else {return}
-        viewModel.showDeleteAlert(with: indexPath.row)
+        viewModel.deleteFavoriteTapped(with: indexPath.row)
     }
     
-    func viewProfileAlert(customTableViewCell: UITableViewCell) {
+    func viewProfile(customTableViewCell: UITableViewCell) {
         guard let indexPath = myFavoritesView.tableView.indexPath(for: customTableViewCell) else {return}
-        viewModel.viewProfileAlert(with: indexPath.row)
+        viewModel.viewProfile(with: indexPath.row)
     }
 }

@@ -10,10 +10,10 @@ import UIKit
 import Cosmos
 
 protocol CellButtonDelegate: class {
-    func showDeleteAlert(customTableViewCell: UITableViewCell)
-    func viewProfileAlert(customTableViewCell: UITableViewCell)
+    func deleteTapped(customTableViewCell: UITableViewCell)
+    func viewProfile(customTableViewCell: UITableViewCell)
     func viewOnMap(customTableViewCell: UITableViewCell)
-    func bookNowAlert(customTableViewCell: UITableViewCell)
+    func bookNow(customTableViewCell: UITableViewCell)
     func addFavorite(customTableViewCell: UITableViewCell)
 }
 
@@ -62,11 +62,11 @@ class MyFavoriteCell: UITableViewCell {
     
     //MARK:- IBActions
     @IBAction func deleteBtnPressed(_ sender: UIButton) {
-        self.delegate?.showDeleteAlert(customTableViewCell: self)
+        self.delegate?.deleteTapped(customTableViewCell: self)
     }
     
     @IBAction func viewProfileBtnPressed(_ sender: CustomButton) {
-        self.delegate?.viewProfileAlert(customTableViewCell: self)
+        self.delegate?.viewProfile(customTableViewCell: self)
     }
     
     
@@ -85,6 +85,7 @@ extension MyFavoriteCell {
         setupLabel(waitingTimeLabel)
         setupLabel(feesLabel)
     }
+    
     private func setupRatingView() {
         ratingView.settings.updateOnTouch = false
         ratingView.backgroundColor = .clear
@@ -118,11 +119,11 @@ extension MyFavoriteCell {
 }
 
 extension CellButtonDelegate {
-    func showDeleteAlert(customTableViewCell: UITableViewCell){
+    func deleteTapped(customTableViewCell: UITableViewCell){
         
     }
     
-    func viewProfileAlert(customTableViewCell: UITableViewCell) {
+    func viewProfile(customTableViewCell: UITableViewCell) {
         
     }
     
@@ -130,7 +131,7 @@ extension CellButtonDelegate {
 
     }
     
-    func bookNowAlert(customTableViewCell: UITableViewCell) {
+    func bookNow(customTableViewCell: UITableViewCell) {
         
     }
     

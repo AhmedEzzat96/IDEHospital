@@ -42,16 +42,10 @@ extension ResetPasswordViewModel {
                 
             case .success(let response):
                 if response.code == 202 && response.success == true {
-                    self.view?.showAlert(title: L10n.yourRequestWasSent, message: L10n.resetPasswordMsg, handler: { [weak self] (alert) in
-                        
-                        DispatchQueue.main.async {
-                            self?.view?.goToHomeScreen()
-                        }
-                        
-                    })
+                    self.view?.showAlert(.success(L10n.resetPasswordMsg), okButtonAction: .switchToHome)
                 } else {
-                    if let error = response.errors?.email?[0] {
-                        self.view?.showAlert(title: L10n.warning, message: error, handler: nil)
+                    if let emailError = response.errors?.email?[0] {
+                        self.view?.showAlert(.failure(emailError), okButtonAction: .dismissCurrent)
                     }
                 }
             case .failure(let error):
@@ -63,7 +57,7 @@ extension ResetPasswordViewModel {
     
     private func validateEmail(with user: User?) -> Bool {
         if let emailError = ValidationManager.shared().isValidData(with: .email(user?.email)) {
-            self.view?.showAlert(title: L10n.sorry, message: emailError, handler: nil)
+            self.view?.showAlert(.failure(emailError), okButtonAction: .dismissCurrent)
             return false
         }
         return true

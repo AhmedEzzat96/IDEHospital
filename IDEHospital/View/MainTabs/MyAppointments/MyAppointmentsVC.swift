@@ -13,7 +13,7 @@ protocol MyAppointmentsVCProtocol: class {
     func hideLoader()
     func reloadData()
     func isHidden(tableView: Bool, noItemsFound: Bool)
-    func showAlert(title: String, message: String, actions: [((UIAlertAction) -> Void)?]?)
+    func showAlert(message: String)
 }
 
 class MyAppointmentsVC: UIViewController {
@@ -109,20 +109,29 @@ extension MyAppointmentsVC: MyAppointmentsVCProtocol {
         self.myAppointmentsView.noAppointmentsLabel.isHidden = noItemsFound
     }
     
-    func showAlert(title: String, message: String, actions: [((UIAlertAction) -> Void)?]?) {
-        self.openAlert(title: title, message: message, alertStyle: .alert, actionTitles: [L10n.no, L10n.yes], actionStyles: [.cancel, .destructive], actions: actions)
+    func showAlert(message: String) {
+        let yesOrNoPopUp = YesOrNoPopUpVC.create(title: message)
+        yesOrNoPopUp.delegate = self
+        present(yesOrNoPopUp, animated: true, completion: nil)
     }
 }
 
 //MARK:- ShowAlert Delegate
 extension MyAppointmentsVC: CellButtonDelegate {
-    func showDeleteAlert(customTableViewCell: UITableViewCell) {
-        guard let indexPath = myAppointmentsView.tableView.indexPath(for: customTableViewCell) else {return}
-        viewModel.showDeleteAlert(with: indexPath.row)
+    func deleteTapped(customTableViewCell: UITableViewCell) {
+        guard let indexPath = myAppointmentsView.tableView.indexPath(for: customTableViewCell) else { return }
+        viewModel.deleteTapped(with: indexPath.row)
     }
     
     func viewOnMap(customTableViewCell: UITableViewCell) {
-        guard let indexPath = myAppointmentsView.tableView.indexPath(for: customTableViewCell) else {return}
+        guard let indexPath = myAppointmentsView.tableView.indexPath(for: customTableViewCell) else { return }
         viewModel.openMapForPlace(for: indexPath.row)
+    }
+}
+
+// MARK:- YesOrNoPopUpDelegate
+extension MyAppointmentsVC: YesOrNoPopUpVCDelegate {
+    func yesPressed() {
+        viewModel.removeAppointment()
     }
 }

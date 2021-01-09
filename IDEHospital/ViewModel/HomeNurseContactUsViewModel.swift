@@ -14,6 +14,7 @@ protocol HomeNurseContactUsViewModelProtocol {
     func textViewShouldEndEditing(text: String)
     func requestTapped(with requestData: RequestData)
     func getPlaceHolder() -> String
+    func okTapped()
 }
 
 class HomeNurseContactUsViewModel {
@@ -43,15 +44,12 @@ extension HomeNurseContactUsViewModel {
         APIManager.sendRequest(request) { [weak self] (response) in
             switch response {
             case .success(let response):
-                print(response.code)
                 if response.success, response.code == 202 {
-                    self?.view?.showAlert(title: L10n.done, message: L10n.yourRequestWasSent) { (action) in
-                        self?.popOrDismiss()
-                    }
+                    self?.view?.showAlert(type: .success(L10n.yourRequestWasSent), okButtonAction: .delegation)
                 }
             case .failure(let error):
                 print(error)
-                self?.view?.showAlert(title: L10n.sorry, message: error.localizedDescription, handler: nil)
+                self?.view?.showAlert(type: .failure(L10n.responseError), okButtonAction: .dismissCurrent)
             }
             self?.view?.hideLoader()
         }
@@ -109,25 +107,29 @@ extension HomeNurseContactUsViewModel: HomeNurseContactUsViewModelProtocol {
     func requestTapped(with requestData: RequestData) {
         
         if let nameError = ValidationManager.shared().isValidData(with: .name(requestData.name)) {
-            self.view?.showAlert(title: L10n.sorry, message: nameError, handler: nil)
+            self.view?.showAlert(type: .failure(nameError), okButtonAction: .dismissCurrent)
             return
         }
         
         if let emailError = ValidationManager.shared().isValidData(with: .email(requestData.email)) {
-            self.view?.showAlert(title: L10n.sorry, message: emailError, handler: nil)
+            self.view?.showAlert(type: .failure(emailError), okButtonAction: .dismissCurrent)
             return
         }
         
         if let phoneError = ValidationManager.shared().isValidData(with: .phone(requestData.mobile)) {
-            self.view?.showAlert(title: L10n.sorry, message: phoneError, handler: nil)
+            self.view?.showAlert(type: .failure(phoneError), okButtonAction: .dismissCurrent)
             return
         }
         
         if let messageError = ValidationManager.shared().isValidData(with: .message(requestData.message)) {
-            self.view?.showAlert(title: L10n.sorry, message: messageError, handler: nil)
+            self.view?.showAlert(type: .failure(messageError), okButtonAction: .dismissCurrent)
             return
         } else {
             sendRequest(with: requestData)
         }
+    }
+    
+    func okTapped() {
+        popOrDismiss()
     }
 }

@@ -47,16 +47,12 @@ extension ResetPasswordVC {
 
 //MARK:- Auth Protocol
 extension ResetPasswordVC: AuthProtocol {
-    func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)?) {
-        self.showSimpleAlert(title: title, message: message, handler: handler)
+    func showAlert(_ type: PopUpType, okButtonAction: OkButtonAction) {
+        showSimpleAlert(type: type, okButtonAction: okButtonAction)
     }
     
     func goToHomeScreen() {
-        let window = AppDelegate.sharedInstance().window
-        let homeVC = HomeVC.create()
-        let homeNav = UINavigationController(rootViewController: homeVC)
-        window?.rootViewController = homeNav
-        
+        switchToHome()
     }
     
     func showLoader() {

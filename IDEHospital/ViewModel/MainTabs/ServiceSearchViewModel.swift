@@ -37,7 +37,8 @@ extension ServiceSearchViewModel {
         APIManager.getCategoriesData(with: categoriesID) { [weak self] (response) in
             switch response {
             case .failure(let error):
-                self?.view?.showAlert(title: L10n.sorry, message: error.localizedDescription)
+                print(error)
+                self?.view?.showAlert(type: .failure(L10n.responseError))
             case .success(let categoryResponse):
                 self?.categoryData = categoryResponse.data
             }

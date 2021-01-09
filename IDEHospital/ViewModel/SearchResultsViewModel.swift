@@ -15,7 +15,7 @@ protocol SearchResultsViewModelProtocol {
     func getItemsCount() -> Int
     func getItem(for row: Int) -> DoctorResultsResponse
     func willDisplay(_ row: Int)
-    func bookNowAlert(with row: Int)
+    func bookNow(with row: Int)
     func addRemoveFavorite(with row: Int)
 }
 
@@ -51,7 +51,7 @@ extension SearchResultsViewModel {
                 self?.view?.showNoDoctrosFoundLabel()
             case .failure(let error):
                 print(error)
-                self?.view?.showAlert(title: L10n.sorry, message: error.localizedDescription)
+                self?.view?.showAlert(type: .failure(L10n.responseError))
             }
             self?.view?.hideLoader()
         }
@@ -105,14 +105,13 @@ extension SearchResultsViewModel: SearchResultsViewModelProtocol {
         }
     }
     
-    func bookNowAlert(with row: Int) {
-        view?.showAlert(title: L10n.sorry, message: L10n.feature)
-        print(searchResults.items[row].id)
+    func bookNow(with row: Int) {
+        view?.goToDoctorProfile(with: searchResults.items[row].id)
     }
     
     func addRemoveFavorite(with row: Int) {
         guard UserDefaultsManager.shared().token != nil else {
-            self.view?.showAlert(title: L10n.warning, message: L10n.addOrRemoveFavorite)
+            self.view?.showAlert(type: .failure(L10n.addOrRemoveFavorite))
             return
         }
         APIManager.addRemoveFavorite(with: searchResults.items[row].id) { [weak self] (success) in

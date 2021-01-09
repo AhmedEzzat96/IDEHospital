@@ -9,9 +9,16 @@
 import UIKit
 
 extension UIViewController {
-    func showSimpleAlert(title: String, message: String?, handler: ((UIAlertAction) -> Void)? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: L10n.ok, style: .cancel, handler: handler))
-        present(alert, animated: true)
+    func showSimpleAlert(type: PopUpType, okButtonAction: OkButtonAction = .dismissCurrent, delegate: SuccessOrFailurePopUpOkButtonDelegate? = nil) {
+        let successOrFailurePopUpVC = SuccessOrFailurePopUpVC.create(type, okButtonAction: okButtonAction)
+        successOrFailurePopUpVC.delegate = delegate
+        present(successOrFailurePopUpVC, animated: true)
+    }
+    
+    @objc func switchToHome() {
+        let window = AppDelegate.sharedInstance().window
+        let homeVC = HomeVC.create()
+        let homeNav = UINavigationController(rootViewController: homeVC)
+        window?.rootViewController = homeNav
     }
 }

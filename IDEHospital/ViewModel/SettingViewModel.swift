@@ -12,6 +12,7 @@ protocol SettingViewModelProtocol {
     func settingCount() -> Int
     func configureModel()
     func getSetting(for index: Int) -> Setting
+    func logOut()
 }
 
 class SettingViewModel {
@@ -27,24 +28,8 @@ class SettingViewModel {
 
 //MARK:- Private Methods
 extension SettingViewModel {
-    private func logout() {
-        APIManager.logout { [weak self] (result) in
-            switch result {
-            case .success(let response):
-                if response.code == 202 && response.success == true {
-                    UserDefaultsManager.shared().token = nil
-                    self?.view?.goToHome()
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
     private func logoutAlert() {
-        self.view?.alertWithAction(title: L10n.logoutTitle, message: L10n.logoutMessage, handler: { [weak self] (alert) in
-            self?.logout()
-        })
+        self.view?.alertWithAction(message: L10n.logoutMessage)
     }
 }
 
@@ -75,7 +60,7 @@ extension SettingViewModel: SettingViewModelProtocol {
         }
         
         let editProfile = Setting(title: L10n.editProfile, icon: Asset.editProfile.image) { [weak self] in
-            self?.view?.showAlert(title: L10n.sorry, message: L10n.feature)
+            self?.view?.showAlert(type: .failure(L10n.feature))
         }
         
         let favorites = Setting(title: L10n.favorites, icon: Asset.heart3.image) { [weak self] in
@@ -108,6 +93,23 @@ extension SettingViewModel: SettingViewModelProtocol {
             return data[1][index]
         } else {
             return data[0][index]
+        }
+    }
+    
+    func logOut() {
+        view?.showLoader()
+        APIManager.logout { [weak self] (result) in
+            switch result {
+            case .success(let response):
+                if response.code == 202 && response.success == true {
+                    UserDefaultsManager.shared().token = nil
+                    self?.view?.goToHome()
+                }
+            case .failure(let error):
+                print(error)
+                self?.view?.showAlert(type: .failure(L10n.responseError))
+            }
+            self?.view?.hideLoader()
         }
     }
 }

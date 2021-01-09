@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Confirm Appointment Pop UpVC-->
+        <scene sceneID="ehh-Pq-o1B">
+            <objects>
+                <viewController storyboardIdentifier="ConfirmAppointmentPopUpVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="WwF-o9-mv6" customClass="ConfirmAppointmentPopUpVC" customModule="IDEHospital" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Jg-9w-QcC" customClass="ConfirmAppointmentPopUpView" customModule="IDEHospital" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A78-Yp-thA">
+                                <rect key="frame" x="12.5" y="257.5" width="350" height="152"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8b-9U-e5f">
+                                        <rect key="frame" x="313" y="5" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="4b8-2e-RFq"/>
+                                            <constraint firstAttribute="height" constant="24" id="p8h-Qi-kFS"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="WwF-o9-mv6" eventType="touchUpInside" id="U4U-7B-mQk"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1w-Rc-905">
+                                        <rect key="frame" x="154" y="26" width="42" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="3T1-ho-lRx">
+                                        <rect key="frame" x="15" y="49.5" width="320" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqI-am-42e" customClass="CustomButton" customModule="IDEHospital" customModuleProvider="target">
+                                        <rect key="frame" x="125" y="74" width="100" height="25"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="confirmButtonPressed:" destination="WwF-o9-mv6" eventType="touchUpInside" id="3sV-Gp-cz1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="c8b-9U-e5f" secondAttribute="trailing" constant="13" id="1fj-Zv-Ys4"/>
+                                    <constraint firstItem="p1w-Rc-905" firstAttribute="centerY" secondItem="A78-Yp-thA" secondAttribute="centerY" multiplier="0.455" id="5o4-OS-uof"/>
+                                    <constraint firstItem="GqI-am-42e" firstAttribute="top" secondItem="3T1-ho-lRx" secondAttribute="bottom" multiplier="1.06" id="7zq-fY-CnU"/>
+                                    <constraint firstAttribute="height" constant="152" id="EET-C6-72h"/>
+                                    <constraint firstItem="p1w-Rc-905" firstAttribute="height" secondItem="A78-Yp-thA" secondAttribute="height" multiplier="0.111842" id="Edw-8b-ocK"/>
+                                    <constraint firstItem="GqI-am-42e" firstAttribute="width" secondItem="A78-Yp-thA" secondAttribute="width" multiplier="0.285714" id="FZl-We-HIa"/>
+                                    <constraint firstItem="c8b-9U-e5f" firstAttribute="top" secondItem="A78-Yp-thA" secondAttribute="top" constant="5" id="JEg-8U-91O"/>
+                                    <constraint firstItem="GqI-am-42e" firstAttribute="centerX" secondItem="3T1-ho-lRx" secondAttribute="centerX" id="K0B-Uh-f0f"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="GqI-am-42e" secondAttribute="bottom" constant="14" id="LY1-X3-3tP"/>
+                                    <constraint firstItem="3T1-ho-lRx" firstAttribute="top" secondItem="p1w-Rc-905" secondAttribute="bottom" multiplier="1.15" id="OAS-ub-dNm"/>
+                                    <constraint firstAttribute="trailing" secondItem="3T1-ho-lRx" secondAttribute="trailing" constant="15" id="TYP-U5-goc"/>
+                                    <constraint firstItem="GqI-am-42e" firstAttribute="height" secondItem="A78-Yp-thA" secondAttribute="height" multiplier="0.164474" id="dyF-rW-2tK"/>
+                                    <constraint firstItem="3T1-ho-lRx" firstAttribute="centerX" secondItem="p1w-Rc-905" secondAttribute="centerX" id="rQ5-Dy-dEa"/>
+                                    <constraint firstItem="p1w-Rc-905" firstAttribute="centerX" secondItem="A78-Yp-thA" secondAttribute="centerX" id="wTQ-1I-uOP"/>
+                                    <constraint firstItem="3T1-ho-lRx" firstAttribute="leading" secondItem="A78-Yp-thA" secondAttribute="leading" constant="15" id="yzy-kx-IAK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="A78-Yp-thA" firstAttribute="centerY" secondItem="gaC-gp-cOK" secondAttribute="centerY" id="0jA-Ft-h0h"/>
+                            <constraint firstItem="A78-Yp-thA" firstAttribute="centerX" secondItem="gaC-gp-cOK" secondAttribute="centerX" id="Aem-K4-ShQ"/>
+                            <constraint firstItem="A78-Yp-thA" firstAttribute="width" secondItem="3Jg-9w-QcC" secondAttribute="width" multiplier="0.933333" id="iPp-Ps-E3r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gaC-gp-cOK"/>
+                        <connections>
+                            <outlet property="cancelButton" destination="c8b-9U-e5f" id="JKJ-Qw-6fb"/>
+                            <outlet property="confirmAppointmentLabel" destination="p1w-Rc-905" id="mM6-u0-xFE"/>
+                            <outlet property="confirmButton" destination="GqI-am-42e" id="hCe-RS-9yu"/>
+                            <outlet property="dateAndTimeLabel" destination="3T1-ho-lRx" id="lxa-Sl-Poa"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="mainView" destination="3Jg-9w-QcC" id="Frg-R0-Hr5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fIT-Du-Z2E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10.4" y="156.97151424287858"/>
+        </scene>
+    </scenes>
+</document>

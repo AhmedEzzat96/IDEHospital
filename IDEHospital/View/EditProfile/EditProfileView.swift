@@ -25,17 +25,34 @@ class EditProfileView: UIView {
         setupTextFields()
         setupButtons()
     }
+    
+    func showData(with user: AuthData) {
+        self.nameTextField.text = user.name
+        self.emailTextField.text = user.email
+        self.mobileNoTextField.text = user.mobile
+    }
 }
 
 // MARK:- Private Methods
 extension EditProfileView {
     private func setupTextFields() {
         nameTextField.setup(leftImage: Asset.name.image, placeholder: L10n.yourName)
+        setupTextField(textField: nameTextField)
         emailTextField.setup(leftImage: Asset.email.image, placeholder: L10n.yourEmail)
+        setupTextField(textField: emailTextField, keyboardType: .emailAddress)
         mobileNoTextField.setup(leftImage: Asset.phone.image, placeholder: L10n.mobileNumber)
+        setupTextField(textField: mobileNoTextField, keyboardType: .asciiCapableNumberPad)
         oldPasswordTextField.setup(leftImage: Asset.password.image, placeholder: "********")
+        setupTextField(textField: oldPasswordTextField, isSecured: true)
         newPasswordTextField.setup(leftImage: Asset.password.image, placeholder: L10n.setNewPassword)
+        setupTextField(textField: newPasswordTextField, isSecured: true)
         confirmPasswordTextField.setup(leftImage: Asset.password.image, placeholder: L10n.confirmPassword)
+        setupTextField(textField: confirmPasswordTextField, isSecured: true)
+    }
+    
+    private func setupTextField(textField: UITextField, keyboardType: UIKeyboardType = .default, isSecured: Bool = false) {
+        textField.keyboardType = keyboardType
+        textField.isSecureTextEntry = isSecured
     }
     
     private func setupButtons() {

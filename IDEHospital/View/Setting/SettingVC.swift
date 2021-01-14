@@ -14,6 +14,7 @@ protocol SettingVCProtocol: class {
     func goToAppointment()
     func goToHome()
     func goToContactUs()
+    func goToEditProfile()
     func goToAboutUsOrTerms(status: InfoType)
     func goToShare()
     func showAlert(type: PopUpType)
@@ -163,6 +164,14 @@ extension SettingVC: SettingVCProtocol {
             activityVC.popoverPresentationController?.sourceView = settingView.tableView
             self.present(activityVC, animated: true)
         }
+    }
+    
+    func goToEditProfile() {
+        let editProfileVC = EditProfileVC.create()
+        editProfileVC.setupNavigationItems(backAction: .dismissCurrent, isSettingEnable: false)
+        let editProfileNav = UINavigationController(rootViewController: editProfileVC)
+        editProfileNav.modalPresentationStyle = .fullScreen
+        present(editProfileNav, animated: true)
     }
     
     func showLoader() {

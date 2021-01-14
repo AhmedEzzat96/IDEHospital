@@ -25,6 +25,7 @@ struct Storyboards {
     static let yesOrNoPopUp = "YesOrNoPopUp"
     static let successOrFailurePopUp = "SuccessOrFailurePopUp"
     static let doctorProfile = "DoctorProfile"
+    static let editProfile = "EditProfile"
 }
 
 // ViewControllers
@@ -46,6 +47,7 @@ struct ViewControllers {
     static let yesOrNoPopUpVC = "YesOrNoPopUpVC"
     static let successOrFailurePopUpVC = "SuccessOrFailurePopUpVC"
     static let doctorProfileVC = "DoctorProfileVC"
+    static let editProfileVC = "EditProfileVC"
 }
 
 // UserDefaultsKeys
@@ -72,6 +74,7 @@ struct URLs {
     static let doctor = "/doctors"
     static let review = "/reviews"
     static let doctorAppointments = "/appointments"
+    static let user = "/user"
 }
 
 // HeaderKeys

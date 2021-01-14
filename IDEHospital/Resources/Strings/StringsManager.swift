@@ -74,6 +74,10 @@ internal enum L10n {
   internal static let donTHaveAccount = L10n.tr("Localizable", "don’tHaveAccount")
   /// Edit Profile
   internal static let editProfile = L10n.tr("Localizable", "editProfile")
+  /// Your Profile is edited succefully
+  internal static let editProfileMessage = L10n.tr("Localizable", "editProfileMessage")
+  /// EDIT PROFILE
+  internal static let editProfileNav = L10n.tr("Localizable", "editProfileNav")
   /// email field is empty
   internal static let emailEmpty = L10n.tr("Localizable", "emailEmpty")
   /// Email should be : example@mail.com
@@ -164,6 +168,10 @@ internal enum L10n {
   internal static let number = L10n.tr("Localizable", "number")
   /// OK
   internal static let ok = L10n.tr("Localizable", "ok")
+  /// old password field is empty
+  internal static let oldPasswordEmpty = L10n.tr("Localizable", "oldPasswordEmpty")
+  /// Old password must be at least 6 characters.
+  internal static let oldPasswordRequirements = L10n.tr("Localizable", "oldPasswordRequirements")
   /// password field is empty
   internal static let passwordEmpty = L10n.tr("Localizable", "passwordEmpty")
   /// The password must be at least 6 characters.

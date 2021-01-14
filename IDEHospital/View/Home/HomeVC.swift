@@ -31,6 +31,7 @@ class HomeVC: UIViewController {
         viewModel.mainCategoriesData()
         setupNavController(title: L10n.chooseServices)
         setupCollectionView()
+        print(UserDefaultsManager.shared().token ?? "")
     }
     
     //MARK:- Public Methods

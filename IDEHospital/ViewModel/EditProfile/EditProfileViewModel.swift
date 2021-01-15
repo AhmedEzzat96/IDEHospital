@@ -75,8 +75,12 @@ extension EditProfileViewModel {
                 if response.code == 200 && response.success == true {
                     self?.view?.showAlert(.success(L10n.editProfileMessage), okButtonAction: .delegation)
                 } else {
-                    guard let emailError = response.errors?.email else { return }
-                    self?.view?.showAlert(.failure(emailError[0]), okButtonAction: .dismissCurrent)
+                    if let emailError = response.errors?.email {
+                        self?.view?.showAlert(.failure(emailError[0]), okButtonAction: .dismissCurrent)
+                    }
+                    if let passwordError = response.message {
+                        self?.view?.showAlert(.failure(passwordError), okButtonAction: .dismissCurrent)
+                    }
                 }
             case .failure(let error):
                 print(error)

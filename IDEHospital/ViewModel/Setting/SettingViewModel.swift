@@ -60,7 +60,7 @@ extension SettingViewModel: SettingViewModelProtocol {
         }
         
         let editProfile = Setting(title: L10n.editProfile, icon: Asset.editProfile.image) { [weak self] in
-            self?.view?.showAlert(type: .failure(L10n.feature))
+            self?.view?.goToEditProfile()
         }
         
         let favorites = Setting(title: L10n.favorites, icon: Asset.heart3.image) { [weak self] in

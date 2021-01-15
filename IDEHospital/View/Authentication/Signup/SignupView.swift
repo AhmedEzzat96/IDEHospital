@@ -35,7 +35,7 @@ extension SignupView {
         nameTextField.setup(leftImage: Asset.name.image, placeholder: L10n.yourName)
         emailTextField.keyboardType = .emailAddress
         emailTextField.setup(leftImage: Asset.email.image, placeholder: L10n.yourEmail)
-        mobileNoTextField.keyboardType = .numberPad
+        mobileNoTextField.keyboardType = .asciiCapableNumberPad
         mobileNoTextField.setup(leftImage: Asset.phone.image, placeholder: L10n.mobileNumber)
         passwordTextField.isSecureTextEntry = true
         passwordTextField.setup(leftImage: Asset.password.image, placeholder: L10n.choosePassword)

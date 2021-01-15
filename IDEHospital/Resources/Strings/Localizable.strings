@@ -79,6 +79,7 @@
 "loginNav" = "LOGIN";
 "warning" = "Warning!";
 "incorrectPassword" = "Incorrect Password";
+"oldPasswordRequirements" = "Old password must be at least 6 characters.";
 "passwordRequirements" = "The password must be at least 6 characters.";
 "confirmPasswordAlert" = "Your password and confirmation password do not match.";
 "resetPasswordMsg" = "Check your mail to reset your password.";
@@ -99,6 +100,7 @@
 "yourMsg" = " Your Message";
 "nameEmpty" = "name field is empty";
 "emailEmpty" = "email field is empty";
+"oldPasswordEmpty" = "old password field is empty";
 "passwordEmpty" = "password field is empty";
 "confirmPwEmpty" = "confirm password field is empty";
 "phoneEmpty" = "mobile No. field is empty";
@@ -131,3 +133,5 @@
 "mustRegister" = "You must be registered to access this page";
 "noAppointments" = "No appointments found for this date";
 "mustAuthenticate" = "Must be Authenticated";
+"editProfileNav" = "EDIT PROFILE";
+"editProfileMessage" = "Your Profile is edited succefully";

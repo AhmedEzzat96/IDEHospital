@@ -168,6 +168,10 @@ internal enum L10n {
   internal static let nameEmpty = L10n.tr("Localizable", "nameEmpty")
   /// Name should contain letters only, at least 3 characters and and at most 18 characters
   internal static let nameRequirements = L10n.tr("Localizable", "nameRequirements")
+  /// new password field is empty
+  internal static let newPasswordEmpty = L10n.tr("Localizable", "newPasswordEmpty")
+  /// New password must be at least 6 characters.
+  internal static let newPasswordRequirements = L10n.tr("Localizable", "newPasswordRequirements")
   /// No
   internal static let no = L10n.tr("Localizable", "no")
   /// No Appointments Found!

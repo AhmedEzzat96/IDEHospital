@@ -16,13 +16,14 @@ enum ValidationError {
     case message(_ message: String?)
     case oldPassword(_ oldPassword: String?)
     case password(_ password: String?)
+    case newPassword(_ newPassword: String?)
     case confirmPassword(_ confirmPassword: String?)
     case reviewComment(_ reviewComment: String?)
     case voucher(_ voucher: String?)
     
     var emptyField: Bool {
         switch self {
-        case .name(let text), .email(let text), .password(let text), .message(let text), .phone(let text), .confirmPassword(let text), .reviewComment(let text), .voucher(let text), .oldPassword(let text):
+        case .name(let text), .email(let text), .password(let text), .message(let text), .phone(let text), .confirmPassword(let text), .reviewComment(let text), .voucher(let text), .oldPassword(let text), .newPassword(let text):
             guard let trimmedText = text?.trimmed else { return false }
             return !trimmedText.isEmpty
         }
@@ -38,7 +39,7 @@ enum ValidationError {
             return phone!.isValidPhone
         case .message(let message):
             return message != L10n.yourMsg && message != L10n.enterDetails
-        case .password(let password), .oldPassword(let password):
+        case .password(let password), .oldPassword(let password), .newPassword(let password):
             return password!.isValidPassword
         case .reviewComment(let text), .voucher(let text):
             return text!.trimmed.count >= 3
@@ -59,6 +60,8 @@ enum ValidationError {
             return (L10n.dataRequirements, L10n.dataRequirements)
         case .oldPassword:
             return (L10n.oldPasswordEmpty, L10n.oldPasswordRequirements)
+        case .newPassword:
+            return (L10n.newPasswordEmpty, L10n.newPasswordRequirements)
         case .password:
             return (L10n.passwordEmpty, L10n.passwordRequirements)
         case .confirmPassword:

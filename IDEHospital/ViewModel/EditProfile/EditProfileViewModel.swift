@@ -41,15 +41,18 @@ extension EditProfileViewModel {
             return false
         }
         
-        guard let oldPassword = oldPassword else { return false }
-        if !oldPassword.isEmpty {
+        guard let oldPassword = oldPassword,
+              let newPassword = newPassword,
+              let confirmPassword = confirmPassword else { return false }
+        
+        if !oldPassword.isEmpty || !newPassword.isEmpty || !confirmPassword.isEmpty {
             if let oldPasswordError = ValidationManager.shared().isValidData(with: .oldPassword(oldPassword)) {
                 self.view?.showAlert(.failure(oldPasswordError), okButtonAction: .dismissCurrent)
                 return false
             }
             
-            if let passwordError = ValidationManager.shared().isValidData(with: .password(newPassword)) {
-                self.view?.showAlert(.failure(passwordError), okButtonAction: .dismissCurrent)
+            if let newPasswordError = ValidationManager.shared().isValidData(with: .newPassword(newPassword)) {
+                self.view?.showAlert(.failure(newPasswordError), okButtonAction: .dismissCurrent)
                 return false
             }
             

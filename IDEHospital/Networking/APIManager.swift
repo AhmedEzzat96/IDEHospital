@@ -117,6 +117,12 @@ class APIManager {
             completion(response)
         }
     }
+    
+    class func AuthAndBook(_ authAndBookRequest: URLRequestConvertible, completion: @escaping (Result<AuthResponse, Error>) -> Void) {
+        request(authAndBookRequest) { (response) in
+            completion(response)
+        }
+    }
 }
 
 extension APIManager {

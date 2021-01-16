@@ -85,6 +85,7 @@
 		06FE099025A34E050002F0A4 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FE098F25A34E050002F0A4 /* Doctor.swift */; };
 		06FE099225A34FF10002F0A4 /* DoctorProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FE099125A34FF10002F0A4 /* DoctorProfileViewModel.swift */; };
 		97D6CEE065259CA6151A715D /* Pods_IDEHospital.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C6039448DDB167416F6840 /* Pods_IDEHospital.framework */; };
+		990184FD25B2A7AF00D8C179 /* UserAndBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990184FC25B2A7AF00D8C179 /* UserAndBooking.swift */; };
 		9907ED9625A3B55100C42E7B /* VoucherPopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9907ED9525A3B55100C42E7B /* VoucherPopUp.storyboard */; };
 		9907ED9A25A3DDBE00C42E7B /* VoucherPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907ED9925A3DDBE00C42E7B /* VoucherPopUpVC.swift */; };
 		9907ED9C25A3DDDA00C42E7B /* VoucherPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907ED9B25A3DDDA00C42E7B /* VoucherPopUpView.swift */; };
@@ -102,6 +103,7 @@
 		9907EDB725A4FAFB00C42E7B /* SuccessOrFailurePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907EDB625A4FAFB00C42E7B /* SuccessOrFailurePopUpView.swift */; };
 		9907EDB925A4FB1900C42E7B /* SuccessOrFailurePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907EDB825A4FB1900C42E7B /* SuccessOrFailurePopUpVC.swift */; };
 		9907EDBB25A4FC5D00C42E7B /* SuccessOrFailurePopUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907EDBA25A4FC5D00C42E7B /* SuccessOrFailurePopUpViewModel.swift */; };
+		990B981525B23B2E000F6E9B /* UnAuthenticatedPopUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990B981425B23B2E000F6E9B /* UnAuthenticatedPopUpViewModel.swift */; };
 		991B7B6B258681CB00700114 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991B7B6A258681CB00700114 /* Localizable.strings */; };
 		991B7B6D2586877400700114 /* FontsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B7B6C2586877400700114 /* FontsManager.swift */; };
 		991B7B6F2586878300700114 /* StringsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B7B6E2586878300700114 /* StringsManager.swift */; };
@@ -130,6 +132,9 @@
 		99697C62257F803900B6BFBE /* ServiceSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99697C61257F803900B6BFBE /* ServiceSearch.storyboard */; };
 		99697C65257F80BD00B6BFBE /* ServiceSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99697C64257F80BD00B6BFBE /* ServiceSearchVC.swift */; };
 		99697C67257F80DB00B6BFBE /* ServiceSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99697C66257F80DB00B6BFBE /* ServiceSearchView.swift */; };
+		996BABA025AA8FF50005B57A /* UnAuthenticatedPopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996BAB9F25AA8FF50005B57A /* UnAuthenticatedPopUp.storyboard */; };
+		996BABA225AA971E0005B57A /* UnAuthenticatedPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996BABA125AA971E0005B57A /* UnAuthenticatedPopUpVC.swift */; };
+		996BABA725AA98090005B57A /* UnAuthenticatedPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996BABA625AA98090005B57A /* UnAuthenticatedPopUpView.swift */; };
 		998F8B14258E41BA006AB00A /* SearchResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 998F8B13258E41BA006AB00A /* SearchResults.storyboard */; };
 		9990F7ED258D751B00991401 /* SearchResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9990F7EB258D751B00991401 /* SearchResultsCell.swift */; };
 		9990F7EE258D751B00991401 /* SearchResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9990F7EC258D751B00991401 /* SearchResultsCell.xib */; };
@@ -228,6 +233,7 @@
 		06FE099125A34FF10002F0A4 /* DoctorProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorProfileViewModel.swift; sourceTree = "<group>"; };
 		39C6039448DDB167416F6840 /* Pods_IDEHospital.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDEHospital.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8569C0829D2161F9E9E57603 /* Pods-IDEHospital.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDEHospital.release.xcconfig"; path = "Target Support Files/Pods-IDEHospital/Pods-IDEHospital.release.xcconfig"; sourceTree = "<group>"; };
+		990184FC25B2A7AF00D8C179 /* UserAndBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAndBooking.swift; sourceTree = "<group>"; };
 		9907ED9525A3B55100C42E7B /* VoucherPopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VoucherPopUp.storyboard; sourceTree = "<group>"; };
 		9907ED9925A3DDBE00C42E7B /* VoucherPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherPopUpVC.swift; sourceTree = "<group>"; };
 		9907ED9B25A3DDDA00C42E7B /* VoucherPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherPopUpView.swift; sourceTree = "<group>"; };
@@ -245,6 +251,7 @@
 		9907EDB625A4FAFB00C42E7B /* SuccessOrFailurePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessOrFailurePopUpView.swift; sourceTree = "<group>"; };
 		9907EDB825A4FB1900C42E7B /* SuccessOrFailurePopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessOrFailurePopUpVC.swift; sourceTree = "<group>"; };
 		9907EDBA25A4FC5D00C42E7B /* SuccessOrFailurePopUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessOrFailurePopUpViewModel.swift; sourceTree = "<group>"; };
+		990B981425B23B2E000F6E9B /* UnAuthenticatedPopUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnAuthenticatedPopUpViewModel.swift; sourceTree = "<group>"; };
 		991B7B6A258681CB00700114 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		991B7B6C2586877400700114 /* FontsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsManager.swift; sourceTree = "<group>"; };
 		991B7B6E2586878300700114 /* StringsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringsManager.swift; sourceTree = "<group>"; };
@@ -273,6 +280,9 @@
 		99697C61257F803900B6BFBE /* ServiceSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServiceSearch.storyboard; sourceTree = "<group>"; };
 		99697C64257F80BD00B6BFBE /* ServiceSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchVC.swift; sourceTree = "<group>"; };
 		99697C66257F80DB00B6BFBE /* ServiceSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchView.swift; sourceTree = "<group>"; };
+		996BAB9F25AA8FF50005B57A /* UnAuthenticatedPopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UnAuthenticatedPopUp.storyboard; sourceTree = "<group>"; };
+		996BABA125AA971E0005B57A /* UnAuthenticatedPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnAuthenticatedPopUpVC.swift; sourceTree = "<group>"; };
+		996BABA625AA98090005B57A /* UnAuthenticatedPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnAuthenticatedPopUpView.swift; sourceTree = "<group>"; };
 		998F8B13258E41BA006AB00A /* SearchResults.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResults.storyboard; sourceTree = "<group>"; };
 		9990F7EB258D751B00991401 /* SearchResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsCell.swift; sourceTree = "<group>"; };
 		9990F7EC258D751B00991401 /* SearchResultsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsCell.xib; sourceTree = "<group>"; };
@@ -705,6 +715,7 @@
 			children = (
 				06EB2E992599268500AFEE13 /* User.swift */,
 				06EB2E9B259926F500AFEE13 /* AuthResponse.swift */,
+				990184FC25B2A7AF00D8C179 /* UserAndBooking.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -812,6 +823,7 @@
 				9907EDA025A43F9A00C42E7B /* ConfirmAppointmentPopUp.storyboard */,
 				9907EDAB25A49F0800C42E7B /* YesOrNoPopUp.storyboard */,
 				9907EDB425A4FAE000C42E7B /* SuccessOrFailurePopUp.storyboard */,
+				996BAB9F25AA8FF50005B57A /* UnAuthenticatedPopUp.storyboard */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -823,6 +835,7 @@
 				9907EDA225A4442D00C42E7B /* ConfirmAppointmentPopUp */,
 				9907ED9825A3DD9B00C42E7B /* VoucherPopUp */,
 				99EEA1C025A638680081D336 /* SuccessOrFailurePopUp */,
+				996BABA525AA97560005B57A /* UnAuthenticatedPopUp */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -843,6 +856,7 @@
 				9907EDA925A481A700C42E7B /* ConfirmAppointmentPopUpViewModel.swift */,
 				9907EDB225A4A78F00C42E7B /* YesOrNoPopUpViewModel.swift */,
 				9907EDBA25A4FC5D00C42E7B /* SuccessOrFailurePopUpViewModel.swift */,
+				990B981425B23B2E000F6E9B /* UnAuthenticatedPopUpViewModel.swift */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -967,6 +981,15 @@
 				99697C66257F80DB00B6BFBE /* ServiceSearchView.swift */,
 			);
 			path = ServiceSearch;
+			sourceTree = "<group>";
+		};
+		996BABA525AA97560005B57A /* UnAuthenticatedPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				996BABA125AA971E0005B57A /* UnAuthenticatedPopUpVC.swift */,
+				996BABA625AA98090005B57A /* UnAuthenticatedPopUpView.swift */,
+			);
+			path = UnAuthenticatedPopUp;
 			sourceTree = "<group>";
 		};
 		998F8B15258E41C7006AB00A /* SearchResults */ = {
@@ -1123,6 +1146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9907EDB525A4FAE000C42E7B /* SuccessOrFailurePopUp.storyboard in Resources */,
+				996BABA025AA8FF50005B57A /* UnAuthenticatedPopUp.storyboard in Resources */,
 				06D046D2259B50B000F4B8C2 /* HomeNurseContactUs.storyboard in Resources */,
 				06BB4E1F2585337200D2C4E3 /* Assets.xcassets in Resources */,
 				991ED245259A82E0008E3C76 /* AboutAndTerms.storyboard in Resources */,
@@ -1222,6 +1246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				996BABA225AA971E0005B57A /* UnAuthenticatedPopUpVC.swift in Sources */,
 				06D046D1259B509600F4B8C2 /* MyFavoriteCellViewModel.swift in Sources */,
 				06D046D0259B508000F4B8C2 /* HomeNurseContactUsViewModel.swift in Sources */,
 				06D046CF259B505200F4B8C2 /* HomeNurseContactUsView.swift in Sources */,
@@ -1261,6 +1286,7 @@
 				06EB2E94259910FE00AFEE13 /* LoginView.swift in Sources */,
 				062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */,
 				9907EDB125A4A42F00C42E7B /* YesOrNoPopUpView.swift in Sources */,
+				990184FD25B2A7AF00D8C179 /* UserAndBooking.swift in Sources */,
 				0644BB2C2590F47900963D65 /* MyAppointmentsVC.swift in Sources */,
 				991ED243259A73F2008E3C76 /* AboutAndTerms.swift in Sources */,
 				995901E725A2AD0C00A5D5AF /* ReviewViewModel.swift in Sources */,
@@ -1291,6 +1317,7 @@
 				06EB2E92259910E800AFEE13 /* LoginVC.swift in Sources */,
 				066B5AB425A4594B005BF3B9 /* Reviews.swift in Sources */,
 				06FE098825A321B30002F0A4 /* TimeCell.swift in Sources */,
+				996BABA725AA98090005B57A /* UnAuthenticatedPopUpView.swift in Sources */,
 				062FDF79257E678D00949D54 /* Constants.swift in Sources */,
 				99430DE725A7C7BC000A850D /* Int+Timestamp.swift in Sources */,
 				06EB2EB52599A09A00AFEE13 /* SettingViewModel.swift in Sources */,
@@ -1316,6 +1343,7 @@
 				06EB2E9C259926F500AFEE13 /* AuthResponse.swift in Sources */,
 				0657F1A225911E03003C9586 /* MyAppointmentResponse.swift in Sources */,
 				067584C9258D7CDD00A65404 /* UIViewController+ShowAlert.swift in Sources */,
+				990B981525B23B2E000F6E9B /* UnAuthenticatedPopUpViewModel.swift in Sources */,
 				9907ED9C25A3DDDA00C42E7B /* VoucherPopUpView.swift in Sources */,
 				06EB2EB32599A01000AFEE13 /* Setting.swift in Sources */,
 				0605D67C258959F3006E38D8 /* MyFavoriteCell.swift in Sources */,

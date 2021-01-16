@@ -14,6 +14,10 @@ internal enum L10n {
   internal static let about = L10n.tr("Localizable", "about")
   /// About Us
   internal static let aboutUs = L10n.tr("Localizable", "aboutUs")
+  /// Your Account has been Created and Appointment Successfully Booked
+  internal static let accCreatedSuccessfullyBooked = L10n.tr("Localizable", "accCreatedSuccessfullyBooked")
+  /// By clicking sign up, you agree to our Terms & Conditions
+  internal static let acceptTerms = L10n.tr("Localizable", "acceptTerms")
   /// Add Comment
   internal static let addComment = L10n.tr("Localizable", "addComment")
   /// You must login to add/remove favorite
@@ -24,6 +28,8 @@ internal enum L10n {
   internal static let appLink = L10n.tr("Localizable", "appLink")
   /// Booked Appointments
   internal static let bookedAppointment = L10n.tr("Localizable", "bookedAppointment")
+  /// Book for another person!
+  internal static let bookForAnother = L10n.tr("Localizable", "bookForAnother")
   /// Are you Booking for another person?
   internal static let bookingAnotherPerson = L10n.tr("Localizable", "bookingAnotherPerson")
   /// Book Now
@@ -106,6 +112,8 @@ internal enum L10n {
   internal static let firstTitle = L10n.tr("Localizable", "firstTitle")
   /// Forgot Password?
   internal static let forgotPassword = L10n.tr("Localizable", "forgotPassword")
+  /// I Have a Voucher Code
+  internal static let haveVoucherCode = L10n.tr("Localizable", "haveVoucherCode")
   /// HOME NURSE
   internal static let homeNurse = L10n.tr("Localizable", "homeNurse")
   /// Incorrect Password
@@ -120,8 +128,12 @@ internal enum L10n {
   internal static let invalidPhoneNumber = L10n.tr("Localizable", "invalidPhoneNumber")
   /// LE
   internal static let le = L10n.tr("Localizable", "le")
+  /// You have Logged in and Appointment Successfully Booked
+  internal static let loggedSuccessfullyBooked = L10n.tr("Localizable", "loggedSuccessfullyBooked")
   /// Login
   internal static let login = L10n.tr("Localizable", "login")
+  /// Login & Book
+  internal static let loginAndBook = L10n.tr("Localizable", "loginAndBook")
   /// LOGIN
   internal static let loginNav = L10n.tr("Localizable", "loginNav")
   /// Logout
@@ -178,6 +190,8 @@ internal enum L10n {
   internal static let rateInfo = L10n.tr("Localizable", "rateInfo")
   /// Choose Region
   internal static let region = L10n.tr("Localizable", "region")
+  /// Register
+  internal static let register = L10n.tr("Localizable", "register")
   /// RESET PASSWORD
   internal static let resetPassword = L10n.tr("Localizable", "resetPassword")
   /// Check your mail to reset your password.
@@ -214,6 +228,8 @@ internal enum L10n {
   internal static let shareText = L10n.tr("Localizable", "shareText")
   /// Sign Up
   internal static let signup = L10n.tr("Localizable", "signup")
+  /// Sign Up & Book
+  internal static let signUpAndBook = L10n.tr("Localizable", "signUpAndBook")
   /// SIGN UP
   internal static let signupNav = L10n.tr("Localizable", "signupNav")
   /// Sorry

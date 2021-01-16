@@ -33,6 +33,8 @@ enum APIRouter: URLRequestConvertible{
     case doctors(_ doctorID: Int)
     case reviews(_ doctorID: Int,_ page: Int)
     case doctorAppointments(_ doctorID: Int)
+    case loginAndBook(_ userAndBooking: UserAndBooking)
+    case registerAndBook(_ userAndBooking: UserAndBooking)
     
     // MARK: - HttpMethod
     private var method: HTTPMethod {
@@ -103,6 +105,10 @@ enum APIRouter: URLRequestConvertible{
             return URLs.doctor + "/\(doctorID)" + URLs.review
         case .doctorAppointments(let doctorID):
             return URLs.doctor + "/\(doctorID)" + URLs.doctorAppointments
+        case .loginAndBook:
+            return URLs.loginAndBook
+        case .registerAndBook:
+            return URLs.registerAndBook
         }
     }
     
@@ -116,9 +122,8 @@ enum APIRouter: URLRequestConvertible{
         
         // Headers
         switch self {
-        case .nurseRequest, .register, .login, .forgetPassword, .contactRequest:
+        case .nurseRequest, .register, .login, .forgetPassword, .contactRequest, .loginAndBook, .registerAndBook:
             urlRequest.setValue(HeaderValues.appJSON, forHTTPHeaderField: HeaderKeys.accept)
-            
         case .favorites, .addRemoveFavorite, .appointments, .removeAppointment, .searchForDoctors, .logout, .doctors:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().token ?? "")",
                 forHTTPHeaderField: HeaderKeys.authorization)
@@ -142,6 +147,8 @@ enum APIRouter: URLRequestConvertible{
             case .forgetPassword(let body):
                 return encodeToJSON(body)
             case .bookAppointment(let body):
+                return encodeToJSON(body)
+            case .registerAndBook(let body), .loginAndBook(let body):
                 return encodeToJSON(body)
             default:
                 return nil

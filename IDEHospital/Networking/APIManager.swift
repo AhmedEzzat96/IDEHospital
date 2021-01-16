@@ -123,6 +123,18 @@ class APIManager {
             completion(response)
         }
     }
+    
+    class func getUserData(completion: @escaping (Result<AuthResponse, Error>) -> Void) {
+        request(APIRouter.getUserData) { (response) in
+            completion(response)
+        }
+    }
+    
+    class func editProfile(with user: User, completion: @escaping (Result<AuthResponse, Error>) -> Void) {
+        request(APIRouter.editProfile(user)) { (response) in
+            completion(response)
+        }
+    }
 }
 
 extension APIManager {

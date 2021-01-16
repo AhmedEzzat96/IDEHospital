@@ -15,6 +15,9 @@
 		0605D67D258959F3006E38D8 /* MyFavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0605D67B258959F3006E38D8 /* MyFavoriteCell.xib */; };
 		0605D67F2589B602006E38D8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0605D67E2589B602006E38D8 /* CustomButton.swift */; };
 		06064CEA2582C693006ADB86 /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06064CE92582C693006ADB86 /* AssetsManager.swift */; };
+		061D001C25A9F2E30007473D /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061D001B25A9F2E30007473D /* EditProfile.storyboard */; };
+		061D001F25A9F9860007473D /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061D001E25A9F9860007473D /* EditProfileVC.swift */; };
+		061D002325A9F9F20007473D /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061D002225A9F9F20007473D /* EditProfileView.swift */; };
 		06264484259A53F000279C7C /* CategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06264483259A53F000279C7C /* CategoryCellViewModel.swift */; };
 		06264490259A606A00279C7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0626448F259A606A00279C7C /* LaunchScreen.storyboard */; };
 		062FDF5C257E669B00949D54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF5B257E669B00949D54 /* AppDelegate.swift */; };
@@ -40,6 +43,7 @@
 		0678C1212581CA4C00949700 /* UIColor+getColorByHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678C1202581CA4C00949700 /* UIColor+getColorByHex.swift */; };
 		06950BAA259C295400DF4ACB /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06950BA9259C295400DF4ACB /* CustomScrollView.swift */; };
 		0699F05D258D1F3E00C2AF5F /* MyFavoriteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699F05C258D1F3E00C2AF5F /* MyFavoriteResponse.swift */; };
+		06A3D4E225B0AEE80002C4A3 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A3D4E125B0AEE80002C4A3 /* EditProfileViewModel.swift */; };
 		06AB4F11258404CA00A0B658 /* UIViewController+NavControllerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB4F10258404CA00A0B658 /* UIViewController+NavControllerSetup.swift */; };
 		06BB4E1E2585334700D2C4E3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FDF80257E694700949D54 /* APIRouter.swift */; };
 		06BB4E1F2585337200D2C4E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 062FDF64257E669E00949D54 /* Assets.xcassets */; };
@@ -162,6 +166,9 @@
 		06064CE92582C693006ADB86 /* AssetsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsManager.swift; sourceTree = "<group>"; };
 		06064D2125830A8A006ADB86 /* Colors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
 		06064D2325830CBB006ADB86 /* ColorsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsManager.swift; sourceTree = "<group>"; };
+		061D001B25A9F2E30007473D /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
+		061D001E25A9F9860007473D /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		061D002225A9F9F20007473D /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		06264483259A53F000279C7C /* CategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellViewModel.swift; sourceTree = "<group>"; };
 		0626448F259A606A00279C7C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		062FDF58257E669B00949D54 /* IDEHospital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDEHospital.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +200,7 @@
 		06950BA9259C295400DF4ACB /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		0699F05C258D1F3E00C2AF5F /* MyFavoriteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteResponse.swift; sourceTree = "<group>"; };
 		0699F05E258D5A3A00C2AF5F /* MyFavoriteCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteCellViewModel.swift; sourceTree = "<group>"; };
+		06A3D4E125B0AEE80002C4A3 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		06AB4F10258404CA00A0B658 /* UIViewController+NavControllerSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavControllerSetup.swift"; sourceTree = "<group>"; };
 		06BB4E202585397D00D2C4E3 /* UIImageView+CircularImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+CircularImage.swift"; sourceTree = "<group>"; };
 		06C0DD8125A25047002ED4DF /* DoctorProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DoctorProfile.storyboard; sourceTree = "<group>"; };
@@ -358,6 +366,23 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
+		061D001A25A9F2C20007473D /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				061D001B25A9F2E30007473D /* EditProfile.storyboard */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		061D001D25A9F9620007473D /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				061D001E25A9F9860007473D /* EditProfileVC.swift */,
+				061D002225A9F9F20007473D /* EditProfileView.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
 		06243E0C258522FB00CC67EC /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +468,7 @@
 		062FDF70257E66E400949D54 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				061D001D25A9F9620007473D /* EditProfile */,
 				9907ED9725A3DD8E00C42E7B /* PopUps */,
 				06C0DD8325A25D05002ED4DF /* DoctorProfile */,
 				06EB2EA825998A6800AFEE13 /* Setting */,
@@ -461,16 +487,17 @@
 		062FDF71257E66E900949D54 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				06A3D4E025B0AED80002C4A3 /* EditProfile */,
+				06A3D4DF25B0AEC80002C4A3 /* Review */,
+				06A3D4DE25B0AEC10002C4A3 /* Setting */,
+				06A3D4DD25B0AEB40002C4A3 /* SearchResults */,
+				06A3D4DC25B0AEA60002C4A3 /* HomeNurseContactUs */,
+				06A3D4DB25B0AE9A0002C4A3 /* AboutAndTerms */,
 				9907ED9D25A421C900C42E7B /* PopUps */,
 				066B5AB725A48C68005BF3B9 /* DoctorProfile */,
 				06264482259A53DE00279C7C /* Home */,
 				06E7DC4C2596984900382E2A /* Authentication */,
 				9966C2FC258263980016A8CB /* MainTabs */,
-				9951E0C2259AB1DF00DDB266 /* AboutAndTermsViewModel.swift */,
-				99F49F25258A8F6A0039A280 /* HomeNurseContactUsViewModel.swift */,
-				99343E4725902FFF008E069F /* SearchResultsViewModel.swift */,
-				06EB2EB42599A09A00AFEE13 /* SettingViewModel.swift */,
-				995901E625A2AD0C00A5D5AF /* ReviewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -499,6 +526,7 @@
 		062FDF74257E671400949D54 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				061D001A25A9F2C20007473D /* EditProfile */,
 				9907ED9425A3B53400C42E7B /* PopUps */,
 				06C0DD8025A25030002ED4DF /* DoctorProfile */,
 				06EB2EA5259989F800AFEE13 /* Setting */,
@@ -612,6 +640,54 @@
 				06950BA9259C295400DF4ACB /* CustomScrollView.swift */,
 			);
 			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		06A3D4DB25B0AE9A0002C4A3 /* AboutAndTerms */ = {
+			isa = PBXGroup;
+			children = (
+				9951E0C2259AB1DF00DDB266 /* AboutAndTermsViewModel.swift */,
+			);
+			path = AboutAndTerms;
+			sourceTree = "<group>";
+		};
+		06A3D4DC25B0AEA60002C4A3 /* HomeNurseContactUs */ = {
+			isa = PBXGroup;
+			children = (
+				99F49F25258A8F6A0039A280 /* HomeNurseContactUsViewModel.swift */,
+			);
+			path = HomeNurseContactUs;
+			sourceTree = "<group>";
+		};
+		06A3D4DD25B0AEB40002C4A3 /* SearchResults */ = {
+			isa = PBXGroup;
+			children = (
+				99343E4725902FFF008E069F /* SearchResultsViewModel.swift */,
+			);
+			name = SearchResults;
+			sourceTree = "<group>";
+		};
+		06A3D4DE25B0AEC10002C4A3 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				06EB2EB42599A09A00AFEE13 /* SettingViewModel.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		06A3D4DF25B0AEC80002C4A3 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				995901E625A2AD0C00A5D5AF /* ReviewViewModel.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		06A3D4E025B0AED80002C4A3 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				06A3D4E125B0AEE80002C4A3 /* EditProfileViewModel.swift */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 		06AB4F0B2583F84100A0B658 /* UIViewController */ = {
@@ -1173,6 +1249,7 @@
 				9907EDA125A43F9A00C42E7B /* ConfirmAppointmentPopUp.storyboard in Resources */,
 				06DD995D257FE68E00D36344 /* PTSans-Bold.ttf in Resources */,
 				06264490259A606A00279C7C /* LaunchScreen.storyboard in Resources */,
+				061D001C25A9F2E30007473D /* EditProfile.storyboard in Resources */,
 				0605D67625895473006E38D8 /* MyFavorites.storyboard in Resources */,
 				0678C11F2581B09500949700 /* CategoryCell.xib in Resources */,
 				9907EDAC25A49F0800C42E7B /* YesOrNoPopUp.storyboard in Resources */,
@@ -1248,6 +1325,7 @@
 			files = (
 				996BABA225AA971E0005B57A /* UnAuthenticatedPopUpVC.swift in Sources */,
 				06D046D1259B509600F4B8C2 /* MyFavoriteCellViewModel.swift in Sources */,
+				06A3D4E225B0AEE80002C4A3 /* EditProfileViewModel.swift in Sources */,
 				06D046D0259B508000F4B8C2 /* HomeNurseContactUsViewModel.swift in Sources */,
 				06D046CF259B505200F4B8C2 /* HomeNurseContactUsView.swift in Sources */,
 				06D046CE259B504E00F4B8C2 /* HomeNurseContactUsVC.swift in Sources */,
@@ -1328,6 +1406,7 @@
 				999A5C1D258E438900FC0792 /* SearchResultsView.swift in Sources */,
 				062FDF83257E6F4A00949D54 /* UIViewController+Storyboard.swift in Sources */,
 				9966C2FB2582636B0016A8CB /* ServiceSearchViewModel.swift in Sources */,
+				061D001F25A9F9860007473D /* EditProfileVC.swift in Sources */,
 				06EB2E962599177F00AFEE13 /* SignupVC.swift in Sources */,
 				06EB2E9E259930C800AFEE13 /* SignupViewModel.swift in Sources */,
 				9938FC25258173CC003781E5 /* UIView+CornerRadius.swift in Sources */,
@@ -1338,6 +1417,7 @@
 				06D046CD259B4FCD00F4B8C2 /* HomeViewModel.swift in Sources */,
 				99343E46258FC274008E069F /* SearchResults.swift in Sources */,
 				99F49F28258A955F0039A280 /* IDEAHospitalTextField.swift in Sources */,
+				061D002325A9F9F20007473D /* EditProfileView.swift in Sources */,
 				0657F1A4259127B5003C9586 /* MyAppointmentCellViewModel.swift in Sources */,
 				9907ED9F25A421F000C42E7B /* VoucherPopUpViewModel.swift in Sources */,
 				06EB2E9C259926F500AFEE13 /* AuthResponse.swift in Sources */,

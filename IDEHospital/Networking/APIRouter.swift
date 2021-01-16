@@ -35,14 +35,18 @@ enum APIRouter: URLRequestConvertible{
     case doctorAppointments(_ doctorID: Int)
     case loginAndBook(_ userAndBooking: UserAndBooking)
     case registerAndBook(_ userAndBooking: UserAndBooking)
+    case getUserData
+    case editProfile(_ user: User)
     
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
-        case .getCategoriesData, .mainCategories, .favorites, .appointments, .searchForDoctors, .aboutUs, .terms, .doctors, .reviews, .doctorAppointments:
+        case .getCategoriesData, .mainCategories, .favorites, .appointments, .searchForDoctors, .aboutUs, .terms, .doctors, .reviews, .doctorAppointments, .getUserData:
             return .get
         case .removeAppointment:
             return .delete
+        case .editProfile:
+            return .patch
         default:
             return .post
         }
@@ -109,6 +113,8 @@ enum APIRouter: URLRequestConvertible{
             return URLs.loginAndBook
         case .registerAndBook:
             return URLs.registerAndBook
+        case .editProfile, .getUserData:
+            return URLs.user
         }
     }
     
@@ -124,10 +130,10 @@ enum APIRouter: URLRequestConvertible{
         switch self {
         case .nurseRequest, .register, .login, .forgetPassword, .contactRequest, .loginAndBook, .registerAndBook:
             urlRequest.setValue(HeaderValues.appJSON, forHTTPHeaderField: HeaderKeys.accept)
-        case .favorites, .addRemoveFavorite, .appointments, .removeAppointment, .searchForDoctors, .logout, .doctors:
+        case .favorites, .addRemoveFavorite, .appointments, .removeAppointment, .searchForDoctors, .logout, .doctors, .getUserData:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().token ?? "")",
                 forHTTPHeaderField: HeaderKeys.authorization)
-        case .bookAppointment, .addReview:
+        case .bookAppointment, .addReview, .editProfile:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().token ?? "")",
                 forHTTPHeaderField: HeaderKeys.authorization)
             urlRequest.setValue(HeaderValues.appJSON, forHTTPHeaderField: HeaderKeys.accept)
@@ -149,6 +155,8 @@ enum APIRouter: URLRequestConvertible{
             case .bookAppointment(let body):
                 return encodeToJSON(body)
             case .registerAndBook(let body), .loginAndBook(let body):
+                return encodeToJSON(body)
+            case .editProfile(let body):
                 return encodeToJSON(body)
             default:
                 return nil

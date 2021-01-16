@@ -19,6 +19,7 @@ struct AuthResponse: Codable {
 struct AuthError: Codable {
     let email: [String]?
     let voucher: [String]?
+    let old_password: [String]?
 }
 
 struct AuthData: Codable {

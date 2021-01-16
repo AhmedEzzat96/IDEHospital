@@ -26,6 +26,7 @@ struct Storyboards {
     static let successOrFailurePopUp = "SuccessOrFailurePopUp"
     static let unAuthPopUp = "UnAuthenticatedPopUp"
     static let doctorProfile = "DoctorProfile"
+    static let editProfile = "EditProfile"
 }
 
 // ViewControllers
@@ -48,6 +49,7 @@ struct ViewControllers {
     static let successOrFailurePopUpVC = "SuccessOrFailurePopUpVC"
     static let unAuthPopUpVC = "UnAuthenticatedPopUpVC"
     static let doctorProfileVC = "DoctorProfileVC"
+    static let editProfileVC = "EditProfileVC"
 }
 
 // UserDefaultsKeys
@@ -76,6 +78,7 @@ struct URLs {
     static let doctorAppointments = "/appointments"
     static let loginAndBook = "/user_appointments/with_login"
     static let registerAndBook = "user_appointments/with_register"
+    static let user = "/user"
 }
 
 // HeaderKeys

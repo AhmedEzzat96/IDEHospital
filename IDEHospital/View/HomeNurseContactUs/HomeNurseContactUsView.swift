@@ -57,7 +57,7 @@ extension HomeNurseContactUsView {
         emailTextField.setup(leftImage: Asset.email.image, placeholder: L10n.yourEmail)
         emailTextField.keyboardType = .emailAddress
         phoneTextField.setup(leftImage: Asset.phone.image, placeholder: L10n.mobileNumber)
-        phoneTextField.keyboardType = .phonePad
+        phoneTextField.keyboardType = .asciiCapableNumberPad
     }
     
     private func setupDetailsTextView(textViewPlaceHolder: String) {

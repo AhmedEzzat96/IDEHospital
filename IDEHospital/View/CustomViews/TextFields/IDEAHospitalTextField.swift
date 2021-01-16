@@ -30,6 +30,7 @@ class IDEAHospitalTextField: UITextField {
     func setup(leftImage: UIImage, placeholder: String) {
         self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: ColorName.white.color, NSAttributedString.Key.font: FontFamily.PTSans.bold.font(size: 15)])
         let leftIcon = UIImageView(image: leftImage)
+        leftIcon.contentMode = .scaleAspectFit
         self.leftView = leftIcon
         
         self.textColor = ColorName.white.color

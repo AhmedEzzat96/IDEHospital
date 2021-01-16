@@ -20,7 +20,8 @@ protocol DoctorProfileVCProtocol: class {
     func showLoader()
     func hideLoader()
     func hideNoAppointmentsLabel(_ isHidden: Bool)
-    func askForConfirmation(with appointment: Appointment, doctorName: String, delegate: DoctorProfilePopupsDelegate)
+    func askForConfirmation(with timestamp: Int, doctorName: String, delegate: DoctorProfilePopupsDelegate)
+    func showAuthAndBookPopUp(for booking: UserAndBooking, delegate: DoctorProfilePopupsDelegate)
 }
 
 class DoctorProfileVC: UIViewController {
@@ -64,7 +65,7 @@ class DoctorProfileVC: UIViewController {
     }
     
     @IBAction func bookNowBtnPressed(_ sender: CustomButton) {
-        viewModel.showVoucher()
+        viewModel.checkAuthAndShowPopUp()
     }
     
     @IBAction func reviewsBtnPressed(_ sender: UIButton) {
@@ -217,9 +218,14 @@ extension DoctorProfileVC: DoctorProfileVCProtocol {
         }
     }
     
-    func askForConfirmation(with appointment: Appointment, doctorName: String, delegate: DoctorProfilePopupsDelegate) {
-        let confirmationPopUp = ConfirmAppointmentPopUpVC.create(for: appointment, doctorName: doctorName)
+    func askForConfirmation(with timestamp: Int, doctorName: String, delegate: DoctorProfilePopupsDelegate) {
+        let confirmationPopUp = ConfirmAppointmentPopUpVC.create(for: timestamp, doctorName: doctorName)
         present(confirmationPopUp, animated: true)
         confirmationPopUp.delegate = delegate
+    }
+    
+    func showAuthAndBookPopUp(for booking: UserAndBooking, delegate: DoctorProfilePopupsDelegate) {
+        let authPopUpVC = UnAuthenticatedPopUpVC.create(booking: booking, delegate: delegate)
+        present(authPopUpVC, animated: true)
     }
 }

@@ -42,7 +42,7 @@ extension EditProfileView {
         setupTextField(textField: emailTextField, keyboardType: .emailAddress)
         mobileNoTextField.setup(leftImage: Asset.phone.image, placeholder: L10n.mobileNumber)
         setupTextField(textField: mobileNoTextField, keyboardType: .asciiCapableNumberPad)
-        oldPasswordTextField.setup(leftImage: Asset.password.image, placeholder: "********")
+        oldPasswordTextField.setup(leftImage: Asset.password.image, placeholder: L10n.stars)
         setupTextField(textField: oldPasswordTextField, isSecured: true)
         newPasswordTextField.setup(leftImage: Asset.password.image, placeholder: L10n.setNewPassword)
         setupTextField(textField: newPasswordTextField, isSecured: true)
@@ -57,7 +57,7 @@ extension EditProfileView {
     
     private func setupButtons() {
         cancelBtn.setBackgroundColor(color: ColorName.richPurpleTwo.color, forState: .normal)
-        cancelBtn.setTitle("Cancel", for: .normal)
-        saveBtn.setTitle("Save", for: .normal)
+        cancelBtn.setTitle(L10n.cancel, for: .normal)
+        saveBtn.setTitle(L10n.save, for: .normal)
     }
 }

@@ -118,6 +118,12 @@ class APIManager {
         }
     }
     
+    class func authAndBook(_ authAndBookRequest: URLRequestConvertible, completion: @escaping (Result<AuthResponse, Error>) -> Void) {
+        request(authAndBookRequest) { (response) in
+            completion(response)
+        }
+    }
+    
     class func getUserData(completion: @escaping (Result<AuthResponse, Error>) -> Void) {
         request(APIRouter.getUserData) { (response) in
             completion(response)

@@ -31,9 +31,9 @@ class ConfirmAppointmentPopUpVC: UIViewController {
     }
     
     // MARK:- Public Methods
-    class func create(for appointment: Appointment, doctorName: String) -> ConfirmAppointmentPopUpVC {
+    class func create(for timestamp: Int, doctorName: String) -> ConfirmAppointmentPopUpVC {
         let confirmAppointmentPopUpVC: ConfirmAppointmentPopUpVC = UIViewController.create(storyboardName: Storyboards.confirmAppointmentPopUp, identifier: ViewControllers.confirmAppointmentPopUpVC)
-        confirmAppointmentPopUpVC.viewModel = ConfirmAppointmentPopUpViewModel(appointment: appointment, doctorName: doctorName)
+        confirmAppointmentPopUpVC.viewModel = ConfirmAppointmentPopUpViewModel(timestamp: timestamp, doctorName: doctorName)
         return confirmAppointmentPopUpVC
     }
     

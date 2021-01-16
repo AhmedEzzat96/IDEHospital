@@ -28,7 +28,7 @@ protocol DoctorProfileViewModelProtocol {
     func didSelectItem(with item: Int)
     func getLastSelectedIndex() -> Int?
     func openMapForPlace()
-    func showVoucher()
+    func checkAuthAndShowPopUp()
     func addReviewTapped()
 }
 
@@ -214,12 +214,12 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
         return lastSelectedAppointmentIndex
     }
     
-    func showVoucher() {
+    func checkAuthAndShowPopUp() {
+        guard let timestamp = appointment.timestamp, let doctorName = doctorData?.name else { return }
         guard UserDefaultsManager.shared().token != nil else {
-            self.view?.showAlert(type: .failure(L10n.mustAuthenticate))
+            self.view?.showAuthAndBookPopUp(for: UserAndBooking(doctorID: appointment.doctorID, doctorName: doctorName, timestamp: String(describing: timestamp)), delegate: self)
             return
         }
-        guard appointment.timestamp != nil, let doctorName = doctorData?.name else { return }
         self.view?.showVoucherPopup(appointment: self.appointment, doctorName: doctorName, delegate: self)
     }
     
@@ -257,18 +257,24 @@ extension DoctorProfileViewModel: DoctorProfileViewModelProtocol {
     }
 }
 
-// MARK:- Popups Delegate
+// MARK:- DoctorProfilePopups Delegate
 extension DoctorProfileViewModel: DoctorProfilePopupsDelegate {
     func continueTapped(appointment: Appointment, doctorName: String) {
         self.appointment = appointment
-        view?.askForConfirmation(with: appointment, doctorName: doctorName, delegate: self)
+        guard let timestamp = appointment.timestamp else { return }
+        view?.askForConfirmation(with: timestamp, doctorName: doctorName, delegate: self)
     }
     
     func confirmTapped() {
         bookAppointment()
     }
+    
+    func authenticatedAndBooked() {
+        getDoctorAppointment(fromBeginning: false)
+    }
 }
 
+// MARK:- SuccessOrFailurePopUp Delegate
 extension DoctorProfileViewModel: SuccessOrFailurePopUpOkButtonDelegate {
     func okTapped() {
         getReviews()

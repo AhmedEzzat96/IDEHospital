@@ -11,6 +11,12 @@ import UIKit
 protocol DoctorProfilePopupsDelegate: class {
     func continueTapped(appointment: Appointment, doctorName: String)
     func confirmTapped()
+    func authenticatedAndBooked()
+}
+
+extension DoctorProfilePopupsDelegate {
+    func continueTapped(appointment: Appointment, doctorName: String) {}
+    func authenticatedAndBooked() {}
 }
 
 protocol VoucherPopUpVCProtocol: class {

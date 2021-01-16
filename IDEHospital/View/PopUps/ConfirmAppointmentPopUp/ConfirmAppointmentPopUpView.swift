@@ -61,7 +61,7 @@ extension ConfirmAppointmentPopUpView {
     }
     
     private func setupCancelButton() {
-        cancelButton.setBackgroundImage(Asset.cancel.image, for: .normal)
+        cancelButton.setBackgroundImage(Asset.cancelBlue.image, for: .normal)
     }
     
     private func setupConfirmButton() {

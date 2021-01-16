@@ -133,5 +133,16 @@
 "mustRegister" = "You must be registered to access this page";
 "noAppointments" = "No appointments found for this date";
 "mustAuthenticate" = "Must be Authenticated";
+"haveVoucherCode" = "I Have a Voucher Code";
+"bookForAnother" = "Book for another person!";
+"loginAndBook" = "Login & Book";
+"register" = "Register";
+"signUpAndBook" = "Sign Up & Book";
+"acceptTerms" = "By clicking sign up, you agree to our Terms & Conditions";
+"accCreatedSuccessfullyBooked" = "Your Account has been Created and Appointment Successfully Booked";
+"loggedSuccessfullyBooked" = "You have Logged in and Appointment Successfully Booked";
 "editProfileNav" = "EDIT PROFILE";
 "editProfileMessage" = "Your Profile is edited succefully";
+"cancel" = "Cancel";
+"save" = "Save";
+"stars" = "********";

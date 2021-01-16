@@ -16,12 +16,12 @@ protocol ConfirmAppointmentPopUpViewModelProtocol {
 class ConfirmAppointmentPopUpViewModel {
     
     // MARK:- Properties
-    private let appointment: Appointment!
+    private let timestamp: Int!
     private let doctorName: String
     
     // MARK:- Init
-    init(appointment: Appointment, doctorName: String) {
-        self.appointment = appointment
+    init(timestamp: Int, doctorName: String) {
+        self.timestamp = timestamp
         self.doctorName = doctorName
     }
 }
@@ -33,6 +33,6 @@ extension ConfirmAppointmentPopUpViewModel: ConfirmAppointmentPopUpViewModelProt
     }
     
     func getDateAndTime() -> String {
-        return "\(appointment.timestamp!.createDate()) \(appointment.timestamp!.createTime())"
+        return "\(timestamp!.createDate()) \(timestamp!.createTime())"
     }
 }

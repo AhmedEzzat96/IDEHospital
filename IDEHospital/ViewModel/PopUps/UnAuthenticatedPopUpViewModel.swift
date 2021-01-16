@@ -135,7 +135,7 @@ extension UnAuthenticatedPopUpViewModel {
     }
     
     private func authAndBook(_ request: APIRouter) {
-        APIManager.AuthAndBook(request) { [weak self] (result) in
+        APIManager.authAndBook(request) { [weak self] (result) in
             switch result {
             case .success(let response):
                 self?.checkAuthAndBookResponse(response)

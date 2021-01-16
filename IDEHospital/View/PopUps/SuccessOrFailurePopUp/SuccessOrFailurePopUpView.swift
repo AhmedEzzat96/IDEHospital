@@ -37,7 +37,6 @@ extension SuccessOrFailurePopUpView {
     }
     
     private func setupPopUpLabel(_ text: String) {
-        popUpLabel.numberOfLines = 2
         popUpLabel.text = text
         popUpLabel.textAlignment = .center
         popUpLabel.textColor = ColorName.darkRoyalBlue.color

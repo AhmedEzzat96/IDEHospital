@@ -143,3 +143,6 @@
 "loggedSuccessfullyBooked" = "You have Logged in and Appointment Successfully Booked";
 "editProfileNav" = "EDIT PROFILE";
 "editProfileMessage" = "Your Profile is edited succefully";
+"cancel" = "Cancel";
+"save" = "Save";
+"stars" = "********";

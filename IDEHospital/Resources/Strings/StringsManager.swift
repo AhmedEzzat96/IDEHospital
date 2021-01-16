@@ -34,6 +34,8 @@ internal enum L10n {
   internal static let bookingAnotherPerson = L10n.tr("Localizable", "bookingAnotherPerson")
   /// Book Now
   internal static let bookNow = L10n.tr("Localizable", "bookNow")
+  /// Cancel
+  internal static let cancel = L10n.tr("Localizable", "cancel")
   /// Choose City first
   internal static let chooseCityFirst = L10n.tr("Localizable", "chooseCityFirst")
   /// Choose Password
@@ -212,6 +214,8 @@ internal enum L10n {
   internal static let reviews = L10n.tr("Localizable", "reviews")
   /// Your review submitted succesfully
   internal static let reviewSubmitted = L10n.tr("Localizable", "reviewSubmitted")
+  /// Save
+  internal static let save = L10n.tr("Localizable", "save")
   /// Schedule
   internal static let schedule = L10n.tr("Localizable", "schedule")
   /// search
@@ -246,6 +250,8 @@ internal enum L10n {
   internal static let sortBy = L10n.tr("Localizable", "sortBy")
   /// Choose Specialist
   internal static let specialist = L10n.tr("Localizable", "specialist")
+  /// ********
+  internal static let stars = L10n.tr("Localizable", "stars")
   /// Submit Review
   internal static let submitReview = L10n.tr("Localizable", "submitReview")
   /// Appointment Successfully Booked
